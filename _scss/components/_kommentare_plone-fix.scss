@@ -1,0 +1,52 @@
+div.discussion {
+	margin-bottom: 5rem;
+	div.comment {
+		padding-top: .6rem;
+		margin-top: 2rem;
+		border-top: 1px solid $dguv-grau-9;
+		div.card {
+			background: none;
+			button.reply-to-comment-button {
+				margin: 1em 0;
+				width: fit-content;
+			}
+			div.card-body {
+				padding:0;
+				div.commentImage {
+					float: left;
+					margin-right: .6rem;
+					img {
+						border-radius:50%;
+					}
+				}
+			}
+			div.card-footer {
+				border: none;
+				background: none;
+				padding-left:0;
+				margin-top: .6rem;
+				div.commentActions {
+					--bs-gutter-x: 0;
+				}
+			}
+		}
+		&[class*="replyTreeLevel"]:not(.replyTreeLevel0) {
+			margin-left: 15rem;
+			+ div.replyTreeLevel0 {
+				margin-top: 4rem;
+			}
+		}
+		&.replyTreeLevel4 {
+			margin-left: 12rem !important;
+		}
+		&.replyTreeLevel3 {
+			margin-left: 9rem !important;
+		}
+		&.replyTreeLevel2 {
+			margin-left: 6rem !important;
+		}
+		&.replyTreeLevel1 {
+			margin-left: 3rem !important;
+		}
+	}
+}

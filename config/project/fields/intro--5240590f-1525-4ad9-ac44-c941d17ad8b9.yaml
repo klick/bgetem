@@ -1,0 +1,19 @@
+columnSuffix: clogzueb
+contentColumnType: text
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: intro
+instructions: null
+name: Intro
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,16 @@
+ul {
+	&.listing.enhanced_summary {
+		li {
+			a {
+				display: block;
+				&:after {
+					float: right;
+				}
+				&:hover {
+				}
+				&:visited {
+				}
+			}
+		}
+	}
+}

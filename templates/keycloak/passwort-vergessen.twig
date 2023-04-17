@@ -1,0 +1,50 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+
+{% block content %}
+
+    <div class="card border-0 card-body bg-white">
+        <header class="card-title">
+            {{ include('keycloak/_includes/localize-dropdown.twig') }}
+            <h1 id="kc-page-title" class="h2 mb-3">Passwort vergessen?</h1>
+        </header>
+        <div id="kc-content">
+            <div id="kc-content-wrapper">
+                <form id="kc-reset-password-form" class="form-horizontal" action="http://localhost:8080/auth/realms/siguv/login-actions/reset-credentials?session_code=K2WLOJYoGsNuI83d2wk4UGgQBRfetpw86GknxKvJ62E&amp;execution=570ce6cf-a020-499f-896a-3c8cc62b3c53&amp;client_id=account-console&amp;tab_id=lEsWHeNOYD0" method="post">
+                    <div class="form-group">
+                        <div class="">
+                            <label for="username" class="font-weight-bold">Benutzername oder E-Mail</label>
+                        </div>
+                        <div class="">
+                            <input type="text" id="username" name="username" class="form-control p-4" autofocus value="" aria-invalid=""/>
+                        </div>
+                    </div>
+                    <div class="form-group my-form-settings">
+                        <div id="kc-form-options" class="mb-2">
+                            <div class="">
+                                <span><a href="/auth/realms/siguv/login-actions/authenticate?client_id=account-console&amp;tab_id=lEsWHeNOYD0">« Zurück zur Anmeldung</a></span>
+                            </div>
+                        </div>
+
+                        <div id="kc-form-buttons" class="mt-4">
+                            <input class="btn btn-primary bg-dguv-blau border-0 text-white px-4 btn-lg" type="submit" value="Absenden"/>
+                        </div>
+                    </div>
+                </form>
+                <div id="kc-info" class="mt-4">
+                    <div id="kc-info-wrapper" class="color-dguv-orange">Geben Sie Ihren Benutzernamen oder Ihre E-Mail Adresse ein und klicken Sie auf Absenden.<br>Danach werden wir Ihnen eine E-Mail mit weiteren Instruktionen zusenden.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

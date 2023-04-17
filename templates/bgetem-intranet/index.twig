@@ -1,0 +1,50 @@
+{# 
+medien/index 
+#}
+
+{# {% if not currentUser %}
+{% redirect 'suche' %}
+{% endif %} #}
+
+{% import '_macros.twig' as macros %}
+{% extends '_layout_' ~ currentSite.handle ~ '.twig' %}
+
+
+
+
+
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['bgetemIntranetStart']
+}) %}
+
+
+
+
+{% block content %}
+
+  
+
+{# <pre>{{ dump(currentUser) }}</pre> #}
+
+{# {% include '_includes/component-banner.twig' %} #}
+
+{% if entry.id == 20544 %}
+<div class="container bg-layout_medien_container my-5">
+  <img src="{{ craft.assets.id(26604).one().url }}" alt="" class="border border-light w-100">
+</div>
+{% endif %}
+
+
+
+{% if entry.modules.level(1) is not empty %}
+  {% include '_includes/component_modules-bs4.twig' %}
+{% else %}
+  Bisher keine Module erstellt
+{% endif %}
+
+
+{% endblock %}

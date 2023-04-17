@@ -1,0 +1,20 @@
+columnSuffix: ahlecruf
+contentColumnType: integer(10)
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: order
+instructions: null
+name: Order
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

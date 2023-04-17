@@ -1,0 +1,55 @@
+// layout/_portlets.scss
+
+div.portlet {
+	background: lighten($dguv-grau-9, 3%);
+	-webkit-box-shadow: 4px 4px 0px 0px $dguv-grau-7;
+	-moz-box-shadow: 4px 4px 0px 0px $dguv-grau-7;
+	box-shadow: 4px 4px 0px 0px $dguv-grau-7;
+	h3 {
+		//text-transform: uppercase;
+		border-bottom: 1px solid $dguv-grau;
+		padding: 0 0 3px 0;
+		font-weight: 600;
+		padding: 12px 12px 8px 12px;
+	}
+	p {
+		&:not(:last-of-type) {
+			margin-bottom: 12px;
+		}
+	}
+	ul {
+		li {
+			a {
+				display: block;
+				margin-left: 1em;
+				@include arrowed('999AA5',-1em);
+				&:visited {
+					@include arrowed('999AA5',-1em);
+				}
+			}
+		}
+	}
+	div.portlet-body-wrapper {
+		padding-right: 12px;
+		padding: 12px;
+	}
+	figure {
+		margin-bottom: 6px;
+	}
+	&.blue {
+		background: $dguv-blau-10;
+		color: $dguv-blau;
+		-webkit-box-shadow: 4px 4px 0px 0px $dguv-blau-4;
+		-moz-box-shadow: 4px 4px 0px 0px $dguv-blau-4;
+		box-shadow: 4px 4px 0px 0px $dguv-blau-4;
+
+		h3 {
+			border-bottom: 1px solid $dguv-blau;
+			padding: 12px 12px 8px 12px;
+			margin-bottom: 0;
+		}
+		div.portlet-body-wrapper {
+			padding: 12px;
+		}
+	}
+}

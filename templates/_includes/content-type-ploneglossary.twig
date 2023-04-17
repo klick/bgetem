@@ -1,0 +1,127 @@
+{% import '_macros.twig' as macros %}
+
+ <div class="row">
+    <div class="col-lg-8">
+
+
+	<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+		<header>
+			{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+			<h1>{{feed.title}}</h1>
+			{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+			<p class="short-description bold">{{ feed.description.data }}</p>
+			{% endif %}
+		</header>
+		<section class="article-body clearfix">
+			<div class="glossary-abc">
+				<ul class="glossaryAbcedaire">
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=a" style="font-weight: bold">A</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=b" style="font-weight: bold">B</a>
+            </li>
+            <li>
+              C
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=d" style="font-weight: bold">D</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=e" style="font-weight: bold">E</a>
+            </li>
+            <li>
+              F
+            </li>
+            <li>
+              G
+            </li>
+            <li>
+              H
+            </li>
+            <li>
+              I
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=j" style="font-weight: bold">J</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=k" style="font-weight: bold">K</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=l" style="font-weight: bold">L</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=m" style="font-weight: bold">M</a>
+            </li>
+            <li>
+              N
+            </li>
+            <li>
+              O
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=p" style="font-weight: bold">P</a>
+            </li>
+            <li>
+              Q
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=r" style="font-weight: bold">R</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=s" style="font-weight: bold">S</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=t" style="font-weight: bold">T</a>
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=u" style="font-weight: bold">U</a>
+            </li>
+            <li>
+              V
+            </li>
+            <li>
+              <a href="{{ getenv('DEFAULT_SITE_URL') }}/unfall-berufskrankheit/glossar?search_letter=w" style="font-weight: bold">W</a>
+            </li>
+            <li>
+              X
+            </li>
+            <li>
+              Y
+            </li>
+            <li>
+              Z
+            </li>
+          </ul>
+			</div>
+			<div class="glossary-search-form">
+				<form class="form-inline {# my-2 my-lg-0 #} saearch search--header">
+          <div class="fields">
+            <input class="my-2" type="search" placeholder="Begriff" aria-label="Search">
+            <button class="btn btn-outline-success my-2 {# my-sm-0 #}" type="submit">Suche</button>
+          </div>
+			      
+			    </form>
+			</div>
+			
+			{{ feed.text is defined ? macros.text(feed.text) : null }}
+			{% if feed.items is defined and feed.items|length > 0 %}
+				<ul class="items {{ feed.layout }} list-unstyled">
+				{% for item in feed.items %}
+					<li>
+						<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (item['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">{{ item.title }}</a><br>
+					</li>
+				{% endfor %}
+				</ul>
+			{% endif %}		
+			</section>
+      {% include "_includes/component-sharing-buttons" %}
+		{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+	</article>
+	    </div>
+	    <div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>
+

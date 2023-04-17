@@ -1,0 +1,39 @@
+defaultPlacement: end
+enableVersioning: true
+handle: stellenanzeigen
+name: Stellenanzeigen
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    enabledByDefault: true
+    hasUrls: true
+    template: stellenanzeigen/_entry
+    uriFormat: 'stellenanzeigen/{slug}'
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    enabledByDefault: true
+    hasUrls: true
+    template: stellenanzeigen/_entry
+    uriFormat: 'stellenanzeigen/{slug}'
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    enabledByDefault: true
+    hasUrls: true
+    template: stellenanzeigen/_entry
+    uriFormat: 'stellenanzeigen/{slug}'
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    enabledByDefault: true
+    hasUrls: true
+    template: stellenanzeigen/_entry
+    uriFormat: 'stellenanzeigen/{slug}'
+type: channel

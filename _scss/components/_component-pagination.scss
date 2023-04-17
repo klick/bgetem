@@ -1,0 +1,38 @@
+div.pagination {
+	nav {
+		width: 100%;
+	}
+	ul.pagination {
+		* {
+			border: none !important;
+		}
+		li {
+			a {
+				-webkit-font-smoothing: subpixel-antialiased;
+				border-radius: 0 !important;
+				color: $dguv-blau-2;
+				svg {
+					width: 10px;
+					path {
+						fill: $dguv-blau-2;
+					}
+				}
+				&:hover {
+					background: $dguv-blau-2 !important;
+					color: #FFFFFF;
+					svg {
+						path {
+							fill: #FFFFFF;
+						}
+					}
+				}
+			}
+			&.active {
+				a {
+					background: $dguv-blau-2;
+					color: white;
+				}
+			}
+		}
+	}
+}

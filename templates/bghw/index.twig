@@ -1,0 +1,39 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_bghw" %}
+
+
+
+{% block content %}
+
+{% include '_includes/component-banner.twig' %}
+
+{# 	<div class="container bg-layout_medien_container my-5">
+		<div class="row">
+			<div class="col bg_bg-dguv-orange">
+				<div class="bg_bg-dguv-rot">
+					Col
+				</div>
+			</div>
+			<div class="col bg_bg-dguv-orange">
+				<div class="bg_bg-dguv-rot">
+					Col
+				</div>
+			</div>
+			<div class="col bg_bg-dguv-orange">
+				<div class="bg_bg-dguv-rot">
+					Col
+				</div>
+			</div>
+		</div>
+	</div> #}
+
+{% if entry.modules.level(1) %}
+	{% include '_includes/component_modules.twig' %}
+{% else %}
+	No
+{% endif %}
+
+
+
+{% endblock %}
+

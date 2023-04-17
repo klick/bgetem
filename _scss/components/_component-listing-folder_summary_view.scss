@@ -1,0 +1,17 @@
+ul {
+	&.listing.folder_summary_view {
+		li {
+			a {
+				display: block;
+				&:after {
+					float: right;
+				}
+				&:hover {
+					
+				}
+				&:visited {
+				}
+			}
+		}
+	}
+}

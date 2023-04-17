@@ -1,0 +1,29 @@
+a.inventar-anchor {
+	padding-top: 24px;
+}
+a.inventar-anchor-link {
+	color: $dguv-grau-4;
+	&:hover {
+		color: $dguv-blau-2;
+	}
+}
+small.toggle-code {
+	cursor: pointer;
+	background: lighten(black, 10%);
+	display: inline-block;
+	padding: 3px 8px;
+	border-radius: 3px;
+	font-weight: 600;
+	margin-bottom: 48px;
+	color: white;
+	&.open {
+		margin-bottom: 12px;
+	}
+}
+pre.code {
+	display: none;
+	margin-bottom: 48px;
+	&.visible {
+		display: block;
+	}
+}

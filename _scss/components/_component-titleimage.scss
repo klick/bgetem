@@ -1,0 +1,6 @@
+div.title-image {
+	margin: 24px 0;
+	@include lg() {
+		margin: 48px 0;
+	}
+}

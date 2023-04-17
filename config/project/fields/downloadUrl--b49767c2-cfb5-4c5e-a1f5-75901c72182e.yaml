@@ -1,0 +1,14 @@
+columnSuffix: sphbcehe
+contentColumnType: string(255)
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: downloadUrl
+instructions: null
+name: 'Download URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

@@ -1,0 +1,40 @@
+{% import '_macros.twig' as macros %}
+
+  <div class="row">
+    <div class="col-lg-8">
+    	<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+		<header>
+			{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+			<h1>{{feed.title}}</h1>
+			{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+			<p>{{ feed.description.data }}</p>
+			{% endif %}
+			{% if feed['@type'] == 'Document' and feed.creators is defined %}
+			AUTOR: {{feed.creators|join(', ', ' und ') }}{{feed.modification_date is defined ? ' | Datum: ' ~ feed.modification_date|date }}<br>
+			{% endif %}
+		</header>
+		<section class="article-body clearfix">
+			{% if feed.image is defined and feed.image is not empty %}
+			{% set params = [
+				{ width: 1110, jpegQuality: 100, format: 'jpg' },
+				{ width: 680, jpegQuality: 100, format: 'jpg' },
+				{ width: 345, jpegQuality: 85, format: 'jpg' }
+			] %}
+			{{ macros.imgFullWidth(feed.image.download, null, false, params, false) }}
+			{% if feed.image_caption is defined and feed.image_caption|length %}<br><small>{{ feed.image_caption }}</small>{% endif %}
+			{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+			{% endif %}
+			{% if feed.file is defined and not feed.file is empty %}
+			<br><br>Datei zum Download:<br>
+			<strong><a href="{{ feed.file.download }}" download>{{ feed.file.filename }}</a> – PDF Dokument, {{ (feed.file.size / 1000000)|number_format(2) }} MB</strong>
+			{% endif %}
+			{{ feed.text is defined ? macros.text(feed.text) : null }}
+		</section>
+		{% include "_includes/component-sharing-buttons" %}
+		{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+	</article>
+    </div>
+    <div class="portlets col-lg-3 offset-md-1">
+    	{% include "_includes/portlets" %}
+    </div>
+  </div>

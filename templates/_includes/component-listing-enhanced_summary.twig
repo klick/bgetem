@@ -1,0 +1,4 @@
+{% import '_macros.twig' as macros %}
+<ul class="items list-unstyled listing {{ feed.layout }}">
+{% include "_includes/listing-items" with {items:feed.items,layout:feed.layout} %}
+</ul>

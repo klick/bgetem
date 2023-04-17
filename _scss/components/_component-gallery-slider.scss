@@ -1,0 +1,111 @@
+div.module__gallery-slider {
+	margin: 36px 0;
+	@include md() {
+		width: 600px;
+		figcaption {
+			padding-left: 20px;
+		}
+	}
+	@include lg() {
+		width: auto;
+		figcaption {
+			padding: 0;
+		}
+		grid-column: 2 / span 10;
+	}
+	@expand .figcaption;
+	div.slider-nav {
+		@extend .mobile-full-edge-padding;
+	}
+}
+div.slider-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 12px;
+	padding:0 !important;
+}
+div.slick-slider {
+	cursor: -webkit-grab; cursor: grab;
+}
+div.gallery-slider__nav {
+	padding: 0;
+		svg {
+			height: 18px;
+			cursor: pointer;
+		}
+	}
+
+
+
+/* bootstrap 4 multi-col carousel */
+#slick {
+  display: none;
+  
+  &.slick-initialized {
+    display: block;
+  }
+  
+  /* .slick-list emulates .row */
+  .slick-list {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  /* .slick-slide emulates .col- */
+  .slick-slide {
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: initial;
+
+    &:focus {
+      outline: none;
+    }
+    
+  }
+
+ 
+
+}
+
+/* tiny slider */
+div.container.slider {
+	position: relative;
+}
+div#custom_controlsContainer {
+	  width: 100%;
+    display: flex;
+    justify-content: center;
+	button {
+		background-size: contain !important;
+		background-repeat: no-repeat !important;
+		border: none;
+		width: 18px;
+		height: 21px;
+		&#next {
+			background: transparent url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%230063af" stroke="none" />\a </g></svg>');
+			&[disabled],
+			&:disabled {
+				background: transparent url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23dadada" stroke="none" />\a </g></svg>');
+			}
+		}
+		&#prev {
+			background: transparent url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style="" transform="matrix(-1, 0, 0, 1, 432.458008, 0)"><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%230063af" stroke="none" />\a </g></svg>');
+			&[disabled],
+			&:disabled {
+				background: transparent url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style="" transform="matrix(-1, 0, 0, 1, 432.458008, 0)"><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23dadada" stroke="none" />\a </g></svg>');
+			}
+		}
+	}
+}
+
+div.bg_carousel-thumbnails {
+	margin-left: auto;
+	margin-right: auto;
+	div.carousel-thumbnail {
+		cursor: pointer;
+		&.active {
+			opacity: .5;
+		}
+	}
+}

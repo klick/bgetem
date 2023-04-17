@@ -1,0 +1,89 @@
+{% import '_macros.twig' as macros %}
+
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+				{% if feed.titleimages is defined and feed.titleimages is not empty %}
+					{% set params = [
+						{ width: 1110, jpegQuality: 100, format: 'jpg' },
+						{ width: 680, jpegQuality: 100, format: 'jpg' },
+						{ width: 345, jpegQuality: 85, format: 'jpg' }
+					] %}
+					{% for img in feed.titleimages %}
+						{{ macros.imgFullWidth(img, null, false, params, false) }}
+						{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+					{% endfor %}
+				{% endif %}
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+				{{ macros.auhtorsByLine(feed.creators, feed.modification_date is defined ? feed.modification_date|date) }}
+			</header>
+			<section class="article-body clearfix">
+				{% if feed.text is defined and feed.text is not null %}
+					{{ feed.text.data|replace({'<a href="https://www.bgetem.de':'<a href="' ~ getenv('DEFAULT_SITE_URL') ~'','<a title="" href="https://www.bgetem.de':'<a href="' ~ getenv('DEFAULT_SITE_URL') ~''})|raw }}<br><br>
+				{% endif %}
+				{% if feed.items is defined and feed.items|length > 0 %}
+					<ul class="items {{ feed.layout }} list-unstyled">
+					{% cache using key craft.app.request.url %}
+					{% for item in feed.items %}
+						{% set itemDetail = {
+						    url: item['@id'],
+						    type: 'json',
+						    cache: 0,
+						} %}
+						{% set itemDetails = craft.feedme.feed(itemDetail) %}
+
+						{# {% if itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 0 %} #}
+						<li>
+							{% if itemDetails['@type'] is defined and itemDetails['@type'] == 'Image' %}
+								{% set params = [
+									{ width: 120, jpegQuality: 85, format: 'jpg' }
+								] %}
+								{{ macros.imgFullWidth(item['@id'], null, false, params, false) }}
+							{% endif %}
+							
+							<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (item['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">{{ item.title }}</a>
+							{{ item.description ? (item.description)|raw : null }}
+							{% if itemDetails['@type'] is defined and itemDetails['@type'] == 'MediaFile' %}
+								{% set params = [
+									{ width: 120, jpegQuality: 85, format: 'jpg' }
+								] %}
+								{% if itemDetails.file['content-type'] == 'image/jpeg' %}
+								<br>{{ macros.imgFullWidth(item['@id'] ~ '/image', null, false, params, false) }}
+								{% endif %}
+								<br><a href="{{ itemDetails.file.download }}">Download {# {{ itemDetails.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF'}) }} #} ({{ (itemDetails.file.size / 1000000)|number_format(2) }} MB)</a>
+							{% endif %}
+						</li>
+						{# {% endif %} #}
+					{% endfor %}
+					{% endcache %}
+					</ul>
+				{% endif %}
+			</section>
+			<aside>
+				{{ macros.entryMeta(feed.modification_date is defined ? feed.modification_date|date : null, feed.webcode is defined ? feed.webcode : null) }}
+			</aside>
+		</article>
+	</div>
+	<div class="col-lg-3 offset-lg-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>
+
+
+
+
+
+
+

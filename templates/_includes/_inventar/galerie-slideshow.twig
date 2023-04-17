@@ -1,0 +1,82 @@
+<div class="container">
+	<h2><strong class="upper"><a id="slideshow-gallery" class="inventar-anchor">Slideshow Galerie</a></strong>&ensp;<a class="inventar-anchor-link" href="#slideshow-gallery">#</a></h2>
+	<p>Info: <a class="external-link" href="https://kenwheeler.github.io/slick/">slick.js</a></p>
+</div>
+<br><br>
+
+{% set galleryImages = gallery.images %}
+
+
+  {% set imgTransforms = {
+    '(max-width: 419px)': {
+        width: 345,
+        height: 160,
+    },
+    '(max-width: 899px)': {
+        width: 510,
+        height: 220,
+    },
+    '(max-width: 1199px)': {
+        width: 930,
+        height: 400,
+    },
+    '(min-width: 1200px)': {
+        width: 1110,
+        height: 479,
+    }
+  } %}
+
+  
+
+<div class="container">	
+{%- set slideshowGallery -%}
+<div class="module module__gallery-slider">
+	<div class="slick-slider-module-gallery" data-id="id-1">
+		{% for img in galleryImages %}
+		{% set imgAttributes = { alt: 'Alt Text', title: img.title } %}
+		<div class="gallery-slider__item" data-image-number="{{ loop.index }}" style="display: inline-block;">
+			<figure class="px-3">
+				 {{ craft.images.pictureMedia(img, imgTransforms, null, imgAttributes) }}
+				 <figcaption>Bildunterschrift: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur veniam provident iure tenetur recusandae debitis odit. Dolores quis</figcaption>
+			</figure>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="nav slider-nav">
+		<div class="gallery-slider__nav id-1 previ_slider" data-id="id-1">
+			<svg viewBox="0 0 500 575.32">
+				<path d="M 6.122 10.4 L 6.122 8.728 L 16.528 8.728 L 11.116 2.832 L 12.216 1.644 L 19.85 9.542 L 12.216 17.44 L 11.116 16.252 L 16.506 10.4 L 6.122 10.4 Z" style="" stroke="none" transform="matrix(-36.421909, 0, 0, -36.421909, 722.974889, 635.198153)" fill="#333339"></path>
+			</svg>
+		</div>
+		<div class="counter" data-id="id-1">
+			<p class="small-font font-weight-medium"><span class="current-image-index">1</span> von 3</p>
+		</div>
+		<div class="gallery-slider__nav id-1 nexti_slider" data-id="id-1">
+			<svg viewBox="0 0 500 575.32">
+				<path d="M6.122000,8.684000 L6.122000,10.356000 L16.528000,10.356000 L11.116000,16.252000 L12.216000,17.440000 L19.850000,9.542000 L12.216000,1.644000 L11.116000,2.832000 L16.506000,8.684000 L6.122000,8.684000 Z " style="" stroke="none" transform="matrix(36.421909, 0, 0, 36.421909, -222.974945, -59.877621)" fill="#333339"></path>
+			</svg>
+		</div>
+	</div>
+</div>
+
+{%- endset -%}
+
+{{ slideshowGallery }}
+
+</div>
+<br><br><br>
+<div class="container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">
+{{- slideshowGallery|e -}}
+</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>

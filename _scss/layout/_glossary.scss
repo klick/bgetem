@@ -1,0 +1,15 @@
+div.glossary-abc {
+	border-bottom: 1px solid $dguv-blau-2;
+	padding-bottom: 12px;
+	a {
+		text-decoration: none;
+		border-bottom: none;
+	}
+}
+div.glossary-abc,
+div.glossary-search-form {
+	margin-bottom: 24px;
+	@include lg {
+		margin-bottom: 48px;
+	}
+}

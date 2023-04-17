@@ -1,0 +1,43 @@
+fieldLayouts:
+  5cd938c2-9003-4851-a52a-b7f285d77b6f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 94c88856-00f9-426f-9f03-3e67a4ab0da2
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 98db5ba7-e022-4037-b435-bedcbe604e0e
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: 666abca7-3afa-46a7-8e2e-3e10dd276a91 # Links und Recherche
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

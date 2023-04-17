@@ -1,0 +1,52 @@
+ul.listing {
+	&.atct_album_view {
+
+	}
+	li[class*="__image"] {
+		div.image-wrapper {
+			box-sizing: border-box;
+			margin: 1px;
+			@include sm() {
+				padding: 12px;
+				div.image {
+					//background: $dguv-grau-9;
+					width: 231px;
+					height: 231px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				img {
+					max-width: 100%;
+					max-height: 100%;
+					border: 1px solid white;
+				}
+			}
+			@include md()  {
+				div.image {
+					width: 204px;
+					height: 204px;
+				}
+			}
+			@include lg()  {
+				div.image {
+					width: 179px;
+					height: 179px;
+				}
+			}
+			@include xl()  {
+				div.image {
+					width: 217.33px;
+					height: 217.33px;
+				}
+			}
+			div.description {
+				margin-top: 12px;
+				text-align: center;
+				@include lg()  {
+					margin-top: 12px;
+				}
+			}
+		}
+	}
+}

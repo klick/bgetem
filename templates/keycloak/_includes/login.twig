@@ -1,0 +1,71 @@
+
+    <div class="card border-0 card-body bg-white">
+        <header class="card-title">
+            <div class="text-right position-relative" id="kc-locale">
+                <div id="kc-locale-wrapper" class="">
+                    {{ include('keycloak/_includes/localize-dropdown.twig') }}
+                </div>
+            </div>
+            <h1 id="kc-page-title" class="h2 mb-3">Bei Ihrem Konto anmelden</h1>
+        </header>
+
+        <div id="kc-content">
+            <div id="kc-content-wrapper">
+                <div id="kc-form">
+                    <div id="kc-form-wrapper">
+
+                        {% if alert %}
+                        <div class="alert-success alert pf-m-warning rounded-0 mb-5 bg-dguv-gruen text-white">
+                            <div class="pf-c-alert__icon">
+                                <span class=""></span>
+                            </div>
+                            <span class="alert-heading">Sie sollten in Kürze eine E-Mail mit weiteren Instruktionen erhalten</span>
+                        </div>
+                        {% endif %}
+
+                        <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="http://localhost:8080/auth/realms/siguv/login-actions/authenticate?session_code=0u_hsYiAfaJ47AhhqhRGNk9lt2bFr2zlIOh-bhJSBNI&amp;execution=812f88b7-ffd6-4c89-b64b-2bb343140a27&amp;client_id=account-console&amp;tab_id=OIAYDtCWbII" method="post">
+
+                            <div class="form-group">
+                                <label for="username" class="font-weight-bold">Benutzername oder E-Mail</label>
+                                <input tabindex="1" id="username" class="form-control p-4" name="username" value=""  type="text" autofocus autocomplete="off" aria-invalid=""/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="font-weight-bold">Passwort</label>
+                                <input tabindex="2" id="password" class="form-control p-4" name="password" type="password" autocomplete="off" aria-invalid=""/>
+                            </div>
+                            
+                            <div class="form-group my-form-settings">
+                                <div id="kc-form-options">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> Angemeldet bleiben
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <span><a tabindex="5" href="/auth/realms/siguv/login-actions/reset-credentials?client_id=account-console&amp;tab_id=OIAYDtCWbII">Passwort vergessen?</a></span>
+                                </div>
+                            </div>
+
+                            <div id="kc-form-buttons" class="form-group my-4">
+                                <input type="hidden" id="id-hidden-input" name="credentialId" />
+                                <input tabindex="4" class="btn btn-primary bg-dguv-blau border-0 text-white px-4 btn-lg" name="login" id="kc-login" type="submit" value="Anmelden"/>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                
+                <div id="kc-info" class="">
+                    <div id="kc-info-wrapper" class="">
+                        <div id="kc-registration-container">
+                            <div id="kc-registration">
+                                <span><span class="arrow-after">Neuer Benutzer?</span> <a tabindex="6" href="/auth/realms/siguv/login-actions/registration?client_id=account-console&amp;tab_id=OIAYDtCWbII">Registrieren</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

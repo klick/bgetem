@@ -1,0 +1,86 @@
+columnSuffix: cagtinme
+contentColumnType: text
+fieldGroup: 88e1572c-f3c5-4214-a261-b079e6234963 # Ausgaben
+handle: hintergrundfarbe
+instructions: null
+name: Hintergrundfarbe
+searchable: false
+settings:
+  default: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Blau
+        -
+          - color
+          - '#0063af'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg_bg-dguv-blau
+    -
+      __assoc__:
+        -
+          - label
+          - Rot
+        -
+          - color
+          - '#d51317'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg_bg-dguv-rot
+    -
+      __assoc__:
+        -
+          - label
+          - Grün
+        -
+          - color
+          - '#4ca22f'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg_bg-dguv-gruen
+    -
+      __assoc__:
+        -
+          - label
+          - Orange
+        -
+          - color
+          - '#f39200'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg_bg-dguv-orange
+    -
+      __assoc__:
+        -
+          - label
+          - 'DGUV Grau '
+        -
+          - color
+          - '#ededed'
+        -
+          - default
+          - ''
+        -
+          - class
+          - bg_bg-dguv-grau-9
+  palette: null
+  setRandom: false
+  useConfigFile: false
+translationKeyFormat: null
+translationMethod: none
+type: percipiolondon\colourswatches\fields\ColourSwatches

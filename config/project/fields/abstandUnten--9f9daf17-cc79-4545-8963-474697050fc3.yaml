@@ -1,0 +1,78 @@
+columnSuffix: hkklfkph
+contentColumnType: string
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: abstandUnten
+instructions: null
+name: 'Abstand unten'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - mb-0
+        -
+          - value
+          - mb-0
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - mb-1
+        -
+          - value
+          - mb-1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - mb-2
+        -
+          - value
+          - mb-2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - mb-3
+        -
+          - value
+          - mb-3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - mb-4
+        -
+          - value
+          - mb-4
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - mb-5
+        -
+          - value
+          - mb-5
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

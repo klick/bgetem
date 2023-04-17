@@ -1,0 +1,14 @@
+columnSuffix: dfnhnhaa
+contentColumnType: string(255)
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: previousItemUrl
+instructions: null
+name: 'Previous Item URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

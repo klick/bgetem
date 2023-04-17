@@ -1,0 +1,22 @@
+div.modal.issue-nav {
+	background: white;
+	width: 100vw;
+	height: 100vh;
+	//max-width: 100vw;
+	div.modal-dialog {
+		// width: 100vw;
+		// max-width: 100vw;
+		// min-height: 100vh !important;
+	}
+}
+div.issue-nav {
+	div.ausgabe-thumb {
+		transition: all .2s ease-out;
+		&:hover {
+			background: $dguv-cyan;
+			* {
+				color: white;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+siteUid: 0920ba4c-ca0e-4187-b14f-53ff8d14c625 # Das Magazin Ihrer Berufsgenossenschaft
+sortOrder: 4
+template: magazin/tags.twig
+uriParts:
+  - tags/
+  -
+    - tag
+    - '[^\/]+'
+uriPattern: 'tags/<tag:[^\/]+>'

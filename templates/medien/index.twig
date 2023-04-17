@@ -1,0 +1,28 @@
+{# 
+medien/index 
+#}
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout_medien" %}
+
+{% set alleProdukte = craft.products() %}
+
+
+{% do craft.blitz.options({
+    cachingEnabled: false,
+    cacheElements: false,
+    cacheElementQueries: false,
+    tags: ['medienStart']
+}) %}
+
+
+{% block content %}
+
+{% if entry.modules.level(1) is not empty %}
+  {% include '_includes/component_modules.twig' %}
+{% else %}
+  No
+{% endif %}
+
+
+{% endblock %}

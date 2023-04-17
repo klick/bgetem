@@ -1,0 +1,75 @@
+figure.product-image {
+	margin-bottom: 18px;
+}
+dl {
+	&.key-value-pair {
+		ul {
+			padding-left: 12px;
+			li {
+				margin-bottom: 12px;
+    			&::before {
+					content: "\2010";
+					color: black;
+					font-weight: 400;
+					display: inline-block; 
+					width: 0.8em;
+					margin-left: -0.8em;
+					background: none;
+    			}
+			}
+		}
+		dt,
+		dd {
+			padding-top: 24px;
+			padding-bottom: 24px;
+			word-wrap: break-word;
+    		hyphens: auto;
+		}
+		dt {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			ul {
+				li {
+					background: red;
+				}
+			}
+		}
+		dd {
+			display: flex;
+			align-items: flex-start;
+			padding-left: 0;
+			margin-bottom: 0;
+			&:before {
+				content: '';
+				background: url('data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%27434px%27%20height%3D%27500px%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%3E%3Cg%3E%3Cpath%20d%3D%27M294.671697%2C215.182669%20L0.000000%2C215.182669%20L0.000000%2C285.440041%20L295.353808%2C285.440041%20L145.289517%2C449.146539%20L191.673025%2C498.940599%20L432.458000%2C249.970300%20L191.673025%2C1.000000%20L145.289517%2C51.476170%20Z%27%20fill%3D%27%23000000%27%20stroke%3D%27none%27%20%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+				background-size: contain !important;
+				margin: .3em 1em 0 0 !important;
+				width: .65em !important;
+				height: .65em !important;
+				background-repeat: no-repeat !important;
+				display: inline-block !important;
+			}
+			span {
+				flex: 1;
+			}
+		}
+		div.divider {
+			border-bottom: 1px solid $dguv-grau-9;
+			height: 1px;
+		}
+		a.download {
+			border-bottom: none;
+			&.inline {
+				svg {
+					width: .7em;
+					margin-left: .4em;
+					vertical-align: initial;
+					path {
+						fill: $dguv-blau-2;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+columnSuffix: araqtjmo
+contentColumnType: string(255)
+fieldGroup: 4b28616a-ad9a-442c-8749-818ef0103741 # Termine
+handle: terminUrl
+instructions: null
+name: 'Termin URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

@@ -1,0 +1,142 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_medien" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: false,
+    cacheElements: false,
+    cacheElementQueries: false,
+}) %}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 50,
+    }
+} %}
+
+{% set artikelCoverAttributes = { alt: 'Alt Text', title: 'title', width: 50 } %}
+
+
+
+{% block content %}
+
+<div class="container bg-layout_medien_container my-5">
+
+<div class="row">
+			<div class="col-9">
+
+
+{# <pre>{{ dump(cart) }}</pre> #}
+
+  <h1 class="h2">Warenkorb</h1>
+
+  {% if cart.lineItems|length %}
+    <form method="post" action="">
+      {{ craft.blitz.csrfInput() }}
+      {{ actionInput('commerce/cart/update-cart') }}
+      {{ successMessageInput('Cart updated.'|t) }}
+
+  <table class="table">
+  	<thead>
+  		<tr>
+  			<th>Artikel</th>
+  			<th>Menge</th>
+  			<th>Preis für Mitglieder</th>
+  			<th>Preis für Nicht-Mitglieder</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		{% for item in cart.lineItems %}
+  		<tr>
+  			<td class="py-4 d-flex">
+  			{# <pre>{{ dump(item.purchasable.product.medienportalTitelbild) }}</pre> #}
+
+  				{% if not item.purchasable.product.medienportalTitelbild is empty %}
+				<div class="image me-2">
+					<figure class="border bg_border-light">
+						{{ craft.images.pictureMedia(item.purchasable.product.medienportalTitelbild.one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+					</figure>
+				</div>
+				{% else %}
+				<div class="image">
+					<figure>
+						{{ craft.images.pictureMedia(craft.assets.id(15178).one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+					</figure>
+				</div>
+				{% endif %}
+  				<div><span class="fw-bold bg_text-blau">{{- item.description -}}</span><br><small class="color-dguv-grau-4">Bestellnummer: {{ item.sku }}</small></div>
+  			</td>
+  			<td class="py-4  {{ not loop.first ? 'border-t border-gray-300 border-dashed' : '' }}">
+                  {# Quantity and note fields #}
+                  {% set hasDonationAmount = item.options.donationAmount is defined %}
+                  <div class="lg:flex">
+                    {% if hasDonationAmount %}
+                      <div class="lg:mr-3">
+                          <label for="lineitem-donationAmount-{{ item.id }}">
+                            <span class="text-gray-500 text-xs block">
+                              {{- 'Donation Amount'|t -}}
+                            </span>
+                          </label>
+                          {{ input('text', 'lineItems[' ~ item.id ~ '][options][donationAmount]', item.options.donationAmount, {
+                            id: 'lineitem-donationAmount-' ~ item.id,
+                            class: 'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded w-32',
+                            placeholder: 'Donation'|t
+                          }) }}
+                      </div>
+                    {% endif %}
+                    <div class="lg:mr-3{{ hasDonationAmount ? ' hidden' : '' }}">
+                      {# <span class="text-gray-500 text-xs block">
+                        {{- 'Qty'|t -}}
+                      </span> #}
+                      {{ input(hasDonationAmount ? 'hidden' : 'number', 'lineItems[' ~ item.id ~ '][qty]', item.qty, {
+                        min: 0,
+                        class: [
+                          'w-32',
+                          item.getFirstError('qty') ? 'border-red-500 border',
+                          'border border-gray-300 hover:border-gray-500 px-4 py-2 leading-tight rounded'
+                        ]
+                      }) }}
+                    </div>
+                  </div>
+                </td>
+  			<td class="py-4">0,00 €</td>
+  			<td class="py-4">{{- item.priceAsCurrency -}}</td>
+  		</tr>
+  		{% endfor %}
+  	</tbody>
+  	<tfoot>
+  		<tr>
+  			<td colspan="2" class="text-end fw-bold py-4 ">Summe:</td>
+  			<td class="py-4 fw-bold text-align-right">0,00 €</td>
+  			<td class="py-4 fw-bold">{{ cart.totalPriceAsCurrency }}</td>
+  		</tr>
+  	</tfoot>
+  </table>
+  <div class="d-flex justify-content-between align-items-center">
+	{{ redirectInput('warenkorb') }}
+	  <button type="submit" class="bg-white bg_text-grau-4 border bg_border-light p-3">
+	    {{- 'Warenkorb aktualisieren'|t -}}
+	  </button>
+	   {% if not cart.hasErrors() %}
+		<a href="{{ url('/medien/checkout') }}" title="Zur Kasse gehen" class="bg-dguv-gruen text-white p-3 text-decoration-none">
+			<span class="arrow-after arrow-white d-flex justify-content-between align-items-center">	{{- 'Zur Kasse gehen'|t -}}</span>
+		</a>
+		 {% endif %}
+  </div>
+
+
+  </form>
+ 
+
+          <a href="{{ url('/medien') }}" title="Zur Kasse gehen" class="py-3 d-inline-block">
+					<small">Weitere Artikel auswählen</small>
+                     </a>              
+
+{% endif %}
+
+</div>
+{{ include('_includes/portlets_medien') }}
+
+	
+</div>
+
+{% endblock %}

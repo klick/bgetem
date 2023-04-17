@@ -1,0 +1,172 @@
+// layout/_home.scss
+
+article.home {
+	*.section-header {
+		letter-spacing: .5px;
+	}
+	header.header-home {
+		div.hero-image {
+			position: relative;
+			padding: 0;
+			margin: 0;
+			background-size: cover !important;
+		    background-repeat: no-repeat !important;
+		    background-position: center center !important;
+			div.headline {
+				position: absolute;
+				background: rgba(9,78,159,0.8);
+				color: white;
+				width: 100%;
+				padding: 12px 24px;
+				bottom: 0;
+				h1 {
+					line-height: 1;
+				}
+				* {
+					color: white;
+				}
+				a.more-link {
+					@include arrowed-intern-link('FFFFFF');
+				}
+				@include xl {
+					padding: 48px 0;
+				}
+			}
+			@include for-phone-only {
+				height: 400px;
+			}
+			@include sm {
+				height: 300px;
+			}
+			@include lg {
+				height: 400px;
+			}
+			@include xl {
+				height: 550px;
+			}
+			@media screen and (min-width: 1800px) {
+				height: 800px;
+			}
+		}		
+	}
+	section.home-section {
+		&.has-background-color {
+			background: $dguv-grau-9;
+		}
+		//padding: 48px 0;
+		@include lg() {
+			//padding: 96px 0;
+		}
+		h2.section-header {
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+		article {
+			header {
+				margin-bottom: 24px;
+			}
+			h1 {
+				margin-left: 0;
+				font-weight: 600;
+			}
+			div.news-item__image {
+				margin-bottom: 24px;
+			}
+		}
+		&.psychische-gesundheit {
+			div.header-image {
+				@include lg {
+					margin-bottom: 48px;
+				}
+			}
+		}
+		&.news {
+			article {
+				margin-bottom: 48px;
+				@include md {
+					margin-bottom: 24px;
+				}
+				p.roof-row {
+					font-size: 14px;
+				}
+			}
+			div.more-news {
+				margin-top: 48px;
+				article {
+					margin-bottom: 12px;
+					header {
+						margin-bottom: 0;
+						
+						div.news-item__image {
+							width: 50%;
+							margin-bottom: 18px;
+						}
+					}
+				}
+				@include md {
+					border-top: 1px solid $dguv-grau-7;
+					padding-top: 24px;
+					margin-top: 24px;
+				}
+			}
+		}
+		&.seminare {
+			div.row {
+				align-items: center;
+			}
+			div.header-image {
+				@include lg {
+					margin-bottom: 48px;
+				}
+			}
+		}
+		&.kontakt {
+			div.body svg {
+				width: 100%;
+				max-width: 100px;
+			}
+		}
+		&.typ-magazin {
+			div.header-image {
+				margin-bottom: 24px;
+				@include lg {
+					margin-bottom: 48px;
+				}
+			}
+		}
+		&.jobs {
+
+		}
+		&.termine {
+			article {
+				margin-bottom: 24px;
+				@include md {
+					margin-bottom: 24px;
+				}
+			}
+		}
+		&.news,
+		&.termine,
+		&.media {
+			article {
+				margin-bottom: 48px;
+				>a {
+					display: block;
+					p {
+						color: $dguv-grau;
+					}
+					&:hover {
+						p {
+							color: $dguv-blau-2;
+						}
+					}
+				}
+			}
+		}
+		div.image-portrait {
+			img {
+				max-width: 50%;
+			}
+		}
+	}
+}

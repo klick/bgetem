@@ -1,0 +1,32 @@
+ul.listing {
+	&:not(.accordion_view) {
+		li[class*="__news-item"] {
+			border-top: 1px solid $dguv-blau-2;
+				a {
+				display: block;
+				padding: 24px 0 24px 0;
+			}
+			div.news-item-wrapper {
+				&.has-image {
+					display: flex;
+					div.news-image {
+						flex: 0 0 30%;
+						margin-right: 24px;
+					}
+				}
+				div.news-description {
+					p {
+						padding-right: 48px;
+					}
+				}
+			}
+		}
+	}
+	li[class*="__folder"] {
+		border-top: 1px solid $dguv-blau-2;
+		a {
+			display: block;
+			padding: 24px 0 24px 0;
+		}
+	}
+}

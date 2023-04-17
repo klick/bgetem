@@ -1,0 +1,299 @@
+field: 229349fa-32d0-458b-a8d3-557561b1f844 # Infobanner
+fieldLayouts:
+  a144d114-731f-4768-b543-66544b647387:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: c426dae6-0d3d-4c1d-b2b2-243488dae406 # Alert
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dd5bfbf2-38eb-467c-8ad4-343cdd18e875
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5d36b6f3-3e49-445a-9555-e0d1d4c6c2b8 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9575d815-a3c5-4243-8791-8aeeaae062ab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8a1c75a7-078c-45d8-96a3-4a40be6966ff # Titel
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 481ed4dd-49d2-43c8-b6af-dabc38cac933
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2569214b-8dd3-48b5-9be8-194b0df28f90 # Mehr Link Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b33c82e7-178c-47bb-8982-24e02b80d34a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: de726bf5-b5e4-426f-bb62-f63b7178c285 # Mehr Link -> Ziel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4bea8cc9-5732-4bd4-bb0a-fcb1818160e2
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 7fe6a5fa-d7bf-4300-a56d-590ea7486fac # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6964ed1-e546-43ec-b137-bf3368d54419
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 07f8a223-17b5-41dc-87fa-2051c9283c7c # Hintergrundbild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dec87237-e298-4c69-a6c9-7def2e558965
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: acfe885b-867e-4ee7-8c01-5d2fb7a3c467
+        userCondition: null
+fields:
+  5d36b6f3-3e49-445a-9555-e0d1d4c6c2b8: # Dachzeile
+    columnSuffix: yjegvxeo
+    contentColumnType: text
+    fieldGroup: null
+    handle: dachzeile
+    instructions: null
+    name: Dachzeile
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  07f8a223-17b5-41dc-87fa-2051c9283c7c: # Hintergrundbild
+    columnSuffix: uymgemhb
+    contentColumnType: string
+    fieldGroup: null
+    handle: hintergrundbild
+    instructions: null
+    name: Hintergrundbild
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:7c2086e6-43ff-45bb-8cf1-5457f668ee34' # Bilder BGHW
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:43ce67ae-cfa2-4680-9235-dd9546b9803e' # Bilder Magazin
+      restrictedLocationSubpath: null
+      selectionLabel: 'Bild hinzufügen'
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  7fe6a5fa-d7bf-4300-a56d-590ea7486fac: # Hintergrundfarbe
+    columnSuffix: fgvpvxrj
+    contentColumnType: text
+    fieldGroup: null
+    handle: hintergrundfarbe
+    instructions: null
+    name: Hintergrundfarbe
+    searchable: false
+    settings:
+      default: null
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Blau
+            -
+              - color
+              - '#0063af'
+            -
+              - default
+              - '1'
+            -
+              - class
+              - bg_bg-dguv-blau
+        -
+          __assoc__:
+            -
+              - label
+              - Rot
+            -
+              - color
+              - '#d51317'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg_bg-dguv-rot
+        -
+          __assoc__:
+            -
+              - label
+              - Grün
+            -
+              - color
+              - '#4ca22f'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg_bg-dguv-gruen
+        -
+          __assoc__:
+            -
+              - label
+              - Orange
+            -
+              - color
+              - '#f39200'
+            -
+              - default
+              - ''
+            -
+              - class
+              - bg_bg-dguv-orange
+      palette: null
+      setRandom: false
+      useConfigFile: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: percipiolondon\colourswatches\fields\ColourSwatches
+  8a1c75a7-078c-45d8-96a3-4a40be6966ff: # Titel
+    columnSuffix: ssnzhchs
+    contentColumnType: text
+    fieldGroup: null
+    handle: titel
+    instructions: null
+    name: Titel
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2569214b-8dd3-48b5-9be8-194b0df28f90: # Mehr Link Text
+    columnSuffix: aggkfnjb
+    contentColumnType: text
+    fieldGroup: null
+    handle: mehrLinkText
+    instructions: null
+    name: 'Mehr Link Text'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c426dae6-0d3d-4c1d-b2b2-243488dae406: # Alert
+    columnSuffix: deuhwlkl
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: alert
+    instructions: null
+    name: Alert
+    searchable: false
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  de726bf5-b5e4-426f-bb62-f63b7178c285: # Mehr Link -> Ziel
+    columnSuffix: jozscxam
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: mehrLinkZiel
+    instructions: null
+    name: 'Mehr Link -> Ziel'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: banner
+name: Banner
+sortOrder: 1

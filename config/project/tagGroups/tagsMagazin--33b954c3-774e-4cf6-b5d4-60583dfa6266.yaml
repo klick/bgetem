@@ -1,0 +1,37 @@
+fieldLayouts:
+  0de259e1-dbfc-4149-8c4f-6e41f8159fcc:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: fb2b2912-298c-4e3b-8f70-6f26f6725495
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 57e710ab-feac-48ab-b973-f1d7b55652d6
+        userCondition: null
+handle: tagsMagazin
+name: 'Tags Magazin'

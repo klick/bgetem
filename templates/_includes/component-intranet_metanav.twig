@@ -1,0 +1,59 @@
+{% if currentUser %}
+{% set userPhoto = currentUser.photo == null ? craft.assets.id(26645).one() : craft.assets.id(currentUser.photoId).one() %}
+{% set userPhotoTransforms = {
+	'(min-width: 11px)': {
+	      width: 35,
+	      ratio: 1/1,
+	      mode: 'crop',
+	  }
+} %}
+{% set userPhotoAttributes = {alt: currentUser.firstName ~ ' ' ~ currentUser.lastName, title: userPhoto.title, class: 'rounded-circle me-2' } %}
+{% endif %}
+
+<div class="py-3 {{ class }}">
+	<div class="container {{ customContainer ? customContainer : null }}">
+		<div class="row align-items-center">
+
+			<div class="col">
+				<small class="align-middle">
+					<a class="text-decoration-none" href="{{ siteUrl }}sitemap">Übersicht</a> | 
+					<a class="text-decoration-none" href="{{ siteUrl }}accessibility-info">Barrierefreiheit</a> | 
+					<a class="text-decoration-none" href="https://www.bgetem.de/bg-etem-kontakt">Kontakt</a>
+				</small>
+			</div>
+
+			{% if search is defined and search == true %}
+			<div class="col">
+				<form class="form-inline search search-header">
+					<input class="form-control bg_bg-dguv-blau text-white" type="search" placeholder="Suchbegriff/Webcode" aria-label="Search">
+					<button class="btn submit submit-search bg_bg-dguv-blau-5" type="submit">Suchen</button>
+				</form>
+			</div>
+			{% endif %}
+
+			{% if showCart == true and  craft.commerce.carts.cart.lineItems|length > 0 %}
+			<div class="col-auto">
+				<a class="text-decoration-none" href="{{ url('warenkorb') }}">Warenkorb <span class="badge bg_bg-dguv-blau-2 align-middle">{{ craft.blitz.getUri('/medien/warenkorb-count') }}</span></a>
+			</div>
+			{% endif %}
+
+			{% if currentUser %}
+			<div class="col-auto">
+				<div class="d-flex align-items-center">
+					<div class="ms-auto">
+						{{craft.images.pictureMedia(userPhoto, userPhotoTransforms, null, userPhotoAttributes)}}
+					</div>
+					<div>
+						<a class="text-decoration-none" href="{{ currentSite.baseUrl }}account"><small>{{ currentUser.firstName }} {{ currentUser.lastName }}</small></a>
+					</div>
+				</div>
+			</div>
+			{% else %}
+			<div class="col-auto text-end">
+				<a class="text-decoration-none" href="/login">Anmelden</a>
+			</div>
+			{% endif %}
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_bghw" %}
+
+{% set bannerImgTransforms = {
+	'(max-width: 575px)': {
+	      width: 350,
+	      height: 150,
+	  },
+	  '(max-width: 991px)': {
+	      width: 340,
+	      height: 140,
+	  },
+	  '(max-width: 1199px)': {
+	      width: 456,
+	      height: 165,
+	  },
+	  '(max-width: 1399px)': {
+	      width: 546,
+	      height: 165,
+	  },
+	  '(max-width: 1799px)': {
+	      width: 546,
+	      height: 180,
+	  },
+	  '(min-width: 1800px)': {
+	      width: 640,
+	      height: 180,
+	  }
+	} %}
+
+{% block content %}
+
+{# 	<div class="container bg-layout_medien_container my-5">
+		{{ entry.title }}
+	</div> #}
+
+	{% if entry.modules.level(1)|length > 0 %}
+		{% include '_includes/component_modules.twig' %}
+	{% else %}
+		<div class="container">
+			Bisher keine Module eingestellt
+		</div>
+	{% endif %}
+
+{% endblock %}
+

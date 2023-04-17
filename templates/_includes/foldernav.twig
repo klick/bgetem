@@ -1,0 +1,29 @@
+<nav class="foldernav">
+	<ul class="list-unstyled subnav">
+{% for item in folderNavItems %}
+		{% set itemDetail = {
+		    url: item['@id'],
+		    type: 'json',
+		    cache: 0,
+		} %}
+
+		{% set itemDetails = craft.feedme.feed(itemDetail) %}
+		
+		{% if itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 0 %}
+		<li><a {% if itemDetails.id == craft.app.request.segment(2) %}class="active"{% endif %} data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (item['@id'])|replace({'https://www.bgetem.de/':'/'}) }}">{{ item.title }}</a>
+			{% if itemDetails.id == craft.app.request.segment(2) %}
+
+			{% if itemDetails.items is defined and itemDetails.items|length %}
+				<ul class="subnav">
+					{% for item in itemDetails.items %}
+						<li><a {% if item['@id']|split('/')|last == craft.app.request.segment(3) %}class="active"{% endif %} href="{{ (item['@id'])|replace({'https://www.bgetem.de/':'/'}) }}">{{ item.title }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+	{% endif %}
+
+		</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+</nav>

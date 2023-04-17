@@ -1,0 +1,37 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 88e1572c-f3c5-4214-a261-b079e6234963 # Ausgaben
+handle: pdf
+instructions: null
+name: PDF
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: false
+  allowedKinds:
+    - pdf
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:43ce67ae-cfa2-4680-9235-dd9546b9803e' # Bilder Magazin
+  defaultUploadLocationSubpath: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:43ce67ae-cfa2-4680-9235-dd9546b9803e' # Bilder Magazin
+  restrictedLocationSubpath: null
+  selectionLabel: 'PDF hinzufügen'
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

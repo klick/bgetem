@@ -1,0 +1,337 @@
+{% import '_macros.twig' as macros %}
+
+{% set heroImage = '/img/start-hero.jpg' %}
+	
+{% scss crunched %}
+	header.header-home div.hero-image {
+		@media screen and (max-width: 575.98px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 375, height:400, mode: 'crop', jpegQuality: 100 }) }}');
+		}
+		@media screen and (min-width: 576px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 576, jpegQuality: 100 }) }}');
+		}
+		@media screen and (min-width: 768px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 768, jpegQuality: 100 }) }}');
+		}
+		@media screen and (min-width: 992px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 992, jpegQuality: 100 }) }}');
+		}
+		@media screen and (min-width: 1200px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 1200, jpegQuality: 100 }) }}');
+		}
+		@media screen and (min-width: 1800px) {
+			background: url('{{ craft.imager.transformImage(heroImage, { width: 1200, jpegQuality: 100 }) }}');
+		}
+	}
+{% endscss %}
+
+<article class="{{ type|replace({'Plone Site':'home','News Item':'newsitem'})|lower }} layout-{{ type|kebab }}" data-content-type="{{ type|kebab }}">
+	<header class="header-home">
+		<div class="hero-image">
+			<div class="headline">
+				<div class="container">
+					<p class="roof-row upper">Die BGETEM</p>
+					<h1 class="display">Unser Ziel: sichere und gesunde Arbeit</h1>
+					<p><a href="/die-bgetem" class="more-link">Mehr erfahren</a></p>
+				</div>
+			</div>
+		</div>	
+	</header>
+
+	<section class="home-section psychische-gesundheit typ-magazin my-5 py-5">
+		<div class="container">
+			<div class="row">
+				<div class="header-image col-md-7 offset-md-1 col-lg-7 offset-lg-1">
+					{% set params = [
+						{ width: 700, height:400, mode:'crop', position: '20% 65%', jpegQuality: 85, format: 'jpg' }
+					] %}
+						<a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen">
+					{{ macros.imgFullWidth('/img/psychische-belastung-start.jpg', null, false, params, false) }}
+					</a>
+				</div>
+				<header class="col-md-7 offset-md-4 ol-lg-7 offset-lg-4">
+					<h2 class="section-header">Prävention</h2>
+					<h1 class="section-header display">Psychische Gesundheit</h1>
+					<p class="display">Erfassen Sie mit den Werkzeugen der BG ETEM psychische Belastungen im Betrieb.<br><br><a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen" class="more-link">Mehr erfahren</a></p>
+				</header>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-section news has-background-color my-5 py-5">
+		{% set newssParams = {
+		    url: 'https://www.bgetem.de/willkommen-bei-der-berufsgenossenschaft/RSS',
+		    type: 'rss',
+		    element: 'item',
+		    cache: 0,
+		} %}
+		{% set news = craft.feedme.feed(newssParams) %}
+		<div class="container">
+			<header>
+				<h2 class="section-header">Aktuelle Meldungen</h2>
+			</header>
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+				{% for newsItem in news|slice(0,3) %}
+					{% set itemDetail = {
+					    url: newsItem.link,
+					    type: 'json',
+					    cache: 0,
+					} %}
+					{% set itemDetails = craft.feedme.feed(itemDetail) %}
+					<article class="col">
+						<a href="{{ newsItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+							<header>
+								<div class="news-item__image">
+									{% if itemDetails.image is defined and itemDetails.image|length %}
+									{% set newsImageParams = [
+										{ width: 255, ratio: 16/9, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+									] %}
+									{{ macros.imgFullWidth(itemDetails.image.download, null, false, newsImageParams, false) }}
+									{% else %}
+										Kein Bild
+									{% endif %}
+								</div>
+							</header>
+							<div class="article-body">
+								<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+								<h1 class="display">{{newsItem.title}}</h1>
+								<p>({{ (newsItem['dc:date'])|date }}) {{ newsItem.description|chop(limit=150, unit='c', append=' …')}}</p>
+							</div>
+						</a>
+						{# <p class="more"><a href="{{ newsItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'})}}" class="more-link">Mehr</a></p> #}
+					</article>
+				{% endfor %}
+			</div>
+			<div class="row row-cols-2 row-cols-sm-2 row-cols-lg-4 more-news">
+				{% for newsItem in news|slice(3,4) %}
+					{% set itemDetail = {
+					    url: newsItem.link,
+					    type: 'json',
+					    cache: 0,
+					} %}
+					{% set itemDetails = craft.feedme.feed(itemDetail) %}
+					<article class="col">
+						<a href="{{ newsItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+							<header>
+								<div class="news-item__image">
+									{% if itemDetails.image is defined and itemDetails.image|length %}
+									{% set newsImageParams = [
+										{ width: 140, ratio: 16/9, mode: 'crop', jpegQuality: 85, format: 'jpg' },
+										{ width: 280, ratio: 16/9, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+									] %}
+									{{ macros.imgFullWidth(itemDetails.image.download, null, false, newsImageParams, false) }}
+									{% else %}
+										Kein Bild
+									{% endif %}
+								</div>
+								<div class="news-item__title">
+									<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+									<h1 class="display">{{newsItem.title}}</h1>
+								</div>
+							</header>
+						</a>
+					</article>
+				{% endfor %}
+			</div>
+			<p><a href="/presse-aktuelles/nachrichten-der-startseite/" class="more-link right-aligned">Alle Meldungen</a></p>
+		</div>
+	</section>
+
+
+
+	<section class="home-section seminare typ-magazin my-5 py-5">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-8 offset-md-0 col-lg-7 offset-lg-1">
+					<h2 class="section-header">Weiterbildung</h2>
+					<h1 class="section-header display">Seminare für Sicherheit und Gesundheit am Arbeitsplatz</h1>
+					<p class="display"> Für jeden das passende Seminar! Recherchieren und buchen Sie bequem online!<br><br><a href="/seminare/seminardatenbank-1" class="more-link">Seminardatenbank</a></p>
+				</header>
+				<div class="header-image col-md-8 offset-md-3 col-lg-7 offset-lg-4">
+					{% set params = [
+						{ width: 700, height:400, mode:'crop', position: '20% 65%', jpegQuality: 85, format: 'jpg' }
+					] %}
+					<a href="/seminare/seminardatenbank-1">
+						{{ macros.imgFullWidth('/img/start-seminare.jpeg', null, false, params, false) }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="home-section kontakt has-background-color my-5 py-5">
+		<div class="container">
+			<div class="row">
+				<header class="col col-md-6 offset-lg-3">
+					<h2 class="section-header">So erreichen Sie uns</h2>
+				</header>
+				<div class="col col-md-6 offset-lg-3">
+					<p>Wir helfen Ihnen bei jedem Anliegen sehr gerne. Finden Sie Ihren persönlichen Ansprechpartner und nehmen Sie Kontakt mit uns auf</p><br>
+					<p class="display"><strong><a href="tel:+4922137780">Telefon: 0221 3778-0</a></strong><br>Service-Zeiten: 8:00 - 17:00 Uhr</p><br>
+					<p>Oder suchen Sie Ihren persönlichen Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-section psychische-gesundheit typ-magazin  my-5 py-5">
+		<div class="container">
+			<div class="row">
+				<div class="header-image col-md-7 offset-md-4 col-lg-7 offset-lg-4">
+					{% set params = [
+						{ width: 700, height:400, mode:'crop', position: '20% 65%', jpegQuality: 85, format: 'jpg' }
+					] %}
+						<a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen">
+					{{ macros.imgFullWidth('/img/psychische-belastung-start.jpg', null, false, params, false) }}
+					</a>
+				</div>
+				<header class="col-md-6 offset-md-1 col-lg-7 offset-lg-2">
+					<h2 class="section-header">Prävention</h2>
+					<h1 class="section-header display">Psychische Gesundheit</h1>
+					<p class="display">Erfassen Sie mit den Werkzeugen der BG ETEM psychische Belastungen im Betrieb.<br><br><a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen" class="more-link">Mehr erfahren</a></p>
+				</header>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-section termine has-background-color my-5 py-5">
+		{% set eventParams = {
+		    url: 'https://www.bgetem.de/presse-aktuelles/termine',
+		    type: 'json',
+		    element: 'items',
+		    cache: 0,
+		} %}
+		{% set events = craft.feedme.feed(eventParams) %}
+		{% set events = events|slice(1,4) %}
+		<div class="container">
+			<header>
+				<h2 class="section-header">Termine</h2>
+			</header>
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+				{% for event in events %}
+				{% set eventDetailParams = {
+				    url: event['@id'],
+				    type: 'json',
+				    cache: 0,
+				} %}
+				{% set eventDetails = craft.feedme.feed(eventDetailParams) %}
+				<article class="col">
+					<a href="{{ eventDetails['@id']|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+						<h1>{{ eventDetails.title}}</h1>
+						{# <p>{{ eventDetails.description.data ? eventDetails.description.data|chop(limit=100, unit='c', append=' …') : 'Lorem Ipsum' }}</p> #}
+						<p><strong>{{eventDetails.startDate is defined ? eventDetails.startDate|date }}–{{eventDetails.endDate is defined ? eventDetails.endDate|date }}, {{ eventDetails.location}}</strong></p>
+					</a>
+				</article>
+				{% endfor %}
+			</div><br>
+			<p><a href="/presse-aktuelles/termine" class="more-link right-aligned">Alle Termine</a></p>
+		</div>
+	</section>
+
+	<section class="home-section psychische-gesundheit typ-magazin  my-5 py-5">
+		<div class="container">
+			<div class="row">
+				<header class="col-md-8 offset-md-4 col-lg-6 offset-lg-4">
+					<h2 class="section-header">Prävention</h2>
+					<h1 class="section-header display">Psychische Gesundheit</h1>
+					<p class="display">Erfassen Sie mit den Werkzeugen der BG ETEM psychische Belastungen im Betrieb.<br><br><a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen" class="more-link">Mehr erfahren</a></p>
+				</header>
+				<div class="header-image col-md-8 offset-md-1 col-lg-7 offset-lg-1">
+					{% set params = [
+						{ width: 700, height:400, mode:'crop', position: '20% 65%', jpegQuality: 85, format: 'jpg' }
+					] %}
+						<a href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/ergonomie/psychische-belastungen">
+					{{ macros.imgFullWidth('/img/psychische-belastung-start.jpg', null, false, params, false) }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="home-section media has-background-color my-5 py-5">
+		{% set mediaParams = {
+		    url: 'https://www.bgetem.de/medien-service/medien-service-kollektion/RSS',
+		    type: 'rss',
+		    element: 'item',
+		    cache: 0,
+		} %}
+		{% set media = craft.feedme.feed(mediaParams) %}
+		<div class="container">
+			<header>
+				<h2 class="section-header">Neueste Medien</h2>
+			</header>
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-md-4">
+				{# {% for mediaItem in media|slice(0,6) if 'impuls' not in mediaItem.title %} #}
+				{% for mediaItem in media|slice(0,4) %}
+					{% set itemDetail = {
+					    url: mediaItem.link,
+					    type: 'json',
+					    cache: 0,
+					} %}
+					{% set itemDetails = craft.feedme.feed(itemDetail) %}
+					<article class="col {# card #} has-image">
+						<a href="{{ mediaItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+							<header>
+								<div class="news-item__image image-portrait">
+									{% if itemDetails.image is defined and itemDetails.image|length %}
+									{% set mediaImageParams = [
+										{ width: 500, ratio: 0.7/1, mode: 'crop', jpegQuality: 100, format: 'jpg' },
+										{ width: 300, ratio: 0.7/1, mode: 'crop', jpegQuality: 100, format: 'jpg' }
+									] %}
+									{{ macros.imgFullWidth(itemDetails.image.download, null, false, mediaImageParams, false) }}
+									{% else %}
+										Kein Bild
+									{% endif %}
+								</div>
+							</header>
+							<div class="article-body">
+								<h1 class="display">{{mediaItem.title}}</h1>
+								<p>{{ mediaItem.description|chop(limit=150, unit='c', append=' …')}}</p>
+							</div>
+						</a>
+						{# <p class="more"><a href="{{ newsItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'})}}" class="more-link">Mehr</a></p> #}
+					</article>
+				{% endfor %}
+			</div>
+			<p><a class="more-link right-aligned" href="/medien-service/medienankuendigungen">Zu allen Medien</a></p>
+		</div>
+	</section>
+
+	<section class="home-section news my-5 py-5">
+		{% set jobFeedParams = {
+		    url: 'https://karriere.bgetem.de/feed/',
+		    type: 'rss',
+		    element: 'item',
+		    cache: 0,
+		} %}
+		{% set jobs = craft.feedme.feed(jobFeedParams) %}
+		<div class="container">
+			<header>
+				<h2 class="section-header">Stellenangebote</h2>
+			</header>
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-md-4">
+				{% for jobItem in jobs|slice(0,4) %}
+					{% set itemDetail = {
+					    url: jobItem.link,
+					    type: 'json',
+					    cache: 0,
+					} %}
+					{% set itemDetails = craft.feedme.feed(itemDetail) %}
+					<article class="col">
+						<a href="{{ jobItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+							<header>
+								<h1 class="display">{{jobItem.title}}</h1>
+							</header>
+							<div class="article-body">
+								<p>{{ jobItem.description|chop(limit=150, unit='c', append=' …')}}</p>
+							</div>
+						</a>
+						{# <p class="more"><a href="{{ newsItem.link|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'})}}" class="more-link">Mehr</a></p> #}
+					</article>
+				{% endfor %}
+			</div>
+			
+			<p><a href="https://karriere.bgetem.de/" class="more-link right-aligned">Alle Stellenangebote</a></p>
+		</div>
+	</section>
+
+</article>

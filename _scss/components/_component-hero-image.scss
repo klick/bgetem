@@ -1,0 +1,6 @@
+div.hero-image {
+	margin-bottom: 24px;
+	@include lg() {
+		margin-bottom: 48px;
+	}
+}

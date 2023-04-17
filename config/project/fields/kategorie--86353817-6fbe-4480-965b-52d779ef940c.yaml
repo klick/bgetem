@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: kategorie
+instructions: null
+name: Kategorie
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: 1
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: false
+  source: 'group:87bc2480-4466-4ea5-95f5-1f30e9429502' # Kategorien Magazin
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

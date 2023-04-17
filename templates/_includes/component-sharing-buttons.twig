@@ -1,0 +1,51 @@
+<div class="shariff-wrapper sharing-buttons mt-5">  
+    <h6>Diesen Beitrag teilen</h6>
+    
+    
+    <div class="shariff">
+    	<ul class="theme-grey orientation-horizontal">
+    		<li class="shariff-button twitt5r">
+    			<a href="https://twitter.com/intent/tweet?text={{ entry.title }} – BGETEM&amp;url={{ url(craft.app.request.pathInfo) }}" data-rel="popup" title="Bei Twitter teilen" role="button" aria-label="Bei Twitter teilen" class="text-decoration-none">
+    				<span class="twitter"></span>
+    				<span class="share_text">tweet</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button facebook">
+    			<a href="https://www.facebook.com/sharer/sharer.php?u={{ url(craft.app.request.pathInfo) }}" data-rel="popup" title="Bei Facebook teilen" role="button" aria-label="Bei Facebook teilen" class="text-decoration-none">
+    				<span class="facebook"></span>
+    				<span class="share_text">teilen</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button linkedin">
+    			<a href="https://www.linkedin.com/shareArticle?mini=true&amp;summary=&amp;title={{ entry.title|url_encode }}&amp;url={{ url(craft.app.request.pathInfo) }}" data-rel="popup" title="Bei LinkedIn teilen" role="button" aria-label="Bei LinkedIn teilen" class="text-decoration-none">
+    				<span class="linkedin"></span>
+    				<span class="share_text">mitteilen</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button mail">
+    			<a href="mailto:?subject={{ entry.title|url_encode }}&amp;body={{ url(craft.app.request.pathInfo) }}" title="Per E-Mail versenden" role="button" aria-label="Per E-Mail versenden" class="text-decoration-none">
+    				<span class="envelope"></span>
+    				<span class="share_text">mail</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button whatsapp">
+    			<a href="whatsapp://send?text={{ entry.title|url_encode }}%20%20{{ url(craft.app.request.pathInfo) }}" title="Bei Whatsapp teilen" role="button" aria-label="Bei Whatsapp teilen" class="text-decoration-none">
+    				<span class="whatsapp"></span>
+    				<span class="share_text">teilen</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button xing">
+    			<a href="https://www.xing.com/social_plugins/share?url={{ url(craft.app.request.pathInfo) }}" data-rel="popup" title="Bei XING teilen" role="button" aria-label="Bei XING teilen" class="text-decoration-none">
+    				<span class="xing"></span>
+    				<span class="share_text">teilen</span>
+    			</a>
+    		</li>
+    		<li class="shariff-button info">
+    			<a href="http://ct.de/-2467514" target="_blank" title="weitere Informationen" role="button" aria-label="weitere Informationen" class="text-decoration-none">
+    				<span class="info"></span>
+    				<span class="share_text">Info</span>
+    			</a>
+    		</li>
+    	</ul>
+    </div>
+ </div>

@@ -1,0 +1,19 @@
+columnSuffix: pfijtarr
+contentColumnType: text
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: galerieposition
+instructions: null
+name: Galerieposition
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

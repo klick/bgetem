@@ -1,0 +1,100 @@
+field: 7e83231a-8956-4d31-8506-f9e905dee038 # Kontaktperson
+fieldLayouts:
+  d6f41044-3eca-4c50-848c-02793accbf66:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ee46e718-c2ac-46a8-bb86-4ecb7098343a # Kontakt Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 64dbe2c7-9435-4801-8729-b4951d4481d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 55eda33f-7753-4af2-99eb-b751ea263cbe # Kontakt Email
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 808cd518-3cb9-4fc6-a731-b3f7f383383e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d016e0d7-8824-4e44-9bc0-e8699c72c056 # Kontakt Telefon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 835eb1c1-2272-4fbc-a770-3314befa9d83
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9a675e18-308c-4089-8751-6d1de6e2d506
+        userCondition: null
+fields:
+  55eda33f-7753-4af2-99eb-b751ea263cbe: # Kontakt Email
+    columnSuffix: hwmjoofd
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: kontaktEmail
+    instructions: null
+    name: 'Kontakt Email'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - email
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  d016e0d7-8824-4e44-9bc0-e8699c72c056: # Kontakt Telefon
+    columnSuffix: smaocdur
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: kontaktTelefon
+    instructions: null
+    name: 'Kontakt Telefon'
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - tel
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  ee46e718-c2ac-46a8-bb86-4ecb7098343a: # Kontakt Name
+    columnSuffix: jsytivvs
+    contentColumnType: text
+    fieldGroup: null
+    handle: kontaktName
+    instructions: null
+    name: 'Kontakt Name'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: kontaktdetails
+name: Kontaktdetails
+sortOrder: 1

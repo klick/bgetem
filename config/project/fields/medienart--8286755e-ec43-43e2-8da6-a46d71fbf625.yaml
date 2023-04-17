@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: medienart
+instructions: null
+name: Medienart
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: 1
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: false
+  source: 'group:0d8dd661-52d0-4e81-84e1-03e7c0078a36' # Medienart
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

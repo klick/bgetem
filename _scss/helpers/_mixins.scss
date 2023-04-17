@@ -1,0 +1,135 @@
+// Mixins
+
+@mixin for-phone-only {
+  @media (max-width: 575.98px) { @content; }
+}
+@mixin sm {
+  @media (min-width: 576px) { @content; }
+}
+@mixin md {
+  @media (min-width: 768px) { @content; }
+}
+@mixin lg {
+  @media (min-width: 992px) { @content; }
+}
+@mixin xl {
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin arrowed($arrow-color: '000000', $left-margin: 0) {
+    &:before {
+    content: "";
+    background: url('data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%27434px%27%20height%3D%27500px%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%3E%3Cg%3E%3Cpath%20d%3D%27M294.671697%2C215.182669%20L0.000000%2C215.182669%20L0.000000%2C285.440041%20L295.353808%2C285.440041%20L145.289517%2C449.146539%20L191.673025%2C498.940599%20L432.458000%2C249.970300%20L191.673025%2C1.000000%20L145.289517%2C51.476170%20Z%27%20fill%3D%27%23' + $arrow-color + '%27%20stroke%3D%27none%27%20%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-size: contain;
+    margin: 0 .4em 0 0;
+    width: .6em;
+    height: .6em;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: $left-margin;
+  }
+  &.white:before {
+    
+  }
+}
+@mixin arrowed-extern-link($arrow-color: '000000') {
+  &:before {
+    content: "";
+    background: url('data:image/svg+xml;charset=utf8, %3Csvg%20viewBox%3D%2750.22%2050.22%20249.56%20249.56%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20d%3D%27M%20199.96%2050.22%20L%20199.96%2075.17%20L%20257.18%2075.17%20L%20116.3%20216.05%20L%20133.95%20233.7%20L%20274.83%2092.82%20L%20274.83%20150.04%20L%20299.78%20150.04%20L%20299.78%2075.17%20L%20299.78%2050.22%20L%20199.96%2050.22%20Z%20M%20224.91%20274.83%20L%2075.17%20274.83%20L%2075.17%20125.09%20L%20150.04%20125.09%20L%20150.04%20100.13%20L%2075.17%20100.13%20L%2050.22%20100.13%20L%2050.22%20125.09%20L%2050.22%20274.83%20L%2050.22%20299.78%20L%2075.17%20299.78%20L%20224.91%20299.78%20L%20249.87%20299.78%20L%20249.87%20274.83%20L%20249.87%20199.96%20L%20224.91%20199.96%20L%20224.91%20274.83%20Z%27%20fill%3D%27%23' + $arrow-color + '%27%20%2F%3E%3C%2Fsvg%3E%0A');
+    background-size: contain;
+    margin: 0 .3em 0 .3em;
+    width: .5em;
+    height: .5em;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@mixin arrowed-intern-link($arrow-color: '000000') {
+  &:after {
+    content: "";
+    background: url('data:image/svg+xml;charset=utf8, %3Csvg%20width%3D%27434px%27%20height%3D%27500px%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%3E%3Cg%3E%3Cpath%20d%3D%27M294.671697%2C215.182669%20L0.000000%2C215.182669%20L0.000000%2C285.440041%20L295.353808%2C285.440041%20L145.289517%2C449.146539%20L191.673025%2C498.940599%20L432.458000%2C249.970300%20L191.673025%2C1.000000%20L145.289517%2C51.476170%20Z%27%20fill%3D%27%23' + $arrow-color + '%27%20stroke%3D%27none%27%20%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-size: contain !important;
+    margin: 0 .3em 0 .3em !important;
+    width: .6em !important;
+    height: .6em !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+}
+@mixin caret-after($caret-color: '000000') {
+  &:after {
+    content: "" !important;
+    background: url('data:image/svg+xml;charset=utf8, %3Csvg%20viewBox%3D%27103.23%20128.61%2011.5%206.31%27%20width%3D%27434px%27%20height%3D%27500px%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20xmlns%3Axlink%3D%27http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%27%3E%3Cg%20style%3D%27%27%3E%3Cpath%20d%3D%27M%20112.135%20131.585%20L%20112.135%20131.955%20L%20107.425%20137.515%20L%20105.825%20136.545%20L%20109.755%20131.745%20L%20105.825%20126.965%20L%20107.425%20126.015%20L%20112.135%20131.585%20Z%27%20fill%3D%27%23' + $caret-color + '%27%20style%3D%27white-space%3A%20pre%3B%27%20transform%3D%27matrix%280%2C%201%2C%20-1%2C%200%2C%20240.744995%2C%2022.785%29%27%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-size: contain !important;
+    margin: 0 !important;
+    width: .5em !important;
+    height: .5em !important;
+    background-repeat: no-repeat !important;
+    display: inline-block !important;
+    border: none !important;
+    vertical-align: baseline;
+  }
+}
+
+
+
+
+// Flexbox
+
+@mixin flex-container($direction:row wrap, $justify:flex-start, $align: flex-start) {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-flow: $direction;
+  -moz-flex-flow: $direction;
+  -ms-flex-flow: $direction;
+  flex-flow: $direction;
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  justify-content: $justify;
+  -webkit-align-items: $align;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  align-items: $align;
+}
+
+@mixin flex-item($grow: 0, $shrink: 0, $width: auto) {
+  -webkit-flex: $grow $shrink $width;
+  -moz-flex: $grow $shrink $width;
+  -ms-flex: $grow $shrink $width;
+  flex: $grow $shrink $width;
+}
+
+@mixin background-gradient {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,000000+100&amp;0+0,0.9+100 */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#b3000000',GradientType=0 ); /* IE6-9 */
+}
+
+// Background images + high res
+@mixin background-image($image, $image2x, $color: transparent) {
+  background: $color url($image) no-repeat;
+  background-size: auto;
+  //background-position: center center; 
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (    min--moz-device-pixel-ratio: 2),
+        only screen and (    -o-min-device-pixel-ratio: 2/1),
+        only screen and (         min-device-pixel-ratio: 2),
+        only screen and (            min-resolution: 192dpi),
+        only screen and (             min-resolution: 2dppx) {
+          background: $color url($image2x) no-repeat;
+          background-size: auto;
+          //background-position: center center; 
+  }
+}

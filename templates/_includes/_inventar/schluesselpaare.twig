@@ -1,0 +1,161 @@
+<h2><strong class="upper"><a id="schluesselpaar" class="inventar-anchor">Schlüsselpaare</a></strong>&ensp;<a class="inventar-anchor-link" href="#schluesselpaar">#</a></h2>
+
+<br><br>
+
+{% set productImage = craft.assets.id(15187).one() %}
+
+  {% set productImageTransforms = {
+    '(max-width: 419px)': {
+        width: 345,
+    },
+    '(max-width: 899px)': {
+        width: 510,
+    },
+    '(max-width: 1199px)': {
+        width: 930,
+    },
+    '(min-width: 1200px)': {
+        width: 1110,
+    }
+  } %}
+
+{# <pre>{{ dump(productImage) }}</pre> #}
+
+{%- set schluesselpaar -%}
+
+<article>
+	<header>
+		{% set productImageAttributes = { alt: productImage.title, title: productImage.title } %}
+		<div class="row">
+			<h1 class="col col-8 col-sm-8 col-md-4 col-lg-11">A-1300 UV</h1>
+			<figure class="product-image col col-md-1">
+			 	{{ craft.images.pictureMedia(productImage, productImageTransforms, null, productImageAttributes) }}
+				<figcaption>{{ productImage.title }}</figcaption>
+			</figure>
+		</div>
+		<div class="dot">
+			<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+			</svg>
+		</div>
+		<p class="intro description bold">({{ now|date('d.m.Y') }}) Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!</p>
+	</header>
+	<section class="article-body clearfix">
+		<dl class="row key-value-pair">
+  			<dt class="col col-sm-3">Typ des Wasch- und Reinigungsmittels</dt>
+  			<dd class="col col-sm-6"><span>Offsetdruck (allgemein)</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Branche</dt>
+			<dd class="col col-sm-6"><span>branch</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Hautschutzmittelgruppe</dt>
+			<dd class="col col-sm-6"><span>Gegen wechselnde Arbeitsstoffe</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Sonderreiniger</dt>
+			<dd class="col col-sm-6"><span>Nein</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Emissionsarmes Produkt</dt>
+			<dd class="col col-sm-6"><span>Ja</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Flammpunkt</dt>
+			<dd class="col col-sm-6"><span>75</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Wertebereich für den Flammpunkt</dt>
+			<dd class="col col-sm-6"><span>nein</span></dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Datum</dt>
+			<dd class="col col-sm-6"><span>{{ now|date('d.m.Y') }}</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Datum + Uhrzeit</dt>
+			<dd class="col col-sm-6"><span>{{ now|date('d.m.Y, H:s') }}</span></dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Textblock</dt>
+			<dd class="col col-sm-6"><span>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!</span></dd>
+		
+			<div class="w-100 divider"></div>
+
+
+			{%- set exampleFile = craft.assets.id(11938).one() -%}
+
+			<dt class="col col-sm-3">Datei</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<a class="download inline" href="{{ exampleFile.url }}" title="{{ exampleFile.title }} – {{ exampleFile.kind|upper }} herunterladen" download>
+						{{ exampleFile.title }} – {{ exampleFile.kind|upper }} ({{ (exampleFile.size / 1000000)|number_format(2) }} MB)
+						<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+						</svg>
+						{# <small>Herunterladen<br>{{ exampleFile.kind|upper }}, {{ (exampleFile.size / 1000000)|number_format(2) }} MB</small> #}
+					</a>
+				</span>
+			</dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Dateiliste</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<ul>
+						{% for x in range(0, 3) %}
+							<li>
+								<a class="download inline" href="{{ exampleFile.url }}" title="{{ exampleFile.title }} – {{ exampleFile.kind|upper }} herunterladen" download>
+									{{ exampleFile.title }} – {{ exampleFile.kind|upper }} ({{ (exampleFile.size / 1000000)|number_format(2) }} MB)
+									<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+										<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+									</svg>
+									{# <small>Herunterladen<br>{{ exampleFile.kind|upper }}, {{ (exampleFile.size / 1000000)|number_format(2) }} MB</small> #}
+								</a>
+							</li>	
+						{% endfor %}
+					</ul>
+				</span>
+			</dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Bestandteile (Liste)</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<ul>
+						<li>10-Undecenal (>= 77.0 % <= 88.0 %)</li>
+						<li>1-(2-Hydroxy-3-sulfonatopropyl)pyridinium (>= 3.0 %, <= 5.0 %)</li>
+						<li>Weiterer Listenpunkt</li>
+						<li>Letzter Listenpunkt</li>
+					</ul>
+				</span>
+			</dd>
+			
+			{# <dt class="col-sm-4">Truncated term is truncated</dt>
+			<dd class="col-sm-8"><span>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</span></dd> #}
+		</dl>
+	</section>
+</article>
+
+{%- endset -%}
+
+{{ schluesselpaar }}
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+	<code class="language-html">
+	{{- schluesselpaar|e -}}
+	</code>
+</pre>

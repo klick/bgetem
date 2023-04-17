@@ -1,0 +1,10 @@
+<footer class="article-footer doc-actions">
+	<h5>Document actions</h5>
+	<ul class="docactions small">
+		{# {{ (date is not null ? '<li><a href="#">Stand: ' ~ date ~ '</a></li>')|raw }} #}
+        {{ (webcode is not null ? '<li><a href="#">Webcode: ' ~ webcode ~ '</a></li>')|raw }}
+        <li><a href="#">Drucken</a></li>
+        <li><a href="#">RSS</a></li>
+        <li><a href="#">Rückmeldung</a></li>
+	</ul>
+</footer>

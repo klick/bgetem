@@ -1,0 +1,50 @@
+{% import '_macros.twig' as macros %}
+ <div class="row">
+    <div class="col-lg-8">
+		<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+						<div class="dot">
+							<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+							  <defs></defs>
+							  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+							</svg>
+						</div>
+						<p class="intro description bold">{{ feed.description.data }}</p>
+					{% endif %}
+			</header>
+			<section class="article-body clearfix">
+				<div class="event-details">
+					<p>
+						<strong>Ort:</strong> {{ feed.location }}<br>
+						<strong>Datum:</strong> {{ feed.startDate|date }}&mdash;{{ feed.endDate|date }}<br>
+						<strong>Kontakt:</strong>
+						{{ (feed.contactName is not empty ? '<br>' ~ feed.contactName)|raw }} 
+						{{ (feed.contactEmail is not empty ? '<br>Email: <a href="mailto:' ~ feed.contactEmail ~ '">' ~ feed.contactEmail ~ '</a>')|raw }}
+						{{ (feed.contactPhone is not empty ? '<br>Telefon: <a href="mailto:' ~ feed.contactPhone ~ '">' ~ feed.contactPhone ~ '</a>')|raw }}
+					</p>
+					{% set link = craft.calendarLinks.create({
+					    text: feed.title,
+					    from: feed.startDate|date_modify('+1 hour'),
+					    to: feed.endDate|date_modify('+3 hours'),
+					}) %}
+					{% do link.description(feed.description.data is defined ? feed.description.data) %}
+					{% do link.address(feed.location) %}
+					<br>
+					<small>Zum Kalender hinzufügen: 
+						<a href="{{ link.ics() }}" download="{{ feed.title }}.ics">Ical</a> | 
+						<a href="{{ link.google() }}" download="{{ feed.title }}">Google</a> | 
+						<a href="{{ link.yahoo() }}" download="{{ feed.title }}">Yahoo</a>
+					</small>
+				</div>
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+	</div>
+	<div class="col-lg-3 offset-lg-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>

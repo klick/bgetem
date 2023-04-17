@@ -1,0 +1,14 @@
+columnSuffix: mabhhyia
+contentColumnType: boolean
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: nurDownload
+instructions: null
+name: 'Nur Download'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

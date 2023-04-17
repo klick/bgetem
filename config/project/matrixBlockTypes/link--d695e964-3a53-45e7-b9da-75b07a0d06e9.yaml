@@ -1,0 +1,153 @@
+field: cf5a605b-acb4-4296-b702-72ef5386a6b3 # Linkfeld
+fieldLayouts:
+  71afad01-5cde-4470-b644-b95b84ad3a3a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ab28b56c-a969-42b1-88d0-ac5c67a2f522 # Linktext
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6ec1abb-f31b-4bf8-a96d-5f51c3ea89c9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d25dea44-f8f0-4555-bcc7-4f38b3cd72b8 # Link-Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 955ac3d9-9fb0-40f9-b257-350c877512ab
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2e9a779e-bee1-4399-8275-29eb5c25bd1f # Typed
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75dc72d3-4c22-4b71-9a75-546f528cab74
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0d1c7494-547d-4b8b-b135-f6b8d23be96a
+        userCondition: null
+fields:
+  2e9a779e-bee1-4399-8275-29eb5c25bd1f: # Typed
+    columnSuffix: vtumnzvx
+    contentColumnType: string
+    fieldGroup: null
+    handle: typed
+    instructions: null
+    name: Typed
+    searchable: false
+    settings:
+      allowCustomText: true
+      allowTarget: false
+      autoNoReferrer: false
+      customTextMaxLength: 0
+      customTextRequired: false
+      defaultLinkName: user
+      defaultText: ''
+      enableAllLinkTypes: true
+      enableAriaLabel: false
+      enableElementCache: false
+      enableTitle: false
+      typeSettings:
+        asset:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+        category:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+        craftCommerce-product:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+        custom:
+          allowAliases: false
+          disableValidation: false
+          enabled: false
+        email:
+          allowAliases: false
+          disableValidation: false
+          enabled: false
+        entry:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+        site:
+          enabled: false
+          sites: '*'
+        tel:
+          allowAliases: false
+          disableValidation: false
+          enabled: false
+        url:
+          allowAliases: false
+          disableValidation: false
+          enabled: false
+        user:
+          allowCrossSiteLink: false
+          allowCustomQuery: false
+          enabled: false
+          sources: '*'
+    translationKeyFormat: null
+    translationMethod: none
+    type: lenz\linkfield\fields\LinkField
+  ab28b56c-a969-42b1-88d0-ac5c67a2f522: # Linktext
+    columnSuffix: cxftzlhv
+    contentColumnType: text
+    fieldGroup: null
+    handle: linktext
+    instructions: null
+    name: Linktext
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d25dea44-f8f0-4555-bcc7-4f38b3cd72b8: # Link-Url
+    columnSuffix: pldortlt
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: linkUrl
+    instructions: null
+    name: Link-Url
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: link
+name: Link
+sortOrder: 1

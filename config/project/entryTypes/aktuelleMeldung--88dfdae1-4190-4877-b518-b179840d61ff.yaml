@@ -1,0 +1,145 @@
+fieldLayouts:
+  1e097d21-de9a-4c62-985b-79dd79471e3c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d4fd887b-4676-4f97-96b8-3abc48808070
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ac766a0-6597-4056-9fd4-46bfa681912c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2173ca04-5504-41cf-9d7d-2faca852ff35
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a4b1362-c04e-4bfd-86c1-bbdda74e8768
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95a3101f-8d10-42a2-b1e5-b340f0a2ae71
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 66edba03-f90c-4fbe-b0b9-b817fadcb59d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4c0ed0b-1055-45fd-a2ec-c8763a89e437
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 53541d99-0c99-427f-8a9e-2057eeff4eb5 # Plone Slug
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f947805-26fb-4c13-8905-b2ea8cb3f227
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9e952942-4c7d-4e68-bfdb-39cc2db9ce3b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 200606da-2722-4f6e-99f3-9243e42aa6d0 # URL original
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 135bb61a-6f5e-42ed-b51c-3a8aafc3c8b8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: e4ccd07d-67f3-4755-97b1-3cc4112a36cf
+        userCondition: null
+handle: aktuelleMeldung
+hasTitleField: true
+name: 'Aktuelle Meldung'
+section: d72b6749-cdcf-4fae-b301-4fb276ea7af9 # Presse-Aktuelles
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

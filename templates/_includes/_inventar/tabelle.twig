@@ -1,0 +1,198 @@
+<div class="container">
+	<h2><strong class="upper"><a id="einfache-table" class="inventar-anchor">Einfache Tabelle</a></strong>&ensp;<a class="inventar-anchor-link" href="#einfache-table">#</a></h2>
+	<p>Schriftvorschlag für Tabellen: <b>Axel</b>, Schrift für tabellarische Inhalte <a class="external-link" href="https://www.fontshop.com/families/axel">»Axel« bei Fontshop</a></p>
+</div>
+<br><br>
+
+
+{%- set table -%}
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Medienart</th>
+			<th scope="col">Freimenge</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Faltblätter</td>
+			<td>bis 30 Exemplare</td>
+		</tr>
+		<tr>
+			<td>Broschüren</td>
+			<td>bis 20 Exemplare</td>
+		</tr>
+		<tr>
+			<td>Plakate/Aushänge</td>
+			<td>bis 10 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Elektronische Medien<br>(gilt auch für Broschüren mit CD-ROM/DVD-ROM)
+			</td>
+			<td>bis 3 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Azubi-Pakete
+			</td>
+			<td>
+				1 Exemplar
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Unternehmermodell-Ordner
+			</td>
+			<td>1 Exemplar
+		</tr>
+		<tr>
+			<td>
+				Aktionsmedien
+			</td>
+			<td>1 Exemplar</td>
+		</tr>
+		<tr>
+			<td>
+				Aufkleber, Anstecknadeln
+			</td>
+			<td>20 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Regelwerk (DGUV Vorschriften, DGUV Regeln, DGUV Informationen, DGUV Grundsätze, Gesetze/Verordnungen)
+			</td>
+			<td>unbegrenzt / bis 99 Exemplare je Bestellung im Medienportal</td>
+		</tr>
+	</tbody>
+</table>
+{%- endset -%}
+
+<div class="container">
+	{{ table }}
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">
+{{- table|e -}}
+</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!--ERWEITERTE TABELLE-->
+
+<div class="container">
+	<h2><strong class="upper"><a id="erweiterte-tabelle" class="inventar-anchor">Erweiterte Tabelle</a></strong>&ensp;<a class="inventar-anchor-link" href="#erweiterte-tabelle">#</a></h2>
+	<p>Schriftvorschlag für Tabellen: <b>Axel</b>, Schrift für tabellarische Inhalte <a class="external-link" href="https://www.fontshop.com/families/axel">»Axel« bei Fontshop</a></p>
+</div>
+<br><br>
+
+{%- set tableExtended -%}
+<h2><strong>Vergleichende Darstellung der Klassifizierungen von staubbeseitigenden Maschinen</strong></h2><br>
+<table class="table table-bordered table-extended">
+	<thead>
+		<tr>
+			<th rowspan="2">Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube<br><br>Vor 01.01.2005</td>
+			<th colspan="2" class="border-one-px">Bis 1998 (Übergangsfrist bis 2003) nach ZH 1/487</td>
+			<th rowspan="2">Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube<br><br>Seit 01.01.2005</td>
+			<th colspan="2" class="border-one-px">geltende Staubklassen nach DIN EN 60335-2-69 Anh. AA und E DIN IEC 61 J/94/CD</td>
+		</tr>
+		<tr>
+			<th>Verwendungskategorie</td>
+			<th>Max. Durchlassgrad</td>
+			<th>Staubklasse</td>
+			<th>Max. Durchlassgrad</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>mit MAK-Werten > 1 mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">U</span><br>(S, G, C, K1, K2)</td>
+			<td>≤ 5%</td>
+			<td>mit AGW<br>> 1mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">L</span><br>(M, H)</td>
+			<td>< 1%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten > 0,1 mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">S</span><br>(G, C, K1, K2)</td>
+			<td>≤ 1%</td>
+			<td rowspan="2">mit AGW<br>≥ 0,1 mg/m<sup>3</sup></td>
+			<td rowspan="2">Mindestens <span class="big red">M</span><br>(H)</td>
+			<td rowspan="2">< 0,1%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten</td>
+			<td>Mindestens <span class="big red">G</span><br>(C, K1, K2)</td>
+			<td>≤ 0,5%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 GefStoffV)</td>
+			<td>Mindestens <span class="big red">C</span><br>(K1, K2)</td>
+			<td>≤ 0,1%</td>
+			<td rowspan="2">mit AGW<br>< 0,1 mg/m<sup>3</sup><br>krebserzeugende Gefahrstoffe gem. GefStoffV § 11. TRGS905 bzw. TRGS 906</td>
+			<td><span class="big red">H</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV)</td>
+			<td><span class="big red">K1, K2</span></td>
+			<td>≤ 0,05%</td>
+			<td><span class="big red">H</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten < 0,1mg* m<sup>3</sup> + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV) inkl. Asbest</td>
+			<td><span class="big red">K1, K2 +</span><br><span class="red">Eignung für Einsatz gemäß TRGS 519</span></td>
+			<td>≤ 0,005%</td>
+			<td>Asbest gemäß TRGS 519</td>
+			<td><span class="big red">H +</span> <span class="red">Eignung für Einsatz gemäß TRGS 519</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME < 1 mJ)</td>
+			<td colspan="2">Mindestens <span class="big red">S</span><br>mit <span class="big red">B1</span> zusätzlich</td>
+			<td>Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME < 1 mJ)</td>
+			<td colspan="2">Mindestens <span class="big red">L</span><br>mit zusätzlicher Prüfung nach DIN EN 60335-2-69, Anhang CC<br><span class="big red">Geräte der Bauart Zone 22</span></td>
+		</tr>
+	</tbody>
+</table>
+<p><strong>Quelle: IFA 2011</strong></p>
+{%- endset -%}
+
+<div class="container">
+	{{ tableExtended }}
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">
+{{- tableExtended|e -}}
+</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>

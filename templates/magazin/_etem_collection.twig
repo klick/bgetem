@@ -1,0 +1,48 @@
+{# {% if not entry %}
+  {% exit 404 %}
+{% endif %} #}
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['etemcollection']
+}) %}
+
+{% import '_macros.twig' as macros %}
+
+{% set entry = craft.entries.siteId(2).sectionId(2).slug(craft.app.request.getSegment(1)).one() %}
+{% set etemPlusEntries = entry.etemPlus.with(['cover', 'titlestoryCover']).all() %}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+<div class="container magazin my-3 my-md-5">
+	<h1 class="font-weight-bold color-dguv-blau mb-5">etem <em style="color:#afca06;">plus</em></h1>
+		{% set branchSmallCardImgTransforms = {
+		  '(min-width: 345px)': {
+		      width: 384,
+		      height: 218,
+		      mode: 'crop'
+		  }
+		} %}
+		{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
+		{% for entry in etemPlusEntries %}
+			<a class="row p-0 text-decoration-none"  href="{{ entry.url }}">
+				<div class="col-sm-12 col-md-4 mb-3 mb-md-5">
+					{% if entry.titlestoryCover is not empty %}
+					{{ craft.images.pictureMedia(entry.titlestoryCover[0], branchSmallCardImgTransforms, null, cardImgAttributes) }}
+					{% elseif entry.cover is not empty %}
+					{{ craft.images.pictureMedia(entry.cover[0], branchSmallCardImgTransforms, null, cardImgAttributes) }}
+					{% endif %}
+				</div>
+				<div class="col-sm-12 col-md-8 mb-5 pt-md-3">
+					<h2 class="font-weight-bold">{{ entry.title }}</h2>
+					<p class="card-text lead pr-md-5 text-dark">
+						<span class="description">{{ entry.intro|typogrify }}</span>
+					</p>
+				</div>
+			</a>
+		{% endfor %}
+</div>
+{% endblock %}

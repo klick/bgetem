@@ -1,0 +1,121 @@
+{% set jsonLdContainer = seomatic.jsonLd.container() %}
+{% do jsonLdContainer.include(false) %}
+{% set scriptContainer = seomatic.script.container() %}
+{% do scriptContainer.include(false) %}
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#004993">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-config" content="/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="robots" content="noindex,nofollow">	
+		{% hook 'seomaticRender' %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+		
+		{# <link href="http://mmenu.localhost/dist/mmenu.css" rel="stylesheet" /> #}
+	</head>
+	<body class="{{ (craft.app.request.segments|first is not null) ? 'bg-dguv-blau' }}" data-content-type="">
+
+
+
+		<div id="my-page">
+			<div class="container">
+				<div id="kc-header" class="page-header text-white mt-5 mb-3">
+			        <div id="kc-header-wrapper" class="h1">
+			            SIGUV
+			        </div>
+			    </div>
+				{% block content %}
+				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+				{% endblock %}
+			</div>
+		</div>
+
+
+
+
+
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/jquery-3.4.1.slim.min.js"></script>
+
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/popper.min.js"></script>
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bootstrap.min.js"></script>
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bundle.js"></script>
+
+				<script>
+			
+		  $(document).ready(function(){
+		  	$('.slider_campaigns').slick({
+		    	fade: false,
+				mobileFirst: true,
+				variableWidth: false,
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				prevArrow:$('.previ_slider'),
+		  		nextArrow:$('.nexti_slider'),
+				infinite: true,
+				  	responsive: [
+		  		{
+			      breakpoint: 1,
+			      settings: {
+			        arrows: false,
+			        //centerMode: true,
+			        //centerPadding: '40px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        arrows: false,
+			        //centerMode: true,
+			        //centerPadding: '40px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 992,
+			      settings: {
+			        arrows: true,
+			        //centerMode: true,
+			        //centerPadding: '0px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 1200,
+			      settings: {
+			        arrows: true,
+			        //centerMode: true,
+			        //centerPadding: '80px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			  ]
+		  });
+		});
+
+		</script>
+
+
+	</body>
+</html>

@@ -1,0 +1,19 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+{# {% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %} #}
+
+{% block content %}
+
+    {{ include('keycloak/_includes/login.twig', {alert: true}) }}
+
+{% endblock %}

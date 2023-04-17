@@ -1,0 +1,14 @@
+columnSuffix: naazqtuu
+contentColumnType: string(255)
+fieldGroup: 88e1572c-f3c5-4214-a261-b079e6234963 # Ausgaben
+handle: itemUrl
+instructions: null
+name: 'Item URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

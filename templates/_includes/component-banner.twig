@@ -1,0 +1,48 @@
+{% set bannerImgTransforms = {
+	'(max-width: 575px)': {
+	      width: 350,
+	      height: 150,
+	  },
+	  '(max-width: 991px)': {
+	      width: 340,
+	      height: 140,
+	  },
+	  '(max-width: 1199px)': {
+	      width: 456,
+	      height: 165,
+	  },
+	  '(max-width: 1399px)': {
+	      width: 546,
+	      height: 165,
+	  },
+	  '(max-width: 1799px)': {
+	      width: 546,
+	      height: 180,
+	  },
+	  '(min-width: 1800px)': {
+	      width: 640,
+	      height: 180,
+	  }
+	} %}
+
+<div class="container bg-layout_medien_container my-5">
+{% for banner in banner.infobanner.all() %}
+{% set bannerImgAttributes = { alt: '', title: '', class:'' } %}
+	<div class="infobanner mb-5">
+		<a class="col-12 text-white d-block text-decoration-none {{ banner.hintergrundfarbe.class }}" href="{{ banner.mehrLinkZiel }}">
+			<div class="row align-items-center">
+				<div class="col-sm-6">
+				<div class="wrapper p-3">
+					{{ (banner.dachzeile ? '<p class="roof text-uppercase text-white">' ~ banner.dachzeile ~ '</p>')|raw }}
+					<p class="h2">{{ banner.titel }}</p>
+					{{ (banner.mehrLinkText ? '<p class="more-link text-white">' ~ banner.mehrLinkText ~ '</p>')|raw }}
+				</div>
+				</div>
+				<div class="col-sm-6">
+					{{ craft.images.pictureMedia(banner.hintergrundbild[0], bannerImgTransforms, null, bannerImgAttributes) }}
+				</div>
+			</div>
+		</a>
+	</div>
+{% endfor %}
+</div>

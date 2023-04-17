@@ -1,0 +1,17 @@
+article.layout-event_view {
+	div.event-details {
+		padding: 24px 0;
+		border-top: 1px solid $dguv-grau-4;
+		border-bottom: 1px solid $dguv-grau-4;
+		// @include lg {
+		// 	padding: 48px 0;
+		// }
+		p {
+			line-height: 1.8em;
+		}
+		margin-bottom: 24px;
+		@include lg {
+			margin-bottom: 48px;
+		}
+	}
+}

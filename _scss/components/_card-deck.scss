@@ -1,0 +1,41 @@
+div.card-deck,
+div.card-group {
+	h3 {
+		font-size: 16px;
+		font-weight: 600;
+		margin-bottom: 6px;
+		@include lg() {
+			font-size: 22px;
+		}
+	}
+	div.card {
+		background: initial;
+		a {
+			border: 1px solid $dguv-grau-8;
+			padding: 12px;
+			color: $dguv-blau-2;
+			p {
+				color: $text-color;
+			}
+			div.card-body {
+				h3 {
+					font-size: 22px;
+				}
+			}
+			&:hover {
+				background: $dguv-grau-9;
+				text-decoration: none !important;
+				p {
+					color: $dguv-blau-2;
+				}
+			}
+		}
+		img {
+			&.img-top,
+			&.card-img-top,
+			&:first-of-type {
+				margin-bottom: 12px;
+			}
+		}
+	}
+}

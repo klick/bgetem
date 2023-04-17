@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 88e1572c-f3c5-4214-a261-b079e6234963 # Ausgaben
+handle: linkfeld
+instructions: null
+name: Linkfeld
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_linkfeld}}'
+  maxBlocks: 1
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,16 @@
+columnSuffix: nlrbsuob
+contentColumnType: string(255)
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: genericUrl
+instructions: null
+name: 'Generische Url'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+    - tel
+    - email
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

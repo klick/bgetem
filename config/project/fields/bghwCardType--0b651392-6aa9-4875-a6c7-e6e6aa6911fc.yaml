@@ -1,0 +1,61 @@
+columnSuffix: ofagkdnj
+contentColumnType: string
+fieldGroup: cd49009d-49c7-44c2-adce-81651a699347 # BGHW
+handle: bghwCardType
+instructions: null
+name: '[BGHW] Kartentyp'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - optgroup
+          - 'Bitte wählen'
+    -
+      __assoc__:
+        -
+          - label
+          - Textkarte
+        -
+          - value
+          - textkarte
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Linkkarte
+        -
+          - value
+          - linkkarte
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Listenkarte
+        -
+          - value
+          - listenkarte
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Apikarte
+        -
+          - value
+          - apikarte
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

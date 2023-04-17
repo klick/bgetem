@@ -1,0 +1,121 @@
+fieldLayouts:
+  d9313213-bea5-4bcd-a6c0-6baec2fb042c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d73a9d68-b17d-4d84-8d67-d27aca63ea7a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7bcef4d8-9442-477b-8d1d-049cee63cfb8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3815da74-3f8a-41ca-b25b-5f46dfa79af3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3817c8e1-60bf-4d8b-83c0-4742c230764f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b35a7ae2-3bd8-4060-aeb9-c4d387dcf15c # Datei
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95f8128f-fbd5-4664-a51b-1a00ef5c3b2b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a9db595-dae6-451a-90d5-66f75bb28e7e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 0a3ce07c-cc65-4578-8ef8-4db0c2145c8e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4eeb07ce-170c-4943-a8bd-681edc9cf69e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: 5f333239-fb93-4c23-b273-fddf27c9106b
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: 737466a9-13e4-48b4-9183-b99322d6153a # [BGHW] Formulare und Anträge
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

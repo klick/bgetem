@@ -1,0 +1,103 @@
+fieldLayouts:
+  6a307596-04b5-4a36-a2c9-7fd3ecddb13f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 2c1f6bcc-d161-4a22-bb3a-a2fdb91115e3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b12f7f18-3d9d-4ac1-8034-e0e381267b2c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5d77497-52ab-4259-b1f5-d145f81d658e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5db1b4cb-640f-4f5e-908d-6427f3682105
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ea449e0-c24c-43f6-beda-e462ce379ed6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1accf0f8-bb10-4379-a2f2-e411cb1e9c7c # Produkte
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4a5198f0-c383-4303-a0d5-f5ecabfecf1e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 32783016-0c94-4fef-a624-8eacac10ba98
+        userCondition: null
+handle: spezial
+hasTitleField: true
+name: Spezial
+section: 4a3887b8-7e54-4709-b239-64288b09c0a0 # [Medienportal] Spezial
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

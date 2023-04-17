@@ -1,0 +1,70 @@
+defaultPlacement: end
+fieldLayouts:
+  5e6745bf-57fd-4230-8b8e-8e5a79a08516:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: f8cc359b-4173-44ed-ab55-05d14a0cdd31
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 5ec53931-6772-4b1b-aa26-08872bb9116e
+        userCondition: null
+handle: divisionMagazine
+name: 'Sparte Magazin'
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    hasUrls: false
+    template: null
+    uriFormat: null
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    hasUrls: false
+    template: null
+    uriFormat: null
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    hasUrls: false
+    template: null
+    uriFormat: null
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    hasUrls: false
+    template: null
+    uriFormat: null
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    hasUrls: false
+    template: null
+    uriFormat: null
+  c267be8c-ada1-4920-8ecf-cc60914aed52: # Keycloak
+    hasUrls: false
+    template: null
+    uriFormat: null
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: a29f5232-71f8-4fc1-b6e2-d640c8d0b5e8

@@ -1,0 +1,32 @@
+{% import '_macros.twig' as macros %}
+{% set params = [
+	{ width: 730, jpegQuality: 100, format: 'jpg', mode: 'fit' },
+	{ width: 345, jpegQuality: 85, format: 'jpg', mode: 'fit' }
+] %}
+{% if images|length > 1 %}
+<div class="module module__gallery-slider mobile-full-width">
+	<div class="slick-slider-module-gallery" data-id="id-1">
+		{% for key, image in images %}
+		<div class="gallery-slider__item" data-image-number="{{ key }}">
+			{{ macros.imgFullWidth(image, null, true, params, caption|default("Bildunterschrift: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur veniam provident iure tenetur recusandae debitis odit. Dolores quis")) }}
+		</div>
+		{% endfor %}
+	</div>
+	<div class="nav slider-nav">
+		<div class="gallery-slider__nav id-1 previ_slider" data-id="id-1">
+			<svg viewBox="0 0 500 575.32"><path d="M 6.122 10.4 L 6.122 8.728 L 16.528 8.728 L 11.116 2.832 L 12.216 1.644 L 19.85 9.542 L 12.216 17.44 L 11.116 16.252 L 16.506 10.4 L 6.122 10.4 Z" style="" stroke="none" transform="matrix(-36.421909, 0, 0, -36.421909, 722.974889, 635.198153)" fill="#333339"></path></svg>
+		</div>
+		<div class="counter" data-id="id-1">
+			<p class="small-font font-weight-medium"><span class="current-image-index">1</span> von {{images|length}}</p>
+		</div>
+		<div class="gallery-slider__nav id-1 nexti_slider" data-id="id-1">
+			<svg viewBox="0 0 500 575.32"><path d="M6.122000,8.684000 L6.122000,10.356000 L16.528000,10.356000 L11.116000,16.252000 L12.216000,17.440000 L19.850000,9.542000 L12.216000,1.644000 L11.116000,2.832000 L16.506000,8.684000 L6.122000,8.684000 Z " style="" stroke="none" transform="matrix(36.421909, 0, 0, 36.421909, -222.974945, -59.877621)" fill="#333339"></path></svg>
+		</div>
+	</div>
+</div>
+{% else %}
+<div class="title-image">
+{{ macros.imgFullWidth(images[0], null, false, params, false) }}
+{% if caption is defined and caption|length %}<br><small>{{ caption }}</small>{% endif %}
+</div>
+{% endif %}

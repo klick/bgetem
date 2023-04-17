@@ -1,0 +1,20 @@
+columnSuffix: nitjmgqh
+contentColumnType: integer(10)
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: medium
+instructions: null
+name: Medium
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

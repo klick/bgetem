@@ -1,0 +1,133 @@
+fieldLayouts:
+  bbe929e7-7593-4c3a-8f11-2cc20ed7c233:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a9a9905f-7b73-467c-b0c7-8964530d9596
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cff58d05-1ce6-4604-89da-23b3333c2181
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0e5c7117-10ba-4d3b-a867-f56e8019fdee # [BGHW] Schmuckbild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f7e23e6-4b0b-4b4f-aedd-de2953c308ae
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 785c369b-552b-453e-9289-d47067bc81ff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a1651a49-f97c-4fa1-9eea-33be6bad2e6d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7a85498e-3749-4d15-a173-4d08fb507eed
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b3b8a336-944e-4387-99e2-50bee2ff1445
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 8e71ef51-7288-4ef2-b4d2-063b3e6c91e6
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bdf766f9-10e9-4aab-9d83-3722b81ba7f1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: ff640d37-f6bb-467e-8159-763e1ea556a0
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: b292b1ca-4d77-45e7-97a2-da468c18c880 # [BGHW] ABC Tabelle
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

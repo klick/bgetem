@@ -1,0 +1,453 @@
+{% import '_macros.twig' as macros %}
+
+{% set clusterCardImageTransforms = {
+	'(max-width: 575px)': {
+	      width: 350,
+	      height: 250,
+	  },
+	  '(max-width: 991px)': {
+	      width: 340,
+	      height: 250,
+	  },
+	  '(max-width: 1199px)': {
+	      width: 456,
+	      height: 250,
+	  },
+	  '(max-width: 1399px)': {
+	      width: 546,
+	      height: 250,
+	  },
+	  '(max-width: 1799px)': {
+	      width: 546,
+	      height: 250,
+	  },
+	  '(min-width: 1800px)': {
+	      width: 640,
+	      height: 250,
+          mode: 'crop',
+	  }
+	} %}
+
+
+{% for module in entry.modules.level(1) %}
+{% switch module.type.handle %}	
+{% case "cluster" %}
+{%- set cluster ~%}
+<div class="bg_cluster {{ module.hintergrundfarbe ? module.hintergrundfarbe.class ~ ' py-5' : null }}" id="cluster_{{ module.id }}">
+	<div class="container {{ module.type.handle }} {{ module.hintergrundfarbe ? null : 'my-5' }}">
+		{% if module.ueberschrift is not empty -%}
+		<p class="text-uppercase font-weight-bold mb-4"><strong>{{ module.ueberschrift }}</strong></p>
+		{% endif %}
+		{%- if module.children is not empty -%}
+		<div class="row g-3">
+			{%- for card in module.children.all() %}
+			<div class="col {{ card.kartenbreite }}">
+        		{%- if card.coverFull %}
+        		{%- set backGroundImageAsset = card.linkfield.element.medienportalTitelbild.one() ??? card.linkfield.element.cover.one() ??? card.cover.one() -%}
+        		{%- set backGroundImage = craft.imager.transformImage(backGroundImageAsset, { width: 500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url -%}
+        		{% endif ~%}
+        		<div class="card h-100 {{ card.type.handle }} {{ card.coverFull == true ? 'text-white' }} {{ card.hintergrundfarbe.class is defined ? card.hintergrundfarbe.class ~ ' text-white' : null }} {{ (module.hintergrundfarbe is empty) and (card.hintergrundfarbe is empty) ? 'border bg_border-light' }}" style="{% if card.coverFull == true %}background-image: linear-gradient(187deg, rgba(255, 255, 255, 0) 0%, rgba(0, 14, 25, 1) 99%), url({{ backGroundImage }});background-repeat: no-repeat; background-size: cover;background-position: center center{% endif %}">
+					{%- switch card.type.handle -%}
+					{%- case "textkarte" -%}
+					{%- if card.cover is not empty and card.coverFull == false -%}
+					{%- set clusterCardImage = card.cover.one() -%}
+					{%- set clusterCardImageAttributes = {alt: clusterCardImage.title, title: clusterCardImage.title, class: 'cardimage cardimage-center' } -%}
+					<figure class="card-header">
+						{{ craft.images.pictureMedia(clusterCardImage, clusterCardImageTransforms, null, clusterCardImageAttributes) }}
+					</figure>
+    				{%- endif -%}
+					<div class="card-body p-4">
+        				{{- card.dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ card.dachzeile ~ '</p>')|raw -}}
+        				<p class="{{ card.leadCard ? 'h1' : 'h5' }} bg_text-blau"><b>{{ card.ueberschrift }}</b></p>
+        				{% if card.leadCard %}
+        					{{ (card.body|replace({'<p>':'<p class="lead">'}))|raw }}
+        				{% else %}
+        					{{ card.body }}
+        				{% endif %}
+        				{%- if not card.linkfield.isEmpty() -%}
+        				<p class="mt-3 bg_text-blau"><a class="text-decoration-none arrow-after {{ card.hintergrundfarbe is not null or card.coverFull == true ? ' white' : ' blau' }}" href="{{ card.linkfield }}" style="hyphens: none">{{ card.linkfield.getCustomText('Mehr') }}</a>
+        				{%- endif -%}
+    				</div>
+					{#- LINKKARTE -#}
+					{%- case "linkkarte" -%}
+    				{% if card.linkfield.hasElement %}
+    					<a href="{{ card.linkfield.element.url }}" class="text-decoration-none h-100 {{ card.coverFull == true ? 'text-white' : 'bg_hover-guv-blau' }}">
+    					{% if (card.linkfield.element.cover is not empty or card.linkfield.element.medienportalTitelbild is not empty) and card.coverFull == false %}
+    					{% set clusterCardImage = card.cover.one() ??? card.linkfield.element.cover.one() ??? card.linkfield.element.medienportalTitelbild.one() %}
+    					{% set clusterCardImageAttributes = {alt: clusterCardImage.title, title: clusterCardImage.title, class: 'cardimage cardimage-center' } %}
+    					<figure class="card-header">
+    						{% if card.linkfield.element.type == 'media' and card.cover is empty %}
+    							 <img src="{{ craft.imager.transformImage(clusterCardImage, { width: 160, height: 226, format: 'webp', mode: 'letterbox', webpImagickOptions: { lossless: 'true', method: '1' } }).url }}" alt="" style="width:auto" class="ms-4 mt-4 border bg_border-light">
+    						{% else %}
+    							{{craft.images.pictureMedia(clusterCardImage, clusterCardImageTransforms, null, clusterCardImageAttributes)}}
+    						{% endif %}
+    					</figure>
+    					{% endif %}
+        					<div class="card-body p-4">
+        						{% set dachzeile = card.dachzeile ??? card.linkfield.element.dachzeile ??? card.linkfield.element.medienart.one() %}
+        						{{ dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ dachzeile ~ '</p>')|raw }}
+        						<p class="h5 bg_text-blau"><b>{{ card.ueberschrift ??? card.linkfield.element.title }}</b></p>
+        						{% set description = card.body ??? card.linkfield.element.description ??? card.linkfield.element.intro %}
+        						{{ description ? description }}
+        						<p class="mt-3 bg_text-blau"><span class="arrow-after {{ card.hintergrundfarbe is not null or card.coverFull == true ? ' white' : ' blau' }}">{{ card.linkfield.getCustomText('Mehr') }}</span></p>
+        					</div>
+    					</a>
+    				{% else %}
+    					{% set clusterCardImage = card.cover.one() ??? null %}
+    					{% if clusterCardImage %}
+    					{% set clusterCardImageAttributes = {alt: clusterCardImage.title, title: clusterCardImage.title, class: 'cardimage cardimage-center' } %}
+    						<figure class="card-header">
+        						{{craft.images.pictureMedia(clusterCardImage, clusterCardImageTransforms, null, clusterCardImageAttributes)}}
+        					</figure>
+    					{% endif %}
+    					<a href="{{ card.linkfield }}" class="text-decoration-none h-100 {{ card.coverFull == true ? 'text-white' : 'bg_hover-guv-blau' }}">
+        					<div class="card-body p-4">
+        						{{ card.dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ card.dachzeile ~ '</p>')|raw }}
+        						<p class="h5 bg_text-blau"><b>{{ card.ueberschrift }}</b></p>
+        						{{ card.body }}
+        						<p class="mt-3 bg_text-blau"><span class="arrow-after {{ card.hintergrundfarbe is not null or card.coverFull == true ? ' white' : ' blau' }}">{{ card.linkfield.getCustomText('Mehr') }}</span></p>
+        					</div>
+    					</a>
+    				{% endif %}
+    				{#- LISTENKARTE -#}
+					{%- case "listenkarte" -%}
+					{%- set clusterCardImage = card.linkfield.element.medienportalTitelbild.one() ??? card.linkfield.element.cover.one() ??? card.cover.one() -%}
+					{%~ if clusterCardImage %}
+					{%- set clusterCardImageAttributes = {alt: clusterCardImage.title, title: clusterCardImage.title, class: 'cardimage cardimage-center' } -%}
+						<figure class="card-header">
+						{{ craft.images.pictureMedia(clusterCardImage, clusterCardImageTransforms, null, clusterCardImageAttributes) }}
+						</figure>
+					{% endif ~%}
+    				<div class="card-body p-4">
+						{{- card.dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ card.dachzeile ~ '</p>')|raw }}
+						{{ card.ueberschrift ? ('<p class="h6 mb-3"><b>' ~ card.ueberschrift ~ '</b></p>')|raw }}
+						{%~ if card.eintraege|length %}
+						{% set items = card.eintraege.with(['cover']).orderBy('postDate DESC').all() -%}
+						<ul class="{{ card.mitCover ? null : '' }}{{ card.arrowed ? ' arrowed' : null }}">
+							{% for entry in items -%}
+							<li class="{{- card.abstandUnten }} d-flex align-items-baseline">
+								<a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 {{ card.mitCover ? 'd-block d-flex' }} d-inline-block" href="{{ entry.sectionId == 17 ? entry.urlOriginal : entry.url }}">
+									{% if card.mitCover %}
+									{%- set listCoverTransforms = {
+									'(min-width: 1px)': {
+									      width: 115,
+									      height: 60,
+									      mode: 'crop',
+									  }
+									} -%}
+									{%- set listCoverAttributes = {alt: '', title: '', class: '' } -%}
+									<figure class="flex-shrink-0 mt-1 me-3">
+										{{craft.images.pictureMedia(entry.cover[0], listCoverTransforms, null, listCoverAttributes)}}
+									</figure>
+    								{%- endif -%}
+    								{%- if card.arrowed %}
+    									{{- entry.title -}}
+    								{% else ~%}
+									<div>
+										{%- if entry.type == 'termin' %}{{ entry.terminStart|date('d.m.Y') }} | {{ entry.ort }}<br>{% endif ~%}
+										<b>{{ entry.title }}</b><br>
+										{%- if entry.type == 'termin' -%}{% else %}<span class="bg_text-primary">
+										{% if card.mitCover %}
+										{{ entry.description | chop(limit=300, unit='c', append='…') }}
+										{% else %}
+										{{ entry.description | chop(limit=15, unit='w', append='…') }}
+										{% endif %}
+										</span>{% endif ~%}
+									</div>
+									{%- endif ~%}
+								</a>
+							</li>
+							{%- endfor ~%}
+						</ul>
+        				{%- endif ~%}
+        				{{ card.body ? card.body }}
+        				{%- if not card.linkfield.isEmpty() -%}
+        				<p class="mt-3 bg_text-blau"><a class="text-decoration-none arrow-after {{ card.hintergrundfarbe is not null or card.coverFull == true ? ' white' : ' blau' }}" href="{{ card.linkfield }}" style="hyphens: none">{{ card.linkfield.getCustomText('Mehr') }}</a>
+        				{%- endif -%}
+					</div>
+    				{#- APIKARTE -#}
+    				{%- case "apikarte" -%}
+    				<div class="card-body p-4">
+        				{{ card.dachzeile ? ('<p class="roof text-uppercasee mb-2">' ~ card.dachzeile ~ '</p>')|raw }}
+        				API
+    				</div>
+					{%- endswitch ~%}
+				</div>
+			</div>
+			{%~ endfor ~%}
+		</div>
+		{%- else -%}
+			no children
+		{%~ endif ~%}
+	</div>
+</div>
+{%- endset -%}
+
+		{{ cluster }}
+
+		{% if code is defined %}
+
+		<br>
+		<br>
+		<br>
+
+		<div class="container">
+
+		<small class="toggle-code">HTML</small>
+		<pre class="code">
+		<code class="language-html line-numbers">
+		{{- cluster|e -}}
+		</code>
+		</pre>
+
+		</div>
+
+		{% endif %}
+	
+		{% case "stoerer" %}
+
+		{% if module.coverFull == true %}
+    		{% set backGroundImageAsset = module.linkfield.element.medienportalTitelbild.one() ??? module.linkfield.element.cover.one() ??? module.cover.one() ??? null %}
+    		{% set backGroundImage = craft.imager.transformImage(backGroundImageAsset, { width: 1500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% endif %}
+    	{% set moduleCoverAsset = module.linkfield.element.medienportalTitelbild.one() ??? module.linkfield.element.cover.one() ??? module.cover.one() ??? null %}
+    	{% set moduleCover = craft.imager.transformImage(moduleCoverAsset, { width: 1500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% set dachzeile = module.dachzeile ??? module.linkfield.element.dachzeile %}
+    	{% set description = module.body ??? module.linkfield.element.description ??? module.linkfield.element.intro %}
+
+		{# {% if module.cover is not empty %}
+    		{% set backGroundImage = craft.imager.transformImage(backGroundImageAsset, { width: 1000, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% else %}
+    		{% set backGroundImage = null %}
+    	{% endif %} #}
+
+
+    	<div class="{{ module.hintergrundfarbe ? module.hintergrundfarbe.class ~ ' py-5' : null }}">
+    		<div class="container {{ module.type.handle }} py-5">
+				<div class="" style="{% if module.coverFull == true %}background-image: linear-gradient(187deg, rgba(255, 255, 255, 0) 0%, rgba(0, 14, 25, 1) 99%), url({{ backGroundImage }});background-repeat: no-repeat; background-size: cover;background-position: center center;{% endif %}">
+					<div class="row {{ module.coverFull ? 'justify-content-center text-center' }}">
+			 			<div class="col col-md-7 {{ (module.coverFull == true) or (module.hintergrundfarbe) ? 'p-5 text-white' : 'py-4 pe-5' }}">
+			        		{{ dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ dachzeile ~ '</p>')|raw }}
+			 				<p class="h1 display-4 bg_text-blau "><b>{{ module.ueberschrift ??? module.linkfield.element.title }}</b></p>
+				 			<p class="lead">{{ description|striptags }}</p>
+				 			{% if module.linkfield is not null and module.linkfield is not empty %}
+        					<p class="mt-3 bg_text-blau lead"><a class="text-decoration-none arrow-after {{ module.hintergrundfarbe is not null or module.coverFull == true ? ' white' : ' blau' }}" href="{{ entry.sectionId == 17 ? entry.urlOriginal : module.linkfield }}">{{ module.linkfield.getCustomText('Mehr') }}</a>
+        					{% endif %}
+			 			</div>
+			 			{% if module.coverFull == false and moduleCover is not empty %}
+			 			<div class="col col-md-5 ps-0">
+			 				<figure class="h-100">
+        						<img src="{{ moduleCover }}" alt="" class="h-100 cardimage cardimage-center">
+        					</figure>
+        				</div>
+			 			{% endif %}
+			 		</div>
+				</div>
+			</div>
+    	</div>
+
+
+    	{% case "spezial" %}
+
+		{% if module.coverFull == true %}
+    	{% set backGroundImageAsset = module.linkfield.element.medienportalTitelbild.one() ??? module.linkfield.element.cover.one() ??? module.cover.one() ??? null %}
+    	{% set backGroundImage = craft.imager.transformImage(backGroundImageAsset, { width: 1500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% endif %}
+    	{% set moduleCoverAsset = module.linkfield.element.medienportalTitelbild.one() ??? module.linkfield.element.cover.one() ??? module.cover.one() ??? null %}
+    	{% if moduleCoverAsset %}
+    		{% set moduleCover = craft.imager.transformImage(moduleCoverAsset, { width: 1500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% endif %}
+    	
+    	{% set dachzeile = module.dachzeile ??? module.linkfield.element.dachzeile %}
+    	{% set description = module.body ??? module.linkfield.element.description ??? module.linkfield.element.intro %}
+
+		{# {% if module.cover is not empty %}
+    		{% set backGroundImage = craft.imager.transformImage(backGroundImageAsset, { width: 1000, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+    	{% else %}
+    		{% set backGroundImage = null %}
+    	{% endif %} #}
+
+
+    	<div class="{{ module.hintergrundfarbe.class ??? null }} py-5">
+    		<div class="container {{ module.type.handle }} my-5">
+				<div class="p-3" style="{% if module.coverFull == true %}background-image: linear-gradient(187deg, rgba(255, 255, 255, 0) 0%, rgba(0, 14, 25, 1) 99%), url({{ backGroundImage }});background-repeat: no-repeat; background-size: cover;background-position: center center;{% endif %}">
+					<div class="p-3 border border-light">
+						{# <div class="text-center">
+							{{ dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ dachzeile ~ '</p>')|raw }}
+							<p class="text-uppercase text-white mb-3 fw-bold" style="letter-spacing: .2em;">Spezial</p>
+						</div> #}
+					
+						<div class="row {{ (module.coverFull == true) or (module.hintergrundfarbe) ? 'text-white pb-3 pt-3' }}">
+
+				 			<div class="col col-md-7 {{ (module.coverFull == true) or (module.hintergrundfarbe) ? 'px-2 px-md-5 text-white' : 'py-4 pe-5' }}">
+				        		{{ dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ dachzeile ~ '</p>')|raw }}
+				 				<p class="h1 display-4 bg_text-blau "><b>{{ module.ueberschrift ??? module.linkfield.element.title }}</b></p>
+					 			<p class="lead">{{ description|striptags }}</p>
+					 			{# {% if module.linkfield is not empty %}
+	        					<p class="mt-3 bg_text-blau lead">
+	        						<a class="text-decoration-none arrow-after {{ module.hintergrundfarbe is not null or module.coverFull == true ? ' white' : ' blau' }}" href="{{ entry.sectionId == 17 ? entry.urlOriginal : module.linkfield }}">{{ module.linkfield.getCustomText('Mehr') }}</a>
+	        					</p>
+	        					{% endif %} #}
+				 			</div>
+				 			<div class="col col-md-5">
+				 				<p class="h4 mb-4">Unter anderem diese Medien:</p>
+				 				<a href="{{ entry.sectionId == 17 ? entry.urlOriginal : module.linkfield }}" class="text-decoration-none">
+					 				<div class="row">
+					 					{% for product in module.linkfield.element.produkte.with(['medienportalTitelbild','medienart']).limit(4).all() %}
+					 					<div class="col-6 mb-3">
+					 						<div class="d-flex">
+					 							<figure class="flex-shrink-0 me-2">
+					 							<img src="{{ craft.imager.transformImage(product.medienportalTitelbild[0], { width: 60, format: 'webp', mode: 'letterbox', webpImagickOptions: { lossless: 'true', method: '1' } }).url }}" alt="" style="width:auto" class="">
+					 						</figure>
+					 						<p><span class="mt-1" style="hyphens:auto;">{{ product.title }}</span></p>
+					 						</div>
+					 					</div>
+					 					{% endfor %}
+					 				</div>
+				 				</a>
+				 				{# <ul class="arrowed">
+									{% for product in module.linkfield.element.produkte %}
+										<li class="mb-1">{{ product.title }}</li>
+									{% endfor %}
+				 				</ul> #}
+				 			</div>
+				 			<div class="w-100"></div>
+
+				 			<div class="col col-12 {{ (module.coverFull == true) or (module.hintergrundfarbe) ? 'px-2 px-md-5 text-white' : 'py-4 pe-5' }}">
+				 				{% if module.linkfield is not empty %}
+	        					<p class="mt-3 lead">
+	        						<a class="text-decoration-none arrow-after {{ module.hintergrundfarbe is not null or module.coverFull == true ? ' white' : ' blau' }}" href="{{ entry.sectionId == 17 ? entry.urlOriginal : module.linkfield }}">{{ module.linkfield.getCustomText('Mehr') }}</a>
+	        					</p>
+	        					{% endif %}
+				 			</div>
+
+				 			{# {% if module.coverFull == false and moduleCoverAsset is not empty %}
+				 			<div class="col col-md-5 ps-0">
+				 				<figure class="h-100">
+	        						<img src="{{ moduleCover }}" alt="" class="h-100 cardimage cardimage-center">
+	        					</figure>
+	        				</div>
+				 			{% endif %} #}
+				 		</div>
+
+					</div>
+					
+				</div>
+			</div>
+    	</div>
+
+    	{% case "suchfeldGross" %}
+
+    	{# 
+    	{% set backGroundImage = craft.imager.transformImage(craft.assets.id(20956).one(), { width: 1500, format: 'webp', webpImagickOptions: { lossless: 'true', method: '1' } }).url %}
+		<div class="border-bottom bg_border-light text-white" style="background-image: linear-gradient(187deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 14, 25, 1) 99%), url({{ backGroundImage }});background-repeat: no-repeat; background-size: cover;background-position: center center;"> 
+		#}
+    	
+    	<div class="border-bottom bg_border-light bg_bg-dguv-blau">
+		  <div class="container py-5">
+		    <div class="row justify-content-center">
+		      <div class="col-7">
+		        <h1 class="display-6 fw-bold mb-2 text-white">BG ETEM Medienportal</h1>
+		        <p class="mb-4 lead text-white ">Wählen Sie aus {{ alleProdukte|length }} Medien.</p>
+		        <section class="mb-5">
+		          <form action="{{ url('suche') }}" class="mb-5 suche-gross" id="suchform">
+		            <div class="input-group d-flex">
+		            <span class="input-group-btn">
+		                <button type="submit" class="btn btn-default mp-search p-3 bg-white border-0" data-dashlane-rid="0dbc300ea9258763" data-dashlane-label="true" data-form-type="">
+		                  <span class="d-flex justify-content-center align-items-center">
+		                    <svg width="32" height="32" class="DFW_E nT46U NIGLg" viewBox="0 0 32 32" version="1.1" aria-hidden="false"><desc lang="de">Eine Lupe</desc><path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z" fill="#004994"></path></svg>
+		                  </span>
+		                </button>
+		              </span>
+		              <input type="text" name="suchtext" placeholder="Suchbegriff + Enter" class="form-control mp-search-input border-0" data-dashlane-rid="bd0f2ad146469fb2" data-form-type="">
+		            </div>        
+		          </form>
+		        </section>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		{% case "sliderProdukte" %}    	
+
+    	{% set latestArtikel = craft.products().with(['medienportalTitelbild','medienart']).limit(12).orderBy('postDate DESC') %}
+    	<div class="{{ module.hintergrundfarbe.class ??? null }} py-5">
+
+			<div class="container my-5 bg_slider">
+				<p class="text-uppercase font-weight-bold mb-4"><strong>Neueste Medien</strong></p>
+			  <div class="my-slider row g-3">
+			  {% for card in latestArtikel %}
+			  {% set clusterCardImage = card.medienportalTitelbild[0] ??? craft.assets.id(15178).one() %}
+			    <div class="col col-12 col-lg-3">
+			      <div class="card h-100 linkkarte {{ card.hintergrundfarbe.class is defined ? card.hintergrundfarbe.class ~ ' text-white' : null }} {{ (module.hintergrundfarbe is empty) and (card.hintergrundfarbe is empty) ? 'border bg_border-light' }}">
+			        <a href="{{ card.url }}" class="text-decoration-none bg_hover-dguv-blau">
+			          <figure>
+			            {% if clusterCardImage %}
+			              <img src="{{ craft.imager.transformImage(clusterCardImage, { width: 160, height: 226, format: 'webp', mode: 'letterbox', webpImagickOptions: { lossless: 'true', method: '1' } }).url }}" alt="" style="width:auto" class="ms-4 mt-4 border bg_border-light">
+			            {% endif %}
+			          </figure>
+			          <div class="card-body p-4">
+			            {% set dachzeile = card.medienart[0] ??? null %}
+			            {{ dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ dachzeile ~ '</p>')|raw }}
+			            <p class="h6 bg_text-blau"><b>{{ card.title }}</b></p>
+			            {# {% set description = card.description %}
+			            {{ description ? description }} #}
+			            <p class="mt-3 bg_text-blau"><span class="arrow-after {{ card.hintergrundfarbe is not null or card.coverFull == true ? ' white' : ' blau' }}">Mehr</span></p>
+			          </div>
+			        </a>
+			      </div>
+			    </div>
+			  {% endfor %}
+			  </div>
+			  <div id="custom_controlsContainer" class="mt-4">
+			    <button id="prev" class="bg_button--prev mx-2"></button>
+			    <button id="next" class="bg_button--next mx-2"></button>
+			  </div>
+			</div>
+		</div>
+
+		{%- js -%}
+
+		 var slider = tns({
+		    container: '.my-slider',
+		    slideBy: 1,
+		    autoplay: false,
+		    loop: false,
+		    gutter: 0,
+		    edgePadding: 0,
+		    nav: false,
+		    controlsContainer: "#custom_controlsContainer",
+		    prevButton: '#prev', 
+		    nextButton: '#next', // String selector
+		    rewind: false,
+		    responsive: {
+		    0: {
+		        items: 1.2
+		      },
+		      576: {
+		        items: 1.6
+		      },
+		      768: {
+		        items: 2.2
+		      },
+		      992: {
+		        items: 3.2
+		      },
+		      1200: {
+		      	items: 4.2
+		      }
+		     }
+		  });
+
+		{%- endjs -%}
+		
+		
+	
+	
+		{% default %}
+		
+	
+	{% endswitch %}
+	
+	
+{% endfor %}

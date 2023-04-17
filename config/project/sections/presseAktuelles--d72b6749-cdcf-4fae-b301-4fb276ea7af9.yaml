@@ -1,0 +1,39 @@
+defaultPlacement: end
+enableVersioning: true
+handle: presseAktuelles
+name: Presse-Aktuelles
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: 'presse-aktuelles/{slug}'
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry
+    uriFormat: 'presse-aktuelles/{slug}'
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry
+    uriFormat: 'presse-aktuelles/{slug}'
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry
+    uriFormat: 'presse-aktuelles/{slug}'
+type: channel

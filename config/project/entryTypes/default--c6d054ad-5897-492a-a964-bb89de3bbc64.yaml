@@ -1,0 +1,144 @@
+fieldLayouts:
+  f439cf83-f047-4844-8dec-eb1121c02999:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9e8f3955-976e-46f2-b55c-139881959a16
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: db27d238-a584-4597-92e6-9a9cfa3e6b76 # Jahr
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 506fe36f-165e-4e17-ab87-29ba7550d634
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ec48655-7862-4582-9ec2-593d4bd630a3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5f8f596f-03c8-4237-b30f-078a4e4507c1 # Ausgabe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: abfb28bb-89b6-4648-8c88-eb7dd326044d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b9177b97-7003-4a68-bb72-251caf8d875a # PDF
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0169597c-92e9-4bbe-9886-a83d73955ae5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3ab9694f-2302-4f74-b7d0-62d61fc3916f # Themenüberschrift
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0c357085-404d-4361-ade8-a7c18cdd0ee3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 4afd1266-332e-45fa-9cb6-be5f79ce23eb
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: c9786807-2d61-4e69-81a0-5f5a8e11b89a # Bühnen-Beiträge
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d8f3c38-d38f-4585-960d-9aedd3312974
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fc6a7c30-5ef8-4afc-bddf-ed8a7f1e928d # ETEM +
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ad88e72-7ecb-4000-bb76-329eb7c493df
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 20672963-5e68-4c37-9c2c-d8cc44335ac0 # Themen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b36c797-36ac-4f3e-a7ac-7b76ff8eacb6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5bf014ba-5954-47ed-b7bd-c6a7ea1fe086
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 8bb547f6-733a-4d2f-a80b-9e11ade49f9b # [Magazin] Ausgaben
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

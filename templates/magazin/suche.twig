@@ -1,0 +1,154 @@
+{# 
+medien/index 
+#}
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout" %}
+
+{% set searchQuery = craft.app.request.getParam('suchtext') %}
+
+{% if searchQuery %}
+	{% set artikel = craft.entries.sectionId(1).with(['titlestoryCover','cover']).search(searchQuery).limit(10).orderBy('score') %}
+{% endif %}
+
+
+{# {% set filterCategories = craft.categories()
+  .groupId('7,8,4,3')
+  .all()
+ %}
+ {% set filterCategoriesGrouped = filterCategories|group(e => e.group) %} #}
+
+
+
+{% paginate artikel as pageInfo, pageEntries %}
+
+{# {% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['medienStart']
+}) %} #}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 388,
+        ratio: 16/9,
+        mode: 'crop',
+    }
+} %}
+
+
+
+
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+
+			<section class="listings clearfix my-5" id="results">
+				<div class="row align-items-baseline mb-2">
+				{% if searchQuery %}
+					<div class="col-7 text-start">
+						<b>Suchergebnisse für „{{ searchQuery }}“</b>
+					</div>
+					<div class="col-5 text-end">
+						<small>Gefundene Artikel: {{ artikel|length }}</small>
+					</div>
+				</div>
+				{% else %}
+					<div class="col-12 text-end">
+						<small>Gefundene Artikel: {{ artikel|length }}</small>
+					</div>
+				{% endif %}
+				<ul class="listing m-0">
+					{% for artikel in pageEntries %}
+					<li class="card listing__item mb-5">
+						
+							<div class="item-wrapper has-image">			
+								<div class="image">
+									{% set artikelCover = artikel.titlestoryCover[0] ??? artikel.cover[0] %}
+									{% set artikelCoverAttributes = { alt: '', title: artikelCover.title ??? 'BGETEM Logo' } %}
+									<figure class="">
+										{% if not artikelCover == null %}
+											{{craft.images.pictureMedia(artikelCover, artikelCoverTransforms, null, artikelCoverAttributes)}}
+										{% else %}
+										<img src="../img/etem_search_replace.svg" alt="">
+										{% endif %}
+									</figure>
+								</div>
+								<div class="item-contents">
+									<a href="{{ artikel.url }}">
+										<div class="card-header">
+											<div class="d-flex justify-content-space-between">
+												{{ artikel.dachzeile ? ('<small class="roof text-uppercase mb-2">' ~ artikel.dachzeile ~ '</small>')|raw }}
+												{{ artikel.ausgabeEintrag is not empty ? ('<small class="ms-auto mb-2 bg_fv-lining-nums">etem ' ~ artikel.ausgabeEintrag.one().title ~ '</small>')|raw }}
+											</div>
+											<h3>{{ artikel.title}}</h3>
+										</div>
+										<div class="card-body p-0">
+											<p>{{ artikel.intro }}</p>
+										</div>
+									</a>
+									{% if artikel.tagsMagazin|length %}
+										<div class="tags mt-3">
+											<small>
+												{% for tag in artikel.tagsMagazin %}
+													<a href="{{ url('tags/'~tag.slug) }}" class="me-2">#{{ tag.title }}</a>
+												{% endfor %}
+											</small>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% if pageInfo.total > 10 %}
+				<div class="pagination my-5">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination small justify-content-center">
+							{% if pageInfo.prevUrl %}
+							<li class="page-item">
+								<a class="page-link" href="{{ pageInfo.prevUrl }}">
+									<svg viewBox="118.687 114.053 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+										<g style="" transform="matrix(-1, 0, 0, -1, 409.562164, 390.553284)">
+											<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+										</g>
+									</svg>
+								</a>
+							</li>
+							{% endif %}
+							{% for page, url in pageInfo.getPrevUrls(10) %}
+							<li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+							{% endfor %}
+							<li class="page-item  active"><a class="page-link" href="#">{{ pageInfo.currentPage }}</a></li>
+							{% for page, url in pageInfo.getNextUrls(10) %}
+							<li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+							{% endfor %}
+							{% if pageInfo.nextUrl %}
+							<li class="page-item">
+								<a class="page-link" href="{{ pageInfo.nextUrl }}">
+									<svg viewBox="0 0 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+										<g style="" transform="matrix(1, 0, 0, 1, -275.274994, -258.549988)">
+											<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+										</g>
+									</svg>
+								</a>
+							</li>
+							{% endif %}
+						</ul>
+					</nav>
+				</div>
+				{% endif %}
+			</section>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

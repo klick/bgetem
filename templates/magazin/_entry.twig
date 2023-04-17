@@ -1,0 +1,211 @@
+{% if entry is not defined or entry is null %}
+    {% exit 404 %}
+{% endif %}
+
+{% do craft.blitz.options({
+    tags: ['artikel']
+}) %}
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout" %}
+
+
+
+{% block content %}
+
+{# <a href="{{ currentSite.baseUrl }}">Start</a> #}
+
+{% scss %}
+/*! Comment */
+article section.article-body div.text-1 {
+	> figure:first-of-type,
+	> div.caption:first-of-type,
+	> p:first-of-type > img {
+		display: none;
+	}
+}
+{# article section.article-body div.text-1 div.caption:first-child {
+	display: none;
+} #}
+{# article section.article-body div.text-1 img.image-inline:first-of-type {
+	display: none;
+} #}
+{# article section.article-body figure.cover figcaption * {
+	&:not(.caption) {
+	display: none;
+	}
+} #}
+
+article section.article-body figure.cover figcaption * {
+	&.caption {
+	&:not(:first-of-type) {
+	display: none;
+	}
+	
+	}
+}
+
+
+
+.footer {
+    .copyright {
+        color: silver;
+    }
+}
+{% endscss %}
+
+
+<article>
+	<div class="container my-3 my-md-5">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-7">
+				<header>
+					{{ (entry.dachzeile ? '<p class="roof-row upper">' ~ entry.dachzeile ~ '</p>')|raw }}
+					<h1>{{ entry.title }}</h1>
+					{# {{ entry.text | getFirstImage }} #}
+					{% if entry.intro is not empty %}
+					<div class="dot">
+						<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+						</svg>
+					</div>
+					<p class="intro description bold">{{ entry.intro }}</p>
+					{% endif %}
+					<p class="bi bi-hourglass-split"><span class="ps-1">Lesedauer: {{ entry.readTime }}{{ entry.readTime > 1 ? ' Minuten' : ' Minute' }}</span></p>
+				</header>
+			</div>
+		</div>
+	</div>
+
+	<section class="article-body clearfix">
+		<div class="container my-3 my-md-5">
+			<figure class="cover">
+			{% set imgTransforms = {
+			  '(max-width: 1199px)': {
+			      width: 718,
+			      height: 416,
+			  },
+			  '(min-width: 1200px)': {
+			      width: 1310,
+			      height: 746,
+			  }
+			} %}
+			{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
+				{% if entry.titlestoryCover is not empty %}
+				{{ craft.images.pictureMedia(entry.titlestoryCover[0], imgTransforms, null, cardImgAttributes) }}
+				{% elseif entry.cover is not empty %}
+				{{ craft.images.pictureMedia(entry.cover[0], imgTransforms, null, cardImgAttributes) }}
+				{% endif %}
+				<figcaption>
+					{{ entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
+				</figcaption>
+			</figure>
+		</div>
+
+
+
+		{# {% set LaImage = getFirstImage(entry.text) %}
+		<pre>{{ dump(LaImage) }}</pre> #}
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-7">
+
+					<div class="text-1 mb-5">
+					{{ (entry.text | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+					</div>
+
+
+
+					{% if entry.infobox is not empty %}
+					<div class="infobox infobox-1 mt-5 mt-lg-0 me-lg-5 mb-5 border border-dguv-cyan border-dashed p-3 p-md-4{% if entry.text2 is not empty %} floating mt-lg-0 me-lg-5{%endif %}">
+						{{ entry.infobox }}
+					</div>
+					{% endif %}
+
+					{% if entry.galerieposition == 'oben' and entry.video1 is not empty %}
+						{{ entry.video1 }}
+						<script src="//e.video-cdn.net/v2/embed.js"></script>
+					{% endif %}
+
+					{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
+
+					{% if  entry.text2 is not empty %}
+					<div class="text-2 mt-5 mb-5">
+						{{ (entry.text2 | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+					</div>
+					{% endif %}
+
+					{% if entry.infobox2 is not empty %}
+					<div class="infobox infobox-2 mt-5 mb-5 border border-dguv-cyan border-dashed p-3 p-md-4{% if entry.text3 is not empty %} floating mt-lg-0 me-lg-5{%endif %}">
+						{{ entry.infobox2 }}
+					</div>
+					{% endif %}
+
+					{% if  entry.text3 is not empty %}
+					<div class="text-3 mt-5 mb-5">
+						{{ (entry.text3 | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+					</div>
+					{% endif %}
+
+
+					
+
+					
+
+					{% if entry.galerieposition != 'oben' and entry.video1 is not empty%}
+					<div class="video mt-5 mb-5">
+						{{ entry.video1 }}
+					</div>
+					{% endif %}
+
+					{% if entry.video2 is not empty %}
+					<div class="video mt-5 mb-5">
+						{{ entry.video2 }}
+					</div>
+					{% endif %}
+
+					{% if entry.video3 is not empty %}
+					<div class="video mt-5 mb-5">
+						{{ entry.video3 }}
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+	{% if entry.infobox3 is not empty %}
+	<aside>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-7 col-md-7">
+					<div class="infobox infobox-abbinder mt-5 mb-5 border-top bg_border-dguv-blau  p-3 p-md-5 bg_bg-dguv-grau-leicht">
+						{{ entry.infobox3|replace({'<h4>':'<p>','</h4>':'</p>'})|raw }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</aside>
+	{% endif %}
+</article>
+
+<div class="container mb-5">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-7">
+			{{ include('_includes/component-sharing-buttons.twig') }}
+
+			{# {{ entry.sammlung.value }} #}
+
+			{# {% if entry.titlestoryCover.one() is not null %}
+				<img src="{{ entry.titlestoryCover.one().url }}" alt="">
+			{% endif %}
+
+			{% if entry.cover is not null %}
+				<img src="{{ entry.cover.one().url }}" alt="">
+			{% endif %} #}
+
+			<p><a href="/magazin/{{ entry.ausgabe }}">Ausgabe {{ entry.ausgabe }}</a></p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+fieldLayouts:
+  3ed70950-a370-4c43-9dab-e872d14cddfb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: a3dea7ba-d860-41b0-a0bc-b4c482cfee64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9b390404-5240-453f-8b9a-ca16a19f9c67
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 9c8b6af8-71f4-4940-822f-aa08e726879a
+        userCondition: null
+handle: bgetemIntranetHome
+hasTitleField: true
+name: '[BGETEM INtranet] Home'
+section: e0559d9c-74af-47ef-9dc8-3789f92177c5 # [BGETEM INtranet] Home
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

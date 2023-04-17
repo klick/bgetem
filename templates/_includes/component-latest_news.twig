@@ -1,0 +1,29 @@
+{% import '_macros.twig' as macros %}
+
+{% if collectionContents is defined and collectionContents != null %}
+
+<ul class="listing">
+	{% for item in collectionContents.content_list %}
+	<li class="listing__item mb-5">
+		<a href="{{ item.url|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+			<div class="item-wrapper {{ item.image is defined and item.image is not empty ? 'has-image'}}">
+				{% set latestNewsImage = item.image|split('"')[1] %}
+				{% set latestNewsImageParams = [
+					{ width: 500, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+				] %}
+				{% if latestNewsImage|length %}
+				<div class="image">
+					{{ macros.imgFullWidth(latestNewsImage, null, false, latestNewsImageParams, false) }}
+				</div>
+				{% endif %}
+				<div class="description">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+				</div>
+			</div>
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endif %}

@@ -1,0 +1,25 @@
+{% import '_macros.twig' as macros %}
+<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+	<header>
+		{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+		<h1>{{feed.title}}</h1>
+		{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+		<p class="short-description bold">{{ feed.description.data }}</p>
+		{% endif %}
+		{# {% if feed.description is defined and feed.description is not empty %}
+		<p class="short-description bold">{{ feed.description }}</p>
+		{% endif %} #}
+		{% if feed['@type'] == 'Document' and feed.creators is defined %}
+		<p class="author-byline upper">{{feed.creators|join(', ', ' und ') }}{{feed.modification_date is defined ? ' | ' ~ feed.modification_date|date }}</p>
+		{% endif %}
+	</header>
+	<section class="article-body clearfix">
+		{% if feed.embed is defined %}
+		{{ feed.embed|raw }}
+	{% endif %}
+		{{ feed.text is defined ? macros.text(feed.text) : null }}
+	</section>
+	<aside>
+		{{ macros.entryMeta(feed.modification_date is defined ? feed.modification_date|date : null, feed.webcode is defined ? feed.webcode : null) }}
+	</aside>
+</article>

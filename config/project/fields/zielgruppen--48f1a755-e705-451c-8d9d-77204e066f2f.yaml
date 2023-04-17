@@ -1,0 +1,23 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: zielgruppen
+instructions: null
+name: Zielgruppen
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: true
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: false
+  source: 'group:512f63e9-3ab8-4726-a143-18e9ad2147e6' # Zielgruppen
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

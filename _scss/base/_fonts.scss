@@ -1,0 +1,118 @@
+// @font-face{
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/LightItalic/OpenSans-LightItalic.woff?v=1.101) format("woff");
+//     font-weight:300;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"UnitWeb";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/LightItalic/OpenSans-LightItalic.woff?v=1.101) format("woff");
+//     font-weight:300;
+//     font-style:italic
+// }
+// @font-face{
+//     font-family:"DGUVMetaWeb";
+//     src:url(../fonts/DGUVMetaWeb-Normal.woff) format("woff");
+//     font-weight:400;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"DGUVMetaWeb";
+//     src:url(../fonts/DGUVMetaWeb-Bold.woff) format("woff");
+//     font-weight:600;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"UnitWeb";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/Italic/OpenSans-Italic.woff?v=1.101) format("woff");
+//     font-weight:400;
+//     font-style:italic
+// }
+// @font-face{
+//     font-family:"UnitWeb";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/Semibold/OpenSans-Semibold.woff?v=1.101) format("woff");
+//     font-weight:600;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"UnitWeb";
+//     src:url(../UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/SemiboldItalic/OpenSans-SemiboldItalic.woff?v=1.101) format("woff");
+//     font-weight:600;
+//     font-style:italic
+// }
+// @font-face{
+//     font-family:"UnitWeb";
+//     src:url(../fonts/UnitWeb/UnitWebPro-Bold.woff) format("woff"),url(../fonts/UnitWeb/UnitWebPro-Bold.woff) format("woff");
+//     font-weight:700;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"Open Sans";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/BoldItalic/OpenSans-BoldItalic.woff?v=1.101) format("woff");
+//     font-weight:700;
+//     font-style:italic
+// }
+// @font-face{
+//     font-family:"Open Sans";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/ExtraBold/OpenSans-ExtraBold.woff?v=1.101) format("woff");
+//     font-weight:800;
+//     font-style:normal
+// }
+// @font-face{
+//     font-family:"Open Sans";
+//     src:url(../fonts/UnitWeb/UnitWebPro) format("woff2"),url(fonts/open_sans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff?v=1.101) format("woff");
+//     font-weight:800;
+//     font-style:italic
+// }
+
+
+
+@font-face {
+    font-family: 'DGUVMetaWeb';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/dguvmetaweb-normal.woff?#iefix) format("embedded-opentype"), url(../fonts/dguvmetaweb-normal.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'DGUVMetaWeb';
+    font-style: italic;
+    font-weight: 400;
+    src: url(../fonts/dguvmetaweb-normalita.woff?#iefix) format("embedded-opentype"), url(../fonts/dguvmetaweb-normalita.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'DGUVMetaWeb';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/dguvmetaweb-bold.woff?#iefix) format("embedded-opentype"), url(../fonts/dguvmetaweb-bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: 'DGUVMetaWeb';
+    font-style: italic;
+    font-weight: 700;
+    src: url(../fonts/dguvmetaweb-boldita.woff?#iefix) format("embedded-opentype"), url(../fonts/dguvmetaweb-boldita.woff) format("woff");
+}
+
+@font-face {
+  font-family: "axel";
+  src:url("../fonts/axel/Axel-Regular.eot");
+  src:url("../fonts/axel/Axel-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/axel/Axel-Regular.woff") format("woff"),
+    url("../fonts/axel/Axel-Regular.ttf") format("truetype"),
+    url("../fonts/axel/Axel-Regular.svg#winter") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "axel";
+  src:url("../fonts/axel-bold/Axel-Bold.eot");
+  src:url("../fonts/axel-bold/Axel-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/axel-bold/Axel-Bold.woff") format("woff"),
+    url("../fonts/axel-bold/Axel-Bold.ttf") format("truetype"),
+    url("../fonts/axel-bold/Axel-Bold.svg#winter") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+

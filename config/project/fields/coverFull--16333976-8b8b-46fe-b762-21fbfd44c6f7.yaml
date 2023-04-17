@@ -1,0 +1,14 @@
+columnSuffix: bpyumdlx
+contentColumnType: boolean
+fieldGroup: cd49009d-49c7-44c2-adce-81651a699347 # BGHW
+handle: coverFull
+instructions: null
+name: 'Cover Full'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,19 @@
+columnSuffix: nyfpuhxd
+contentColumnType: text
+fieldGroup: 47c9e39d-3647-44d3-8396-c4633530fb7a # User
+handle: userOrt
+instructions: null
+name: 'User Ort'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

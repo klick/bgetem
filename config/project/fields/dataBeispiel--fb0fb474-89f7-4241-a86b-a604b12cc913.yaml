@@ -1,0 +1,14 @@
+columnSuffix: rsmviiie
+contentColumnType: boolean
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: dataBeispiel
+instructions: null
+name: 'Data Beispiel'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

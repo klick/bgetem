@@ -1,0 +1,7 @@
+allowPublicRegistration: true
+defaultGroup: d83a6862-1462-4021-9ab2-032bb27d4e55 # Keycloak
+photoSubpath: null
+photoVolumeUid: 43ce67ae-cfa2-4680-9235-dd9546b9803e # Bilder Magazin
+requireEmailVerification: true
+suspendByDefault: false
+validateOnPublicRegistration: false

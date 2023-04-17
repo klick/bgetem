@@ -1,0 +1,6 @@
+siteUid: 265b612b-3848-4489-a762-54ddab4e55af # BG ETEM Intranet
+sortOrder: 5
+template: bgetem-intranet/css-fixes.twig
+uriParts:
+  - css-fixes
+uriPattern: css-fixes

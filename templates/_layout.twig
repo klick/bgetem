@@ -1,0 +1,375 @@
+{% set jsonLdContainer = seomatic.jsonLd.container() %}
+{% do jsonLdContainer.include(false) %}
+{% set scriptContainer = seomatic.script.container() %}
+{% do scriptContainer.include(false) %}
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="UTF-8">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#004993">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-config" content="/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+		<meta name="robots" content="noindex,nofollow">	
+		{% hook 'seomaticRender' %}
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+		<!-- JavaScript Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+		
+		{# <link href="http://mmenu.localhost/dist/mmenu.css" rel="stylesheet" /> #}
+	</head>
+	<body>
+
+		<!-- Header -->
+
+		<header class="header-global py-4 py-lg-5">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-6">
+						<a class="link-home me-auto" href="{{ currentSite.baseUrl }}{{ craft.entries.section('ausgaben').one().slug }}" title="Zur Ausgabe {{ craft.entries.section('ausgaben').one().title }} der etem.">
+							<svg class="logo-etem" viewBox="91.016 167.276 263.207 87.514" xmlns="http://www.w3.org/2000/svg">
+								<path d="M 144.349 221.274 L 144.349 219.811 C 144.349 203.984 142.487 197.733 136.768 191.881 C 132.246 187.226 125.995 184.699 118.813 184.699 C 110.833 184.699 104.316 187.625 98.996 193.876 C 93.41 200.526 91.016 207.708 91.016 218.88 C 91.016 240.825 102.055 254.125 120.409 254.125 C 128.921 254.125 136.901 251.199 142.753 245.879 L 138.763 239.229 C 134.108 243.485 128.921 245.48 122.537 245.48 C 115.887 245.48 109.769 243.086 106.045 237.367 C 103.784 233.909 102.986 229.121 102.986 222.87 L 102.986 221.274 Z M 133.31 213.427 L 102.986 213.427 C 103.518 199.728 108.838 192.812 118.281 192.812 C 123.335 192.812 127.99 195.073 130.251 198.664 C 132.246 201.856 133.177 206.245 133.31 213.427 Z M 190.234 186.428 L 173.609 186.428 C 173.609 178.581 174.673 169.404 174.939 167.276 L 164.033 169.67 C 163.767 171.798 162.969 180.709 162.969 186.428 L 154.324 186.428 L 154.324 194.275 L 162.969 194.275 L 162.969 239.761 C 162.969 246.411 164.698 250.667 169.353 252.928 C 171.88 254.125 174.54 254.79 177.998 254.79 C 182.653 254.79 186.377 253.859 189.702 252.13 L 188.239 245.48 C 186.377 246.411 184.648 246.81 181.722 246.81 C 175.205 246.81 173.21 244.283 173.21 236.968 L 173.21 194.275 L 187.042 194.275 L 190.234 186.428 Z M 252.877 221.274 L 252.877 219.811 C 252.877 203.984 251.015 197.733 245.296 191.881 C 240.774 187.226 234.523 184.699 227.341 184.699 C 219.361 184.699 212.844 187.625 207.524 193.876 C 201.938 200.526 199.544 207.708 199.544 218.88 C 199.544 240.825 210.583 254.125 228.937 254.125 C 237.449 254.125 245.429 251.199 251.281 245.879 L 247.291 239.229 C 242.636 243.485 237.449 245.48 231.065 245.48 C 224.415 245.48 218.297 243.086 214.573 237.367 C 212.312 233.909 211.514 229.121 211.514 222.87 L 211.514 221.274 Z M 241.838 213.427 L 211.514 213.427 C 212.046 199.728 217.366 192.812 226.809 192.812 C 231.863 192.812 236.518 195.073 238.779 198.664 C 240.774 201.856 241.705 206.245 241.838 213.427 Z M 354.223 252.662 L 354.223 202.654 C 354.223 192.147 347.44 184.699 337.598 184.699 C 330.815 184.699 322.702 188.955 316.318 195.738 C 313.924 188.689 307.407 184.699 300.89 184.699 C 294.107 184.699 285.994 189.753 281.605 194.674 C 281.605 190.551 279.743 185.896 279.211 184.832 L 269.103 187.226 C 269.635 188.157 271.497 192.812 271.497 201.324 L 271.497 252.662 L 281.472 252.662 L 281.472 203.186 C 288.388 196.935 293.309 194.408 298.363 194.408 C 301.422 194.408 303.55 195.206 305.146 197.068 C 306.609 198.93 307.008 201.59 307.008 205.58 L 307.008 252.662 L 317.515 252.662 L 317.515 204.25 C 324.431 197.866 329.086 194.009 335.071 194.009 C 340.657 194.009 343.583 197.334 343.583 203.718 L 343.583 252.662 L 354.223 252.662 Z" style="fill: rgb(0, 73, 148);" stroke="none"/>
+							</svg>
+						</a>
+					</div>
+					<div class="col-4 ms-auto">
+						{{ include('_includes/logo-bgetem-is.twig', {class: 'ms-auto'}) }}	
+					</div>
+				</div>
+			</div>
+		</header>	
+		<nav class="navbar navbar-light border-top border-bottom border-light py-3 py-md-4">
+			<div class="container d-flex align-items-center">
+				<p><a class="navbar-brand mb-0 me-auto fw-bold">{{ currentSite.name }}</a></p>
+				{% if not (searchQuery is defined or tag is defined or craft.app.request.segments|last == 'ausgaben') %}
+					<span class="ms-auto">
+						<b>Ausgabe {{ entry.section.id == 1 ? entry.ausgabe : entry.title }}</b> | 
+						<small class="d-inline"><a href="{{ alias(currentSite.baseUrl) }}ausgaben" class="me-3 text-dark">Alle Ausgaben</a></small>
+					</span>
+					
+				{# <button type="button" class="btn btn-outline-secondary border-light ms-auto me-3" data-toggle="modal" data-target=".bd-example-modal-lg">
+				Ausgabe {{ entry.section.id == 1 ? entry.ausgabe : entry.title }}
+				</button> #}
+				<button type="button" class="btn btn-outline-secondary border-light ms-0 toggle-searchfield">
+	                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+	                	<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+	                </svg>
+	            </button>
+	            {% endif %}
+		  	</div>
+		</nav>
+
+		{%- js -%}
+			
+			$(document).ready(function(){
+				$(document).on('click', 'button.toggle-searchfield', function(){
+					$('div.searchfield').toggleClass('hidden');
+				})
+			})
+
+		{%- endjs -%}
+
+		<!-- End Header -->
+		
+		<!-- Suche -->
+
+		<div class="border-bottom bg_border-light searchfield hidden">
+		  <div class="container bg-layout_medien_container py-5">
+		    <div class="row justify-content-center">
+		      <div class="col-12 col-lg-7">
+		        <section>
+		          <form action="{{ url('suche') }}" class="suche-gross" id="suchform">
+		            <div class="input-group d-flex">
+		            <span class="input-group-btn">
+		                <button type="submit" class="form-control btn btn-default mp-search p-3 bg-white border-end-0" data-dashlane-rid="0dbc300ea9258763" data-dashlane-label="true" data-form-type="">
+		                  <span class="d-flex justify-content-center align-items-center">
+		                    <svg width="32" height="32" class="DFW_E nT46U NIGLg" viewBox="0 0 32 32" version="1.1" aria-hidden="false"><desc lang="de">Eine Lupe</desc><path d="M22 20c1.2-1.6 2-3.7 2-6 0-5.5-4.5-10-10-10S4 8.5 4 14s4.5 10 10 10c2.3 0 4.3-.7 6-2l6.1 6 1.9-2-6-6zm-8 1.3c-4 0-7.3-3.3-7.3-7.3S10 6.7 14 6.7s7.3 3.3 7.3 7.3-3.3 7.3-7.3 7.3z" fill="#004994"></path></svg>
+		                  </span>
+		                </button>
+		              </span>
+		              <input type="text" name="suchtext" placeholder="Suchbegriff + Enter" class="form-control mp-search-input border-start-0" data-dashlane-rid="bd0f2ad146469fb2" data-form-type="">
+		            </div>        
+		          </form>
+		        </section>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- End Suche -->
+
+		<div id="my-page">
+			{% block content %}
+			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+			{% endblock %}
+		</div>
+
+		<!-- Footer -->
+
+		<footer class="footer footer-global bg_bg-dguv-blau mt-auto py-3">
+			<div class="container">
+				<div class="row py-5">
+					<div class="col-12 ">
+						<p class="h4 fw-bold w-50">etem - Das Magazin Ihrer Berufsgenossenschaft</p>
+					</div>
+					<div class="col col-12 col-sm-4 col-md-6 col-lg-6">
+						<p class="border-top border-white pt-2">Herausgeber:<br>Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM)<br>Gustav-Heinemann-Ufer 130<br>50968 Köln</p>
+						<p>Für den Inhalt verantwortlich:<br>Johannes Tichi, Vorsitzender der Geschäftsführung</p>
+					</div>
+					<div class="col col-12 col-sm-4 col-md-6 col-lg-4 offset-lg-2 pt-2">
+						<p class="border-top border-white pt-2"><strong>Redaktion:</strong><br>Annika Pabst (BG ETEM)<br>Stefan Thissen (wdv Gesellschaft für Medien & Kommunikation mbH & Co. OHG, Siemensstraße 6, 61352 Bad Homburg)<br>Holger Blatterspiel (wdv, Bildredaktion)</p>
+						<p>Telefon: 0221 3778-1010<br>E-Mail: <a href="mailto:etem@bgetem.de">etem@bgetem.de</a></p>
+						<div class="social-profiles">
+							<div class="social-connect">
+								<p><small>Folgen Sie uns:</small></p>
+								<div class="social-icons">
+									<div class="icon youtube">
+										<a href="http://www.youtube.de/diebgetem" target="_blank" title="BGETEM auf YouTube besuchen">
+											<svg viewBox="0 76.8 511.999 358.4" xmlns="http://www.w3.org/2000/svg">
+												<path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
+											</svg>
+										</a>
+									</div>
+									<div class="icon facebook">
+										<a href="http://www.facebook.com/bgetem" target="_blank" title="BGETEM auf Facebook besuchen">
+											<svg viewBox="0 0 14222 14136" xmlns="http://www.w3.org/2000/svg">
+												<path class="fil0" d="M14222 7111c0,-3927 -3184,-7111 -7111,-7111 -3927,0 -7111,3184 -7111,7111 0,3549 2600,6491 6000,7025l0 -4969 -1806 0 0 -2056 1806 0 0 -1567c0,-1782 1062,-2767 2686,-2767 778,0 1592,139 1592,139l0 1750 -897 0c-883,0 -1159,548 -1159,1111l0 1334 1972 0 -315 2056 -1657 0 0 4969c3400,-533 6000,-3475 6000,-7025z"/>
+											</svg>
+										</a>
+									</div>
+									<div class="icon twitter">
+										<a href="https://www.twitter.com/bg_etem" target="_blank" title="BGETEM auf Twitter besuchen">
+											<svg viewBox="0.082 -3.824 638.754 519.121" xmlns="http://www.w3.org/2000/svg">
+												<path d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094"/>
+											</svg>
+										</a>
+									</div>
+									<div class="icon xing">
+										<a href="http://www.xing.to/bgetem" target="_blank" title="BGETEM auf Xing besuchen">
+											<svg viewBox="7.5 5 85 90" xmlns="http://www.w3.org/2000/svg">
+												<path d="M60.364,95L40.236,59.717L71.475,5H92.5L61.262,59.717L81.391,95H60.364z M27.322,67.787l15.617-25.711l-11.712-20.63  H11.404l11.713,20.63L7.5,67.787H27.322z"/>
+											</svg>
+										</a>
+									</div>
+									<div class="icon linkedin">
+										<a href="https://www.linkedin.com/company/bgetem" target="_blank" title="BGETEM auf LinkedIn besuchen">
+											<svg viewBox="-0.927 -1.353 512.117 512.131" xmlns="http://www.w3.org/2000/svg">
+												<path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;" />
+											</svg>
+										</a>
+									</div>
+									<div class="icon instagram">
+										<a href="https://www.instagram.com/bg__etem" target="_blank" title="BGETEM auf Instagram besuchen">
+											<svg viewBox="0 0.159 503.841 503.841" xmlns="http://www.w3.org/2000/svg">
+												<path d="M 251.921 336.053 C 205.543 336.053 167.947 298.457 167.947 252.08 C 167.947 205.702 205.543 168.106 251.921 168.106 C 298.298 168.106 335.894 205.702 335.894 252.08 C 335.894 298.457 298.298 336.053 251.921 336.053 Z M 251.921 122.715 C 180.474 122.715 122.556 180.633 122.556 252.08 C 122.556 323.526 180.474 381.444 251.921 381.444 C 323.367 381.444 381.285 323.526 381.285 252.08 C 381.285 180.633 323.367 122.715 251.921 122.715 Z M 416.627 117.604 C 416.627 134.3 403.092 147.834 386.396 147.834 C 369.701 147.834 356.166 134.3 356.166 117.604 C 356.166 100.908 369.701 87.374 386.396 87.374 C 403.092 87.374 416.627 100.908 416.627 117.604 Z M 251.921 0.15900000000000003 C 183.503 0.15900000000000003 174.924 0.449 148.054 1.6749999999999998 C 121.24 2.899 102.927 7.157 86.902 13.385 C 70.336 19.823 56.287 28.437 42.282 42.442 C 28.277 56.447 19.663 70.496 13.225 87.062 C 6.997 103.086 2.739 121.399 1.5150000000000001 148.213 C 0.28900000000000003 175.083 0 183.662 0 252.08 C 0 320.497 0.28900000000000003 329.076 1.5150000000000001 355.946 C 2.739 382.76 6.997 401.073 13.225 417.097 C 19.663 433.663 28.277 447.712 42.282 461.718 C 56.287 475.723 70.336 484.337 86.902 490.775 C 102.927 497.002 121.24 501.261 148.054 502.484 C 174.924 503.71 183.503 504 251.921 504 C 320.338 504 328.917 503.71 355.787 502.484 C 382.601 501.261 400.914 497.002 416.938 490.775 C 433.504 484.337 447.553 475.723 461.559 461.718 C 475.564 447.712 484.178 433.663 490.616 417.097 C 496.843 401.073 501.102 382.76 502.325 355.946 C 503.551 329.076 503.841 320.497 503.841 252.08 C 503.841 183.662 503.551 175.083 502.325 148.213 C 501.102 121.399 496.843 103.086 490.616 87.062 C 484.178 70.496 475.564 56.447 461.559 42.442 C 447.553 28.437 433.504 19.823 416.938 13.385 C 400.914 7.157 382.601 2.899 355.787 1.6749999999999998 C 328.917 0.449 320.338 0.15900000000000003 251.921 0.15900000000000003 Z M 251.921 45.551 C 319.186 45.551 327.154 45.807 353.718 47.019 C 378.28 48.14 391.619 52.244 400.496 55.693 C 412.255 60.263 420.647 65.723 429.462 74.538 C 438.278 83.353 443.737 91.746 448.307 103.504 C 451.757 112.381 455.861 125.72 456.981 150.282 C 458.193 176.846 458.45 184.814 458.45 252.08 C 458.45 319.345 458.193 327.313 456.981 353.877 C 455.861 378.439 451.757 391.778 448.307 400.655 C 443.737 412.414 438.278 420.806 429.462 429.621 C 420.647 438.437 412.255 443.896 400.496 448.466 C 391.619 451.916 378.28 456.02 353.718 457.14 C 327.158 458.352 319.191 458.609 251.921 458.609 C 184.65 458.609 176.684 458.352 150.123 457.14 C 125.561 456.02 112.222 451.916 103.345 448.466 C 91.586 443.896 83.194 438.437 74.378 429.621 C 65.563 420.806 60.103 412.414 55.534 400.655 C 52.084 391.778 47.98 378.439 46.859 353.877 C 45.647 327.313 45.391 319.345 45.391 252.08 C 45.391 184.814 45.647 176.846 46.859 150.282 C 47.98 125.72 52.084 112.381 55.534 103.504 C 60.103 91.746 65.563 83.353 74.378 74.538 C 83.194 65.723 91.586 60.263 103.345 55.693 C 112.222 52.244 125.561 48.14 150.123 47.019 C 176.687 45.807 184.655 45.551 251.921 45.551 Z" />
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<br>
+				<div class="legal">
+					<p>
+						<a href="https://www.bgetem.de/bg-etem-kontakt" target="_blank" class="text-decoration-none">Kontakt</a> ·
+						<a href="https://www.bgetem.de/die-bgetem/datenschutz" target="_blank" class="text-decoration-none">Datenschutz</a> · 
+						<a href="https://etem.bgetem.de/erklaerung-zur-barrierefreiheit/document_view" target="_blank" class="text-decoration-none">Barrierefreiheit</a> · 
+						<a href="https://www.bgetem.de/die-bgetem/impressum" target="_blank" class="text-decoration-none">Impressum</a> · 
+						<a href="https://etem.bgetem.de/@@bildnachweisview" target="_blank" class="text-decoration-none">Bildnachweis</a>
+					</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- End Footer -->
+
+		<!-- To-Top-Pfeil -->
+
+		<div class="back-to-top-arrow">
+			<a href="#" class="scroll-to-top">
+				<svg viewBox="104.2 87.245 288.211 250.309" xmlns="http://www.w3.org/2000/svg">
+				  <g style="" transform="matrix(0, -0.578805, 0.578805, 0, 103.621086, 337.553772)">
+				    <path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" stroke="none"/>
+				  </g>
+				</svg>
+			</a>
+		</div>
+
+		<!-- Ensd To-Top-Pfeil -->
+		
+
+	{% set issuesByYear = craft.entries.siteId(2).sectionId(2).with(['cover']).orderBy('postDate desc').all()|group(e => e.postDate|date('Y')) %}
+
+	{% cache %}
+
+	{% set issueCoverTransforms = {
+	  '(min-width: 345px)': {
+	      width: 180,
+	      mode: 'fit'
+	  },
+	  '(min-width: 1200px)': {
+	      width: 80,
+	      mode: 'fit'
+	  }
+	} %}
+
+	<!-- Ausgaben-Navigation -->
+
+	<div class="modal issue-nav bd-example-modal-lg align-items-center">
+		<div class="min-vh-100 d-lg-flex align-items-lg-center">
+			<div class="container">
+				<div class="row align-items-center justify-content-space-between mb-3">
+					<div class="col mt-4 mt-lg-0">
+						<h1 class="h2 fw-bold p-0 m-0">Alle Ausgaben der etem</h1>
+					</div>
+					<div class="col text-end mt-4 mt-lg-0">
+						<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          					<span aria-hidden="true" class="d-none">&times;</span>
+        				</button>
+					</div>
+				</div>
+				<div class="row align-items-center">
+  					{% for year, entriesInYear in issuesByYear %}
+  					<div class="col-3 col-md-3 col-lg-1 d-flex align-items-center justify-content-center">
+  						<h2 class="fw-bold">{{ year }}</h2>
+  					</div>
+					{% for entry in entriesInYear %}
+					{% set issueCoverAttributes = { alt: entry.title, title: 'etem Ausgabe' ~ entry.title, class:'card-img-top rounded-0' } %}
+					<div class="ausgabe-thumb col-3 col-md-3 col-lg-1 mt-3 mb-3 pt-3 pb-2{{ craft.app.request.getSegment(1) == entry.title ? ' active bg-dguv-cyan text-white' }}">
+    					<a href="{{ entry.url }}" class="text-decoration-none text-dark">
+	    					<figure class="mb-2">
+	    						{{ craft.images.pictureMedia(entry.cover[0], issueCoverTransforms, null, issueCoverAttributes) }}
+	    					</figure>
+    						<p class="{{ craft.app.request.getSegment(1) == entry.title ? ' fw-bold color-dguv-cyan' }}">{{ entry.title }}</p>	    					
+    					</a>
+    				</div>
+					{% endfor %}
+					{% endfor %}
+	      		</div>
+			</div>
+	 	</div>
+	</div>
+
+	{% endcache %}
+
+	<!-- End Ausgaben-Navigation -->
+
+
+
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/jquery-3.4.1.slim.min.js"></script>
+{# <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script> #}
+
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/popper.min.js"></script>
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bootstrap.min.js"></script>
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bundle.js"></script>
+		
+{# 				<script>
+		$(document).ready(function() {
+			 alert('shown'); 
+				$( ".navbar-toggler-word" ).on( "click", function() {
+				    console.log( "hamburger show" );
+				    $('.navbar-collapse').toggleClass('show');
+				    $('.nav-wrapper').toggleClass('open');
+				} )
+				.on( "hide.bs.collapse", function() {
+				    alert( "hamburger hide" );
+				} );
+
+				$(document).on('click','.menu-item-nav',function(e){
+				    e.preventDefault();
+				    e.stopPropagation();
+				});
+
+				$('#sidebar-handle').on('click',function(e){
+				     //$('#portal-navigation-cover').attr('data-state' == 'open' ? 'closed' : 'open');
+				     $('#portal-navigation-cover, #portal-navigation').attr('data-state',$(this).attr('data-state')==='open'?'closed':'open' );
+				});
+				$(document).on('click','#portal-navigation-cover',function(e){
+				     //$('#portal-navigation-cover').attr('data-state' == 'open' ? 'closed' : 'open');
+				     $('#portal-navigation-cover, #portal-navigation').attr('data-state',$(this).attr('data-state')==='open'?'closed':'open' );
+				});
+
+
+			});
+
+		
+
+		</script> #}
+
+		<script>
+			
+		  $(document).ready(function(){
+		  	$('.slider_campaigns').slick({
+		    	fade: false,
+				mobileFirst: true,
+				variableWidth: false,
+				arrows: false,
+				autoplay: true,
+				autoplaySpeed: 5000,
+				prevArrow:$('.previ_slider'),
+		  		nextArrow:$('.nexti_slider'),
+				infinite: true,
+				  	responsive: [
+		  		{
+			      breakpoint: 1,
+			      settings: {
+			        arrows: false,
+			        //centerMode: true,
+			        //centerPadding: '40px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        arrows: false,
+			        //centerMode: true,
+			        //centerPadding: '40px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 992,
+			      settings: {
+			        arrows: true,
+			        //centerMode: true,
+			        //centerPadding: '0px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 1200,
+			      settings: {
+			        arrows: true,
+			        //centerMode: true,
+			        //centerPadding: '80px',
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			  ]
+		  });
+		});
+
+		</script>
+
+	</body>
+</html>

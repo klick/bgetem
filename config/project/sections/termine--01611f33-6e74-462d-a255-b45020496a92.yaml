@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: termine
+name: Termine
+propagationMethod: all
+siteSettings:
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

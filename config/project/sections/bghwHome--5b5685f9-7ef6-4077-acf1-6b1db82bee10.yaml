@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: bghwHome
+name: '[BGHW] Home'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    enabledByDefault: true
+    hasUrls: true
+    template: bghw/index.twig
+    uriFormat: __home__
+type: single

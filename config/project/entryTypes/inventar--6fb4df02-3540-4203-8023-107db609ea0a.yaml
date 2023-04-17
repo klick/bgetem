@@ -1,0 +1,55 @@
+fieldLayouts:
+  99eb34d7-1557-4e05-bd3b-746ea2cf075b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4488021f-952b-4a95-a208-ac036185ad46
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3eed50c4-cbd6-413c-8189-5f44db14ed05
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 13dc5d53-4ffb-4704-90b0-63064a80b9b2
+        userCondition: null
+handle: inventar
+hasTitleField: false
+name: Inventar
+section: a6670b9e-3e64-44a0-ba93-178c56f8793c # Inventar
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

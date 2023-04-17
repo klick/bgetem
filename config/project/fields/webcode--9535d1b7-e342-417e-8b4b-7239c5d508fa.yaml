@@ -1,0 +1,19 @@
+columnSuffix: bglpicif
+contentColumnType: text
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: webcode
+instructions: null
+name: Webcode
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: true
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,67 @@
+fieldLayouts:
+  7a838aff-c6e4-4e9b-8c12-50d61cdaad16:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: a9cb19e6-c1d3-4b4f-b5ae-033698a11b9a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 785ffb6b-dfab-4d64-862a-ba9d9a7276a7 # Image Alt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df159985-c256-4c2a-9e64-5dc0bb4e646b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 191d740e-8fa8-47c2-9d0e-66ee2727176b # Img Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd6a175a-90dc-4a75-9431-e01024dcbf30
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 1c69a57a-121f-4f31-b84d-2cd5a8503fa0
+        userCondition: null
+fs: bilderMedienportal
+handle: bilderMedienportal
+name: 'Bilder Medienportal'
+sortOrder: 2
+titleTranslationKeyFormat: null
+titleTranslationMethod: none
+transformFs: ''
+transformSubpath: ''

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta name="generator" content="Plone - http://plone.com">
+    <!-- Head Slot -->
+    <title>StartseiteXY &#8212; Plone site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Slot -->
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/shariff.min.css?version=2023-02-16%2009%3A54%3A43.535477" data-bundle="shariff">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/sidebar.min.css?version=2023-02-16%2009%3A54%3A58.415478" data-bundle="sidebar">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-compiled.css" data-bundle="plone">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-editor-tools-compiled.css" data-bundle="plone-editor-tools">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-fontello-compiled.css" data-bundle="plone-fontello">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-glyphicons-compiled.css" data-bundle="plone-glyphicons">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-legacy-compiled.css" data-bundle="plone-legacy">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-logged-in-compiled.css" data-bundle="plone-logged-in">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-tinymce-compiled.css" data-bundle="plone-tinymce">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/siguv.min.css?version=2023-02-16%2009%3A55%3A03.131478" data-bundle="siguv">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/custom.css?version=2023-02-16%2009%3A55%3A02.939478" data-bundle="siguv-static">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/siguv.min.css">
+    <link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+    <link rel="alternate" href="http://svaintra20:8080/portal/RSS" title="Intranet - b'RSS 1.0'" type="application/rss+xml">
+    <link rel="alternate" href="http://svaintra20:8080/portal/rss.xml" title="Intranet - b'RSS 2.0'" type="application/rss+xml">
+    <link rel="alternate" href="http://svaintra20:8080/portal/atom.xml" title="Intranet - b'Atom'" type="application/rss+xml">
+    <link rel="author" href="http://svaintra20:8080/portal/author/schadiet" title="Autoreninformation">
+    <link rel="canonical" href="http://svaintra20:8080/portal">
+    <link rel="apple-touch-icon" sizes="180x180" href="++plone++plonetheme.siguv/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="++plone++plonetheme.siguv/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="++plone++plonetheme.siguv/favicon/favicon-16x16.png">
+    <link rel="manifest" href="++plone++plonetheme.siguv/favicon/site.webmanifest">
+    <link rel="mask-icon" href="++plone++plonetheme.siguv/favicon/safari-pinned-tab.svg" color="#004994">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" href="http://svaintra20:8080/portal/@@search" title="Website durchsuchen">
+    <link rel="stylesheet" type="text/css" href="http://svaintra20:8080/portal/++plone++bgetem.frontpage/frontpage.css">
+    <!-- Script Slot -->
+    <script>
+      PORTAL_URL = 'http://svaintra20:8080/portal';
+    </script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/jquery.min.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/require.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/config.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-base-compiled.min.js" data-bundle="plone-base"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/shariff.min.js?version=2023-02-16%2009%3A54%3A43.535477" data-bundle="shariff"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/sidebar.min.js?version=2023-02-16%2009%3A54%3A58.415478" data-bundle="sidebar"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-moment-compiled.min.js" data-bundle="plone-moment"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-compiled.min.js" data-bundle="plone"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-editor-tools-compiled.min.js" data-bundle="plone-editor-tools"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-legacy-compiled.js" data-bundle="plone-legacy"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-logged-in-compiled.min.js" data-bundle="plone-logged-in"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/plone-tinymce-compiled.min.js" data-bundle="plone-tinymce"></script>
+    <script type="text/javascript" src="{{ craft.app.sites.primarySite.baseUrl }}js/css-fix/siguv.min.js?version=2023-02-16%2009%3A55%3A03.131478" data-bundle="siguv"></script>
+  </head>
+  <body id="visual-portal-wrapper" class="frontend icons-on plone-toolbar-expanded plone-toolbar-left plone-toolbar-left-expanded portaltype-landingpage section-startseitexy site-portal template-landingpage thumbs-on userrole-authenticated userrole-manager userrole-owner viewpermission-view sticky-navigation" dir="ltr" data-base-url="http://svaintra20:8080/portal/startseitexy" data-view-url="http://svaintra20:8080/portal/startseitexy" data-portal-url="http://svaintra20:8080/portal" data-i18ncatalogurl="http://svaintra20:8080/portal/plonejsi18n" data-pat-pickadate='{"date": {"selectYears": 200}, "time": {"interval": 5 } }' data-pat-plone-modal='{"actionOptions": {"displayInModal": false}}'>
+    <header id="portal-top">
+      <div id="portal-header" class="bg-light">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-end">
+            <div class="align-middle">
+              <span class="site-action">
+                <a href="http://svaintra20:8080/portal/sign-language" title="Geb&#228;rdensprache">
+                  <svg viewbox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                    <title>DGUV Icon Sign Language</title>
+                    <path d="M 193.12 150.4 L 228.29 150.4 L 263.29 115.48 C 270.06 108.717 266.971 97.161 257.729 94.679 C 253.44 93.528 248.862 94.751 245.72 97.89 Z M 245.81 150.4 L 250.59 150.4 C 257.565 150.406 264.218 153.337 268.93 158.48 C 269.564 159.17 270.155 159.898 270.7 160.66 L 283.7 147.66 C 288.857 142.487 288.473 134.006 282.87 129.32 C 277.87 125.1 270.31 125.89 265.68 130.52 Z M 65.3 157.67 L 87.72 135.22 L 87.72 130.48 L 87.72 129.79 C 87.72 123.23 82.94 117.33 76.41 116.79 C 69.155 116.144 62.907 121.856 62.9 129.14 L 62.9 130.48 L 62.9 160.09 Z M 139.56 121.67 C 146.215 129.853 147.081 141.311 141.73 150.4 L 191.14 150.4 L 183.33 142.58 L 244.75 80.88 C 249.38 76.24 250.17 68.68 245.95 63.66 C 241.278 58.053 232.8 57.669 227.64 62.83 L 165.76 125 L 157 116.21 L 201.25 71.9 C 205.88 67.27 206.67 59.71 202.45 54.68 C 197.771 49.075 189.291 48.696 184.13 53.86 L 124.88 113.18 C 130.618 114.2 135.815 117.205 139.56 121.67 Z M 274.33 200 L 186.67 200.15 L 186.67 187.76 L 249.26 187.76 C 255.81 187.76 261.71 182.97 262.26 176.43 C 262.918 169.16 257.199 162.891 249.9 162.88 L 112.16 162.88 L 127.62 147.4 L 128.12 146.93 C 132.75 142.29 133.54 134.73 129.33 129.7 C 124.655 124.096 116.177 123.716 111.02 128.88 L 110.02 129.81 L 73.43 166.5 L 73.43 166.5 C 66.534 173.474 62.677 182.892 62.7 192.7 L 62.7 249.92 L 62.7 249.92 L 62.7 250 C 62.678 277.449 84.911 299.718 112.36 299.74 L 112.36 299.74 L 154.54 299.64 L 237.4 299.64 C 244.703 299.634 250.428 293.364 249.77 286.09 C 249.2 279.56 243.3 274.77 236.77 274.77 L 186.67 274.77 L 186.67 262.38 L 262.32 262.46 C 271.892 262.189 277.581 251.656 272.56 243.502 C 270.361 239.931 266.512 237.709 262.32 237.59 L 186.67 237.51 L 186.67 225.05 L 273.67 224.9 C 280.22 224.9 286.12 220.11 286.67 213.57 C 287.346 206.298 281.633 200.016 274.33 200 Z"></path>
+                  </svg>
+                  <span>Geb&#228;rdensprache</span>
+                </a>
+              </span>
+              <span class="site-action">
+                <a href="http://svaintra20:8080/portal/plain-language" title="Leichte Sprache">
+                  <svg viewbox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                    <title>DGUV Icon Easy Language</title>
+                    <path d="M 199.94 249.79 L 262.32 224.09 L 262.32 197.16 L 199.94 222.87 L 199.94 249.79 Z M 199.94 208.84 L 262.32 183.14 L 262.32 156.21 L 199.94 181.92 L 199.94 208.84 Z M 299.75 100.75 L 249.75 121.06 C 246.752 63.549 182.622 30.85 134.315 62.202 C 114.36 75.153 101.754 96.822 100.36 120.57 L 50.21 99.93 L 50.21 248.38 L 175.05 299.78 L 299.75 249.14 Z M 125.14 125.21 C 124.985 86.813 166.455 62.647 199.785 81.711 C 217.294 91.726 227.048 111.301 224.5 131.31 L 175.13 151.36 L 125.49 130.93 C 125.269 129.031 125.152 127.122 125.14 125.21 Z M 75.14 137.21 L 162.48 173.21 L 162.48 267.57 L 75.2 231.62 Z M 187.44 267.73 L 187.44 173.33 L 274.76 137.87 L 274.76 232.29 Z M 132.53 177.21 L 113.93 195.85 L 105.9 187.8 L 88.25 205.49 L 113.93 231.22 L 150.18 194.89 L 132.53 177.21 Z"></path>
+                  </svg>
+                  <span>Leichte Sprache</span>
+                </a>
+              </span>
+            </div>
+            <div>
+              <form action="http://svaintra20:8080/portal/@@search" class="mr-4" id="site-search" role="search" aria-label="Sitewide">
+                <label class="sr-only" for="header-search">Suchbegriff/Webcode</label>
+                <div class="input-group">
+                  <input type="search" name="SearchableText" class="form-control border-dark" id="header-search" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-light border-dark">Suchen</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="portal-mainnavigation">
+      <div id="portal-navigation-cover"></div>
+      <nav id="portal-navigation" class="sidebar-left" data-sidebar-mouse="true" data-sidebar-mouse-area="30">
+        <div class="menu">
+          <!-- Portal Marker -->
+          <!-- Search -->
+          <div id="sidebar-section-search" class="menu-section">
+            <div class="menu-section-content">
+              <form action="http://svaintra20:8080/portal/@@search" id="menu-search" role="search" method="post">
+                <label class="sr-only" for="menu-search">Suchbegriff/Webcode</label>
+                <div class="input-group">
+                  <input type="search" name="SearchableText" class="form-control border-dark" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-light border-dark">Suchen</button>
+                  </div>
+                </div>
+                <input name="_authenticator" type="hidden" value="2154711a110d98d88f93aa8609a825d82ddee992">
+              </form>
+            </div>
+          </div>
+          <!-- tal:comment tal:replace="nothing" -->
+          <div id="sidebar-section-profile" class="menu-section">
+            <div class="menu-profile">
+              <a href="http://svaintra20:8080/portal/@@personal-information">
+                <div class="profile-image" style="background-image: url('http://svaintra20:8080/portal/portal_memberdata/portraits/admin');"></div>
+                <div class="profile-info">
+                  <div class="profile-name">admin</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- /tal:comment -->
+          <!-- Admin Links -->
+          <div id="sidebar-section-site" class="menu-section">
+            <div class="menu-section-title">
+              <span>Webseite</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/plone_control_panel">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Einstellungen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Static Links -->
+          <div id="sidebar-section-links" class="menu-section">
+            <div class="menu-section-title">
+              <span>Links</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal" title="Startseite">
+                <span class="menu-item-icon bi bi-house"></span>
+                <span class="menu-item-title">Startseite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/logout" title="Abmelden">
+                <span class="menu-item-icon bi bi-box-arrow-right"></span>
+                <span class="menu-item-title">Abmelden</span>
+              </a>
+            </div>
+          </div>
+          <!-- Navigation Controls -->
+          <!-- Editing -->
+          <div id="sidebar-section-edit" class="menu-section">
+            <div class="menu-section-title">
+              <span>Bearbeitung</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/startseitexy/view">
+                <span class="menu-item-icon bi bi-eye"></span>
+                <span class="menu-item-title">Anzeigen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/edit">
+                <span class="menu-item-icon bi bi-pencil-square"></span>
+                <span class="menu-item-title">Bearbeiten</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/folder_contents">
+                <span class="menu-item-icon bi bi-folder"></span>
+                <span class="menu-item-title">Inhalte</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@historyview">
+                <span class="menu-item-icon bi bi-clock"></span>
+                <span class="menu-item-title">20.02.2023 20:49</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@sharing">
+                <span class="menu-item-icon bi bi-arrow-90deg-right"></span>
+                <span class="menu-item-title">Freigabe</span>
+              </a>
+            </div>
+          </div>
+          <!-- Workflow -->
+          <div id="sidebar-section-workflow" class="menu-section">
+            <div class="menu-section-title">
+              <span>Arbeitsablauf</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="#">
+                <span class="menu-item-icon bi bi-bullseye state-published with-state-color"></span>
+                <span class="menu-item-title state-published with-state-color">Ver&#246;ffentlicht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_modify?workflow_action=reject&amp;_authenticator=4216d8c5c044876f9b39e3c6dcb47e0353647963">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckweisen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_modify?workflow_action=retract&amp;_authenticator=4216d8c5c044876f9b39e3c6dcb47e0353647963">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckziehen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_history">
+                <span class="menu-item-icon bi bi-three-dots"></span>
+                <span class="menu-item-title">Erweitert</span>
+              </a>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div id="sidebar-section-actions" class="menu-section">
+            <div class="menu-section-title">
+              <span>Aktionen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/startseitexy/@@ical_import_settings/enable?_authenticator=4216d8c5c044876f9b39e3c6dcb47e0353647963" class="">
+                <span class="menu-item-icon bi bi-calendar2-plus"></span>
+                <span class="menu-item-title">Enable icalendar import</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@renewwebcode?_authenticator=4216d8c5c044876f9b39e3c6dcb47e0353647963" class="">
+                <span class="menu-item-icon bi bi-chevron-right"></span>
+                <span class="menu-item-title">Webcode erneuern</span>
+              </a>
+            </div>
+          </div>
+          <!-- Document Management -->
+          <div id="sidebar-section-add" class="menu-section">
+            <div class="menu-section-title">
+              <span>Hinzuf&#252;gen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/++add++Anzeige">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Anzeige </span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Bekanntmachung">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bekanntmachung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Image">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bild</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Cluster">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Cluster</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++File">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Datei</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Feedreader">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Feedreader</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Flexfolder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Flexfolder</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Formularauswahl">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Formularauswahl</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Collection">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Kollektion</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++LDAPPerson">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">LDAPPerson</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Landingpage">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Landingpage</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Link">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Link</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++News%20Item">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Nachricht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Folder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Ordner</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Pinnwand">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Pinnwand</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Portlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Portlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++RSSPortlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">RSSPortlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Document">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Seite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Sozialprojekt">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Soziales Projekt</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Event">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Termin</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++videoembed">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">videoembed</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@folder_factories">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Artikel zur Standardseite hinzuf&#252;gen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Display Management -->
+          <div id="sidebar-section-display" class="menu-section">
+            <div class="menu-section-title">
+              <span>Anzeige</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/select_default_view" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-pip"></span>
+                <span class="menu-item-title">Darstellung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/select_default_page" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-geo"></span>
+                <span class="menu-item-title">Standardseite</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="siguv-navigation" class="enabled">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="http://svaintra20:8080/portal" title="Plone site">
+              <img src="https://www.bgetem.de/++theme++plonetheme.siguv/logo/bg-etem.svg" alt="Plone site">
+            </a>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a id="diebgetem" class="nav-link" href="http://svaintra20:8080/portal/diebgetem"> Die BG ETEM </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="standorte" class="nav-link" href="http://svaintra20:8080/portal/standorte"> Standorte </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="sicherheit-gesundheit" class="nav-link" href="http://svaintra20:8080/portal/sicherheit-gesundheit"> Sicherheit/Gesundheit </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="arbeitsbereiche" class="nav-link" href="http://svaintra20:8080/portal/arbeitsbereiche"> Arbeitsbereiche </a>
+              </li>
+              <li class="nav-item">
+                <a id="testnachricht-im-bereich-it" class="nav-link" href="http://svaintra20:8080/portal/testnachricht-im-bereich-it"> Testnachricht im Bereich IT </a>
+              </li>
+              <li class="nav-item">
+                <a id="sammlung-flexfolder" class="nav-link" href="http://svaintra20:8080/portal/sammlung-flexfolder"> Sammlung Flexfolder </a>
+              </li>
+            </ul>
+            <div id="sidebar-handle">
+              <img class="icon icon-inline icon-lg" src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/icons/bootstrap/justify.svg" alt="Sign Sidebar" style="margin: -3px 5px 0 0 !important;">
+              <span>Men&#252;</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Body Slot for everything between Header and Footer -->
+    <section>
+      <!-- Content Slot inside Section Content -->
+
+        <!--<div tal:replace="structure provider:plone.abovecontenttitle" />-->
+        <!--<div tal:replace="structure provider:plone.belowcontenttitle" />-->
+
+          <!-- Start Iteration Pageitems -->
+          <!-- Portal Status Messages -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block"></div>
+              <div class="col-12 col-md-8">
+                <div class="pt-1"></div>
+              </div>
+              <div class="col-md-2 d-none d-md-block"></div>
+            </div>
+          </div>
+          <!-- Ende Portal Status Message -->
+          <!-- Cluster -->
+          <!--
+  -->
+          <div>
+            <div class="container bg-layout_medien_container cluster my-5">
+              <img class="border border-light w-100" src="http://svaintra20:8080/portal/startseitexy/copy_of_cluster1/banner/@@images/image/large" title="Banner" alt="banner etem">
+            </div>
+            <div class="bg_cluster">
+              <div class="container bg-layout_medien_container cluster my-5">
+                <div class="row g-3">
+                  <div class="col col-12 col-lg-6">
+                    <div class="card h-100 border bg_border-light bg-white">
+                      <div class="card-body p-4">
+                        <p class="h6 mb-3">
+                          <b>BG ETEM</b>
+                        </p>
+                        <p class="card-body-roof"></p>
+                        <p class="card-body-desc"></p>
+                        <ul>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-block d-flex d-inline-block" href="http://svaintra20:8080/portal/news/nachrichten-bg-etem/17-02-2023-dguv-newsletter-februar-2023">
+                              <figure class="flex-shrink-0 mt-1 me-3">
+                                <picture>
+                                  <img src="http://svaintra20:8080/portal/news/nachrichten-bg-etem/17-02-2023-dguv-newsletter-februar-2023/@@images/image" alt="" title="" height="108" width="118">
+                                </picture>
+                              </figure>
+                              <div>
+                                <b>17.02.2023: DGUV Newsletter Februar 2023</b>
+                                <br>
+                                <span class="bg_text-primary"> Einige Themen der Februar-Ausgabe des DGUV Newsletters: Gemeinsam in eine neue Normalit&#228;t... </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-block d-flex d-inline-block" href="http://svaintra20:8080/portal/news/nachrichten-bg-etem/15-02-2023-energiesparmassnahmen">
+                              <figure class="flex-shrink-0 mt-1 me-3">
+                                <picture>
+                                  <img src="http://svaintra20:8080/portal/news/nachrichten-bg-etem/15-02-2023-energiesparmassnahmen/@@images/image" alt="" title="" height="108" width="118">
+                                </picture>
+                              </figure>
+                              <div>
+                                <b>15.02.2023: Energiesparma&#223;nahmen</b>
+                                <br>
+                                <span class="bg_text-primary"> Das Bundeskabinett hat die Verl&#228;ngerung der &#8222;kurzfristig wirksamen Energiesparma&#223;nahmen&#8220;... </span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <a class="text-decoration-none arrow-after blau" style="hyphens: none" href="/portal/kollektionen/bg-etem">alle Artikel anzeigen</a>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                    <!--</div> col-->
+                  </div>
+                  <div class="col col-12 col-lg-3">
+                    <div class="card h-100 border bg_border-light bg-white">
+                      <div class="card-body p-4">
+                        <p class="h6 mb-3">
+                          <b>Standorte</b>
+                        </p>
+                        <p class="card-body-roof"></p>
+                        <p class="card-body-desc"></p>
+                        <ul>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100  d-inline-block" href="http://svaintra20:8080/portal/news/standortnachrichten/weiter-testnachricht">
+                              <div>
+                                <b>K&#246;ln: Weitere Testnachricht</b>
+                                <br>
+                                <span class="bg_text-primary"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor... </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100  d-inline-block" href="http://svaintra20:8080/portal/news/standortnachrichten/testnachricht-standort-koeln">
+                              <div>
+                                <b>K&#246;ln: Testnachricht Standort K&#246;ln</b>
+                                <br>
+                                <span class="bg_text-primary"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor... </span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <a class="text-decoration-none arrow-after blau" style="hyphens: none" href="/portal/news/standortnachrichten">mehr</a>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                    <!--</div> col-->
+                  </div>
+                  <div class="col col-12 col-lg-3">
+                    <div class="card h-100 border bg_border-light bg-white">
+                      <div class="card-body p-4">
+                        <p class="h6 mb-3">
+                          <b>Bereiche</b>
+                        </p>
+                        <p class="card-body-roof"></p>
+                        <p class="card-body-desc"></p>
+                        <ul>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100  d-inline-block" href="http://svaintra20:8080/portal/testnachricht-im-bereich-it">
+                              <div>
+                                <b>IT: Testnachricht im Bereich IT</b>
+                                <br>
+                                <span class="bg_text-primary"> ... </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100  d-inline-block" href="http://svaintra20:8080/portal/news/nachrichten-aus-bereichen/personal-zugriff-auf-sap-22-23-02">
+                              <div>
+                                <b>Personal: Zugriff auf SAP 22./23.02.</b>
+                                <br>
+                                <span class="bg_text-primary"> Die Personalabteilung teilt mit, dass sie von Mittwoch, 22.02.2023, bis Donnerstag,... </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li class="mb-3 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100  d-inline-block" href="http://svaintra20:8080/portal/news/nachrichten-aus-bereichen/it-wlan-cnuv-gastnetz-update">
+                              <div>
+                                <b>IT: WLAN "CNUV-Gastnetz" Update</b>
+                                <br>
+                                <span class="bg_text-primary"> Die DGUV informiert &#252;ber Wartungsarbeiten am WLAN "CNUV-Gastnetz" am Dienstag, 14.02.23... </span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <a class="text-decoration-none arrow-after blau" style="hyphens: none" href="/portal/kollektionen/bereiche">alle Artikel anzeigen</a>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                    <!--</div> col-->
+                  </div>
+                  <!--row-->
+                  <!--</div> col-->
+                  <!--<div tal:condition="view/centercontent" class="col-md-2 d-none d-md-block"></div>-->
+                </div>
+                <!--row-->
+              </div>
+              <!--container-->
+            </div>
+          </div>
+          <!-- Ende Cluster -->
+          <!-- Folder & Collection -->
+          <!-- Ende Folder & Collection -->
+
+
+          <!-- Start Iteration Pageitems -->
+          <!-- Portal Status Messages -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-2 d-none d-md-block"></div>
+              <div class="col-12 col-md-8">
+                <div class="pt-1"></div>
+              </div>
+              <div class="col-md-2 d-none d-md-block"></div>
+            </div>
+          </div>
+          <!-- Ende Portal Status Message -->
+          <!-- Cluster -->
+          <!--
+  -->
+          <div>
+            
+          <div class="bg_cluster">
+            <div class="container bg-layout_medien_container cluster my-5">
+              <div class="row g-3">
+                <!--<div tal:condition="view/centercontent" class="col-md-2 d-none d-md-block"></div>-->
+                <!--<div tal:attributes="class view/contentclass">-->
+                <!-- Title and Clustertools 2 -->
+                <!-- Banner -->
+                <!-- Bereiche, Standorte, Allgemeine Nachrichten -->
+                <!--<div class="row g-4">-->
+                <div class="col col-12 col-lg-8 mb-4">
+                  <div class="card h-100 border bg_border-light bg-white">
+                    <a>
+                      <img src="http://svaintra20:8080/portal/startseitexy/cluster1/neues-leitbild-video-der-geschaeftsfuehrung/@@images/image/large" title="Neues Leitbild-Video der Gesch&#228;ftsf&#252;hrung" alt="test" class="card-img-top cardimage cardimage-center">
+                    </a>
+                    <a class="card-body linkcard">
+                      <p class="card-body-roof"></p>
+                      <p class="lead">Neues Leitbild-Video der Gesch&#228;ftsf&#252;hrung</p>
+                      <p class="card-body-desc"></p>
+                      <p>
+                        <span>Wie laufen die Leitbild-Dialoge in den Teams ab? Was hat das Referat der Gesch&#228;ftsf&#252;hrung aus dem eigenen Pilot-Leitbild-Dialog mitgenommen? Antworten gibt es im Video von Johannes Tichi, Sophie Kappas und Gaby Linnartz.</span>
+                      </p>
+                      <p>
+                        <span></span>
+                      </p>
+                      <p>
+                        <span></span>
+                      </p>
+                    </a>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <div class="col col-12 col-lg-4 mb-4">
+                  <div class="card h-100 border bg_border-light bg-white">
+                    <div class="card-body p-4">
+                      <p class="h6 mb-3">
+                        <b>Stellenmarkt</b>
+                      </p>
+                      <p class="card-body-roof"></p>
+                      <p class="card-body-desc"></p>
+                      <p class="card-body-desc">Derzeit keine Inhalte vorhanden.</p>
+                    </div>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <div class="col col-12 col-lg-3 mb-4">
+                  <div class="card h-100 border bg_border-light bg-white">
+                    <a href="http://svaintra20:8080/portal/news/speiseplaene"></a>
+                    <a class="card-body linkcard" href="http://svaintra20:8080/portal/news/speiseplaene">
+                      <p class="card-body-roof"></p>
+                      <p class="lead">Speisepl&#228;ne</p>
+                      <p class="card-body-desc"></p>
+                    </a>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <div class="col col-12 col-lg-3 mb-4">
+                  <div class="card h-100 border bg_border-light bg-danger">
+                    <a href="http://svaintra20:8080/portal/schwarzes-brett-1"></a>
+                    <a class="card-body linkcard" href="http://svaintra20:8080/portal/schwarzes-brett-1">
+                      <p class="card-body-roof"></p>
+                      <p class="lead">Schwarzes Brett</p>
+                      <p class="card-body-desc"></p>
+                    </a>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <div class="col col-12 col-lg-3 mb-4">
+                  <div class="card h-100 border bg_border-light bg-white">
+                    <img src="http://svaintra20:8080/portal/startseitexy/cluster1/corona/@@images/image/large" title="Corona" alt="test" class="border border-light w-100 cardimage-top">
+                    <div class="card-body p-4">
+                      <p class="h6 mb-3">
+                        <b>Corona</b>
+                      </p>
+                      <p class="card-body-roof"></p>
+                      <p class="card-body-desc"></p>
+                    </div>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <div class="col col-12 col-lg-3 mb-4">
+                  <div class="card h-100 border bg_border-light bg-white">
+                    <img src="http://svaintra20:8080/portal/startseitexy/cluster1/home-office/@@images/image/large" title="Home-Office" alt="ttest" class="border border-light w-100 cardimage-top">
+                    <div class="card-body p-4">
+                      <p class="h6 mb-3">
+                        <b>Home-Office</b>
+                      </p>
+                      <p class="card-body-roof"></p>
+                      <p class="card-body-desc"></p>
+                    </div>
+                    <!--card body-->
+                    <!--card footer-->
+                  </div>
+                  <!--card-->
+                  <!--</div> col-->
+                </div>
+                <!--row-->
+                <!--</div> col-->
+                <!--<div tal:condition="view/centercontent" class="col-md-2 d-none d-md-block"></div>-->
+            </div>
+          </div>
+          <!-- Ende Cluster -->
+          <!-- Folder & Collection -->
+          <!-- Ende Folder & Collection -->
+        </div>
+        <!-- Ende Pageitems -->
+        <div class="container">
+          <!--          <div class="row"><div class="col-12"><div tal:replace="structure provider:plone.belowcontentbody" /></div></div>-->
+        </div>
+
+    </section>
+    <footer id="portal-footer">
+      <div id="cluster-viewlet">
+        <div class="container-fluid mt-3 bg-white">
+          <div class="container-fluid">
+            <div class="row mt-4 mb-3">
+              <div class="col-md-2 d-none d-md-block"></div>
+              <div class="col-12 col-md-8 p-0">
+                <div class="row g-4">
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Quicklinks</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/dienstreise"> Dienstreise </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/altervorsorgung"> Altervorsorgung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/speisepl%C3%A4ne"> Speisepl&#228;ne </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/schwarzes-brett"> Schwarzes Brett </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/adressen-standorte"> Adressen Standorte </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/beruf-und-familie"> Beruf und Familie </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/datenschutz-newsletter"> Datenschutz Newsletter </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/dienstregeln"> Dienstregeln </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/intranet-netiquette"> Intranet-Netiquette </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Links und Recherche</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-sv-portal"> BG ETEM SV-Portal </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-mub-info"> BG ETEM MuB-Info </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-unfall-info"> BG ETEM Unfall-Info </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-satzung"> BG ETEM Satzung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/uv-net"> UV-NET </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/dguv-rundschreiben-startseite"> DGUV-Rundschreiben Startseite </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/dok-plan"> DOK-Plan </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/juris"> JURIS </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/datenbank-fachaufs%C3%A4tze"> Datenbank Fachaufs&#228;tze </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/elektronische-kommentierung"> Elektronische Kommentierung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/siguv"> SIGUV </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Anwendungen</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-fico"> SAP FICO </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-fiori"> SAP FIORI </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-einkauf"> SAP Einkauf </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/mediendatenbank"> Mediendatenbank </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/hilfe-f%C3%BCr-ms-office-2019"> Hilfe f&#252;r MS Office 2019 </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/hilfe-f%C3%BCr-ms-office-2016"> Hilfe f&#252;r MS Office 2016 </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/self-service-portal"> Self-Service-Portal </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/it-hotline"> IT-Hotline </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-ess-mss"> SAP ESS/MSS </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <!--col-->
+                </div>
+                <!--row-->
+              </div>
+              <!--col-->
+              <div class="col-md-2 d-none d-md-block"></div>
+            </div>
+            <!--row-->
+          </div>
+          <!--container-->
+        </div>
+      </div>
+      <script>
+        var _old_define = define;
+        var _old_require = require;
+        var _old_jquery = jQuery;
+        define = undefined;
+        require = undefined;
+        jQuery = undefined;
+      </script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.0" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script>
+        define = _old_define;
+        require = _old_require;
+        jQuery = _old_jquery;
+      </script>
+      <div id="bgetem.nine.rewrite">
+        <!-- Script zum Umschreiben von Download-URLs -->
+        <script>
+          $(document).ready(function() {
+            $('a').each(function() {
+              var lnk = this.href;
+              var srcurl = lnk.replace('medien-service/interaktiv-lernmodule-sicherheit-und-gesundheit-am-arbeitsplatz/lernmodule-herunterladen', 'share/interaktiv');
+              this.href = srcurl;
+            });
+          });
+        </script>
+      </div>
+      <script>
+        var _old_define = define;
+        var _old_require = require;
+        var _old_jquery = jQuery;
+        define = undefined;
+        require = undefined;
+        jQuery = undefined;
+      </script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.0" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script>
+        define = _old_define;
+        require = _old_require;
+        jQuery = _old_jquery;
+      </script>
+    </footer>
+    <script type="application/javascript" src="http://svaintra20:8080/portal/++resource++protect.js" data-site-url="http://svaintra20:8080/portal" data-token="2154711a110d98d88f93aa8609a825d82ddee992" id="protect-script"></script>
+  </body>
+</html>

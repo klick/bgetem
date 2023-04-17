@@ -1,0 +1,157 @@
+fieldLayouts:
+  bce43b4a-b4e2-4293-a5bf-417dc8999545:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7656a362-8255-4280-89cf-c4a62f6c3176
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8695819b-f662-4ff4-b210-c9f9242ac767
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b7dc291-c676-493d-82a5-11553ce83fc1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b22ab796-420a-41bf-afac-42427c322fa2 # Termin Start
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff87b1a9-7d3b-44f5-ae92-d1a6b7c32c64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2b4bb988-7ea1-409a-acad-f0c54d78fcc6 # Termin Ende
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e791f432-f199-4804-8d4a-276e9bbb67b1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d7cae9fd-1be3-4d89-a7fa-090c21d05a43 # Ort
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7cf1ae91-9238-469a-bb7f-fd75bf9b4619
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: abfae7f9-d019-4fa1-a1f3-8e743c97f5c7 # Termin URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5b6e7979-90e8-4fe6-bc88-e09d3e88e19e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7e83231a-8956-4d31-8506-f9e905dee038 # Kontaktperson
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2afa4c27-a0a8-41d0-b4e4-e134a8056db9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c096c1ee-03d5-4b2d-afd5-945a5ce902ee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 374dafd4-00bb-4b48-9f37-48d21ea376ee
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84048e76-b884-49c2-a5a2-b552c5533619
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: 0f8e25a9-b551-4353-8646-4c20c3282ddd
+        userCondition: null
+handle: termin
+hasTitleField: true
+name: Termin
+section: 7104933b-77b4-49f4-a8d1-14f5389901c9 # [BGHW ]Termine
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

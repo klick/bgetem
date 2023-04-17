@@ -1,0 +1,9 @@
+{% set currentIssue = craft.entries.section('ausgaben').one() %}
+{% if craft.app.request.segments|first == false %}
+	{% redirect currentIssue %}
+{% endif %}
+
+
+{{ entry.ausgabeUrl| split('/',5)[3] }}
+
+

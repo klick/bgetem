@@ -1,0 +1,43 @@
+fieldLayouts:
+  279f11a7-5f6f-43a1-b4b4-b7129812f50d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e4baed07-9328-40b2-b91e-ae3d4f4d788f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 40b97943-e737-4b11-a0cc-2c35d228693e
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: 3a4fe6b3-7fa2-47a7-aa8f-3c8a0e2defb0 # Quicklinks
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

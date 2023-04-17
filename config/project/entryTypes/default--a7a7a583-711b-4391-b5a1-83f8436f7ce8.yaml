@@ -1,0 +1,43 @@
+fieldLayouts:
+  c0706950-91de-48a1-8796-deb2a6d2d125:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5383f44e-a0aa-4edd-8558-d143e5f4f876
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 9fd6f022-b95e-4e6c-993d-1068e992be69
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: ba022acb-eb7e-409e-a25a-1eab9f9b01c2 # Stellenanzeigen
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,19 @@
+columnSuffix: frrhgrss
+contentColumnType: string(16)
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: medienartCode
+instructions: null
+name: 'Medienart Code'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 4
+  code: true
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

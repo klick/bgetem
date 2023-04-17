@@ -1,0 +1,94 @@
+childBlocks: null
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+fieldLayouts:
+  e8586241-fb43-4c9a-8bbe-a9b0928a2153:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4a698194-d184-45b5-8751-d8df85d37bb5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab7bd847-fc3b-4e58-af4d-cb6a714b61fd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalte
+        uid: 0f20ca02-773e-4728-b837-45f31dacf52c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 729e8099-e116-420e-bb48-cff32ac2289d # Kartenbreite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 239d5f67-8d29-4004-a6ab-5a245edbadd7
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 16333976-8b8b-46fe-b762-21fbfd44c6f7 # Cover Full
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9c75ebb6-31d9-46a3-a82c-1c701728e9a6
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 875b5abb-fd1b-48a9-8d59-afaa93058564 # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf967113-004d-4817-81b7-173da57f24db
+            userCondition: null
+            warning: null
+            width: 25
+        name: Einstellungen
+        uid: 09838a98-94a6-41a7-a923-e3a94ef84ebc
+        userCondition: null
+group: f976ef3d-bbf8-4cc1-8c45-b634eee2c77a # Karten
+groupChildBlockTypes: true
+handle: apikarte
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Api-Karte
+sortOrder: 10
+topLevel: false

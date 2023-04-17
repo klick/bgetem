@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: cluster
+name: Cluster
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    enabledByDefault: true
+    hasUrls: true
+    template: cluster.twig
+    uriFormat: cluster
+type: single

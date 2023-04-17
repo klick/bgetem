@@ -1,0 +1,65 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+
+{% block content %}
+
+    <div class="card border-0 card-body bg-white">
+        <header class="card-title">
+            {{ include('keycloak/_includes/localize-dropdown.twig') }}
+            <h1 id="kc-page-title" class="h2 mb-3">Passwort aktualisieren</h1>
+        </header>
+        <div id="kc-content">
+            <div id="kc-content-wrapper">
+                <div class="alert-warning alert bg-dguv-orange text-white rounded-0 mb-5">
+                    <div class="pf-c-alert__icon">
+                        <span class=""></span>
+                    </div>
+                    <span class="alert-heading">Sie müssen Ihr Passwort ändern.</span>
+                </div>
+                <form id="kc-passwd-update-form" class="form-horizontal" action="http://localhost:8080/auth/realms/siguv/login-actions/required-action?session_code=z3L0VH_jUTUkP6_aGeQi7sozekHCofoFBFdlTsSbgLk&amp;execution=UPDATE_PASSWORD&amp;client_id=account-console&amp;tab_id=mtmlPBtSg6w" method="post">
+                    <input type="text" id="username" name="username" value="dasniko" autocomplete="username" readonly="readonly" style="display:none;"/>
+                    <input type="password" id="password" name="password" autocomplete="current-password" style="display:none;"/>
+
+                    <div class="form-group">
+                        <div class="">
+                            <label for="password-new" class="font-weight-bold">Neues Passwort</label>
+                        </div>
+                        <div class="">
+                            <input type="password" id="password-new" name="password-new" class="form-control p-4" autofocus autocomplete="new-password" aria-invalid="" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="">
+                            <label for="password-confirm" class="font-weight-bold">Passwort bestätigen</label>
+                        </div>
+                        <div class="">
+                            <input type="password" id="password-confirm" name="password-confirm" class="form-control p-4" autocomplete="new-password" aria-invalid=""/>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div id="kc-form-options" class="mb-2">
+                            <div class="">
+                                
+                            </div>
+                        </div>
+
+                        <div id="kc-form-buttons" class="mt-5">
+                            <input class="btn btn-primary bg-dguv-blau border-0 text-white px-4 btn-lg" type="submit" value="Absenden" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

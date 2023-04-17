@@ -1,0 +1,31 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: eintrag
+instructions: null
+name: Eintrag
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: true
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: null
+  showSiteMenu: true
+  sources:
+    - 'section:0158b508-0e9f-4d41-9410-4e298cd84b2e' # [Magazin] Artikel
+    - 'section:8bb547f6-733a-4d2f-a80b-9e11ade49f9b' # [Magazin] Ausgaben
+    - 'section:01611f33-6e74-462d-a255-b45020496a92' # Termine
+    - 'section:b292b1ca-4d77-45e7-97a2-da468c18c880' # [BGHW] ABC Tabelle
+    - 'section:0408cca5-e827-40c8-9397-89c062429004' # [BGHW] Aktuelle Meldungen
+    - 'section:b87426b2-2875-4462-abf0-a1e3a4462caa' # [BGHW] Aufgaben
+    - 'section:737466a9-13e4-48b4-9183-b99322d6153a' # [BGHW] Formulare und Anträge
+    - 'section:7104933b-77b4-49f4-a8d1-14f5389901c9' # [BGHW ]Termine
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

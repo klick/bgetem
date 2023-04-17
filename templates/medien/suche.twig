@@ -1,0 +1,358 @@
+{# 
+medien/index 
+#}
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout_medien" %}
+
+{% set searchQuery = craft.app.request.getParam('suchtext') %}
+
+{% if searchQuery %}
+	{# {% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(5).orderBy('postDate DESC') %} #}
+	{% set artikelStart = craft.products().with(['medienportalTitelbild']).search(searchQuery).with(['medienportalTitelbild']).orderBy('score') %}
+	{% else %}
+		{% if craft.app.request.hostInfo|split('.')|last == 'test' %}
+			{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(5).orderBy('score') %}
+		{% else %}
+		{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(20).orderBy('score') %}
+	{% endif %}
+{% endif %}
+
+
+{% set filterCategories = craft.categories()
+  .groupId('7,8,4,3')
+  .all()
+ %}
+ {% set filterCategoriesGrouped = filterCategories|group(e => e.group) %}
+
+
+{# {% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(20).orderBy('postDate DESC') %} #}
+
+{% paginate artikelStart as pageInfo, pageEntries %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['medienStart']
+}) %}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 141,
+    }
+} %}
+
+{% set artikelCoverAttributes = { alt: 'Alt Text', title: 'title' } %}
+
+{# {% block ausgabe %}
+<p class="mb-0 d-inline">| Ausgabe {{ entry.title }}</p>
+{% endblock %} #}
+
+
+
+{% block content %}
+
+<div class="container bg-layout_medien_container my-5">
+	<div class="row">
+		<div class="col-9">
+			{# <pre>{{ dump(artikelStart) }}</pre> #}
+			<section class="mb-5">
+				<form action="{{ url('suche') }}" class="mb-5" id="suchform">
+					<div class="input-group d-flex">
+						<input type="text" name="suchtext" placeholder="Geben Sie einen Suchbegriff ein…" class="form-control mp-search-input bg_border-dguv-gruen" data-dashlane-rid="bd0f2ad146469fb2" data-form-type="" value="{{ searchQuery }}">
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-default mp-search p-3 bg-dguv-gruen text-white" data-dashlane-rid="0dbc300ea9258763" data-dashlane-label="true" data-form-type=""><span class="arrow-after arrow-white d-flex justify-content-between align-items-center">Suche</span>
+							</button>
+						</span>
+					</div>				
+					<div class="row my-4">
+					{% for group, categories in filterCategoriesGrouped %}
+						<div class="col-3 toggle-category-fields {{ group|kebab }} {{ group|kebab == 'themen' ? 'order-1' : group|kebab == 'zielgruppen' ? 'order-2' : group|kebab == 'medienart' ? 'order-3' : group|kebab == 'branchen' ? 'order-4' : null }}" data-category-group="{{ group|kebab }}" role="button">
+							<span class="d-block p-3 bg_bg-dguv-grau-9 text-center bg_hover-bg-dguv-gruen dropdown-toggle">{{ group }}</span>
+						</div>
+					{% endfor %}
+					</div>
+					<div class="row">
+						{% for group, categories in filterCategoriesGrouped %}
+						<fieldset class="{{ group|kebab }} {{ group|kebab == 'themen' ? 'order-1 hidden' : group|kebab == 'zielgruppen' ? 'order-2 hidden' : group|kebab == 'medienart' ? 'order-3 hidden' : group|kebab == 'branchen' ? 'order-4 hidden' : null }} bg-transparent" data-category-group="{{ group|kebab }}">
+							{% for category in categories %}
+							<label class="p-2 mb-2 me-1 bg_text-default-color bg-dguv-grau-9 bg_hover-bg-dguv-gruen {{ group|kebab == 'medienart' ? 'radio' : 'checkbox' }}" for="{{ category.id }}" data-category-id="{{ category.id}}" data-category-title="{{ category }}" role="button">
+									<small>{{ category }}</small>
+									<input class="visually-hidden" type="{{ group|kebab == 'medienart' ? 'radio' : 'checkbox' }}" data-category-id="{{ category.id }}" id="{{ category.id }}" name="categoryIds[]" value="{{ category.id }}">
+							</label>
+							{% endfor %}
+						</fieldset>
+					{% endfor %}
+					</div>
+				</form>
+				<div class="bg_active-filter-terms">
+					{# <span class="p-2 mb-2 me-1 d-inline-block bg_bg-dguv-gruen bg_active-filter-term bg_hover-bg-dguv-blau" data-category-id="14159" role="button">
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-x-octagon me-1" viewBox="0 0 16 16">
+						  <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+						  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+						</svg>
+						<small class="d-inline-block">Arbeitsmedizin</small>
+					</span> #}
+				</div>
+			</section>
+			<section class="listings clearfix" id="results">
+				<div class="row align-items-baseline mb-2">
+				{% if searchQuery %}
+					<div class="col-6 text-start">
+						<b>Suchergebnisse für „{{ searchQuery }}“</b>
+					</div>
+					<div class="col-6 text-end">
+						<small>Gefundene Artikel: {{ artikelStart|length }}</small>
+					</div>
+				</div>
+				{% else %}
+					<div class="col-12 text-end">
+						<small>Gefundene Artikel: {{ artikelStart|length }}</small>
+					</div>
+				{% endif %}
+				<ul class="listing m-0">
+					{% for artikel in pageEntries %}
+					{{ include('_includes/component-listing_with-image-and-actions', {entry: artikel, image: artikel.medienportalTitelbild ? artikel.medienportalTitelbild[0] : null, buyButton: true}) }}
+					{% endfor %}
+				</ul>
+				<div class="pagination">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination small">
+						{% if pageInfo.prevUrl %}
+						<li class="page-item">
+							<a class="page-link" href="{{ pageInfo.prevUrl }}">
+								<svg viewBox="118.687 114.053 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+									<g style="" transform="matrix(-1, 0, 0, -1, 409.562164, 390.553284)">
+										<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+									</g>
+								</svg>
+							</a>
+						</li>
+						{% endif %}
+						{% for page, url in pageInfo.getPrevUrls(10) %}
+						<li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+						{% endfor %}
+						<li class="page-item  active"><a class="page-link" href="#">{{ pageInfo.currentPage }}</a></li>
+						{% for page, url in pageInfo.getNextUrls(10) %}
+						<li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+						{% endfor %}
+						{% if pageInfo.nextUrl %}
+						<li class="page-item">
+							<a class="page-link" href="{{ pageInfo.nextUrl }}">
+								<svg viewBox="0 0 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+									<g style="" transform="matrix(1, 0, 0, 1, -275.274994, -258.549988)">
+										<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+									</g>
+								</svg>
+							</a>
+						</li>
+						{% endif %}
+					</ul>
+				</nav>
+			</div>
+			</section>
+		</div>
+		{{ include('_includes/portlets_medien') }}
+	</div>
+</div>
+
+{% js %}
+
+$(document).ready(function(){
+
+	resultsPagination = [];
+	//console.log(resultsPagination);
+
+	function filter() {
+		$('section.listings#results').empty().html(
+			'<div class="d-flex justify-content-center spinner-wrapper">' +
+			  '<div class="spinner-border bg_text-blau" role="status">' +
+			    '<span class="visually-hidden">Loading...</span>' +
+			  '</div>' +
+			'</div>'
+			);
+			$.get( '/medien/api/products.json?', $('form#suchform').serialize(), function(data) {
+	         // ... do something with response from server
+	   
+	        	
+	        	
+	        	//console.log(resultsPagination); 
+	         
+		        $('section.listings#results').html(
+		        	'<div class="row align-items-baseline mb-2">' +
+						'<div class="col-12 text-end">' +
+							'<small>Gefundene Artikel: ' + data.meta.pagination.total + '</small>' +
+						'</div>' +
+					'</div>' +
+					'<ul class="listing m-0">'
+		         );
+
+		        data.data.forEach(function(item) {
+		         	$('ul.listing').append(
+						'<li class="card listing__item mb-5">' + 
+							'<div class="row py-4 item-wrapper has-actions">' + 
+								'<div class="col-2">' + 
+									'<figure>' + 
+										'<img src="' + item.cover + '" alt="">' + 
+									'</figure>' + 
+								'</div>' + 
+								'<div class="col-7">' + 
+									'<a href="/medien' + item.uri + '">' + 
+										'<h4 class="h5 fw-bold">' + item.title + '</h4>' + 
+									'</a>' + 
+									'<div class="p-0">' + 
+										'<p>' + item.description + '</p>' + 
+									'</div>' + 
+								'</div>' + 
+								'<div class="col-3">' + 
+									'<div class="mp-price-table">' + 
+										'<div class="conditions bg-dguv-grau-leicht">' + 
+											'<small class="py-2 px-3 color-dguv-grau-3">Versicherte Unternehmen: 99 Freiexemplare, jedes weitere Exemplar 0,00 €</small>' + 
+											'<small class="py-2 px-3 border-white border-top border-bottom color-dguv-grau-3">Andere Besteller: 2,– € zzgl. 3,50 € Versandkosten</small>' + 
+										'</div>' + 
+										'<a href="/medien' + item.uri + '" title="„' + item.title + '“ ansehen">' +
+											'<small class="bg-dguv-grau-8 text-black p-3 bg-hover-dguv-blau"><span class="arrow-after arrow-black d-flex justify-content-between align-items-center">Details</span></small>' + 
+										'</a>' + 
+									'</div>' + 
+								'</div>' + 
+							'</div>' + 
+						'</li>'
+		         	);
+		        });
+		        resultsPagination = data.meta.pagination;
+		        $('section.listings').append(
+		        	'<div class="row align-items-baseline mb-2">' +
+						'<div class="col-12 text-end">' +
+							'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button">Mehr laden</a>' +
+						'</div>' +
+					'</div>' +
+					'<ul class="listing m-0">'
+		         );
+		        $('div.spinner').remove();
+	    	},
+	    	'json' // I expect a JSON response
+
+		);
+	}
+
+	function loadMore(url) {
+		//console.log(resultsPagination); 
+
+		$('section.listings').append(
+    		'<div class="d-flex justify-content-center spinner-wrapper">' +
+			  '<div class="spinner-border bg_text-blau" role="status">' +
+			    '<span class="visually-hidden">Loading...</span>' +
+			  '</div>' +
+			'</div>'
+    	);
+
+		$.get( url, function(data) {
+	         // ... do something with response from server
+	   		console.log('More: ' +  url);
+	   		console.log(data);
+
+	        data.forEach(function(item) {
+	         	$('ul.listing').append(
+					'<li class="card listing__item mb-5">' + 
+						'<div class="row py-4 item-wrapper has-actions">' + 
+							'<div class="col-2">' + 
+								'<figure>' + 
+									'<img src="' + item.cover + '" alt="">' + 
+								'</figure>' + 
+							'</div>' + 
+							'<div class="col-7">' + 
+								'<a href="/medien' + item.uri + '">' + 
+									'<h4 class="h5 fw-bold">' + item.title + '</h4>' + 
+								'</a>' + 
+								'<div class="p-0">' + 
+									'<p>' + item.description + '</p>' + 
+								'</div>' + 
+							'</div>' + 
+							'<div class="col-3">' + 
+								'<div class="mp-price-table">' + 
+									'<div class="conditions bg-dguv-grau-leicht">' + 
+										'<small class="py-2 px-3 color-dguv-grau-3">Versicherte Unternehmen: 99 Freiexemplare, jedes weitere Exemplar 0,00 €</small>' + 
+										'<small class="py-2 px-3 border-white border-top border-bottom color-dguv-grau-3">Andere Besteller: 2,– € zzgl. 3,50 € Versandkosten</small>' + 
+									'</div>' + 
+									'<a href="/medien' + item.uri + '" title="„' + item.title + '“ ansehen">' +
+										'<small class="bg-dguv-grau-8 text-black p-3 bg-hover-dguv-blau"><span class="arrow-after arrow-black d-flex justify-content-between align-items-center">Details</span></small>' + 
+									'</a>' + 
+								'</div>' + 
+							'</div>' + 
+						'</div>' + 
+					'</li>'
+	         	);
+	        });
+	        //resultsPagination = data.meta.pagination;
+	        console.log('NEXT: ' + data.meta.pagination.links.next);
+	        $('div.spinner-wrapper').remove();
+	        $('section.listings').append(
+	        	'<div class="row align-items-baseline mb-2">' +
+					'<div class="col-12 text-end">' +
+						'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button">Mehr laden</a>' +
+					'</div>' +
+				'</div>' +
+				'<ul class="listing m-0">'
+	        );
+		});
+	}
+
+	$("#suchform").submit(function(e) {
+		e.preventDefault();
+		filter();
+	});
+
+	$('form#suchform label').change( function(e) {
+		var categoryId = $(this).data('category-id');
+		var categoryTitle = $(this).data('category-title');
+		$(this).toggleClass('bg-dguv-grau-9 bg-dguv-gruen');
+		//console.log(categoryId);
+		filter();
+	    $('fieldset').not('.hidden').addClass('hidden');
+	    $('div.bg_active-filter-terms').append(
+
+	    	'<span class="p-2 mb-1 me-1 d-inline-block bg_bg-dguv-gruen bg_active-filter-term bg_hover-bg-dguv-blau" data-category-id="' + categoryId + '" role="button">' +
+				'<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-octagon me-2" viewBox="0 0 16 16">' +
+				  '<path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>' +
+				  '<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>' +
+				'</svg>' +
+				'<small class="d-inline-block">' + categoryTitle + '</small>' +
+			'</span>'
+
+	    );
+	});
+	$('div.bg_active-filter-terms').on('click', 'span.bg_active-filter-term', function() {
+		var categoryId = $(this).data('category-id');
+		var inputActive = $('input').data('category-id', categoryId);
+		$('input[data-category-id="' + categoryId + '"]').prop("checked", false);
+		$('label[data-category-id="' + categoryId + '"]').toggleClass('bg-dguv-grau-9 bg-dguv-gruen');
+		$(this).remove();
+		filter();
+		//console.log('Cat ID: ' + categoryId);
+		$('fieldset').not('.hidden').addClass('hidden');
+		$("label").removeClass("highlight").addClass('LOL');
+  		$("label:has(+.filters input:checked)").addClass("highlight");
+	});
+
+	$('div.toggle-category-fields').on('click', function(){
+		var categoryGroup = $(this).data('category-group');
+		console.log(categoryGroup);
+		$('fieldset.' + categoryGroup).toggleClass('hidden').siblings().not('.hidden').addClass('hidden');
+	})
+
+	$('section.listings').on('click', 'span.load-more-button', function(){
+		$(this).remove();
+		var url = resultsPagination.links.next;
+		console.log('Next: ' + url);
+		//console.log(resultsPagination);
+		loadMore('/medien/api/products.json?suchtext&categoryIds[0]=14159&page=3');
+	})
+	
+});
+
+
+{% endjs %}
+
+
+{% endblock %}

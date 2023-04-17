@@ -1,0 +1,61 @@
+{% import '_macros.twig' as macros %}
+
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="content-type-{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				{% if feed.titleimages is defined and feed.titleimages is not empty %}
+					{% set params = [
+						{ width: 1110, jpegQuality: 100, format: 'jpg' },
+						{ width: 680, jpegQuality: 100, format: 'jpg' },
+						{ width: 345, jpegQuality: 85, format: 'jpg' }
+					] %}
+					{% for img in feed.titleimages %}
+						{{ macros.imgFullWidth(img, null, false, params, false) }}
+						{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+					{% endfor %}
+				{% endif %}
+				{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+				{{ macros.auhtorsByLine(feed.creators, feed.modification_date is defined ? feed.modification_date|date) }}
+			</header>
+			<section class="article-body clearfix">
+				{% if feed.definition is defined and feed.definition is not null %}
+					{{ feed.definition.data|replace({'<a href="https://www.bgetem.de':'<a href="' ~ getenv('DEFAULT_SITE_URL') ~'','<a title="" href="https://www.bgetem.de':'<a href="' ~ getenv('DEFAULT_SITE_URL') ~'','<h2>':'<h3>','</h2>':'</h3>'})|raw }}<br><br>
+				{% endif %}
+				{% if feed.variants is defined and feed.variants is not empty %}
+					<h3>Varianten</h3>
+					<ul class="glossary-variants">
+						{% for variant in feed.variants %}
+							<li>{{ variant }}</li>
+						{% endfor %}
+					</ul>
+
+				{% endif %}
+			</section>
+			{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+    </div>
+    <div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>
+
+
+
+
+
+
+
+

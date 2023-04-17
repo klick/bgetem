@@ -1,0 +1,97 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+{# {% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %} #}
+
+{% block content %}
+
+   <div class="card border-0 card-body bg-white">
+      <header class="card-title">
+         {{ include('keycloak/_includes/localize-dropdown.twig') }}
+         <h1 id="kc-page-title" class="h2 mb-3">Registrierung</h1>
+      </header>
+      <div id="kc-content">
+         <div id="kc-content-wrapper">
+            <form id="kc-register-form" class="form-horizontal" action="http://localhost:8080/auth/realms/siguv/login-actions/registration?session_code=mXZGkTtUNOETpUvSTOtNF2URoGryAhOJZ1wlrYJJO8Q&amp;execution=22c2ee83-8ef8-4023-a915-54056e63c801&amp;client_id=account-console&amp;tab_id=drtXAQ0UI1U" method="post">
+
+               <div class="form-group mb-4">
+                   <div class="">
+                       <label for="firstName" class="font-weight-bold">Vorname</label>
+                   </div>
+                   <div class="">
+                       <input type="text" id="firstName" class="form-control p-4" name="firstName" value="" aria-invalid=""/>
+                   </div>
+               </div>
+
+               <div class="form-group mb-4">
+                   <div class="">
+                       <label for="lastName" class="font-weight-bold">Nachname</label>
+                   </div>
+                   <div class="">
+                       <input type="text" id="lastName" class="form-control p-4" name="lastName" value="" aria-invalid="" />
+
+                   </div>
+               </div>
+
+               <div class="form-group mb-4">
+                   <div class="">
+                       <label for="email" class="font-weight-bold">E-Mail</label>
+                   </div>
+                   <div class="">
+                       <input type="text" id="email" class="form-control p-4" name="email" value="" autocomplete="email" aria-invalid="" />
+
+                   </div>
+               </div>
+
+               <div class="form-group mb-4">
+                  <div class="">
+                     <label for="username" class="font-weight-bold">Benutzername</label>
+                  </div>
+                  <div class="">
+                     <input type="text" id="username" class="form-control p-4" name="username" value="" autocomplete="username" aria-invalid="" />
+                  </div>
+               </div>
+
+               <div class="form-group mb-4">
+                  <div class="">
+                     <label for="password" class="font-weight-bold">Passwort</label>
+                  </div>
+                  <div class="">
+                     <input type="password" id="password" class="form-control p-4" name="password" autocomplete="new-password" aria-invalid="" />
+                  </div>
+               </div>
+
+               <div class="form-group mb-4">
+                  <div class="">
+                     <label for="password-confirm" class="font-weight-bold">Passwort bestätigen</label>
+                  </div>
+                  <div class="">
+                     <input type="password" id="password-confirm" class="form-control p-4" name="password-confirm" aria-invalid="" />
+                  </div>
+               </div>
+
+               <div class="form-group">
+                   <div id="kc-form-options" class="mb-3">
+                       <div class="">
+                           <span><a href="/auth/realms/siguv/login-actions/authenticate?client_id=account-console&amp;tab_id=drtXAQ0UI1U">« Zurück zur Anmeldung</a></span>
+                       </div>
+                   </div>
+                   <div id="kc-form-buttons" class="mt-4">
+                       <input class="btn btn-primary bg-dguv-blau border-0 text-white px-4 btn-lg" type="submit" value="Registrieren"/>
+                   </div>
+               </div>
+            </form>
+         </div>
+      </div>
+    </div>
+
+{% endblock %}

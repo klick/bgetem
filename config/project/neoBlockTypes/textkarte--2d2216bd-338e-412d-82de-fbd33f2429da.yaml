@@ -1,0 +1,164 @@
+childBlocks: null
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+fieldLayouts:
+  2e35a911-ab5c-41fe-81a0-7b7f34545801:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: cb16955d-7c85-4fda-98f6-94e78e9b4694
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 847a555d-3a10-447c-a767-62df45db3fed
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f804d8f8-b0d2-40f9-aa5e-5d1963d62fb5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 81f0465c-b748-4122-8893-9e53b76c37c7 # Überschrift
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 65252cdd-3bf0-4c34-bdbd-8264e895ae42
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 892c94b6-eba6-430d-a322-183e4a9bbe59
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 0fe3316e-69c3-4343-a266-030c6873383b
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f9f6fbdf-4b31-4008-a500-e75ac60f6f54 # Linkfeld
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c413bd9c-95c0-4c3d-b263-7a760e8bb2b7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cf5a605b-acb4-4296-b702-72ef5386a6b3 # Linkfeld
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7aceee3b-1154-4816-b4b8-75677fdfb638
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalte
+        uid: 42dfc669-1b0e-410d-9329-309da351040d
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 729e8099-e116-420e-bb48-cff32ac2289d # Kartenbreite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5ae64c18-b10b-4fa1-9743-185876d00ce6
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: fa8471db-64d3-4a98-8c70-aceb4d237e19 # Lead Card?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 808f831d-ab49-46bf-a5aa-30803fbb9235
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 16333976-8b8b-46fe-b762-21fbfd44c6f7 # Cover Full
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dfc6d56c-c0a9-4be5-bfbf-30bba1ebbbc2
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 875b5abb-fd1b-48a9-8d59-afaa93058564 # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94b1097c-1fa4-469e-8915-8563f0535db1
+            userCondition: null
+            warning: null
+            width: 25
+        name: Einstellungen
+        uid: a35312cd-d083-4c48-84c1-722e64643723
+        userCondition: null
+group: f976ef3d-bbf8-4cc1-8c45-b634eee2c77a # Karten
+groupChildBlockTypes: true
+handle: textkarte
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Textkarte
+sortOrder: 7
+topLevel: false

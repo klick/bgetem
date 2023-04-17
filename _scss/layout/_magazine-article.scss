@@ -1,0 +1,16 @@
+aside {
+	div.infobox-abbinder {
+		p:first-of-type {
+			display: none;
+		}
+		p:not(:last-of-type){
+			margin-bottom: 1rem;
+		}
+		ul {
+			margin-bottom: 1rem;
+			li {
+				margin-bottom: .5rem;
+			}
+		} 
+	}
+}

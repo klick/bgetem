@@ -1,0 +1,79 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+{# {% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %} #}
+
+{% block content %}
+
+
+   <div class="card border-0 card-body bg-white">
+      <header class="card-title">
+         {{ include('keycloak/_includes/localize-dropdown.twig') }}
+         <h1 id="kc-page-title" class="h2 mb-3">Mehrfachauthentifizierung konfigurieren</h1>
+      </header>
+      <div id="kc-content">
+         <div id="kc-content-wrapper">
+            <div class="alert-warning alert bg-dguv-orange text-white rounded-0 mb-5">
+               <div class="pf-c-alert__icon">
+                  <span class=""></span>
+               </div>
+               <span class="alert-heading">Sie müssen eine Mehrfachauthentifizierung einrichten, um das Benutzerkonto zu aktivieren.</span>
+            </div>
+            <ol id="kc-totp-settings" class="mb-5">
+               <li>
+                  <p>Installieren Sie eine der folgenden Applikationen auf Ihrem Smartphone:</p>
+                  <ul id="kc-totp-supported-apps">
+                     <li>FreeOTP</li>
+                     <li>Google Authenticator</li>
+                   </ul>
+               </li>
+               <li>
+                  <p>Öffnen Sie die Applikation und scannen Sie den Barcode.</p>
+                  <img id="kc-totp-secret-qr-code" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2AQAAAADNaUdlAAACp0lEQVR4Xu2YPa6rMBCFB6VwyRLYSbIxJCKxMbITL4HSBcrcc45JcuFJt3mFp4iLiMxnpPF4fjH/c212lhzXl58lx/XlZ8lxka9m1q0X96XfrFz7+1A6AKwpBp/cH9J2vWQ8bQPQOAiE4KOlh9+H5PgpZtjk3NSF4nP2Z++5dKsNeArH71ZMUiiPn0i83n8WSs9+9nJb//WPdlzxMw7p8fvnHF/tuBbim/pn6Z+WfhdH4Ihq+SdCZ8pKQna0b2s+DrrwxNRTbnUn3uEhQnA942kxY2qcskJHOTMCx7KrSTAzfrZabgplIbhq3UjVzdIC09q1VsJd/9b8PsAhkbVV/5Z+zopv7Nz1b82Vq0dGDTYxU8ITRr4ThLM0rxPrH/4yP/IdK6/60pojf8Oq6h9m1ucLkyQq9U3bYnCvqcd5CGyCa2Zsj8HROtCqlp41f7OTULi/7d+WI9ckHeIh/8QTdtLme/y05vxZkLrRf6G/oZT9P3fG4NA6sQjW1oauKSf41L/GHFUFt04ppxLor/yI/FOP1pzXgN7QZNckzkyJSOdJYnDYFwnbUPVmlj6cZD9YEK7QRlVGE0bprCCnO0wxuEZ3NjnsGjqmI4aTf/rbxhy+eOVU/FRWpIxXryQZgTsHThqZVjV+/2ASyof+sSV/3b8aag1RSt0aR0NwFBPjVEdLJ6ZGZiKWm13/1lxXP6Kh1lcj+SeCHO/s+rfniBq2XoBqcuCuKNI0dwSutXII5fctcpn2ff+tOe9f+jNgEuenxEr4OV9rPjHrMLQ5lXS0b0f9X/NJcz6yNNM/2VpT6uwPg3F9P9pM/ZfpI+s7viNwuiYCOrPJUXy7jByC8/45BKh/pdZqvfQUghs/yIyoynbxwqrsmqS4IvC/1pefJcf15WfJcf03/wEVJ81tzzWNawAAAABJRU5ErkJggg==" alt="Figure: Barcode"><br/>
+                  <p><a href="http://localhost:8080/auth/realms/siguv/login-actions/required-action?client_id=account-console&amp;tab_id=BhvNNaQ0ki0&amp;mode=manual&amp;execution=CONFIGURE_TOTP" id="mode-manual">Sie können den Barcode nicht scannen?</a></p>
+                </li>
+               <li>
+                   <p>Geben Sie den von der Applikation generierten One-time Code ein und klicken Sie auf Speichern.</p>
+                   <p>Geben Sie einen Gerätenamen an, um die Verwaltung Ihrer OTP-Geräte zu erleichtern.</p>
+               </li>
+            </ol>
+
+            <form action="http://localhost:8080/auth/realms/siguv/login-actions/required-action?session_code=6u_3vevzOIfyWWhw2RT2clJfdXhb3Yxz1uCGUHrD0y8&amp;execution=CONFIGURE_TOTP&amp;client_id=account-console&amp;tab_id=BhvNNaQ0ki0" class="form-horizontal" id="kc-totp-settings-form" method="post">
+               
+               <div class="form-group">
+                  <div class="">
+                     <label for="totp" class="control-label font-weight-bold">One-time Code</label> <span class="required">*</span>
+                  </div>
+                  <div class="">
+                     <input type="text" id="totp" name="totp" autocomplete="off" class="form-control p-4" aria-invalid="" />
+                  </div>
+                  <input type="hidden" id="totpSecret" name="totpSecret" value="m09OVlf7qNLR9JdsPKNU" />
+               </div>
+               
+               <div class="form-group mb-5">
+                   <div class="">
+                       <label for="userLabel" class="control-label font-weight-bold">Gerätename</label>
+                   </div>
+
+                   <div class="">
+                       <input type="text" class="form-control p-4" id="userLabel" name="userLabel" autocomplete="off" aria-invalid="" />
+                   </div>
+               </div>
+               <div class="form-group">
+                  <input type="submit" class="btn btn-primary bg-dguv-blau border-0 text-white px-4 btn-lg" id="saveTOTPBtn" value="Absenden" />
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+{% endblock %}

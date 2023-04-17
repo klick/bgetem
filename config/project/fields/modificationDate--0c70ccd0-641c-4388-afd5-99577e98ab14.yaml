@@ -1,0 +1,17 @@
+columnSuffix: kpjrygnj
+contentColumnType: datetime
+fieldGroup: a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f # Medienportal
+handle: modificationDate
+instructions: null
+name: 'Modification date'
+searchable: false
+settings:
+  max: null
+  min: null
+  minuteIncrement: 30
+  showDate: true
+  showTime: false
+  showTimeZone: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

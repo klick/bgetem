@@ -1,0 +1,9 @@
+siteUid: 0920ba4c-ca0e-4187-b14f-53ff8d14c625 # Das Magazin Ihrer Berufsgenossenschaft
+sortOrder: 1
+template: magazin/_etem_collection.twig
+uriParts:
+  1:
+    - slug
+    - '[^\/]+'
+  2: /etem_collection
+uriPattern: '<slug:[^\/]+>/etem_collection'

@@ -1,0 +1,19 @@
+columnSuffix: wfnmvjcp
+contentColumnType: text
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: kommentarschliessungAnmerkung
+instructions: null
+name: 'Kommentarschliessung Anmerkung'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 2
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

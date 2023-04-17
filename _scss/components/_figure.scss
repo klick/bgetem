@@ -1,0 +1,24 @@
+figure {
+	img {
+		width: 100%;
+	}
+	&.inline {
+		img {
+			width: 300px;
+			margin: 0 24px 12px 0;
+		}
+	}
+	figcaption {
+		margin-top: 6px;
+	}
+}
+img {
+	&.image-right {
+		float: right;
+		margin: 0 0 12px 12px;
+	}
+	&.image-left {
+		float: left;
+		margin: 0 24px 12px 0;
+	}
+}

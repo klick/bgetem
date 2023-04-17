@@ -1,0 +1,354 @@
+
+
+{% set navItems = 'https://newbgetem.bg-kooperation.de/' ~ craft.app.request.pathInfo ~ '/@@navigation' %}
+
+{%- set subNavParams = {
+    url: navItems,
+    type: 'xml',
+    item: 'a',
+    cache: 0,
+  } -%}
+{%- set subNavItems = craft.feedme.feed(subNavParams) -%}
+
+
+<div id="portal-navigation-cover" data-state="closed"></div>
+
+<nav id="portal-navigation" class="sidebar-left" data-state="closed">
+
+  <div class="menu">
+
+      <!-- Search -->
+
+  <div id="sidebar-section-search" class="menu-section">
+
+    {# <div class="menu-section-title">
+      <span>Suche</span>
+      <span class="section-handle">
+        <i class="section-up bi bi-chevron-down"></i>
+        <i class="section-down bi bi-chevron-up"></i>
+      </span>
+    </div> #}
+
+    <div class="menu-section-content">
+      <form class="form-inline search search-header">
+            <input class="form-control" type="search" placeholder="Suchbegriff/Webcode" aria-label="Search">
+            <button class="btn btn-outline-success my-2 submit submit-search" type="submit">Suche</button>
+          </form>
+
+    </div>
+
+  </div>
+
+    <div id="sidebar-section-profile" class="menu-section">
+      <div class="menu-profile">
+
+        <a href="https://newbgetem.bg-kooperation.de/@@personal-information">
+
+          <div class="profile-image" style="background-image: url( '{{ getenv('DEFAULT_SITE_URL') ~ '/img/defaultUser.png' }}' );"></div>
+
+          <div class="profile-info">
+            <div class="profile-name">Vorname Nachname</div>
+          </div>
+
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Admin Links -->
+
+    <div id="sidebar-section-site" class="menu-section mb-4">
+
+      <div class="menu-section-title">
+        <span>Webseite</span>
+        <span class="section-handle">
+          <i class="section-up bi bi-chevron-down"></i>
+          <i class="section-down bi bi-chevron-up"></i>
+        </span>
+      </div>
+
+      <div class="menu-section-content">
+
+        <a href="https://newbgetem.bg-kooperation.de/plone_control_panel">
+          <span class="menu-item-icon bi bi-gear"></span> <span class="menu-item-title">Einstellungen</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Static Links -->
+
+    <div id="sidebar-section-links" class="menu-section">
+
+      <div class="menu-section-title">
+        <span>Links</span>
+        <span class="section-handle">
+          <i class="section-up bi bi-chevron-down"></i>
+          <i class="section-down bi bi-chevron-up"></i>
+        </span>
+      </div>
+
+      <div class="menu-section-content">
+
+        <a href="https://newbgetem.bg-kooperation.de" title="Startseite">
+          <span class="menu-item-icon bi bi-house"></span>
+          <span class="menu-item-title">Startseite</span>
+        </a>
+
+        <a href="https://newbgetem.bg-kooperation.de/logout" title="Abmelden">
+          <span class="menu-item-icon bi bi-box-arrow-right"></span>
+          <span class="menu-item-title">Abmelden</span>
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+
+    <div id="sidebar-section-navigation" class="menu-section">
+
+      <div class="menu-section-title">
+        <span>Navigation</span>
+        <span class="section-handle">
+          <i class="section-up bi bi-chevron-down"></i>
+          <i class="section-down bi bi-chevron-up"></i>
+        </span>
+      </div>
+
+      <div id="navigation-wrapper" class="navigation-dynamic" style="display: block;">
+
+        <div class="menu-section-content">
+
+        {# {% for link in subNavItems['div']['a'] %}
+          <a class="{{ craft.app.request.pathInfo|length == 0 ? 'index' }} {{ link['@class'] is defined ? link['@class'] : null }}" href="{{  link['@href'] is defined ? link['@href']|replace({'https://newbgetem.bg-kooperation.de':getenv('DEFAULT_SITE_URL')}) : null }}" title="{{ link['@title'] is defined ? link['@title'] : null }}">
+          {% for span in link['span'] %}
+            <span class="{{ span['@class'] is defined ? span['@class'] : null }}">{{ (span['@'] is defined ? span['@'] : null)|replace({'Back':'Zurück'}) }}</span>
+          {% endfor %}
+          </a>
+        {% endfor %} #}
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Editing -->
+
+  <div id="sidebar-section-edit" class="menu-section">
+
+    <div class="menu-section-title">
+      <span>Bearbeitung</span>
+      <span class="section-handle">
+        <i class="section-up bi bi-chevron-down"></i>
+        <i class="section-down bi bi-chevron-up"></i>
+      </span>
+    </div>
+
+    <div class="menu-section-content">
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/view">
+        <span class="menu-item-icon bi bi-eye"></span> <span class="menu-item-title">Anzeigen</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/edit">
+        <span class="menu-item-icon bi bi-pencil-square"></span> <span class="menu-item-title">Bearbeiten</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/folder_contents">
+        <span class="menu-item-icon bi bi-folder"></span> <span class="menu-item-title">Inhalte</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/@@historyview">
+        <span class="menu-item-icon bi bi-clock"></span>
+        <span class="menu-item-title">30.06.2020 23:02</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/@@sharing">
+        <span class="menu-item-icon bi bi-check"></span> <span class="menu-item-title">Freigabe</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Workflow -->
+
+  <div id="sidebar-section-workflow" class="menu-section">
+
+    <div class="menu-section-title">
+      <span>Arbeitsablauf</span>
+      <span class="section-handle">
+        <i class="section-up bi bi-chevron-down"></i>
+        <i class="section-down bi bi-chevron-up"></i>
+      </span>
+    </div>
+
+    <div class="menu-section-content">
+      <a href="#">
+        <span class="menu-item-icon bi bi-check-two-all state-published with-state-color"></span> <span class="menu-item-title state-published with-state-color">Veröffentlicht</span>
+      </a>
+
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/content_status_modify?workflow_action=reject&amp;_authenticator=ef1f18199d2b306019ff0fb5b4278f9a24295bf3">
+        <span class="menu-item-icon bi bi-x-octagon"></span> <span class="menu-item-title">Zurückweisen</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/content_status_modify?workflow_action=retract&amp;_authenticator=ef1f18199d2b306019ff0fb5b4278f9a24295bf3">
+        <span class="menu-item-icon bi bi-arrow-counterclockwise"></span> <span class="menu-item-title">Zurückziehen</span>
+      </a>
+
+
+      <a href="https://newbgetem.bg-kooperation.de/die-bg-etem-aktiv-fuer-sicherheit-und-gesundheit-am-arbeitsplatz/content_status_history">
+        <span class="menu-item-icon bi bi-three-dots"></span>
+        <span class="menu-item-title">Erweitert</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Actions -->
+
+
+
+  <!-- Document Management -->
+
+  <div id="sidebar-section-add" class="menu-section">
+
+    <div class="menu-section-title">
+      <span>Hinzufügen</span>
+      <span class="section-handle">
+        <i class="section-up bi bi-chevron-down"></i>
+        <i class="section-down bi bi-chevron-up"></i>
+      </span>
+    </div>
+
+    <div class="menu-section-content">
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Image">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Bild</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++File">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Datei</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++EasyForm">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">EasyForm</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Collection">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Kollektion</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Landingpage">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Landingpage</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Link">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Link</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++News%20Item">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Nachricht</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Folder">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Ordner</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Document">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Seite</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++Event">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">Termin</span>
+      </a>
+
+      <a href="https://newbgetem.bg-kooperation.de/++add++presseabo">
+        <span class="menu-item-icon bi bi-plus"></span>
+        <span class="menu-item-title">presseabo</span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Display Management -->
+
+  <div id="sidebar-section-display" class="menu-section">
+
+    <div class="menu-section-title">
+      <span>Anzeige</span>
+      <span class="section-handle">
+        <i class="section-up bi bi-chevron-down"></i>
+        <i class="section-down bi bi-chevron-up"></i>
+      </span>
+    </div>
+
+    <div class="menu-section-content">
+      <a href="https://newbgetem.bg-kooperation.de/select_default_view" class="pat-plone-modal">
+        <span class="menu-item-icon bi bi-layout-sidebar-reverse"></span>
+        <span class="menu-item-title">Darstellung</span>
+      </a>
+      <a href="https://newbgetem.bg-kooperation.de/select_default_page" class="pat-plone-modal">
+        <span class="menu-item-icon bi bi-geo"></span>
+        <span class="menu-item-title">Standardseite</span>
+      </a>
+    </div>
+
+  </div>
+
+
+
+
+
+</nav>
+
+{% set url = '/sidebar-util?path=' ~ craft.app.request.pathInfo %}
+
+{% js %}
+$(document).ready(function() {
+
+  $(document).on('click','span.menu-item-nav',function(e){
+    var url = '/sidebar-util?path=' + $(this).parents('a').attr('href').replace(/^.*\/\/[^\/]+/, '');
+    $('#navigation-wrapper').fadeOut( 50, function() {
+      $.ajax({ type: "GET",   
+        url: url, 
+        async: false,
+        success : function(text)
+        {
+          $('#navigation-wrapper .menu-section-content').html(text).fadeIn();
+        }
+      });
+      $('#navigation-wrapper').fadeIn(50);
+    });
+  });
+  $(document).on('click','a.link-back',function(e){
+    e.preventDefault();
+    var url = '/sidebar-util?path=' + $(this).attr('href').replace(/^.*\/\/[^\/]+/, '');
+    $('#navigation-wrapper').fadeOut( 50, function() {
+      $.ajax({ type: "GET",   
+        url: url, 
+        async: false,
+        success : function(text)
+        {
+          $('#navigation-wrapper .menu-section-content').html(text).fadeIn();
+        }
+      });
+      $('#navigation-wrapper').fadeIn(50);
+    });
+    
+    });
+
+});
+{% endjs %}

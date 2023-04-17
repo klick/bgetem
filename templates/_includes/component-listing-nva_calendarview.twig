@@ -1,0 +1,9 @@
+{% import '_macros.twig' as macros %}
+<p><a href="#">Vergangene Termine 2020</a> | <a href="#">2021</a></p>
+<ul class="items list-unstyled listing {{ feed.layout }}">
+
+	{% include "_includes/listing-items" with {items:feed.items,layout:feed.layout} %}
+
+
+
+</ul>

@@ -1,0 +1,208 @@
+{% requireLogin %}
+
+{# 
+medien/index 
+#}
+
+{# {% if not currentUser %}
+{% redirect 'suche' %}
+{% endif %} #}
+
+{% import '_macros.twig' as macros %}
+{% extends '_layout_' ~ currentSite.handle ~ '.twig' %}
+{% set userPhoto = currentUser.photo == null ? craft.assets.id(26645).one() : craft.assets.id(currentUser.photoId).one() %}
+
+
+
+
+
+{% do craft.blitz.options({
+    cachingEnabled: false
+}) %}
+
+
+
+
+{% block content %}
+
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<div class="container bg-layout_medien_container">
+		<div class="scrollbox">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a class="text-decoration-none" href="{{ currentSite.baseUrl }}">Startseite</a>
+				</li>
+				<li class="breadcrumb-item last" aria-current="page">
+					<a class="text-decoration-none" href="{{ currentSite.baseUrl }}account">Profil</a>
+				</li>
+				<li class="breadcrumb-item last" aria-current="page">
+					<strong>Profil bearbeiten</strong>
+				</li>
+			</ol>
+		</div>
+	</div>
+</nav>
+
+
+
+{% macro errorList(errors) %}
+	{% if errors %}
+		{{ ul(errors, {class: 'errors'}) }}
+	{% endif %}
+{% endmacro %}
+
+{% set user = user ?? currentUser %}
+
+{% if user.hasErrors() %}
+  <p>Unable to save your profile.</p>
+{% endif %}
+
+<div class="container bg-layout_medien_container my-5">
+	<div class="row">
+		<div class="col-lg-8">
+			{# Require that a user is logged in to view this form. #}
+			
+			<form method="post" accept-charset="UTF-8" enctype="multipart/form-data">
+				{{ csrfInput() }}
+				{{ actionInput('users/save-user') }}
+				{{ hiddenInput('userId', user.id) }}
+				{{ redirectInput('account') }}
+
+				<div class="row">
+					<div class="col-12 col-md-3">
+
+						<div class="d-flex flex-column align-items-center">
+
+						{% if user.photo %}
+						{# <label>Photo</label> #}
+					    {{ user.photo.getImg({width: 150, height: 150})|attr({
+					      id: 'user-photo',
+					      alt: user.friendlyName,
+					      class: 'rounded-circle mb-3',
+					    }) }}
+
+					    <label for="delete-photo" class="mb-2">
+							{{ input('checkbox', 'deletePhoto', '1', {
+					        	id: 'delete-photo',
+							}) }}
+Foto löschen
+					    </label>
+				    	{% else %}
+				    	<img id="user-photo" class="rounded-circle mb-3" src="{{ userPhoto.url }}" width="150" height="150" alt="Marcus">
+							{% endif %}
+							{# <img id="blah" src="#" alt="your image" class="rounded-circle" style="width: 150px; height: 150px" /> #}
+								<label for="photo" class="d-flex flex-column align-items-center">Neues Foto hochladen
+							{{ input('file', 'photo', null, {
+								id: 'photo',
+								accept: 'image/png,image/jpeg',
+								class: 'form-control d-none',
+							}) }}
+							  <span class="btn btn-outline-secondary">Datei auswählen</span>
+</label>
+						</div>
+				</div>
+
+				<div class="col-12 col-md-8 offset-md-1">
+				
+					<h1 class="h2 mb-3 fw-bold">{{ user.fullName }}</h1>
+					<p class="mb-2">
+					<strong>E-Mail:</strong> {{ user.email }}<br>
+					<strong>Telefon:</strong> 0228 9 26 50 10<br>
+					<strong>Telefax:</strong> 0228 9 26 50 10-10<br>
+					</p>
+					<p class="mb-5">
+					<strong>Mobil:</strong> 0151 12 34 56 78<br>
+					<strong>Bereich/Abteilung:</strong> Kommunikation<br>
+					<strong>Standort:</strong> Köln
+					</p>
+				
+
+
+
+				<div class="form-group mb-5">
+					<label for="ort">Ort</label>
+				{{ input('text', 'fields[userOrt]', user.userOrt, {
+					id: 'ort',
+					class: 'form-control',
+				}) }}
+				{{ _self.errorList(user.getErrors('username')) }}
+				</div>
+				
+				
+
+					<div class="form-group mb-5">
+												<label for="auswahlStandortnews" class="border-top w-100 h5 text-uppercase bg_font-variant-asc pt-2 text-muted mb-3">Auswahl Standortnews</label><br>
+						{% for option in user.auswahlStandortnews.options %}
+							<small class="btn btn-sm user-news-prefs {{ option.selected ? 'btn-secondary' : 'btn-outline-secondary'}} mb-1" data-option-value="{{ option.value }}">{{ option.label }}</small>
+						{% endfor %}
+
+						<input type="hidden" name="fields[auswahlStandortnews]" value="" />
+						<select name="fields[auswahlStandortnews][]" id="auswahlStandortnews" multiple class="d-none">
+						{% for option in user.auswahlStandortnews.options %}
+							<option value="{{ option.value }}" {{ option.selected ? 'selected' : null }}>{{ option.label }}</option>
+						{% endfor %}
+						</select>
+					</div>
+<div>						
+<label for="auswahlBereichsnews" class="border-top w-100 h5 text-uppercase bg_font-variant-asc pt-2 text-muted mb-3">Auswahl Bereichsnews</label><br>
+						{% for option in user.auswahlBereichsnews.options %}
+							<small class="btn btn-sm user-news-prefs {{ option.selected ? 'btn-secondary' : 'btn-outline-secondary'}} mb-1" data-option-value="{{ option.value }}">{{ option.label }}</small>
+						{% endfor %}
+						<input type="hidden" name="fields[auswahlBereichsnews]" value="" />
+						<select name="fields[auswahlBereichsnews][]" id="auswahlBereichsnews" multiple class="d-none">
+						{% for option in user.auswahlBereichsnews.options %}
+							<option value="{{ option.value }}" {{ option.selected ? 'selected' : null }}>{{ option.label }}</option>
+						{% endfor %}
+						</select>
+	
+</div>
+
+
+			<div class="d-flex mt-5">
+				<span><a class="btn btn-outline-secondary me-2" href="{{ currentSite.baseUrl }}account">Abbrechen</a></span>
+				<button class="btn btn-primary" type="submit">Profil speichern</button>
+			</div>
+				
+				</div>
+				</div>
+			</form>
+
+  		</div>
+
+  		<div class="col-lg-3 offset-md-1 portlets">
+	    	<div class="portlet mb-5">
+				<h3 class="h6">Ansprechpartner</h3>
+				<div class="portlet-body-wrapper">
+					<p>Hier finden Sie Ihren Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.
+					</p><p>Telefonisch erreichen Sie die BG ETEM unter 0221 3778-0.<br>Service-Zeiten: 8:00 - 17:00 Uhr</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{%- js -%}
+	$(document).ready(function(){
+		console.log('Hi');
+		$('small.user-news-prefs').on('click', function(){
+			var optionValue = $(this).attr('data-option-value');
+			var selected = $('option[value="' + optionValue +'"]').attr("selected");
+			$(this).toggleClass('btn-outline-secondary btn-secondary');
+			{# $('option[value="' + optionValue +'"]').attr("selected","selected").change(); #}
+			if($('option[value="' + optionValue +'"]').attr("selected")) {
+				$('option[value="' + optionValue +'"]').attr("selected", false);
+				} else {
+				$('option[value="' + optionValue +'"]').attr("selected", "selected");
+			}
+		})
+	});
+	photo.onchange = evt => {
+		const [file] = photo.files
+		if (file) {
+			blah.src = URL.createObjectURL(file)
+		}
+	}
+{%- endjs -%}
+  
+
+{% endblock %}

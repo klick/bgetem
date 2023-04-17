@@ -1,0 +1,177 @@
+columnSuffix: youfptiy
+contentColumnType: string
+fieldGroup: 47c9e39d-3647-44d3-8396-c4633530fb7a # User
+handle: auswahlBereichsnews
+instructions: null
+name: 'Auswahl Bereichsnews'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Controlling
+        -
+          - value
+          - controlling
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Datenschutz
+        -
+          - value
+          - datenschutz
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Finanzen
+        -
+          - value
+          - finanzen
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Geschäftsführung
+        -
+          - value
+          - geschaeftsfuehrung
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Innenrevision
+        -
+          - value
+          - innenrevision
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Innere Verwaltung'
+        -
+          - value
+          - innereVerwaltung
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Interessenvertretungen
+        -
+          - value
+          - interessenvertretungen
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - IT
+        -
+          - value
+          - it
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Kommunikation
+        -
+          - value
+          - kommunikation
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Mitglieder und Beitrag'
+        -
+          - value
+          - mitgliederUndBeitrag
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Personal
+        -
+          - value
+          - personal
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Prävention
+        -
+          - value
+          - praevention
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Regress
+        -
+          - value
+          - regress
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Rehabilitation
+        -
+          - value
+          - rehabilitation
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Sicherheit und Gesundheit'
+        -
+          - value
+          - sicherheitUndGesundheit
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\MultiSelect

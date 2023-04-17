@@ -1,0 +1,39 @@
+defaultPlacement: end
+enableVersioning: true
+handle: aktuelleMeldungen
+name: '[BGHW] Aktuelle Meldungen'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: '../presse-aktuelles/{slug}'
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: 'presse-aktuelles/{slug}'
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: 'nachrichten/{slug}'
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: '../presse-aktuelles/{slug}'
+type: channel

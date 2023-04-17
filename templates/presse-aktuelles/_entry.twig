@@ -1,0 +1,105 @@
+
+{% import '_macros.twig' as macros %}
+{% extends '_layout_' ~ currentSite.handle ~ '.twig' %}
+
+{% set titleImageTransforms = {
+	'(min-width: 1px)': {
+		width: 345,
+		ratio: 16/9,
+		mode: 'crop',
+	}
+} %}
+{% set titleImageAttributes = {alt: entry.cover.one().title, title: entry.cover.one().title, class: '' } %}
+{% set commentParams = {
+    ownerId: entry.id
+} %}
+{% set renderParams = {
+    ownerId: entry
+} %}
+{% set commentCount = (craft.comments.fetch(commentParams) | length) %}
+
+
+{% css %}
+{% if not entry.kommentare.commentEnabled %}
+	div.bg_cc--i-footer {
+		display: none;
+		visibility: hidden;
+	}
+{% endif %}
+	
+{% endcss %}
+
+
+{% block content %}
+
+<div class="container bg-layout_medien_container cluster my-5">
+
+	<div class="row">
+	    <div class="col-lg-8">
+	    	<article class="" data-content-type="">
+				<header>
+	    			<p class="roof-row upper">{{ entry.dachzeile ? entry.dachzeile : 'Sicherheit am Arbeitsplatz' }}</p>
+					<h1>{{entry.title}}</h1>
+					{% if entry.description is defined and entry.description is not empty %}
+					<div class="dot">
+						<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+						  <defs></defs>
+						  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+						</svg>
+					</div>
+					<p class="intro description bold">{{ entry.description }}</p>
+					{% endif %}
+					<p class="author-byline">Letzte Änderung: {# {{ authors|join(', ', ' und ') }}  #}{{ entry.postDate|date('d.m.Y') }}</p>
+				</header>
+				<section class="article-body clearfix">
+					{% if entry.cover is defined and entry.cover is not empty %}
+					<figure class="news-image inline float-start mt-1">
+						{{craft.images.pictureMedia(entry.cover.one(), titleImageTransforms, null, titleImageTransforms)}}
+						<figcaption class="mt-2">Bild: Halfpoint/ stock.adobe.com</figcaption>
+						{% if entry.cover.one().imgCaption is defined and entry.cover.one().imgCaption|length %}<figcaption>{{ entry.cover.one().imgCaptionn }}</figcaption>{% endif %}
+					</figure>
+					{% endif %}
+					{{ entry.body | replace({'<h2>':'<h2 class="my-3">'})|raw }}
+				</section>
+				{# <pre>{{ dump(craft.comments.fetch(commentParams) | length) }}</pre>
+				{{ commentCount }} #}
+				{# {{ craft.comments.fetch(entry.id) }} #}
+				{% if currentUser and entry.kommentare.commentEnabled %}
+				<aside class="mt-5">
+					<h3 class="h5 mt-2 text-uppercase bg_font-variant-asc fw-bold">Kommentare:</h3>
+					<div>
+						{{ craft.comments.render(entry.id) }}
+					</div>
+				</aside>
+				{% elseif currentUser and entry.kommentare.commentEnabled == false and commentCount > 0 %}
+					<aside class="mt-5">
+					<h3 class="h5 mt-2 text-uppercase bg_font-variant-asc fw-bold">Kommentare:</h3>
+						<div>
+							{{ craft.comments.render(entry.id, renderParams) }}
+						</div>
+						<p class="mt-5 quiet"><i>Dieser Beitrag kann nicht mehr kommentiert werden.{{ (entry.kommentarschliessungAnmerkung ? '<br> Anmerkung Moderator: ' ~ entry.kommentarschliessungAnmerkung)|raw }}</i></p>
+					</aside>
+				{% else %}
+					<aside class="mt-5">
+						<p class="mt-2"><i>Dieser Beitrag kann nicht kommentiert werden.</i></p>
+					</aside>
+				{% endif %}
+				
+				{% include "_includes/component-sharing-buttons" %}
+				{% include "_includes/component-doc-actions" with {webcode:entry.webcode is defined ? entry.webcode : null} %}
+			</article>
+	    </div>
+	    <div class="col-lg-3 offset-md-1 portlets">
+	    	<div class="portlet mb-5">
+				<h3 class="h6">Ansprechpartner</h3>
+				<div class="portlet-body-wrapper">
+					<p>Hier finden Sie Ihren Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.
+					<p>Telefonisch erreichen Sie die BG ETEM unter 0221 3778-0.<br>Service-Zeiten: 8:00 - 17:00 Uhr</p>
+				</div>
+			</div>
+	    </div>
+	</div>
+
+</div>
+
+{% endblock %}

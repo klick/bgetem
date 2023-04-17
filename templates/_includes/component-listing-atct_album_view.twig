@@ -1,0 +1,8 @@
+{% import '_macros.twig' as macros %}
+<ul class="items list-unstyled listing {{ feed.layout }} row no-guttes row-cols-1 row-cols-sm-2 row-cols-md-3">
+{% include "_includes/listing-items" with {items:feed.items,layout:feed.layout} %}
+</ul>
+
+{% if feed.batching is defined and feed.batching|length > 0 %}
+{% include "_includes/component-pagination" %}
+{% endif %}

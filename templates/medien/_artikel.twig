@@ -1,0 +1,180 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_medien" %}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 376,
+    }
+} %}
+
+{% set artikelCoverAttributes = { alt: 'Alt Text', title: 'title' } %}
+
+{# {% block ausgabe %}
+<p class="mb-0 d-inline">| Ausgabe {{ entry.title }}</p>
+{% endblock %} #}
+
+{% block content %}
+
+<div class="container bg-layout_medien_container my-5">
+	<div class="row">
+		<div class="col-9">
+			<article>
+				<div class="row">
+					<div class="col-12">
+						<header class="pb-4 border-bottom bg_border-light">
+							{# <p class="roof-row upper">{% for medienart in product.medienart %}{{ medienart }}{% if not loop.last %}, {% endif %}{% endfor %}</p> #}
+							<h1 class="h2 bg_text-blau fw-bold">{{ product.title }}</h1>
+							<p class="intro description bold mb-0">{{ product.description }} {% if currentUser and currentUser.id == 1 %}&ensp;<a href="{{ product.cpEditUrl }}">e</a>{% endif %}</p>
+						</header>
+					</div>
+					{% if not product.medienportalTitelbild is empty %}
+					<div class="image col-3">
+						<figure class="border bg_border-light">
+							{{ craft.images.pictureMedia(product.medienportalTitelbild.one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+						</figure>
+					</div>
+					{% else %}
+					<div class="image col-3">
+						<figure class="border bg_border-light">
+							{{ craft.images.pictureMedia(craft.assets.id(15178).one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+						</figure>
+					</div>
+					{% endif %}
+					<div class="col-9">
+						{# <header>
+							<p class="roof-row upper">{% for medienart in product.medienart %}{{ medienart }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+							<h1 class="h2 color-dguv-blau">{{ product.title }}</h1>
+							<p class="intro description bold">{{ product.description }}</p>
+						</header> #}
+						<section class="article-body">
+							{% cache %}
+							<div class="row">
+								<div class="col-8">
+								<small>
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 mb-2 fw-bold">Bestellnummer:</span>
+										<span class="col-7 mb-2">{{ product.defaultVariant.sku }}</span>
+									</span>
+
+									{% if not product.medienart is empty %}
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 fw-bold">Medienart:</span>
+										<span class="col-7">
+											{% for medienart in product.medienart %}
+											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ medienart.url }}">{{ medienart }}</a>{% if not loop.last %}, {% endif %} 
+											{% endfor %}
+										</span>
+									</span>
+									{% endif %}
+									
+									{% if not product.branchen is empty %}
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 fw-bold">Branchen:</span>
+										<span class="col-7">
+											{% for branche in product.branchen %}
+											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ branche.url }}">{{ branche }}</a>{% if not loop.last %}, {% endif %} 
+											{% endfor %}
+										</span>
+									</span>
+									{% endif %}
+
+									{% if not product.themenMedienportal is empty %}
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 fw-bold">Themen:</span>
+										<span class="col-7">
+											{% for thema in product.themenMedienportal %}
+											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ thema.url }}">{{ thema }}</a>{% if not loop.last %}, {% endif %} 
+											{% endfor %}
+										</span>
+									</span>
+									{% endif %}
+
+									{% if not product.zielgruppen is empty %}
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 fw-bold">Zielgruppen:</span>
+										<span class="col-7">
+											{% for zielgruppe in product.zielgruppen %}
+											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ zielgruppe.url }}">{{ zielgruppe }}</a>{% if not loop.last %}, {% endif %} 
+											{% endfor %}
+										</span>
+									</span>
+									{% endif %}
+
+									{% if not product.downloadFilename is empty %}
+									<span class="row bg_category-wrapper mb-3">
+										<span class="col-4 fw-bold">Download:</span>
+										<span class="col-7">
+											<a class="text-decoration-none shadow-none border-bottom-0 download inline" href="{{ product.downloadUrl }}" download>{{ product.downloadFilename }}</a> ({{ product.downloadContentType|replace({'application/pdf': 'PDF'}) }}, {{ ((product.downloadSize / 1024)|round(1) / 1024)|round(1)  }} MB)
+										</span>
+									</span>
+									{% endif %}
+								</small>
+								</div>
+								<div class="col-4">
+									<div class="mp-price-table">
+										<div class="conditions bg-dguv-grau-leicht">
+											<small class="py-2 px-3 color-dguv-grau-3">Versicherte Unternehmen: 99 Freiexemplare, jedes weitere Exemplar 0,00 €</small>
+											<small class="py-2 px-3 border-white border-top border-bottom color-dguv-grau-3">Andere Besteller: {{ product.defaultVariant.price }},– € zzgl. 3,50 € Versandkosten</small>
+										</div>
+										{% if product.defaultVariant.stock > 0 %}
+										<form method="post">
+											{{ craft.blitz.csrfInput() }}
+											{{ actionInput('commerce/cart/update-cart') }}
+											{{ redirectInput('warenkorb') }}
+											{{ hiddenInput('successMessage', ('Added "' ~ product.title ~ '" to cart.')|hash) }}
+											{{ hiddenInput('qty', 1) }}
+											<div class="d-none">
+												<select name="purchasableId">
+													{% for variant in product.variants %}
+													<option value="{{ variant.id }}">{{ variant.sku }}</option>
+													{% endfor %}
+												</select>
+											</div>
+											<button type="submit" class="w-100 bg-dguv-gruen text-white p-3"><small><span class="arrow-after arrow-white d-flex justify-content-between align-items-center">Jetzt bestellen</span></small></button>
+										</form>
+										{% else %}
+											<small class="w-100 bg-dguv-grau-8 p-3 color-dguv-rot border-white  border-bottom">Zur Zeit nicht lieferbar</small>
+										{% endif %}
+									</div>
+								</div>
+							</div>
+							{% endcache %}
+						</section>
+					</div>
+
+					{% if not product.body is empty %}
+					<section class="article-body my-4">
+						<div class="col-12">
+						{{ product.body }}
+						</div>
+					</section>
+					{% endif %}
+
+					<footer class="article-footer doc-actions mb-5">
+						<ul class="docactions small">
+							<li>Aktualisiert: {{ product.postDate|date('d.m.Y') }}</li>
+							<li><a href="#">Drucken</a></li>
+							<li><a href="{{ product.url }}">Webcode: {{ product.webcode }}</a></li>
+						</ul>
+					</footer>
+					
+					{% if not product.artikelreferenzen is empty %}
+					<aside class="my-5">
+						<h2 class="h5 fw-bold mt-5">Weitere Medien zu diesem Thema:</h2>
+						<ul class="listing m-0">
+						{% for artikel in product.artikelreferenzen %}
+							{{ include('_includes/component-listing_with-image-and-actions', {entry: artikel, image: artikel.medienportalTitelbild.one(), buyButton: false }) }}
+						{% endfor %}
+						</ul>
+					</aside>
+					{% endif %}
+				</div>
+			</article>
+		</div>
+		{% cache globally %}
+			{{ include('_includes/portlets_medien') }}
+		{% endcache %}
+	</div>
+</div>
+
+{% endblock %}

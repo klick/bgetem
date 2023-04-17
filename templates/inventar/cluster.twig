@@ -1,0 +1,31 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_inventar" %}
+
+{% block content %}
+
+<div class="inventar py-4">
+	<div class="container bg-layout_medien_container">
+		<h1><strong><a href="{{ alias(currentSite.baseUrl) }}">Inventar</a> / Cluster</strong></h1>
+	</div>
+</div>
+
+
+<!-- Meta Navigation -->
+
+{# <div class="container">
+	<h2 class="h6"><strong class="upper"><a id="metanavigation" class="inventar-anchor">Metanavigation</a></strong>&ensp;<a class="inventar-anchor-link" href="#metanavigation">#</a></h2>
+</div> #}
+
+	
+
+
+{% if entry.modules.level(1) %}
+	{% include '_includes/component_modules.twig' with {'code': true} %}
+{% else %}
+	No
+{% endif %}
+
+
+
+{% endblock %}
+

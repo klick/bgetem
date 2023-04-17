@@ -1,0 +1,92 @@
+{# 
+medien/index 
+#}
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout_medien" %}
+
+{% set searchQuery = craft.app.request.getParam('suchtext') %}
+
+{% if searchQuery %}
+	{# {% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(5).orderBy('postDate DESC') %} #}
+	{% set artikelStart = craft.products().with(['medienportalTitelbild']).search(searchQuery).with(['medienportalTitelbild']).orderBy('postDate DESC') %}
+	{% else %}
+		{% if craft.app.request.hostInfo|split('.')|last == 'test' %}
+			{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(5).orderBy('postDate DESC') %}
+		{% else %}
+		{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(20).orderBy('postDate DESC') %}
+	{% endif %}
+{% endif %}
+
+
+{% set filterCategories = craft.categories()
+  .groupId('7,8,4,3')
+  .all()
+ %}
+ {% set filterCategoriesGrouped = filterCategories|group(e => e.group) %}
+
+
+{# {% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(20).orderBy('postDate DESC') %} #}
+
+{% paginate artikelStart as pageInfo, pageEntries %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['medienStart']
+}) %}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 141,
+    }
+} %}
+
+{% set artikelCoverAttributes = { alt: 'Alt Text', title: 'title' } %}
+
+{# {% block ausgabe %}
+<p class="mb-0 d-inline">| Ausgabe {{ entry.title }}</p>
+{% endblock %} #}
+
+
+
+{% block content %}
+
+<div class="container bg-layout_medien_container my-5">
+	<div class="row">
+		<div class="col-9">
+			{# <pre>{{ dump(artikelStart) }}</pre> #}
+			<article>
+				<header>
+					{{ entry.dachzeile ? ('<p class="roof text-uppercase mb-2">' ~ entry.dachzeile ~ '</p>')|raw }}
+					<h1>{{ entry.title }}</h1>
+					<div class="dot">
+						<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+							<circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+						</svg>
+					</div>
+					<p class="intro description bold">{{ entry.description }}</p>
+					<p class="author-byline">Letzte Änderung: {{ entry.postDate|date('d.m.Y') }}</p>
+				</header>
+				<section class="article-body">
+					{{ entry.body }}<br>
+				</section>
+				<section>
+					<p class="mb-3">Sie sehen auf dieser Seite nur einen thematischen Ausschnitt unseres Angebots an Informationsmitteln.<br>Weitere Medien der BG ETEM erhalten Sie über die <a href="{{ siteUrl }}">Startseite unseres Medienportals.</a></p>
+					<div class="row align-items-baseline mb-2">
+						<ul class="listing m-0">
+							{% for artikel in entry.produkte %}
+							{{ include('_includes/component-listing_with-image-and-actions', {entry: artikel, image: artikel.medienportalTitelbild ? artikel.medienportalTitelbild[0] : null, buyButton: true}) }}
+							{% endfor %}
+						</ul>
+					</div>
+				</section>
+			</article>
+		</div>
+		{{ include('_includes/portlets_medien') }}
+	</div>
+</div>
+
+
+{% endblock %}

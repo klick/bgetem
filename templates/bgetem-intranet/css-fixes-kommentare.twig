@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+  <head>
+    <meta name="generator" content="Plone - http://plone.com">
+    <!-- Head Slot -->
+    <meta name="description" content="Die BG ETEM: Aktiv f&#252;r Sicherheit und Gesundheit am Arbeitsplatz. Wir sind die gesetzliche Unfallversicherung f&#252;r rund vier Millionen Menschen in mehr als 200.000 Mitgliedsunternehmen. Wir unterst&#252;tzen unsere Mitgliedsunternehmen bei Arbeitssicherheit und Gesundheitsschutz. Wir k&#252;mmern uns um Verletzte und Erkrankte und sorgen f&#252;r eine bestm&#246;gliche Wiedereingliederung.">
+    <title>Die BG ETEM &#8212; Plone site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Slot -->
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/shariff.min.css?version=2023-02-16%2009%3A54%3A43.535477" data-bundle="shariff">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/sidebar.min.css?version=2023-02-16%2009%3A54%3A58.415478" data-bundle="sidebar">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-compiled.css" data-bundle="plone">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-editor-tools-compiled.css" data-bundle="plone-editor-tools">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-fontello-compiled.css" data-bundle="plone-fontello">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-glyphicons-compiled.css" data-bundle="plone-glyphicons">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-legacy-compiled.css" data-bundle="plone-legacy">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-logged-in-compiled.css" data-bundle="plone-logged-in">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/plone-tinymce-compiled.css" data-bundle="plone-tinymce">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/siguv.min.css?version=2023-02-16%2009%3A55%3A03.131478" data-bundle="siguv">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/custom.css?version=2023-02-16%2009%3A55%3A02.939478" data-bundle="siguv-static">
+    <link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/css-fix/siguv.min.css">
+    <link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+    <link rel="author" href="http://svaintra20:8080/portal/author/admin" title="Autoreninformation">
+    <link rel="canonical" href="http://svaintra20:8080/portal/diebgetem">
+    <link rel="apple-touch-icon" sizes="180x180" href="++plone++plonetheme.siguv/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="++plone++plonetheme.siguv/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="++plone++plonetheme.siguv/favicon/favicon-16x16.png">
+    <link rel="manifest" href="++plone++plonetheme.siguv/favicon/site.webmanifest">
+    <link rel="mask-icon" href="++plone++plonetheme.siguv/favicon/safari-pinned-tab.svg" color="#004994">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="search" href="http://svaintra20:8080/portal/@@search" title="Website durchsuchen">
+    <!-- Script Slot -->
+    <script>
+      PORTAL_URL = 'http://svaintra20:8080/portal';
+    </script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/components/jquery/dist/jquery.min.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/components/requirejs/require.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/config.js" data-bundle="basic"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A00.979482/plone-base-compiled.min.js" data-bundle="plone-base"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++resource++nva.viewlets/shariff.min.js?version=2023-02-16%2009%3A54%3A43.535477" data-bundle="shariff"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++resource++collective.sidebar/js/sidebar.min.js?version=2023-02-16%2009%3A54%3A58.415478" data-bundle="sidebar"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A01.059482/plone-moment-compiled.min.js" data-bundle="plone-moment"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A00.991482/plone-compiled.min.js" data-bundle="plone"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A01.019482/plone-editor-tools-compiled.min.js" data-bundle="plone-editor-tools"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-17%2009%3A24%3A42.566575/plone-legacy-compiled.js" data-bundle="plone-legacy"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A01.055482/plone-logged-in-compiled.min.js" data-bundle="plone-logged-in"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++plone++static/++unique++2023-02-16%2009%3A57%3A01.091482/plone-tinymce-compiled.min.js" data-bundle="plone-tinymce"></script>
+    <script type="text/javascript" src="http://svaintra20:8080/portal/++theme++plonetheme.siguv/js/siguv.min.js?version=2023-02-16%2009%3A55%3A03.131478" data-bundle="siguv"></script>
+  </head>
+  <body id="visual-portal-wrapper" class="frontend icons-on plone-toolbar-expanded plone-toolbar-left plone-toolbar-left-expanded portaltype-folder section-diebgetem site-portal template-enhanced_foldersummary thumbs-on userrole-authenticated userrole-manager userrole-owner viewpermission-view sticky-navigation" dir="ltr" data-base-url="http://svaintra20:8080/portal/diebgetem" data-view-url="http://svaintra20:8080/portal/diebgetem" data-portal-url="http://svaintra20:8080/portal" data-i18ncatalogurl="http://svaintra20:8080/portal/plonejsi18n" data-pat-pickadate='{"date": {"selectYears": 200}, "time": {"interval": 5 } }' data-pat-plone-modal='{"actionOptions": {"displayInModal": false}}'>
+    <header id="portal-top">
+      <div id="portal-header" class="bg-light">
+        <div class="container">
+          <div class="d-flex align-items-center justify-content-end">
+            <div class="align-middle">
+              <span class="site-action">
+                <a href="http://svaintra20:8080/portal/sign-language" title="Geb&#228;rdensprache">
+                  <svg viewbox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                    <title>DGUV Icon Sign Language</title>
+                    <path d="M 193.12 150.4 L 228.29 150.4 L 263.29 115.48 C 270.06 108.717 266.971 97.161 257.729 94.679 C 253.44 93.528 248.862 94.751 245.72 97.89 Z M 245.81 150.4 L 250.59 150.4 C 257.565 150.406 264.218 153.337 268.93 158.48 C 269.564 159.17 270.155 159.898 270.7 160.66 L 283.7 147.66 C 288.857 142.487 288.473 134.006 282.87 129.32 C 277.87 125.1 270.31 125.89 265.68 130.52 Z M 65.3 157.67 L 87.72 135.22 L 87.72 130.48 L 87.72 129.79 C 87.72 123.23 82.94 117.33 76.41 116.79 C 69.155 116.144 62.907 121.856 62.9 129.14 L 62.9 130.48 L 62.9 160.09 Z M 139.56 121.67 C 146.215 129.853 147.081 141.311 141.73 150.4 L 191.14 150.4 L 183.33 142.58 L 244.75 80.88 C 249.38 76.24 250.17 68.68 245.95 63.66 C 241.278 58.053 232.8 57.669 227.64 62.83 L 165.76 125 L 157 116.21 L 201.25 71.9 C 205.88 67.27 206.67 59.71 202.45 54.68 C 197.771 49.075 189.291 48.696 184.13 53.86 L 124.88 113.18 C 130.618 114.2 135.815 117.205 139.56 121.67 Z M 274.33 200 L 186.67 200.15 L 186.67 187.76 L 249.26 187.76 C 255.81 187.76 261.71 182.97 262.26 176.43 C 262.918 169.16 257.199 162.891 249.9 162.88 L 112.16 162.88 L 127.62 147.4 L 128.12 146.93 C 132.75 142.29 133.54 134.73 129.33 129.7 C 124.655 124.096 116.177 123.716 111.02 128.88 L 110.02 129.81 L 73.43 166.5 L 73.43 166.5 C 66.534 173.474 62.677 182.892 62.7 192.7 L 62.7 249.92 L 62.7 249.92 L 62.7 250 C 62.678 277.449 84.911 299.718 112.36 299.74 L 112.36 299.74 L 154.54 299.64 L 237.4 299.64 C 244.703 299.634 250.428 293.364 249.77 286.09 C 249.2 279.56 243.3 274.77 236.77 274.77 L 186.67 274.77 L 186.67 262.38 L 262.32 262.46 C 271.892 262.189 277.581 251.656 272.56 243.502 C 270.361 239.931 266.512 237.709 262.32 237.59 L 186.67 237.51 L 186.67 225.05 L 273.67 224.9 C 280.22 224.9 286.12 220.11 286.67 213.57 C 287.346 206.298 281.633 200.016 274.33 200 Z"></path>
+                  </svg>
+                  <span>Geb&#228;rdensprache</span>
+                </a>
+              </span>
+              <span class="site-action">
+                <a href="http://svaintra20:8080/portal/plain-language" title="Leichte Sprache">
+                  <svg viewbox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                    <title>DGUV Icon Easy Language</title>
+                    <path d="M 199.94 249.79 L 262.32 224.09 L 262.32 197.16 L 199.94 222.87 L 199.94 249.79 Z M 199.94 208.84 L 262.32 183.14 L 262.32 156.21 L 199.94 181.92 L 199.94 208.84 Z M 299.75 100.75 L 249.75 121.06 C 246.752 63.549 182.622 30.85 134.315 62.202 C 114.36 75.153 101.754 96.822 100.36 120.57 L 50.21 99.93 L 50.21 248.38 L 175.05 299.78 L 299.75 249.14 Z M 125.14 125.21 C 124.985 86.813 166.455 62.647 199.785 81.711 C 217.294 91.726 227.048 111.301 224.5 131.31 L 175.13 151.36 L 125.49 130.93 C 125.269 129.031 125.152 127.122 125.14 125.21 Z M 75.14 137.21 L 162.48 173.21 L 162.48 267.57 L 75.2 231.62 Z M 187.44 267.73 L 187.44 173.33 L 274.76 137.87 L 274.76 232.29 Z M 132.53 177.21 L 113.93 195.85 L 105.9 187.8 L 88.25 205.49 L 113.93 231.22 L 150.18 194.89 L 132.53 177.21 Z"></path>
+                  </svg>
+                  <span>Leichte Sprache</span>
+                </a>
+              </span>
+            </div>
+            <div>
+              <form action="http://svaintra20:8080/portal/@@search" class="mr-4" id="site-search" role="search" aria-label="Sitewide">
+                <label class="sr-only" for="header-search">Suchbegriff/Webcode</label>
+                <div class="input-group">
+                  <input type="search" name="SearchableText" class="form-control border-dark" id="header-search" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-light border-dark">Suchen</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="portal-mainnavigation">
+      <div id="portal-navigation-cover"></div>
+      <nav id="portal-navigation" class="sidebar-left" data-sidebar-mouse="true" data-sidebar-mouse-area="30">
+        <div class="menu">
+          <!-- Portal Marker -->
+          <!-- Search -->
+          <div id="sidebar-section-search" class="menu-section">
+            <div class="menu-section-content">
+              <form action="http://svaintra20:8080/portal/@@search" id="menu-search" role="search" method="post">
+                <label class="sr-only" for="menu-search">Suchbegriff/Webcode</label>
+                <div class="input-group">
+                  <input type="search" name="SearchableText" class="form-control border-dark" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-light border-dark">Suchen</button>
+                  </div>
+                </div>
+                <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+              </form>
+            </div>
+          </div>
+          <!-- tal:comment tal:replace="nothing" -->
+          <div id="sidebar-section-profile" class="menu-section">
+            <div class="menu-profile">
+              <a href="http://svaintra20:8080/portal/@@personal-information">
+                <div class="profile-image" style="background-image: url('http://svaintra20:8080/portal/portal_memberdata/portraits/admin');"></div>
+                <div class="profile-info">
+                  <div class="profile-name">admin</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- /tal:comment -->
+          <!-- Admin Links -->
+          <div id="sidebar-section-site" class="menu-section">
+            <div class="menu-section-title">
+              <span>Webseite</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/plone_control_panel">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Einstellungen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Static Links -->
+          <div id="sidebar-section-links" class="menu-section">
+            <div class="menu-section-title">
+              <span>Links</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal" title="Startseite">
+                <span class="menu-item-icon bi bi-house"></span>
+                <span class="menu-item-title">Startseite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/logout" title="Abmelden">
+                <span class="menu-item-icon bi bi-box-arrow-right"></span>
+                <span class="menu-item-title">Abmelden</span>
+              </a>
+            </div>
+          </div>
+          <!-- Navigation Controls -->
+          <div id="sidebar-section-navigation" class="menu-section">
+            <div class="menu-section-title">
+              <span>Navigation</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div id="navigation-wrapper" class="navigation-dynamic">
+              <div class="menu-section-content">
+                <a class="link-back link-folder" href="http://svaintra20:8080/portal">
+                  <span class="menu-item-icon bi bi-chevron-left"></span>
+                  <span class="menu-item-title">Zur&#252;ck</span>
+                </a>
+                <a class="link-show link-item" href="http://svaintra20:8080/portal/diebgetem" title="Die BG ETEM">
+                  <span class="menu-item-title">Die BG ETEM</span>
+                </a>
+                <div class="has-back">
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/selbstverwaltung" title="Selbstverwaltung">
+                      <span class="menu-item-title">Selbstverwaltung</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/selbstverwaltung" title="Selbstverwaltung">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/geschaeftsfuehrung" title="Gesch&#228;ftsf&#252;hrung">
+                      <span class="menu-item-title">Gesch&#228;ftsf&#252;hrung</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/geschaeftsfuehrung" title="Gesch&#228;ftsf&#252;hrung">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/dienstregeln" title="Dienstregeln">
+                      <span class="menu-item-title">Dienstregeln</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/dienstregeln" title="Dienstregeln">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/interessenvertretungen" title=" Interessenvertretungen ">
+                      <span class="menu-item-title"> Interessenvertretungen </span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/interessenvertretungen" title=" Interessenvertretungen ">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/compliance" title="Compliance">
+                      <span class="menu-item-title">Compliance</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/compliance" title="Compliance">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/datenschutz-korruptionspraevention" title="Datenschutz/Korruptionspr&#228;vention">
+                      <span class="menu-item-title">Datenschutz/Korruptionspr&#228;vention</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/datenschutz-korruptionspraevention" title="Datenschutz/Korruptionspr&#228;vention">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/leitbild" title="Leitbild">
+                      <span class="menu-item-title">Leitbild</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/leitbild" title="Leitbild">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/abteilungen" title="Abteilungen">
+                      <span class="menu-item-title">Abteilungen</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/abteilungen" title="Abteilungen">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                  <div class="d-flex">
+                    <a class="link-item" href="http://svaintra20:8080/portal/diebgetem/stabsstellen" title="Stabsstellen">
+                      <span class="menu-item-title">Stabsstellen</span>
+                    </a>
+                    <a class="link-folder" href="http://svaintra20:8080/portal/diebgetem/stabsstellen" title="Stabsstellen">
+                      <span class="menu-item-nav bi bi-caret-right-fill"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Editing -->
+          <div id="sidebar-section-edit" class="menu-section">
+            <div class="menu-section-title">
+              <span>Bearbeitung</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/diebgetem/view">
+                <span class="menu-item-icon bi bi-eye"></span>
+                <span class="menu-item-title">Anzeigen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/edit">
+                <span class="menu-item-icon bi bi-pencil-square"></span>
+                <span class="menu-item-title">Bearbeiten</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/folder_contents">
+                <span class="menu-item-icon bi bi-folder"></span>
+                <span class="menu-item-title">Inhalte</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/@@historyview">
+                <span class="menu-item-icon bi bi-clock"></span>
+                <span class="menu-item-title">27.03.2023 16:30</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/@@sharing">
+                <span class="menu-item-icon bi bi-arrow-90deg-right"></span>
+                <span class="menu-item-title">Freigabe</span>
+              </a>
+            </div>
+          </div>
+          <!-- Workflow -->
+          <div id="sidebar-section-workflow" class="menu-section">
+            <div class="menu-section-title">
+              <span>Arbeitsablauf</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="#">
+                <span class="menu-item-icon bi bi-bullseye state-published with-state-color"></span>
+                <span class="menu-item-title state-published with-state-color">Ver&#246;ffentlicht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/content_status_modify?workflow_action=reject&amp;_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckweisen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/content_status_modify?workflow_action=retract&amp;_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckziehen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/content_status_history">
+                <span class="menu-item-icon bi bi-three-dots"></span>
+                <span class="menu-item-title">Erweitert</span>
+              </a>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div id="sidebar-section-actions" class="menu-section">
+            <div class="menu-section-title">
+              <span>Aktionen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/diebgetem/object_cut?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="">
+                <span class="menu-item-icon bi bi-file-minus"></span>
+                <span class="menu-item-title">Ausschneiden</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/object_copy?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="">
+                <span class="menu-item-icon bi bi-files"></span>
+                <span class="menu-item-title">Kopieren</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/delete_confirmation?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="pat-plone-modal" data-pat-plone-modal='{"actionOptions": {"disableAjaxFormSubmit":true, "redirectOnResponse":true}}'>
+                <span class="menu-item-icon bi bi-trash"></span>
+                <span class="menu-item-title">L&#246;schen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/object_rename?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="pat-plone-modal" data-pat-plone-modal="{}">
+                <span class="menu-item-icon bi bi-shuffle"></span>
+                <span class="menu-item-title">Umbenennen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/@@manage-aliases" class="">
+                <span class="menu-item-icon bi bi-chevron-right"></span>
+                <span class="menu-item-title">URL-Verwaltung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/@@ical_import_settings/enable?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="">
+                <span class="menu-item-icon bi bi-calendar2-plus"></span>
+                <span class="menu-item-title">Enable icalendar import</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/@@renewwebcode?_authenticator=59e5591bbf3febdeb840ea69a3c1e4cd5d50f538" class="">
+                <span class="menu-item-icon bi bi-chevron-right"></span>
+                <span class="menu-item-title">Webcode erneuern</span>
+              </a>
+            </div>
+          </div>
+          <!-- Document Management -->
+          <div id="sidebar-section-add" class="menu-section">
+            <div class="menu-section-title">
+              <span>Hinzuf&#252;gen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Anzeige">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Anzeige </span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Bekanntmachung">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bekanntmachung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Image">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bild</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Cluster">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Cluster</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++File">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Datei</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Feedreader">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Feedreader</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Flexfolder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Flexfolder</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Formularauswahl">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Formularauswahl</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Collection">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Kollektion</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++LDAPPerson">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">LDAPPerson</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Landingpage">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Landingpage</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Link">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Link</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++News%20Item">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Nachricht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Folder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Ordner</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Pinnwand">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Pinnwand</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Portlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Portlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++RSSPortlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">RSSPortlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Document">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Seite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Sozialprojekt">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Soziales Projekt</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++Event">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Termin</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/++add++videoembed">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">videoembed</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/folder_constraintypes_form">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Einschr&#228;nkungen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Display Management -->
+          <div id="sidebar-section-display" class="menu-section">
+            <div class="menu-section-title">
+              <span>Anzeige</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/diebgetem/select_default_view" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-pip"></span>
+                <span class="menu-item-title">Darstellung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/diebgetem/select_default_page" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-geo"></span>
+                <span class="menu-item-title">Standardseite</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="siguv-navigation" class="enabled">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand" href="http://svaintra20:8080/portal" title="Plone site">
+              <img src="https://www.bgetem.de/++theme++plonetheme.siguv/logo/bg-etem.svg" alt="Plone site">
+            </a>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown active">
+                <a id="diebgetem" class="nav-link" href="http://svaintra20:8080/portal/diebgetem"> Die BG ETEM </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="standorte" class="nav-link" href="http://svaintra20:8080/portal/standorte"> Standorte </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="sicherheit-gesundheit" class="nav-link" href="http://svaintra20:8080/portal/sicherheit-gesundheit"> Sicherheit/Gesundheit </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a id="arbeitsbereiche" class="nav-link" href="http://svaintra20:8080/portal/arbeitsbereiche"> Arbeitsbereiche </a>
+              </li>
+              <li class="nav-item">
+                <a id="testnachricht-im-bereich-it" class="nav-link" href="http://svaintra20:8080/portal/testnachricht-im-bereich-it"> Testnachricht im Bereich IT </a>
+              </li>
+              <li class="nav-item">
+                <a id="sammlung-flexfolder" class="nav-link" href="http://svaintra20:8080/portal/sammlung-flexfolder"> Sammlung Flexfolder </a>
+              </li>
+            </ul>
+            <div id="sidebar-handle">
+              <img class="icon icon-inline icon-lg" src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/icons/bootstrap/justify.svg" alt="Sign Sidebar" style="margin: -3px 5px 0 0 !important;">
+              <span>Men&#252;</span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Body Slot for everything between Header and Footer -->
+    <section id="content">
+      <!-- Content Slot inside Section Content -->
+      <div id="viewlet-above-content">
+        <nav id="plone-breadcrumb" aria-label="breadcrumb">
+          <div class="container">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="http://svaintra20:8080/portal">Startseite</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                <span>Die BG ETEM</span>
+              </li>
+            </ol>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+        <div id="viewlet-statusmessage"></div>
+        <!-- Main Slot inside Bootstrap Container -->
+        <div class="container" id="main-content">
+          <div class="row">
+            <span class="col-12">
+              <span id="social-tags-body" style="display: none" itemscope itemtype="http://schema.org/WebPage"></span>
+              <p class="roof text-uppercase mb-1"></p>
+            </span>
+          </div>
+          <!-- Content -->
+          <div class="row">
+            <!-- Content-Spalte -->
+            <div class="col-12 col-lg-9">
+              <h1>Die BG ETEM</h1>
+              <!--<span tal:content="structure provider:plone.belowcontenttitle" />-->
+              <p class="lead mt-5">
+                <img class="icon" src="++theme++plonetheme.siguv/icons/siguv/dot.svg">
+                <span>Die BG ETEM: Aktiv f&#252;r Sicherheit und Gesundheit am Arbeitsplatz. Wir sind die gesetzliche Unfallversicherung f&#252;r rund vier Millionen Menschen in mehr als 200.000 Mitgliedsunternehmen. Wir unterst&#252;tzen unsere Mitgliedsunternehmen bei Arbeitssicherheit und Gesundheitsschutz. Wir k&#252;mmern uns um Verletzte und Erkrankte und sorgen f&#252;r eine bestm&#246;gliche Wiedereingliederung.</span>
+              </p>
+              <span></span>
+              <div class="mt-5"></div>
+              <!-- Start Iteration Folder Items -->
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/selbstverwaltung">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Selbstverwaltung </h3>
+                      <p> An der Spitze der Berufsgenossenschaft stehen die beiden Selbstverwaltungsorgane Vertreterversammlung und Vorstand. Sie werden je zur H&#228;lfte aus ehrenamtlichen Vertretern der Versicherten und der Arbeitgeber gebildet. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/geschaeftsfuehrung">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Gesch&#228;ftsf&#252;hrung </h3>
+                      <p> Die Gesch&#228;ftsf&#252;hrung verantwortet die laufenden Verwaltungsgesch&#228;fte der BG Energie Textil Elektro Medienerzeugnisse. Sie steuert und koordiniert die Abteilungen sowie Bezirksverwaltungen und bereitet die Entscheidungen der Selbstverwaltung (Vertreterversammlung, Vorstand, Aussch&#252;sse) vor. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/dienstregeln">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Dienstregeln </h3>
+                      <p></p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/interessenvertretungen">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Interessenvertretungen </h3>
+                      <p> Gleichstellungsbeauftragte, Personalvertretungen (Gesamt-Personalrat, &#246;rtliche Personalr&#228;te sowie Jugend- und Auszubildendenvertretung) und Schwerbehindertenvertretung stellen sich vor und informieren. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/compliance">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Compliance </h3>
+                      <p> Das Compliance-Management-System der BG ETEM schafft &#252;ber die geltenden Gesetze hinaus Regeln der (Zusammen-)Arbeit. Diese k&#246;nnen, auch wenn sie nicht in Gesetzen stehen, f&#252;r das t&#228;gliche Miteinander und die jeden Tag zu treffenden Entscheidungen f&#252;r die Besch&#228;ftigten ebenso wichtig sein. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/datenschutz-korruptionspraevention">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Datenschutz/Korruptionspr&#228;vention </h3>
+                      <p> Birgit Schlentzka ist sowohl unsere Datenschutzbeauftragte als auch unsere Ansprechperson f&#252;r Korruptionspr&#228;vention. Sie informiert und liefert umfangreiches Material aus beiden Bereichen. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/leitbild">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Leitbild </h3>
+                      <p> Mit unserem Leitbild soll ein Zielzustand f&#252;r die (Zusammen-)Arbeit in unserer BG beschrieben werden, den alle Besch&#228;ftigten akzeptieren und mittragen &#8211; und ihr Handeln bei der und f&#252;r die BG ETEM darauf hin ausrichten. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/abteilungen">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Abteilungen </h3>
+                      <p> Die Abteilungen der BG ETEM sind mit Ausnahme von Regress (Standort Augsburg) alle in der Hauptverwaltung in K&#246;ln angesiedelt. Sie informieren hier &#252;ber ihre Aufgaben und Ansprechpartner/innen. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <div class="list-item">
+                <hr class="media-default">
+                <!-- Vorschaubild vorhanden -->
+                <!-- Vorschaufilm vorhanden -->
+                <!-- Ende Vorschaufilm vorhanden -->
+                <!-- Vorschaubild nicht vorhanden -->
+                <a href="http://svaintra20:8080/portal/diebgetem/stabsstellen">
+                  <div class="row">
+                    <div class="col-12">
+                      <h3> Stabsstellen </h3>
+                      <p> Die Stabsstellen der BG ETEM stellen sich vor und berichten &#252;ber ihre Arbeit. </p>
+                    </div>
+                  </div>
+                </a>
+                <!-- Ende Vorschaubild nicht vorhanden -->
+              </div>
+              <!-- Ende Iteration Folder Items -->
+            </div>
+            <!-- Ende Content-Spalte -->
+            <!-- Portlets/Cards vorhanden / Portlet-Spalte -->
+            <div class="col-lg-3 col-12"></div>
+            <!-- Ende Portlets/Cards vorhanden / Portlet-Spalte -->
+          </div>
+          <!-- Ende Content -->
+          <!-- Elemente nach Content -->
+          <div class="row">
+            <span class="col-12 col-lg-9"></span>
+          </div>
+          <div class="row">
+            <span class="col-12 col-lg-9">
+              <div class="visualClear">
+                <!-- -->
+              </div>
+              <div class="documentActions"></div>
+              <div id="document-actions">
+                <ul class="list-inline">
+                  <li class="list-inline-item"> Webcode: 23999216 </li>
+                </ul>
+              </div>
+            </span>
+          </div>
+          <!--  Ende Elemente nach Content -->
+        </div>
+        <!-- Ende Container -->
+      </div>
+      <div id="viewlet-below-content">
+        <!--
+<link rel="stylesheet" type="text/css"
+            tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+            tal:attributes="href string:${navroot}/++plone++bgetem.frontpage/bootstrap.css"
+            />
+-->
+        <div class="w-50 mx-auto">
+          <div class="discussion showCommenterImage">
+            <h2>Kommentare</h2>
+            <div class="comment replyTreeLevel0 state-published" id="1680268587725974">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">31.03.2023 15:16</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680268587725974/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel1 state-published" id="1680269592157839">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">31.03.2023 15:33</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Antwort auf den neusten Kommentar Kommentar</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680269592157839/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel2 state-published" id="1680272202194491">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">31.03.2023 16:16</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Hello World!</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680272202194491/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel0 state-published" id="1680190939871068">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">30.03.2023 17:42</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Test 1</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680190939871068/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel1 state-published" id="1680191002419527">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">30.03.2023 17:43</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Antwort auf Test 1</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680191002419527/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel2 state-published" id="1680268565113682">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">31.03.2023 15:16</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Antwort auf die Antwort auf Test 1</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680268565113682/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment replyTreeLevel1 state-published" id="1680269624823381">
+              <div class="card">
+                <div class="card-body">
+                  <div class="commentImage">
+                    <a href="http://svaintra20:8080/portal/author/admin">
+                      <img src="https://placekitten.com/32/32" alt="admin" class="defaultuserimg" height="32">
+                    </a>
+                  </div>
+                  <div class="documentByLine" style="font-size: medium;">
+                    <a href="http://svaintra20:8080/portal/author/admin">admin</a> sagt <div class="commentDate">31.03.2023 15:33</div>
+                  </div>
+                  <div class="card-text">
+                    <p>Antwort auf den &#228;ltesten Kommentar</p>
+                  </div>
+                </div>
+                <button class="context reply-to-comment-button hide allowMultiSubmit btn btn-outline-info">Antworten</button>
+                <div class="card-footer">
+                  <div class="commentActions row">
+                    <form name="delete" action="http://svaintra20:8080/portal/diebgetem/++conversation++default/1680269624823381/@@moderate-delete-comment" method="post" class="commentactionsform">
+                      <input name="form.button.DeleteComment" class="destructive btn btn-danger" type="submit" style="margin: 4px;" value="L&#246;schen">
+                      <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+                    </form>
+                    <!-- Workflow actions (e.g. 'publish') -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="commenting" class="reply">
+            <fieldset>
+              <legend>Neuen Kommentar hinzuf&#252;gen</legend>
+              <p>Sie k&#246;nnen einen Kommentar abgeben, indem Sie das unten stehende Formular ausf&#252;llen. Nur Text.</p>
+              <form data-pat-autotoc="levels: legend; section: fieldset; className: autotabs" class="rowlike pat-formunloadalert   enhanced_foldersummary view-name-enhanced_foldersummary" action="http://svaintra20:8080/portal/diebgetem/enhanced_foldersummary" method="post" enctype="multipart/form-data">
+                <!-- Default fieldset -->
+                <div data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-in_reply_to" class="form-group pat-inlinevalidation" data-fieldname="form.widgets.in_reply_to">
+                  <input id="form-widgets-in_reply_to" name="form.widgets.in_reply_to" value="" class="hidden-widget" type="hidden">
+                </div>
+                <div data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-author_name" class="form-group pat-inlinevalidation" data-fieldname="form.widgets.author_name">
+                  <input id="form-widgets-author_name" name="form.widgets.author_name" value="" class="hidden-widget" type="hidden">
+                </div>
+                <div data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-author_email" class="form-group pat-inlinevalidation" data-fieldname="form.widgets.author_email">
+                  <input id="form-widgets-author_email" name="form.widgets.author_email" value="" class="hidden-widget" type="hidden">
+                </div>
+                <div data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-comment-text" class="form-group pat-inlinevalidation" data-fieldname="form.widgets.text">
+                  <label for="form-widgets-comment-text" class="d-block required">Kommentar</label>
+                  <textarea id="form-widgets-comment-text" name="form.widgets.text" class="textarea-widget required text-field autoresize form-control "></textarea>
+                </div>
+                <div data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-user_notification" class="form-group pat-inlinevalidation" data-fieldname="form.widgets.user_notification">
+                  <div class="form-check option" id="form-widgets-user_notification">
+                    <input type="checkbox" class="single-checkbox-widget bool-field form-check-input " id="form-widgets-user_notification-0" name="form.widgets.user_notification:list" value="selected">
+                    <label class="form-check-label" for="form-widgets-user_notification-0">
+                      <div>E-Mail-Benachrichtigung bei neuen Kommentaren</div>
+                    </label>
+                    <input type="hidden" name="form.widgets.user_notification-empty-marker" value="1">
+                  </div>
+                </div>
+                <!-- Secondary fieldsets -->
+                <!-- <metal:actions define-slot="actions"><metal:define define-macro="actions"><div class="formControls" tal:condition="view/actions/values|nothing"><tal:block repeat="action view/actions/values"><input tal:replace="structure action/render" /></tal:block></div></metal:define></metal:actions> -->
+                <input class="btn btn-primary" type="submit" name="form.buttons.comment" value="Kommentieren">
+                <input class="btn btn-danger" type="submit" name="form.buttons.cancel" value="Abbrechen">
+                <input name="_authenticator" type="hidden" value="d60fb2f569ba237c941f30e7fec73dce3d543fef">
+              </form>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer id="portal-footer">
+      <div id="cluster-viewlet">
+        <div class="container-fluid mt-3 bg-white">
+          <div class="container-fluid">
+            <div class="row mt-4 mb-3">
+              <div class="col-md-2 d-none d-md-block"></div>
+              <div class="col-12 col-md-8 p-0">
+                <div class="row g-4">
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Quicklinks</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/dienstreise"> Dienstreise </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/altervorsorgung"> Altervorsorgung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/speisepl%C3%A4ne"> Speisepl&#228;ne </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/schwarzes-brett"> Schwarzes Brett </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/adressen-standorte"> Adressen Standorte </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/beruf-und-familie"> Beruf und Familie </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/datenschutz-newsletter"> Datenschutz Newsletter </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/quicklinks/dienstregeln"> Dienstregeln </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/intranet-netiquette"> Intranet-Netiquette </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Links und Recherche</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-sv-portal"> BG ETEM SV-Portal </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-mub-info"> BG ETEM MuB-Info </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-unfall-info"> BG ETEM Unfall-Info </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/bg-etem-satzung"> BG ETEM Satzung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/uv-net"> UV-NET </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/dguv-rundschreiben-startseite"> DGUV-Rundschreiben Startseite </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/dok-plan"> DOK-Plan </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/juris"> JURIS </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/datenbank-fachaufs%C3%A4tze"> Datenbank Fachaufs&#228;tze </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/elektronische-kommentierung"> Elektronische Kommentierung </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/links-und-recherche/siguv"> SIGUV </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <div class="col-12 col-lg-4 mb-4">
+                    <div class="card h-100">
+                      <div class="card-body">
+                        <p class="card-body-roof"></p>
+                        <p class="lead">Anwendungen</p>
+                        <p class="card-body-desc"></p>
+                        <ul class="arrowed">
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-fico"> SAP FICO </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-fiori"> SAP FIORI </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-einkauf"> SAP Einkauf </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/mediendatenbank"> Mediendatenbank </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/hilfe-f%C3%BCr-ms-office-2019"> Hilfe f&#252;r MS Office 2019 </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/hilfe-f%C3%BCr-ms-office-2016"> Hilfe f&#252;r MS Office 2016 </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/self-service-portal"> Self-Service-Portal </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/it-hotline"> IT-Hotline </a>
+                          </li>
+                          <li class="bi bi-arrow-right-short mb-0 d-flex align-items-baseline">
+                            <a class="text-decoration-none hover-underlined bg_hover-dguv-blau w-100 d-inline-block" href="http://svaintra20:8080/anwendungen/sap-ess-mss"> SAP ESS/MSS </a>
+                          </li>
+                        </ul>
+                      </div>
+                      <!--card body-->
+                      <!--card footer-->
+                    </div>
+                    <!--card-->
+                  </div>
+                  <!--col-->
+                </div>
+                <!--row-->
+              </div>
+              <!--col-->
+              <div class="col-md-2 d-none d-md-block"></div>
+            </div>
+            <!--row-->
+          </div>
+          <!--container-->
+        </div>
+      </div>
+      <script>
+        var _old_define = define;
+        var _old_require = require;
+        var _old_jquery = jQuery;
+        define = undefined;
+        require = undefined;
+        jQuery = undefined;
+      </script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.0" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script>
+        define = _old_define;
+        require = _old_require;
+        jQuery = _old_jquery;
+      </script>
+      <div id="bgetem.nine.rewrite">
+        <!-- Script zum Umschreiben von Download-URLs -->
+        <script>
+          $(document).ready(function() {
+            $('a').each(function() {
+              var lnk = this.href;
+              var srcurl = lnk.replace('medien-service/interaktiv-lernmodule-sicherheit-und-gesundheit-am-arbeitsplatz/lernmodule-herunterladen', 'share/interaktiv');
+              this.href = srcurl;
+            });
+          });
+        </script>
+      </div>
+      <script>
+        var _old_define = define;
+        var _old_require = require;
+        var _old_jquery = jQuery;
+        define = undefined;
+        require = undefined;
+        jQuery = undefined;
+      </script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/jquery.slim.min.js?version=3.5.1" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="http://svaintra20:8080/portal/++theme++plonetheme.tokyo/js/bootstrap.bundle.min.js?version=4.6.0" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script>
+        define = _old_define;
+        require = _old_require;
+        jQuery = _old_jquery;
+      </script>
+    </footer>
+    <script type="application/javascript" src="http://svaintra20:8080/portal/++resource++protect.js" data-site-url="http://svaintra20:8080/portal" data-token="d60fb2f569ba237c941f30e7fec73dce3d543fef" id="protect-script"></script>
+  </body>
+</html>

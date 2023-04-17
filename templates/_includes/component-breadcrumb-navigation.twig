@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb" class="breadcrumb">
+	<div class="container">
+	<div class="scrollbox">
+		<ol class="breadcrumb">
+			
+			<li class="breadcrumb-item">
+				<a href="/">Startseite</a>
+			</li>
+			{% for node in breadcrumbs -%}
+				{%- if not loop.last -%}
+				<li class="breadcrumb-item">
+					<a href="{{ node['@id'] is defined ? (node['@id'])|replace({'https://www.bgetem.de/':'/'}) : null }}" rel="noopener noreferrer">{{ node.title is defined ? node.title|replace({'Medien / Service':'Medien','Arbeitssicherheit / Gesundheitsschutz':'Prävention','Mitgliedschaft / Beitrag':'Mitgliedschaft & Beitrag','Unfall / Berufskrankheit':'Unfall & Berufskrankheit','Presse / Aktuelles':'Presse'}) : null }}</a>
+				</li>
+				{% else -%}
+				<li class="breadcrumb-item last" aria-current="page">
+					<strong>{{ node.title is defined ? (node.title|replace({'Medien / Service':'Medien','Arbeitssicherheit / Gesundheitsschutz':'Prävention','Mitgliedschaft / Beitrag':'Mitgliedschaft & Beitrag','Unfall / Berufskrankheit':'Unfall & Berufskrankheit','Presse / Aktuelles':'Presse'})) | chop(limit=30, unit='c', append=' …') : null }}</strong>
+				</li>
+				{%- endif -%}
+			{%- endfor -%}
+		</ol>
+	</div>
+		
+
+	</div>
+</nav>

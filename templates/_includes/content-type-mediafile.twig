@@ -1,0 +1,79 @@
+{% import '_macros.twig' as macros %}
+
+  <div class="row">
+    <div class="col-lg-8">
+    			<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+		<header>
+			{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+			<h1>{{feed.title}}</h1>
+			{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+			{% if feed['@type'] == 'Document' and feed.creators is defined %}
+			AUTOR: {{feed.creators|join(', ', ' und ') }}{{feed.modification_date is defined ? ' | Datum: ' ~ feed.modification_date|date }}<br>
+			{% endif %}
+		</header>
+
+
+		<section class="article-body clearfix">
+			
+			<div class="row">
+				<div class="col-8 col-md-6">
+					{% if feed.image is defined and feed.image is not empty %}
+					{% set params = [
+						{ width: 1110, jpegQuality: 100, format: 'jpg', mode:'fit' },
+						{ width: 680, jpegQuality: 100, format: 'jpg', mode:'fit' },
+						{ width: 345, jpegQuality: 85, format: 'jpg', mode:'fit' }
+					] %}
+					{{ macros.imgFullWidth(feed.image.download, null, false, params, false) }}
+					{% if feed.image_caption is defined and feed.image_caption|length %}<br><small>{{ feed.image_caption }}</small>{% endif %}
+					{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+					{% else %}
+					<svg class="document-icon" viewBox="75.17 50.22 199.66 249.56" xmlns="http://www.w3.org/2000/svg">
+						<path d="M 125.09 175 L 224.92 175 L 224.92 199.96 L 125.09 199.96 L 125.09 175 Z M 125.09 224.91 L 224.92 224.91 L 224.92 249.87 L 125.09 249.87 L 125.09 224.91 Z M 192.65 50.22 L 75.17 50.22 L 75.17 299.78 L 274.83 299.78 L 274.83 132.4 Z M 200 92.82 L 232.26 125.09 L 200 125.09 Z M 100.17 274.82 L 100.17 75.17 L 175 75.17 L 175 150 L 249.87 150 L 249.87 274.83 Z" fill="#ededed"></path>
+					</svg>
+					{% endif %}
+				</div>
+			
+				
+				<div class="col-8 col-md-4">
+					<p>Datei zum Download:</p>
+					{% if feed.file is defined and not feed.file is empty %}
+					<div class="download-action">
+						<a href="{{ feed.file.download }}">
+							<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+								<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"/></path>
+							</svg>
+							<strong>
+								{{ feed.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF','image/jpeg':'JPG','application/zip':'ZIP'}) }}, {{ (feed.file.size / 1000000)|number_format(2) }} MB
+							</strong>
+						</a>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+
+			
+
+			{# {% if feed.file is defined and not feed.file is empty %}
+			<br><br>Datei zum Download:<br>
+			<strong><a href="{{ feed.file.download }}" download>{{ feed.file.filename }}</a> – {{ feed.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF','image/jpeg':'JPG','application/zip':'ZIP'}) }} Dokument, {{ (feed.file.size / 1000000)|number_format(2) }} MB</strong>
+			{% endif %} #}
+
+			{{ feed.text is defined ? macros.text(feed.text) : null }}
+		</section>
+
+		{% include "_includes/component-sharing-buttons" %}
+		{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+	</article>
+    </div>
+    <div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+columnSuffix: opygkxdk
+contentColumnType: text
+fieldGroup: 88e1572c-f3c5-4214-a261-b079e6234963 # Ausgaben
+handle: themenuberschrift
+instructions: null
+name: Themenüberschrift
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

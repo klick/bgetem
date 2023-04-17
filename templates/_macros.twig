@@ -1,0 +1,64 @@
+{#
+ # IMG SRCSET
+ #}
+
+{% macro imgFullWidth(img, params, altText, titleText = null, ratio = "auto" ) %}
+
+	{% if img.hasFocalPoint is defined %}
+		{% set focalPoint = img.getFocalPoint() %}
+		{% set position = img.getFocalPoint() %}
+	{% else %}
+		{% set position = 'center-center' %}
+	{% endif %}
+
+	{% set transformedImages = craft.imager.transformImage(img, 
+		params
+		, { ratio: ratio, position:position, jpegQuality: 80 }) 
+	%}
+
+<img data-sizes="auto" src="{{ craft.imager.transformImage(img, { width: 800, height: 500, mode: 'crop', position:position }) }}" srcset="{{ craft.imager.srcset(transformedImages) }}" {{( altText is defined ? 'alt="' ~ altText ~ '"')|raw }} {{( titleText is defined ? 'title="' ~ titleText ~ '"')|raw }}>
+
+{% endmacro %}
+
+{# Section Optional Headline #}
+
+{% macro headline(entry, section) %}
+
+{{ section.headline != null ? tag(section.headlineType.value, {
+    class:'as-headline',
+    'data-section': entry.title|lower,
+    text: section.headline
+  }) : null
+}}
+
+{% endmacro %}
+
+{% macro articleGrid(entry, cardImgTransforms) %}
+
+{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
+<div class="col-sm-{{ entry.small }} col-md-{{ entry.medium }} col-lg-{{ entry.large }} my-3 d-flex align-items-stretch">
+	<div class="magazine-card themen border border-light {{ entry.colorcodeTitle is not empty ? 'has-background-mask text-white bg-dguv-' ~ entry.colorcodeTitle|ascii }}">
+		<a href="{{ entry.url }}" class="card-link p-0 text-decoration-none">
+		{% if entry.titlestoryCover is not empty %}
+		{{ craft.images.pictureMedia(entry.titlestoryCover[0], cardImgTransforms, null, cardImgAttributes) }}
+		{% elseif entry.cover is not empty %}
+		{{ craft.images.pictureMedia(entry.cover[0], cardImgTransforms, null, cardImgAttributes) }}
+		{% endif %}
+			<div class="card-body">
+				{% set category = entry.kategorie[0] ?? null %}
+				{% if category %}
+				<p class="category roof-row text-uppercase mb-2"><small>{{ entry.dachzeile ? entry.dachzeile : entry.kategorie[0] }}</small></p>
+				{% endif %}
+				<h2 class="mb-2"><strong>{{ entry.title }}</strong></h2>
+				<p class="card-text">
+					<span class="description">{{ entry.intro|typogrify }}</span>
+				</p>
+			</div>
+		</a>
+	</div>
+</div>
+{% endmacro %}
+
+{% macro dachzeile(dachzeile) %}
+	{{ card.dachzeile ? ('<p class="roof text-uppercase text-white">' ~ card.dachzeile ~ '</p>')|raw }}
+{% endmacro %}

@@ -1,0 +1,18 @@
+article.layout-mediafile_view {
+	div.download-action {
+		margin-top:12px;
+		a {
+			text-decoration: none;
+			border-bottom: none;
+			display: flex;
+			align-items: center;
+		}
+		svg {
+			width: 15px;
+			margin-right: 12px;
+			path {
+				fill: $dguv-blau-2;
+			}
+		}
+	}
+}

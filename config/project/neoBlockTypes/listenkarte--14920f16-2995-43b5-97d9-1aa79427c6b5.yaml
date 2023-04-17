@@ -1,0 +1,194 @@
+childBlocks: null
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+fieldLayouts:
+  a077de7c-3fd9-4a94-8f95-128496c7d18c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 72b11192-5482-4a25-9618-f679be48d29f # Einträge
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 891b8b6e-8fbe-40a6-aaa9-b9889ececd8a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: bc908702-858b-4a81-891c-ef3af9dab870
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 86bb144a-902b-4554-a04f-80384a7b897c # Mit Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a2dbf33-2b5f-4905-96ec-d60c9d100f19
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 9f9daf17-cc79-4545-8963-474697050fc3 # Abstand unten
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 93b373b8-6490-4ec5-964c-782088ae5c64
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 5d42d873-8c48-4c84-bafb-17d870608e3b # Arrowed
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ca73a81-f161-4cfc-a34a-ffe003854217
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 0f42f474-bd0e-4014-9d1e-c98a24bd740c
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f9f6fbdf-4b31-4008-a500-e75ac60f6f54 # Linkfeld
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 70a374b2-b262-451b-8be1-d554b3644a20
+            userCondition: null
+            warning: null
+            width: 100
+        name: Items
+        uid: 748aa04a-fc99-4b66-8c97-e5a594676c46
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 135a8f66-d7dd-4074-b1f6-966663922bcf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 47b15818-0e42-48a4-9950-7bfecb8b2010
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 81f0465c-b748-4122-8893-9e53b76c37c7 # Überschrift
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9064b792-8cf7-4e23-9454-f6ad812b83e3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ba3e4a9-c6e7-47eb-a297-098e35996a06
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Eigene Inhalte'
+        uid: da144c7a-b339-4e79-b106-56405d824d4c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 729e8099-e116-420e-bb48-cff32ac2289d # Kartenbreite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 654ad440-8596-4052-8fa9-7c2a78dae508
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 16333976-8b8b-46fe-b762-21fbfd44c6f7 # Cover Full
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3936ab40-8f72-407e-ba62-3323693923d0
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 875b5abb-fd1b-48a9-8d59-afaa93058564 # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d61b54c-9b97-4c86-b673-dae10e3478a5
+            userCondition: null
+            warning: null
+            width: 25
+        name: Einstellungen
+        uid: faa5d1f6-8977-412d-9c71-35a2233193a6
+        userCondition: null
+group: f976ef3d-bbf8-4cc1-8c45-b634eee2c77a # Karten
+groupChildBlockTypes: true
+handle: listenkarte
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Listenkarte
+sortOrder: 9
+topLevel: false

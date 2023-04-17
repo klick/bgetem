@@ -1,0 +1,43 @@
+{% import '_macros.twig' as macros %}
+
+ <div class="row">
+    <div class="col-lg-8">
+
+
+		<article class="{{ feed['@type']|lower|kebab }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+				<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+					<div class="dot">
+						<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+						  <defs></defs>
+						  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+						</svg>
+					</div>
+					<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+				{{ macros.auhtorsByLine(feed.creators, feed.effectiveDate is defined ? feed.effectiveDate|date) }}
+			</header>
+			<section class="article-body clearfix">
+				{% if feed.image is defined and feed.image is not empty %}
+					{% set params = [
+						{ width: 400, jpegQuality: 85, format: 'jpg' }
+					] %}
+					<figure class="news-image inline float-left">
+						{{ macros.imgFullWidth(feed.image.download, null, false, params, false) }}
+						{% if feed.image_caption is defined and feed.image_caption|length %}<figcaption>{{ feed.image_caption }}</figcaption>{% endif %}
+						{% if feed.imageCaption is defined and feed.imageCaption|length %}<figcaption>{{ feed.imageCaption }}</figcaption>{% endif %}
+					</figure>
+				{% endif %}
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+	</div>
+	<div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>

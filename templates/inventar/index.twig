@@ -1,0 +1,2725 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_inventar" %}
+
+{% block content %}
+
+<div class="inventar py-4">
+	<div class="container bg-layout_medien_container">
+		<h1><strong>Inventar</strong></h1>
+	</div>
+</div>
+
+<div class="inventar py-4 my-4">
+	<div class="container bg-layout_medien_container">
+		<p>Aktuelles CSS <a class="arrowed fw-bold" href="{{ rev('css/styles.css') }}">–> {{ rev('css/styles.css') }}</a></p>
+	</div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!-- Meta Navigation -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="cluster" class="inventar-anchor">Cluster</a></strong>&ensp;<a class="inventar-anchor-link" href="#metanavigation">#</a></h2>
+</div>
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h4"><a href="{{ url('cluster') }}">Cluster –></a></h2>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!-- Meta Navigation -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="metanavigation" class="inventar-anchor">Metanavigation</a></strong>&ensp;<a class="inventar-anchor-link" href="#metanavigation">#</a></h2>
+</div>
+<br><br><nav class="nav meta-nav global bg-light py-4">
+	<div class="container bg-layout_medien_container">
+		<ul class="meta-nav">
+			<li class="meta-nav-item gebaerdensprache">
+				<a href="#">
+					<svg id="Ebene_1" data-name="Ebene 1" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+						<title>DGUV_icons_gebaerdensprache_schwarz</title>
+						<path d="M 193.12 150.4 L 228.29 150.4 L 263.29 115.48 C 270.06 108.717 266.971 97.161 257.729 94.679 C 253.44 93.528 248.862 94.751 245.72 97.89 Z M 245.81 150.4 L 250.59 150.4 C 257.565 150.406 264.218 153.337 268.93 158.48 C 269.564 159.17 270.155 159.898 270.7 160.66 L 283.7 147.66 C 288.857 142.487 288.473 134.006 282.87 129.32 C 277.87 125.1 270.31 125.89 265.68 130.52 Z M 65.3 157.67 L 87.72 135.22 L 87.72 130.48 L 87.72 129.79 C 87.72 123.23 82.94 117.33 76.41 116.79 C 69.155 116.144 62.907 121.856 62.9 129.14 L 62.9 130.48 L 62.9 160.09 Z M 139.56 121.67 C 146.215 129.853 147.081 141.311 141.73 150.4 L 191.14 150.4 L 183.33 142.58 L 244.75 80.88 C 249.38 76.24 250.17 68.68 245.95 63.66 C 241.278 58.053 232.8 57.669 227.64 62.83 L 165.76 125 L 157 116.21 L 201.25 71.9 C 205.88 67.27 206.67 59.71 202.45 54.68 C 197.771 49.075 189.291 48.696 184.13 53.86 L 124.88 113.18 C 130.618 114.2 135.815 117.205 139.56 121.67 Z M 274.33 200 L 186.67 200.15 L 186.67 187.76 L 249.26 187.76 C 255.81 187.76 261.71 182.97 262.26 176.43 C 262.918 169.16 257.199 162.891 249.9 162.88 L 112.16 162.88 L 127.62 147.4 L 128.12 146.93 C 132.75 142.29 133.54 134.73 129.33 129.7 C 124.655 124.096 116.177 123.716 111.02 128.88 L 110.02 129.81 L 73.43 166.5 L 73.43 166.5 C 66.534 173.474 62.677 182.892 62.7 192.7 L 62.7 249.92 L 62.7 249.92 L 62.7 250 C 62.678 277.449 84.911 299.718 112.36 299.74 L 112.36 299.74 L 154.54 299.64 L 237.4 299.64 C 244.703 299.634 250.428 293.364 249.77 286.09 C 249.2 279.56 243.3 274.77 236.77 274.77 L 186.67 274.77 L 186.67 262.38 L 262.32 262.46 C 271.892 262.189 277.581 251.656 272.56 243.502 C 270.361 239.931 266.512 237.709 262.32 237.59 L 186.67 237.51 L 186.67 225.05 L 273.67 224.9 C 280.22 224.9 286.12 220.11 286.67 213.57 C 287.346 206.298 281.633 200.016 274.33 200 Z"></path>
+					</svg>
+					<span>Gebärdensprache</span>
+				</a>
+			</li>
+			<li class="meta-nav-item leichte-sprache">
+				<a href="#">
+					<svg id="Ebene_1" data-name="Ebene 1" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+						<title>DGUV_icons_leichte_sprache_schwarz</title>
+						<path d="M 199.94 249.79 L 262.32 224.09 L 262.32 197.16 L 199.94 222.87 L 199.94 249.79 Z M 199.94 208.84 L 262.32 183.14 L 262.32 156.21 L 199.94 181.92 L 199.94 208.84 Z M 299.75 100.75 L 249.75 121.06 C 246.752 63.549 182.622 30.85 134.315 62.202 C 114.36 75.153 101.754 96.822 100.36 120.57 L 50.21 99.93 L 50.21 248.38 L 175.05 299.78 L 299.75 249.14 Z M 125.14 125.21 C 124.985 86.813 166.455 62.647 199.785 81.711 C 217.294 91.726 227.048 111.301 224.5 131.31 L 175.13 151.36 L 125.49 130.93 C 125.269 129.031 125.152 127.122 125.14 125.21 Z M 75.14 137.21 L 162.48 173.21 L 162.48 267.57 L 75.2 231.62 Z M 187.44 267.73 L 187.44 173.33 L 274.76 137.87 L 274.76 232.29 Z M 132.53 177.21 L 113.93 195.85 L 105.9 187.8 L 88.25 205.49 L 113.93 231.22 L 150.18 194.89 L 132.53 177.21 Z"></path>
+					</svg>
+					<span>Leichte Sprache</span>
+				</a>
+			</li>
+			<li class="meta-nav-item suche">
+				<form class="form-inline search search-header">
+					<input class="form-control" type="search" placeholder="Suchbegriff/Webcode" aria-label="Search">
+					<button class="btn btn-outline-success submit submit-search py-0" type="submit">Suche</button>
+				</form>
+			</li>
+			<li class="meta-nav-item extranet-login">
+				<a href="https://extranet-weblogin.bgetem.de/" target="_blank">
+					<svg id="Ebene_1" data-name="Ebene 1" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+						<title>DGUV_icons_ansprechperson_schwarz</title>
+						<path d="M 175 174.92 C 222.997 174.889 252.962 122.912 228.937 81.36 C 204.911 39.809 144.915 39.848 120.943 81.43 C 115.484 90.9 112.61 101.639 112.61 112.57 C 112.66 147 140.57 174.892 175 174.92 Z M 175 75.17 C 203.791 75.193 221.76 106.374 207.344 131.296 C 192.929 156.218 156.941 156.189 142.566 131.244 C 139.293 125.565 137.57 119.125 137.57 112.57 C 137.603 91.917 154.347 75.187 175 75.17 Z M 262.35 200 L 199.78 200 L 175 224.78 L 150.22 200 L 87.65 200 C 66.993 200.017 50.248 216.753 50.22 237.41 L 50.22 299.76 L 299.78 299.76 L 299.78 237.43 C 299.763 216.765 283.015 200.017 262.35 200 Z"></path>
+					</svg>
+					<span>Login Extranet</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<br>
+<br>
+<br>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;nav class=&quot;nav meta-nav global bg-light py-4&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;ul class=&quot;meta-nav&quot;&gt;
+			&lt;li class=&quot;meta-nav-item gebaerdensprache&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;svg id=&quot;Ebene_1&quot; data-name=&quot;Ebene 1&quot; viewBox=&quot;0 0 350 350&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+						&lt;title&gt;DGUV_icons_gebaerdensprache_schwarz&lt;/title&gt;
+						&lt;path d=&quot;M 193.12 150.4 L 228.29 150.4 L 263.29 115.48 C 270.06 108.717 266.971 97.161 257.729 94.679 C 253.44 93.528 248.862 94.751 245.72 97.89 Z M 245.81 150.4 L 250.59 150.4 C 257.565 150.406 264.218 153.337 268.93 158.48 C 269.564 159.17 270.155 159.898 270.7 160.66 L 283.7 147.66 C 288.857 142.487 288.473 134.006 282.87 129.32 C 277.87 125.1 270.31 125.89 265.68 130.52 Z M 65.3 157.67 L 87.72 135.22 L 87.72 130.48 L 87.72 129.79 C 87.72 123.23 82.94 117.33 76.41 116.79 C 69.155 116.144 62.907 121.856 62.9 129.14 L 62.9 130.48 L 62.9 160.09 Z M 139.56 121.67 C 146.215 129.853 147.081 141.311 141.73 150.4 L 191.14 150.4 L 183.33 142.58 L 244.75 80.88 C 249.38 76.24 250.17 68.68 245.95 63.66 C 241.278 58.053 232.8 57.669 227.64 62.83 L 165.76 125 L 157 116.21 L 201.25 71.9 C 205.88 67.27 206.67 59.71 202.45 54.68 C 197.771 49.075 189.291 48.696 184.13 53.86 L 124.88 113.18 C 130.618 114.2 135.815 117.205 139.56 121.67 Z M 274.33 200 L 186.67 200.15 L 186.67 187.76 L 249.26 187.76 C 255.81 187.76 261.71 182.97 262.26 176.43 C 262.918 169.16 257.199 162.891 249.9 162.88 L 112.16 162.88 L 127.62 147.4 L 128.12 146.93 C 132.75 142.29 133.54 134.73 129.33 129.7 C 124.655 124.096 116.177 123.716 111.02 128.88 L 110.02 129.81 L 73.43 166.5 L 73.43 166.5 C 66.534 173.474 62.677 182.892 62.7 192.7 L 62.7 249.92 L 62.7 249.92 L 62.7 250 C 62.678 277.449 84.911 299.718 112.36 299.74 L 112.36 299.74 L 154.54 299.64 L 237.4 299.64 C 244.703 299.634 250.428 293.364 249.77 286.09 C 249.2 279.56 243.3 274.77 236.77 274.77 L 186.67 274.77 L 186.67 262.38 L 262.32 262.46 C 271.892 262.189 277.581 251.656 272.56 243.502 C 270.361 239.931 266.512 237.709 262.32 237.59 L 186.67 237.51 L 186.67 225.05 L 273.67 224.9 C 280.22 224.9 286.12 220.11 286.67 213.57 C 287.346 206.298 281.633 200.016 274.33 200 Z&quot;&gt;&lt;/path&gt;
+					&lt;/svg&gt;
+					&lt;span&gt;Gebärdensprache&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;meta-nav-item leichte-sprache&quot;&gt;
+				&lt;a href=&quot;#&quot;&gt;
+					&lt;svg id=&quot;Ebene_1&quot; data-name=&quot;Ebene 1&quot; viewBox=&quot;0 0 350 350&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+						&lt;title&gt;DGUV_icons_leichte_sprache_schwarz&lt;/title&gt;
+						&lt;path d=&quot;M 199.94 249.79 L 262.32 224.09 L 262.32 197.16 L 199.94 222.87 L 199.94 249.79 Z M 199.94 208.84 L 262.32 183.14 L 262.32 156.21 L 199.94 181.92 L 199.94 208.84 Z M 299.75 100.75 L 249.75 121.06 C 246.752 63.549 182.622 30.85 134.315 62.202 C 114.36 75.153 101.754 96.822 100.36 120.57 L 50.21 99.93 L 50.21 248.38 L 175.05 299.78 L 299.75 249.14 Z M 125.14 125.21 C 124.985 86.813 166.455 62.647 199.785 81.711 C 217.294 91.726 227.048 111.301 224.5 131.31 L 175.13 151.36 L 125.49 130.93 C 125.269 129.031 125.152 127.122 125.14 125.21 Z M 75.14 137.21 L 162.48 173.21 L 162.48 267.57 L 75.2 231.62 Z M 187.44 267.73 L 187.44 173.33 L 274.76 137.87 L 274.76 232.29 Z M 132.53 177.21 L 113.93 195.85 L 105.9 187.8 L 88.25 205.49 L 113.93 231.22 L 150.18 194.89 L 132.53 177.21 Z&quot;&gt;&lt;/path&gt;
+					&lt;/svg&gt;
+					&lt;span&gt;Leichte Sprache&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;meta-nav-item suche&quot;&gt;
+				&lt;form class=&quot;form-inline search search-header&quot;&gt;
+					&lt;input class=&quot;form-control&quot; type=&quot;search&quot; placeholder=&quot;Suchbegriff/Webcode&quot; aria-label=&quot;Search&quot;&gt;
+					&lt;button class=&quot;btn btn-outline-success submit submit-search py-0&quot; type=&quot;submit&quot;&gt;Suche&lt;/button&gt;
+				&lt;/form&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;meta-nav-item extranet-login&quot;&gt;
+				&lt;a href=&quot;https://extranet-weblogin.bgetem.de/&quot; target=&quot;_blank&quot;&gt;
+					&lt;svg id=&quot;Ebene_1&quot; data-name=&quot;Ebene 1&quot; viewBox=&quot;0 0 350 350&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+						&lt;title&gt;DGUV_icons_ansprechperson_schwarz&lt;/title&gt;
+						&lt;path d=&quot;M 175 174.92 C 222.997 174.889 252.962 122.912 228.937 81.36 C 204.911 39.809 144.915 39.848 120.943 81.43 C 115.484 90.9 112.61 101.639 112.61 112.57 C 112.66 147 140.57 174.892 175 174.92 Z M 175 75.17 C 203.791 75.193 221.76 106.374 207.344 131.296 C 192.929 156.218 156.941 156.189 142.566 131.244 C 139.293 125.565 137.57 119.125 137.57 112.57 C 137.603 91.917 154.347 75.187 175 75.17 Z M 262.35 200 L 199.78 200 L 175 224.78 L 150.22 200 L 87.65 200 C 66.993 200.017 50.248 216.753 50.22 237.41 L 50.22 299.76 L 299.78 299.76 L 299.78 237.43 C 299.763 216.765 283.015 200.017 262.35 200 Z&quot;&gt;&lt;/path&gt;
+					&lt;/svg&gt;
+					&lt;span&gt;Login Extranet&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="card-deck-news-home" class="inventar-anchor">Card Deck News home</a></strong>&ensp;<a class="inventar-anchor-link" href="#card-deck-news-home">#</a></h2>
+</div>
+<br><article class="home">
+	<section class="home-section news has-background-color my-5 py-5">
+		<div class="container bg-layout_medien_container">
+			<header>
+				<h2 class="section-header">Aktuelle Meldungen</h2>
+			</header>
+			<div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/aktuelle-meldungen/coronavirus-disease-2019-covid-19">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/ff851fac20546bde2a2dff087141eeba/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/ff851fac20546bde2a2dff087141eeba/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w">
+								</figure>
+							</div>
+						</header>
+						<div class="article-body card-body p-0 p-0">
+							<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+							<h1 class="display">Coronavirus Disease 2019 (COVID-19)</h1>
+							<p>(28.04.2020) Weltweit breitet sich das neue Coronavirus SARS-CoV-2 aus. Wir bieten Informationen zu allgemeinen und speziellen Präventionsmaßnahmen, zum …</p>
+						</div>
+					</a>
+				</article>
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/stoepsel-ins-ohr-wie-es-richtig-geht">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/7f66249c3151812cc836ce571d7d76b4/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/7f66249c3151812cc836ce571d7d76b4/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w">
+								</figure>
+							</div>
+						</header>
+						<div class="article-body card-body p-0 p-0">
+							<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+							<h1 class="display">Stöpsel ins Ohr - wie es richtig geht</h1>
+							<p>(28.04.2020) (28.04.2020) Ob am Arbeitsplatz oder in der Freizeit - das Gehör kann sehr leicht geschädigt werden. Dabei kann man sich so einfach vor Lärm und …</p>
+						</div>
+					</a>
+				</article>
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/corona-bg-etem-stellt-informationen-fuer-druck-und-medienindustrie-bereit">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/93e8aa09dac7f0905fd0708e2199c620/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/93e8aa09dac7f0905fd0708e2199c620/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w">
+								</figure>
+							</div>
+						</header>
+						<div class="article-body card-body p-0 p-0">
+							<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+							<h1 class="display">Corona: BG ETEM stellt Informationen für Druck- und Medienindustrie bereit</h1>
+							<p>(23.04.2020) (23.04.2020) Die Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) hat ihre Informationen zur Corona-Pandemie im Internet …</p>
+						</div>
+					</a>
+				</article>
+			</div>
+			<div class="row row-cols-2 row-cols-sm-2 row-cols-lg-4 more-news">
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/die-bgetem/karriere/stellenangebote-1/wir-stellen-ein-referent-in-m-w-d-am-standort-koeln-1">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/ed755dd068a08f8bae64ffb519d3153c/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/ed755dd068a08f8bae64ffb519d3153c/image_8952a57306579ed7bde0a14863b94706.jpg 140w, ../imager/ed755dd068a08f8bae64ffb519d3153c/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w">
+								</figure>
+							</div>
+							<div class="news-item__title">
+								<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+								<h1 class="display">Wir stellen ein: Referent/in (m/w/d) am Standort Köln</h1>
+							</div>
+						</header>
+					</a>
+				</article>
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/coronavirus-bg-etem-begruesst-einheitliche-arbeitsschutzstandards">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/c18964e835389e3aadea008e63ad9cea/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/c18964e835389e3aadea008e63ad9cea/image_8952a57306579ed7bde0a14863b94706.jpg 140w, ../imager/c18964e835389e3aadea008e63ad9cea/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w">
+								</figure>
+							</div>
+							<div class="news-item__title">
+								<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+								<h1 class="display">Coronavirus: BG ETEM begrüßt einheitliche Arbeitsschutzstandards</h1>
+							</div>
+						</header>
+					</a>
+				</article>
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/presse-aktuelles/nachrichten-der-startseite/gemeinsamer-arbeitsschutzstandard-covid-19">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_8952a57306579ed7bde0a14863b94706.jpg 140w, ../imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w">
+								</figure>
+							</div>
+							<div class="news-item__title">
+								<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+								<h1 class="display">Einheitlicher Arbeitsschutz gegen das Coronavirus</h1>
+							</div>
+						</header>
+					</a>
+				</article>
+				<article class="col card">
+					<a href="https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/coronavirus-informationen-fuer-bau-und-montagestellen">
+						<header class="card-header">
+							<div class="news-item__image">
+								<figure>
+									<img data-sizes="auto" src="../imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_8952a57306579ed7bde0a14863b94706.jpg 140w, ../imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w">
+								</figure>
+							</div>
+							<div class="news-item__title">
+								<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+								<h1 class="display">Coronavirus: Informationen für Bau- und Montagestellen</h1>
+							</div>
+						</header>
+					</a>
+				</article>
+			</div>
+			<p><a href="http://bgetem-inventar.test/presse-aktuelles/nachrichten-der-startseite/" class="more-link right-aligned">Alle Meldungen</a></p>
+		</div>
+	</section>
+</article>
+
+<div class="container bg-layout_medien_container">
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;article class=&quot;home&quot;&gt;
+	&lt;section class=&quot;home-section news has-background-color my-5 py-5&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;header&gt;
+				&lt;h2 class=&quot;section-header&quot;&gt;Aktuelle Meldungen&lt;/h2&gt;
+			&lt;/header&gt;
+			&lt;div class=&quot;row row-cols-1 row-cols-sm-1 row-cols-md-3&quot;&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/aktuelle-meldungen/coronavirus-disease-2019-covid-19&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/ff851fac20546bde2a2dff087141eeba/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/ff851fac20546bde2a2dff087141eeba/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+						&lt;div class=&quot;article-body card-body p-0 p-0&quot;&gt;
+							&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+							&lt;h1 class=&quot;display&quot;&gt;Coronavirus Disease 2019 (COVID-19)&lt;/h1&gt;
+							&lt;p&gt;(28.04.2020) Weltweit breitet sich das neue Coronavirus SARS-CoV-2 aus. Wir bieten Informationen zu allgemeinen und speziellen Präventionsmaßnahmen, zum …&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/stoepsel-ins-ohr-wie-es-richtig-geht&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/7f66249c3151812cc836ce571d7d76b4/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/7f66249c3151812cc836ce571d7d76b4/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+						&lt;div class=&quot;article-body card-body p-0 p-0&quot;&gt;
+							&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+							&lt;h1 class=&quot;display&quot;&gt;Stöpsel ins Ohr - wie es richtig geht&lt;/h1&gt;
+							&lt;p&gt;(28.04.2020) (28.04.2020) Ob am Arbeitsplatz oder in der Freizeit - das Gehör kann sehr leicht geschädigt werden. Dabei kann man sich so einfach vor Lärm und …&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/corona-bg-etem-stellt-informationen-fuer-druck-und-medienindustrie-bereit&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/93e8aa09dac7f0905fd0708e2199c620/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/93e8aa09dac7f0905fd0708e2199c620/image_851bbd66f4bc11fceeaa2ac20fc514e7.jpg 255w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+						&lt;div class=&quot;article-body card-body p-0 p-0&quot;&gt;
+							&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+							&lt;h1 class=&quot;display&quot;&gt;Corona: BG ETEM stellt Informationen für Druck- und Medienindustrie bereit&lt;/h1&gt;
+							&lt;p&gt;(23.04.2020) (23.04.2020) Die Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) hat ihre Informationen zur Corona-Pandemie im Internet …&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;row row-cols-2 row-cols-sm-2 row-cols-lg-4 more-news&quot;&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/die-bgetem/karriere/stellenangebote-1/wir-stellen-ein-referent-in-m-w-d-am-standort-koeln-1&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/ed755dd068a08f8bae64ffb519d3153c/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/ed755dd068a08f8bae64ffb519d3153c/image_8952a57306579ed7bde0a14863b94706.jpg 140w, /imager/ed755dd068a08f8bae64ffb519d3153c/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;news-item__title&quot;&gt;
+								&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+								&lt;h1 class=&quot;display&quot;&gt;Wir stellen ein: Referent/in (m/w/d) am Standort Köln&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/coronavirus-bg-etem-begruesst-einheitliche-arbeitsschutzstandards&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/c18964e835389e3aadea008e63ad9cea/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/c18964e835389e3aadea008e63ad9cea/image_8952a57306579ed7bde0a14863b94706.jpg 140w, /imager/c18964e835389e3aadea008e63ad9cea/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;news-item__title&quot;&gt;
+								&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+								&lt;h1 class=&quot;display&quot;&gt;Coronavirus: BG ETEM begrüßt einheitliche Arbeitsschutzstandards&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/presse-aktuelles/nachrichten-der-startseite/gemeinsamer-arbeitsschutzstandard-covid-19&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_8952a57306579ed7bde0a14863b94706.jpg 140w, /imager/b2911e43c77cb043f6b6bfa47b0ac1b2/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;news-item__title&quot;&gt;
+								&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+								&lt;h1 class=&quot;display&quot;&gt;Einheitlicher Arbeitsschutz gegen das Coronavirus&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+				&lt;article class=&quot;col card&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/presse-aktuelles/pressemeldungen/2020/coronavirus-informationen-fuer-bau-und-montagestellen&quot;&gt;
+						&lt;header class=&quot;card-header&quot;&gt;
+							&lt;div class=&quot;news-item__image&quot;&gt;
+								&lt;figure&gt;
+									&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_8952a57306579ed7bde0a14863b94706.jpg 140w, /imager/cbec5dfa9fe6bbf3cd6f7af5ebd3c251/image_15db04a7633c6c1eacfc907ee34d066b.jpg 280w&quot;&gt;
+								&lt;/figure&gt;
+							&lt;/div&gt;
+							&lt;div class=&quot;news-item__title&quot;&gt;
+								&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+								&lt;h1 class=&quot;display&quot;&gt;Coronavirus: Informationen für Bau- und Montagestellen&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;/header&gt;
+					&lt;/a&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+			&lt;p&gt;&lt;a href=&quot;/presse-aktuelles/nachrichten-der-startseite/&quot; class=&quot;more-link right-aligned&quot;&gt;Alle Meldungen&lt;/a&gt;&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;/article&gt;</code>
+</pre>
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- AKKORDEON -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="accordion" class="inventar-anchor">Akkordeon</a></strong>&ensp;<a class="inventar-anchor-link" href="#accordion">#</a></h2>
+</div>
+
+<div class="container bg-layout_medien_container"><div class="accordion" id="accordion-01">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h3 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					Collapsible Group Item #1
+				</button>
+			</h3>
+		</div>
+		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-01">
+			<div class="card-body p-0 p-0">
+				<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="headingTwo">
+			<h3 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					Collapsible Group Item #2
+				</button>
+			</h3>
+		</div>
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-01">
+			<div class="card-body p-0 p-0">
+				<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="headingThree">
+			<h3 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					Collapsible Group Item #3
+				</button>
+			</h3>
+		</div>
+		<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-01">
+			<div class="card-body p-0 p-0">
+				<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;div class=&quot;accordion&quot; id=&quot;accordion-01&quot;&gt;
+	&lt;div class=&quot;card&quot;&gt;
+		&lt;div class=&quot;card-header&quot; id=&quot;headingOne&quot;&gt;
+			&lt;h3 class=&quot;mb-0&quot;&gt;
+				&lt;button class=&quot;btn btn-link collapsed&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseOne&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapseOne&quot;&gt;
+					Collapsible Group Item #1
+				&lt;/button&gt;
+			&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;div id=&quot;collapseOne&quot; class=&quot;collapse&quot; aria-labelledby=&quot;headingOne&quot; data-parent=&quot;#accordion-01&quot;&gt;
+			&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+				&lt;p&gt;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#039;t heard of them accusamus labore sustainable VHS.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card&quot;&gt;
+		&lt;div class=&quot;card-header&quot; id=&quot;headingTwo&quot;&gt;
+			&lt;h3 class=&quot;mb-0&quot;&gt;
+				&lt;button class=&quot;btn btn-link collapsed&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseTwo&quot;&gt;
+					Collapsible Group Item #2
+				&lt;/button&gt;
+			&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;div id=&quot;collapseTwo&quot; class=&quot;collapse&quot; aria-labelledby=&quot;headingTwo&quot; data-parent=&quot;#accordion-01&quot;&gt;
+			&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+				&lt;p&gt;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#039;t heard of them accusamus labore sustainable VHS.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card&quot;&gt;
+		&lt;div class=&quot;card-header&quot; id=&quot;headingThree&quot;&gt;
+			&lt;h3 class=&quot;mb-0&quot;&gt;
+				&lt;button class=&quot;btn btn-link collapsed&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#collapseThree&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseThree&quot;&gt;
+					Collapsible Group Item #3
+				&lt;/button&gt;
+			&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;div id=&quot;collapseThree&quot; class=&quot;collapse&quot; aria-labelledby=&quot;headingThree&quot; data-parent=&quot;#accordion-01&quot;&gt;
+			&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+				&lt;p&gt;Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&#039;t heard of them accusamus labore sustainable VHS.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- PORTLETS -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="portlets" class="inventar-anchor">Portlets</a></strong>&ensp;<a class="inventar-anchor-link" href="#portlets">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container"><div class="portlets">
+	<div class="card portlet mb-5">
+		<div class="card-header">
+			<h3 class="card-title">Ansprechpartner</h3>
+		</div>
+		<div class="card-body portlet-body-wrapper">
+			<p>Hier finden Sie Ihren Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.</p>
+			<p>Telefonisch erreichen Sie die BG ETEM unter 0221 3778-0.<br>Service-Zeiten: 8:00 - 17:00 Uhr</p>
+		</div>
+	</div>
+	<div class="card portlet mb-5">
+		<div class="card-header">
+			<h3 class="card-title">Videos: Alles aus einer Hand</h3>
+		</div>
+		<figure>
+			<a href="http://bgetem-inventar.test/die-bgetem/videos-alles-aus-einer-hand">
+				<img data-sizes="auto" src="../imager/58cf03587368a06b5e06acf9f0a49ef7/video-alles-aus-einer-hand_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/58cf03587368a06b5e06acf9f0a49ef7/video-alles-aus-einer-hand_999e5ca03b5ddb9fcb4bbef7e4a9f4cd.jpg 345w">
+			</a>
+		</figure>
+		<div class="card-body portlet-body-wrapper">
+			<p>Wir unterstützen Unternehmen im Arbeitsschutz, betreuen Versicherte nach Arbeitsunfällen oder Berufskrankheiten und sichern deren Lebensunterhalt finanziell ab. Wie machen wir das?</p>
+			<a class="more-link" href="http://bgetem-inventar.test/die-bgetem/videos-alles-aus-einer-hand">Mehr</a>
+		</div>
+	</div>
+	<div class="card portlet mb-5">
+		<div class="card-header">
+			<h3 class="card-title">Top 10</h3>
+		</div>
+		<div class="card-body portlet-body-wrapper">
+			<ul class="link-list">
+				<li><a href="http://bgetem-inventar.test/seminare/seminardatenbank-1">Seminardatenbank</a></li>
+				<li><a href="http://bgetem-inventar.test/medien-service/regelwerk-und-informationsmaterial/regelwerk-und-informationsmaterial-sicherheit-in-schrift-bild-und-ton" class="internal-link">Regelwerk und Informationsmaterial</a></li>
+				<li><a href="http://bgetem-inventar.test/mitgliedschaft-beitrag/beitrag/entgeltnachweis-deuev-meldung"><span>Lohnnachweis</span></a></li>
+				<li><a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/gefaehrdungsbeurteilung">Gefährdungsbeurteilung</a></li>
+				<li><a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/unterweisung">Unterweisung</a></li>
+				<li><a href="http://bgetem-inventar.test/unfall-berufskrankheit/formulare">Formulare</a></li>
+				<li><a href="http://bgetem-inventar.test/medien-service/interaktiv-lernmodule-sicherheit-und-gesundheit-am-arbeitsplatz/sicherheit-und-gesundheit-am-arbeitsplatz-interaktiv">Lernmodule Sicherheit und Gesundheit am Arbeitsplatz</a></li>
+				<li><a href="http://bgetem-inventar.test/unfall-berufskrankheit/haeufig-gestellte-fragen/haeufig-gestellte-fragen"><span>Unfall/Berufskrankheit: Häufig gestellte Fragen</span></a></li>
+				<li><a href="http://bgetem-inventar.test/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/notfall-hotline"><span>Notfall-Hotline</span></a></li>
+				<li><a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/betriebsaerztliche-und-sicherheitstechnische-betreuung/unternehmermodell"><span>Unternehmermodell</span></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;div class=&quot;portlets&quot;&gt;
+	&lt;div class=&quot;card portlet mb-5&quot;&gt;
+		&lt;div class=&quot;card-header&quot;&gt;
+			&lt;h3 class=&quot;card-title&quot;&gt;Ansprechpartner&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;card-body portlet-body-wrapper&quot;&gt;
+			&lt;p&gt;Hier finden Sie Ihren Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.&lt;/p&gt;
+			&lt;p&gt;Telefonisch erreichen Sie die BG ETEM unter 0221 3778-0.&lt;br&gt;Service-Zeiten: 8:00 - 17:00 Uhr&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card portlet mb-5&quot;&gt;
+		&lt;div class=&quot;card-header&quot;&gt;
+			&lt;h3 class=&quot;card-title&quot;&gt;Videos: Alles aus einer Hand&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;figure&gt;
+			&lt;a href=&quot;/die-bgetem/videos-alles-aus-einer-hand&quot;&gt;
+				&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/58cf03587368a06b5e06acf9f0a49ef7/video-alles-aus-einer-hand_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/58cf03587368a06b5e06acf9f0a49ef7/video-alles-aus-einer-hand_999e5ca03b5ddb9fcb4bbef7e4a9f4cd.jpg 345w&quot;&gt;
+			&lt;/a&gt;
+		&lt;/figure&gt;
+		&lt;div class=&quot;card-body portlet-body-wrapper&quot;&gt;
+			&lt;p&gt;Wir unterstützen Unternehmen im Arbeitsschutz, betreuen Versicherte nach Arbeitsunfällen oder Berufskrankheiten und sichern deren Lebensunterhalt finanziell ab. Wie machen wir das?&lt;/p&gt;
+			&lt;a class=&quot;more-link&quot; href=&quot;/die-bgetem/videos-alles-aus-einer-hand&quot;&gt;Mehr&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;card portlet mb-5&quot;&gt;
+		&lt;div class=&quot;card-header&quot;&gt;
+			&lt;h3 class=&quot;card-title&quot;&gt;Top 10&lt;/h3&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;card-body portlet-body-wrapper&quot;&gt;
+			&lt;ul class=&quot;link-list&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;/seminare/seminardatenbank-1&quot;&gt;Seminardatenbank&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/medien-service/regelwerk-und-informationsmaterial/regelwerk-und-informationsmaterial-sicherheit-in-schrift-bild-und-ton&quot; class=&quot;internal-link&quot;&gt;Regelwerk und Informationsmaterial&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/mitgliedschaft-beitrag/beitrag/entgeltnachweis-deuev-meldung&quot;&gt;&lt;span&gt;Lohnnachweis&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/gefaehrdungsbeurteilung&quot;&gt;Gefährdungsbeurteilung&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/unterweisung&quot;&gt;Unterweisung&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/unfall-berufskrankheit/formulare&quot;&gt;Formulare&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/medien-service/interaktiv-lernmodule-sicherheit-und-gesundheit-am-arbeitsplatz/sicherheit-und-gesundheit-am-arbeitsplatz-interaktiv&quot;&gt;Lernmodule Sicherheit und Gesundheit am Arbeitsplatz&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/unfall-berufskrankheit/haeufig-gestellte-fragen/haeufig-gestellte-fragen&quot;&gt;&lt;span&gt;Unfall/Berufskrankheit: Häufig gestellte Fragen&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/notfall-hotline&quot;&gt;&lt;span&gt;Notfall-Hotline&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/betriebsaerztliche-und-sicherheitstechnische-betreuung/unternehmermodell&quot;&gt;&lt;span&gt;Unternehmermodell&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<!-- Cards -->
+
+
+<!-- LISTINGS -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="listings" class="inventar-anchor">Listings</a></strong>&ensp;<a class="inventar-anchor-link" href="#listings">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container">
+<h3><strong>Einfaches Listing</strong></h3><section class="listings">
+	<ul class="listing">
+		<li class="card listing__item mb-5">
+			<a href="http://bgetem.localhost/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/verkehrssicherheit">
+				<div class="card-header">
+					<h3>Verkehrssicherheit</h3>
+				</div>
+			</a>
+		</li>
+		<li class="card listing__item mb-5">
+			<a href="http://bgetem.localhost/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit">
+				<div class="card-header">
+					<h3>Ladungssicherheit</h3>
+				</div>
+			</a>	
+		</li>
+	</ul>
+</section>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;section class=&quot;listings&quot;&gt;
+	&lt;ul class=&quot;listing&quot;&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;http://bgetem.localhost/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/verkehrssicherheit&quot;&gt;
+				&lt;div class=&quot;card-header&quot;&gt;
+					&lt;h3&gt;Verkehrssicherheit&lt;/h3&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;http://bgetem.localhost/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit&quot;&gt;
+				&lt;div class=&quot;card-header&quot;&gt;
+					&lt;h3&gt;Ladungssicherheit&lt;/h3&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;	
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code>
+</pre>
+<br><br><br><br><br>
+<h3><strong>Listing mit Text</strong></h3><section class="listings">
+	<ul class="listing">
+		<li class="card listing__item mb-5">
+			<a href="http://bgetem.localhost/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/der-arbeitsunfall-was-ist-das">
+				<div class="card-header">
+					<h3>Der Arbeitsunfall - was ist das?</h3>
+				</div>
+				<div class="card-body p-0 p-0">
+					<p>Am Beispiel eines Dachdeckers zeigt das Erklärvideo der Berufsgenossenschaften und Unfallkassen, was die gesetzliche Unfallversicherung im Falle eines Arbeitsunfalls leistet.</p>
+				</div>
+			</a>
+		</li>
+		<li class="card item listing__item mb-5">
+			<a href="http://bgetem.localhost/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/erste-hilfe">
+				<div class="card-header">
+					<h3>Erste Hilfe</h3>
+				</div>
+				<div class="card-body p-0 p-0">
+					<p>Schnelle und richtige Erste-Hilfe-Maßnahmen sind auch bei leichteren Verletzungen wichtig.</p>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;section class=&quot;listings&quot;&gt;
+	&lt;ul class=&quot;listing&quot;&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;http://bgetem.localhost/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/der-arbeitsunfall-was-ist-das&quot;&gt;
+				&lt;div class=&quot;card-header&quot;&gt;
+					&lt;h3&gt;Der Arbeitsunfall - was ist das?&lt;/h3&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+					&lt;p&gt;Am Beispiel eines Dachdeckers zeigt das Erklärvideo der Berufsgenossenschaften und Unfallkassen, was die gesetzliche Unfallversicherung im Falle eines Arbeitsunfalls leistet.&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;card item listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;http://bgetem.localhost/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/erste-hilfe&quot;&gt;
+				&lt;div class=&quot;card-header&quot;&gt;
+					&lt;h3&gt;Erste Hilfe&lt;/h3&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+					&lt;p&gt;Schnelle und richtige Erste-Hilfe-Maßnahmen sind auch bei leichteren Verletzungen wichtig.&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code>
+</pre>
+<br><br><br>
+<h3><strong>Listing mit Text und Bild</strong></h3><section class="listings clearfix">
+	<ul class="listing">
+		<li class="card listing__item mb-5">
+			<a href="https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/druck-und-papierverarbeitung">
+				<div class="item-wrapper has-image">			
+					<div class="image">
+						<figure>
+							<img data-sizes="auto" src="../imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_80813bb31bf0c5eecd28e38fc6838d78.jpg 500w, ../imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w">
+						</figure>
+					</div>
+					<div class="item-contents">
+						<div class="card-header">
+							<h3>Druck und Papierverarbeitung</h3>
+						</div>
+						<div class="card-body p-0 p-0">
+							<p>Buchbinderei und Druckverarbeitung, Digitaldruck und Siebdruck, Etiketten- und Schmalbahndruck, Flexodruck und Tiefdruck, Foto und Grafik, Offsetdruck, Packmittelherstellung, Wellpappe und Papiererzeugnisse, Zeitungszustellung</p>
+						</div>
+					</div>
+				</div>
+			</a>
+		</li>
+		<li class="card listing__item mb-5">
+			<a href="https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/elektrohandwerke">
+				<div class="item-wrapper has-image">			
+					<div class="image">
+						<figure>
+							<img data-sizes="auto" src="../imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_80813bb31bf0c5eecd28e38fc6838d78.jpg 500w, ../imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w">
+						</figure>
+					</div>
+					<div class="item-contents">
+						<div class="card-header">
+							<h3>Elektrohandwerke</h3>
+						</div>
+						<div class="card-body p-0 p-0">
+							<p>Elektromaschinenbau, Elektrotechnik, Informationstechnik, Photovoltaikanlagen</p>
+						</div>
+					</div>
+				</div>
+			</a>
+		</li>
+	</ul>
+</section>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;section class=&quot;listings clearfix&quot;&gt;
+	&lt;ul class=&quot;listing&quot;&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/druck-und-papierverarbeitung&quot;&gt;
+				&lt;div class=&quot;item-wrapper has-image&quot;&gt;			
+					&lt;div class=&quot;image&quot;&gt;
+						&lt;figure&gt;
+							&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_80813bb31bf0c5eecd28e38fc6838d78.jpg 500w, /imager/c15e051da17f490ffc7d2629fc887fdf/druckundpapierverarbeitung_istock_12994902_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w&quot;&gt;
+						&lt;/figure&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;item-contents&quot;&gt;
+						&lt;div class=&quot;card-header&quot;&gt;
+							&lt;h3&gt;Druck und Papierverarbeitung&lt;/h3&gt;
+						&lt;/div&gt;
+						&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+							&lt;p&gt;Buchbinderei und Druckverarbeitung, Digitaldruck und Siebdruck, Etiketten- und Schmalbahndruck, Flexodruck und Tiefdruck, Foto und Grafik, Offsetdruck, Packmittelherstellung, Wellpappe und Papiererzeugnisse, Zeitungszustellung&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;a href=&quot;https://bgetem.glorious-mess.com/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/elektrohandwerke&quot;&gt;
+				&lt;div class=&quot;item-wrapper has-image&quot;&gt;			
+					&lt;div class=&quot;image&quot;&gt;
+						&lt;figure&gt;
+							&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_80813bb31bf0c5eecd28e38fc6838d78.jpg 500w, /imager/c15e051da17f490ffc7d2629fc887fdf/elektrohandwerk_istock_000012122771_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w&quot;&gt;
+						&lt;/figure&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;item-contents&quot;&gt;
+						&lt;div class=&quot;card-header&quot;&gt;
+							&lt;h3&gt;Elektrohandwerke&lt;/h3&gt;
+						&lt;/div&gt;
+						&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+							&lt;p&gt;Elektromaschinenbau, Elektrotechnik, Informationstechnik, Photovoltaikanlagen&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code>
+</pre>
+<br><br><br>
+<h3><strong>Listing mit Text, Bild und Actions</strong></h3><section class="listings clearfix">
+	<ul class="listing">
+		<li class="card listing__item mb-5">
+			<div class="item-wrapper has-actions">
+				<div class="image">
+					<a href="https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2">
+						<figure>
+							<img data-sizes="auto" src="../imager/d661403d65c533cf5c1924748e1ef22a/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/d661403d65c533cf5c1924748e1ef22a/image_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w">
+						</figure>
+					</a>
+				</div>
+				<div class="item-contents">
+					<div class="card-header">
+						<h3>
+							<a href="https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2">Ladungssicherheit 2</a>
+						</h3>
+					</div>
+					<div class="card-body p-0 p-0">
+						<p>
+							<small>Mit Schiebeplane oder mit Kofferaufbau? Welche Anforderungen muss das Fahrzeug erfüllen, damit die Ladung sicher transportiert werden kann? Vor dem Transport wird das geeignete Transportfahrzeug ausgewählt. Anschließend bestimmt man die notwendigen Ladungssicherungs-Hilfsmittel. Wichtig: Die Anforderungen mit dem Spediteur oder Frachtführer schriftlich vereinbaren. Dann ist man auch immer GURT in Fahrt.
+							</small>
+						</p>
+					</div>
+				</div>
+				<div class="item-actions">
+					<a href="https://www.bgetem.de/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2/@@download/file" title="Ladungssicherheit 2 herunterladen" aria-label="Ladungssicherheit 2 herunterladen">
+						<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"/>
+						</svg><br>
+						<small>Herunterladen<br>JPG, 0.81 MB</small>
+					</a>
+				</div>
+			</div>
+		</li>
+		<li class="card listing__item mb-5">
+			<div class="item-wrapper has-actions">
+				<div class="image">
+					<a href="https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3">
+						<figure>
+							<img data-sizes="auto" src="../imager/1811e1a7acd1e03c102d6eb7389c06cf/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/1811e1a7acd1e03c102d6eb7389c06cf/image_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w">
+						</figure>
+					</a>
+				</div>
+				<div class="item-contents">
+					<div class="card-header">
+						<h3>
+							<a href="https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3">Ladungssicherheit 3</a>
+						</h3>
+					</div>
+					<div class="card-body p-0 p-0">
+						<p>
+							<small>Skizzen und Fotos helfen dabei, Verladeanweisungen verständlich zusammenzufassen. So wird ersichtlich, welche Ladungssicherheits-Maßnahmen bei bestimmten Fahrzeugen und Ladungen erforderlich sind. Zur  Kontrolle am besten die Anweisungen direkt im Verladebereich aufhängen. So ist man immer bestens im Bilde.
+							</small>
+						</p>
+					</div>
+				</div>
+				<div class="item-actions">
+					<a href="https://www.bgetem.de/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3/@@download/file" title="Ladungssicherheit 3 herunterladen" aria-label="Ladungssicherheit 3 herunterladen">
+						<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"/>
+						</svg><br>
+						<small>Herunterladen<br>JPG, 0.71 MB</small>
+					</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+</section>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;section class=&quot;listings clearfix&quot;&gt;
+	&lt;ul class=&quot;listing&quot;&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;div class=&quot;item-wrapper has-actions&quot;&gt;
+				&lt;div class=&quot;image&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2&quot;&gt;
+						&lt;figure&gt;
+							&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/d661403d65c533cf5c1924748e1ef22a/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/d661403d65c533cf5c1924748e1ef22a/image_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w&quot;&gt;
+						&lt;/figure&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;item-contents&quot;&gt;
+					&lt;div class=&quot;card-header&quot;&gt;
+						&lt;h3&gt;
+							&lt;a href=&quot;https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2&quot;&gt;Ladungssicherheit 2&lt;/a&gt;
+						&lt;/h3&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+						&lt;p&gt;
+							&lt;small&gt;Mit Schiebeplane oder mit Kofferaufbau? Welche Anforderungen muss das Fahrzeug erfüllen, damit die Ladung sicher transportiert werden kann? Vor dem Transport wird das geeignete Transportfahrzeug ausgewählt. Anschließend bestimmt man die notwendigen Ladungssicherungs-Hilfsmittel. Wichtig: Die Anforderungen mit dem Spediteur oder Frachtführer schriftlich vereinbaren. Dann ist man auch immer GURT in Fahrt.
+							&lt;/small&gt;
+						&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;item-actions&quot;&gt;
+					&lt;a href=&quot;https://www.bgetem.de/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2/@@download/file&quot; title=&quot;Ladungssicherheit 2 herunterladen&quot; aria-label=&quot;Ladungssicherheit 2 herunterladen&quot;&gt;
+						&lt;svg class=&quot;media-file__download-icon&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+							&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;/&gt;
+						&lt;/svg&gt;&lt;br&gt;
+						&lt;small&gt;Herunterladen&lt;br&gt;JPG, 0.81 MB&lt;/small&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+		&lt;li class=&quot;card listing__item mb-5&quot;&gt;
+			&lt;div class=&quot;item-wrapper has-actions&quot;&gt;
+				&lt;div class=&quot;image&quot;&gt;
+					&lt;a href=&quot;https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3&quot;&gt;
+						&lt;figure&gt;
+							&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/1811e1a7acd1e03c102d6eb7389c06cf/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/1811e1a7acd1e03c102d6eb7389c06cf/image_fb33541fe9165eaf322cc3b14021dc3f.jpg 255w&quot;&gt;
+						&lt;/figure&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;item-contents&quot;&gt;
+					&lt;div class=&quot;card-header&quot;&gt;
+						&lt;h3&gt;
+							&lt;a href=&quot;https://bgetem.glorious-mess.com/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3&quot;&gt;Ladungssicherheit 3&lt;/a&gt;
+						&lt;/h3&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;card-body p-0 p-0&quot;&gt;
+						&lt;p&gt;
+							&lt;small&gt;Skizzen und Fotos helfen dabei, Verladeanweisungen verständlich zusammenzufassen. So wird ersichtlich, welche Ladungssicherheits-Maßnahmen bei bestimmten Fahrzeugen und Ladungen erforderlich sind. Zur  Kontrolle am besten die Anweisungen direkt im Verladebereich aufhängen. So ist man immer bestens im Bilde.
+							&lt;/small&gt;
+						&lt;/p&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;item-actions&quot;&gt;
+					&lt;a href=&quot;https://www.bgetem.de/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-3/@@download/file&quot; title=&quot;Ladungssicherheit 3 herunterladen&quot; aria-label=&quot;Ladungssicherheit 3 herunterladen&quot;&gt;
+						&lt;svg class=&quot;media-file__download-icon&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+							&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;/&gt;
+						&lt;/svg&gt;&lt;br&gt;
+						&lt;small&gt;Herunterladen&lt;br&gt;JPG, 0.71 MB&lt;/small&gt;
+					&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;</code>
+</pre>
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+{# <div class="container bg-layout_medien_container">
+<!-- KARTEIKARTEN -->
+<h2 class="h6"><strong class="upper"><a id="karteikarten" class="inventar-anchor">Karteikarten (Card Deck)</a></strong>&ensp;<a class="inventar-anchor-link" href="#karteikarten">#</a></h2>
+
+<br><br>
+
+<h3><strong>Karteikarten ohne Bild</strong></h3>
+<br><br><div class="card-deck mb-3">
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/3g-am-arbeitsplatz" class="card-link">
+			<div class="card-body p-0 p-0">
+				<h3><strong>3G am Arbeitsplatz</strong></h3>
+				<p class="card-text">
+					<span class="description">Nach § 28b Absatz 1 Infektionsschutzgesetz ist der Zutritt zur Arbeitsstätte bis einschließlich 19. März 2022 nur Arbeitgeber und Beschäftigten mit 3G-Status erlaubt.</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/impfenschuetzt" class="card-link">
+			<div class="card-body p-0 p-0">
+				<h3><strong>Impfen schützt</strong></h3>
+				<p class="card-text">
+					<span class="description">Impfungen sind ein wichtiger Schritt zur Eindämmung der Corona-Pandemie. Beschäftigte müssen über die Schutzimpfung informiert werden.</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/betrieblicher-pandemieplan" class="card-link">
+			<div class="card-body p-0">
+				<h3><strong>Pandemieplan</strong></h3>
+				<p class="card-text">
+					<span class="description">Unternehmen können sich auf den Notfall vorbereiten und dafür sorgen, dass der Betrieb aufrechterhalten werden kann, auch wenn Personen in verschiedenen Funktionen ausfallen.</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+</div>
+<div class="card-deck mb-3">
+  <div class="card mb-3" style="max-width: 18rem;">
+      <a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/hygienekonzept" class="card-link">
+        <div class="card-body p-0">
+          <h3><strong>Hygienekonzept</strong></h3>
+          <p class="card-text">
+            <span class="description">Je mehr Personen sich entsprechend den Hygieneregeln angemessen verhalten, umso geringer ist das Infektionsrisiko für die Gemeinschaft und für den Einzelnen.</span>
+          </p>
+        </div>
+      </a>  
+  </div>
+  <div class="card mb-3" style="max-width: 18rem;">
+      <a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/zur-teststrategie-in-bg-etem-mitgliedsbetrieben" class="card-link">
+        <div class="card-body p-0">
+          <h3><strong>Antigen-Tests</strong></h3>
+          <p class="card-text">
+            <span class="description">Zur Minderung des betrieblichen SARS-CoV-2-Infektionsrisikos hat der Arbeitgeber Beschäftigten mindestens zweimal pro Kalenderwoche einen Corona-Test anzubieten.</span>
+          </p>
+        </div>
+      </a>  
+  </div>
+  <div class="card mb-3" style="max-width: 18rem;">
+      <a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/hygieneplaene-ergaenzung-der-gefaehrdungsbeurteilung" class="card-link">
+        <div class="card-body p-0">
+          <h3><strong>Hygieneplan</strong></h3>
+          <p class="card-text">
+            <span class="description">Die BG ETEM hat Muster-Hygienepläne zur Ergänzung der Gefährdungsbeurteilung entwickelt.</span>
+          </p>
+        </div>
+      </a>  
+  </div>
+</div>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+	<code class="language-html">&lt;div class=&quot;card-deck mb-3&quot;&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/3g-am-arbeitsplatz&quot; class=&quot;card-link&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;3G am Arbeitsplatz&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;Nach § 28b Absatz 1 Infektionsschutzgesetz ist der Zutritt zur Arbeitsstätte bis einschließlich 19. März 2022 nur Arbeitgeber und Beschäftigten mit 3G-Status erlaubt.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/impfenschuetzt&quot; class=&quot;card-link&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;Impfen schützt&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;Impfungen sind ein wichtiger Schritt zur Eindämmung der Corona-Pandemie. Beschäftigte müssen über die Schutzimpfung informiert werden.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/betrieblicher-pandemieplan&quot; class=&quot;card-link&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;Pandemieplan&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;Unternehmen können sich auf den Notfall vorbereiten und dafür sorgen, dass der Betrieb aufrechterhalten werden kann, auch wenn Personen in verschiedenen Funktionen ausfallen.&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;card-deck mb-3&quot;&gt;
+  &lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+      &lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/hygienekonzept&quot; class=&quot;card-link&quot;&gt;
+        &lt;div class=&quot;card-body p-0&quot;&gt;
+          &lt;h3&gt;&lt;strong&gt;Hygienekonzept&lt;/strong&gt;&lt;/h3&gt;
+          &lt;p class=&quot;card-text&quot;&gt;
+            &lt;span class=&quot;description&quot;&gt;Je mehr Personen sich entsprechend den Hygieneregeln angemessen verhalten, umso geringer ist das Infektionsrisiko für die Gemeinschaft und für den Einzelnen.&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;  
+  &lt;/div&gt;
+  &lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+      &lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/zur-teststrategie-in-bg-etem-mitgliedsbetrieben&quot; class=&quot;card-link&quot;&gt;
+        &lt;div class=&quot;card-body p-0&quot;&gt;
+          &lt;h3&gt;&lt;strong&gt;Antigen-Tests&lt;/strong&gt;&lt;/h3&gt;
+          &lt;p class=&quot;card-text&quot;&gt;
+            &lt;span class=&quot;description&quot;&gt;Zur Minderung des betrieblichen SARS-CoV-2-Infektionsrisikos hat der Arbeitgeber Beschäftigten mindestens zweimal pro Kalenderwoche einen Corona-Test anzubieten.&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;  
+  &lt;/div&gt;
+  &lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+      &lt;a href=&quot;https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/coronavirus-disease-2019-covid-19/verhaltensregeln/hygieneplaene-ergaenzung-der-gefaehrdungsbeurteilung&quot; class=&quot;card-link&quot;&gt;
+        &lt;div class=&quot;card-body p-0&quot;&gt;
+          &lt;h3&gt;&lt;strong&gt;Hygieneplan&lt;/strong&gt;&lt;/h3&gt;
+          &lt;p class=&quot;card-text&quot;&gt;
+            &lt;span class=&quot;description&quot;&gt;Die BG ETEM hat Muster-Hygienepläne zur Ergänzung der Gefährdungsbeurteilung entwickelt.&lt;/span&gt;
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/a&gt;  
+  &lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<h3><strong>Karteikarten mit Bild kurz</strong></h3>
+<br><br><div class="card-deck mb-3">
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2020" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2020/die-preistraeger-des-praeventionspreises-2020-der-bg-etem/@@images/image" class="img-fluid img-top" title="Die Preisträger des Präventionspreises 2020 der BG ETEM." alt="Die Preisträger des Präventionspreises 2020 der BG ETEM.">
+			<div class="card-body p-0">
+				<h3><strong>2020</strong></h3>
+				<p class="card-text">
+					<span class="description">Publikumspreis 2020: BSH Hausgeräte GmbH</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2018" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2018/die-preistraeger-des-praeventionspreises-2018-der-bg-etem/@@images/image" class="img-fluid img-top" title="Die Preisträger des Präventionspreises 2018 der BG ETEM." alt="Die Preisträger des Präventionspreises 2018 der BG ETEM.">
+			<div class="card-body p-0">
+				<h3><strong>2018</strong></h3>
+				<p class="card-text">
+					<span class="description">Publikumspreis 2018: Christiansen Print GmbH</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2016" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2016/die-preistraeger-des-iq-praeventionspreises-2016-der-bg-etem-foto-andrea-enderlein/@@images/image" class="img-fluid img-top" title="Die Preisträger des IQ-Präventionspreises 2016 der BG ETEM (Foto: Andrea Enderlein)" alt="None">
+			<div class="card-body p-0">
+				<h3><strong>2016</strong></h3>
+				<p class="card-text">
+					<span class="description">IQ-Präventionspreis 2016: Druckhaus Mainfranken GmbH</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+</div>
+<div class="card-deck mb-3">
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2014" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2014/preistraeger-des-praeventionspreises-2014-foto-andrea-enderlein/@@images/image" class="img-fluid img-top" title="Preisträger des Präventionspreises 2014 (Foto: Andrea Enderlein)" alt="Preisverleihung des Präventionspreises 2014 in Köln am 08. Oktober 2014 im Schokoladenmuseum.">
+			<div class="card-body p-0">
+				<h3><strong>2014</strong></h3>
+				<p class="card-text">
+					<span class="description">IQ-Präventionspreis 2014: Ernst Feiler GmbH</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2012" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2012/preistraeger-des-praeventionspreises-2012/@@images/image" class="img-fluid img-top" title="Preisträger des Präventionspreises 2012" alt="Verleihung des Präventionspreises der BG ETEM am 12.09.2012 in Dresden">
+			<div class="card-body p-0">
+				<h3><strong>2012</strong></h3>
+				<p class="card-text">
+					<span class="description">1. Preis: Ebner &amp; Spiegel GmbH, 2. Preis: Karl Knauer KG, 3. Preis: SIG Combibloc GmbH Werk Linnich</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+	<div class="card mb-3" style="max-width: 18rem;">
+		<a href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2010" class="card-link">
+			<img src="https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2010-1/preistraeger-des-praeventionspreises-2010/@@images/image" class="img-fluid img-top" title="Preisträger des Präventionspreises 2010" alt="None">
+			<div class="card-body p-0">
+				<h3><strong>2010</strong></h3>
+				<p class="card-text">
+					<span class="description">1. Preis: Transfertex GmbH &amp; Co. Thermodruck KG, 2. Preis: RPC Bebo Print Patent GmbH, 3. Preis: Mayer &amp; Söhne Druck- und Mediengruppe</span>
+				</p>
+			</div>
+		</a>  
+	</div>
+</div>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+	<code class="language-html">&lt;div class=&quot;card-deck mb-3&quot;&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2020&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2020/die-preistraeger-des-praeventionspreises-2020-der-bg-etem/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Die Preisträger des Präventionspreises 2020 der BG ETEM.&quot; alt=&quot;Die Preisträger des Präventionspreises 2020 der BG ETEM.&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2020&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;Publikumspreis 2020: BSH Hausgeräte GmbH&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2018&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2018/die-preistraeger-des-praeventionspreises-2018-der-bg-etem/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Die Preisträger des Präventionspreises 2018 der BG ETEM.&quot; alt=&quot;Die Preisträger des Präventionspreises 2018 der BG ETEM.&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2018&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;Publikumspreis 2018: Christiansen Print GmbH&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2016&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2016/die-preistraeger-des-iq-praeventionspreises-2016-der-bg-etem-foto-andrea-enderlein/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Die Preisträger des IQ-Präventionspreises 2016 der BG ETEM (Foto: Andrea Enderlein)&quot; alt=&quot;None&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2016&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;IQ-Präventionspreis 2016: Druckhaus Mainfranken GmbH&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;card-deck mb-3&quot;&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2014&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2014/preistraeger-des-praeventionspreises-2014-foto-andrea-enderlein/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Preisträger des Präventionspreises 2014 (Foto: Andrea Enderlein)&quot; alt=&quot;Preisverleihung des Präventionspreises 2014 in Köln am 08. Oktober 2014 im Schokoladenmuseum.&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2014&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;IQ-Präventionspreis 2014: Ernst Feiler GmbH&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2012&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2012/preistraeger-des-praeventionspreises-2012/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Preisträger des Präventionspreises 2012&quot; alt=&quot;Verleihung des Präventionspreises der BG ETEM am 12.09.2012 in Dresden&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2012&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;1. Preis: Ebner &amp;amp; Spiegel GmbH, 2. Preis: Karl Knauer KG, 3. Preis: SIG Combibloc GmbH Werk Linnich&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+	&lt;div class=&quot;card mb-3&quot; style=&quot;max-width: 18rem;&quot;&gt;
+		&lt;a href=&quot;https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz/praeventionspreis/preistraeger/2010&quot; class=&quot;card-link&quot;&gt;
+			&lt;img src=&quot;https://www.bgetem.de/redaktion/arbeitssicherheit-gesundheitsschutz/bilder/praevpreis/preistraeger-2010-1/preistraeger-des-praeventionspreises-2010/@@images/image&quot; class=&quot;img-fluid img-top&quot; title=&quot;Preisträger des Präventionspreises 2010&quot; alt=&quot;None&quot;&gt;
+			&lt;div class=&quot;card-body p-0&quot;&gt;
+				&lt;h3&gt;&lt;strong&gt;2010&lt;/strong&gt;&lt;/h3&gt;
+				&lt;p class=&quot;card-text&quot;&gt;
+					&lt;span class=&quot;description&quot;&gt;1. Preis: Transfertex GmbH &amp;amp; Co. Thermodruck KG, 2. Preis: RPC Bebo Print Patent GmbH, 3. Preis: Mayer &amp;amp; Söhne Druck- und Mediengruppe&lt;/span&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/a&gt;  
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<h3><strong>Karteikarten mit Bild lang</strong></h3>
+<br><br><div class="card-deck mb-3">
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/VDAwMw--">
+	      <img class="card-img-top" src="https://medien.bgetem.de/medienportal/artikel/VDAwMw--/@@images/72faf48b-f023-463a-8464-ce2a274991a0.jpeg">
+	        <div class="card-body p-0">
+	          <h3>Ergonomische Gestaltung von Montagearbeitsplätzen</h3>
+	          <p class="max-lines ellipsis">Regelmäßig wechseln zwischen Sitzen und Stehen, die Höhe der Arbeitsfläche richtig einstellen, für ausreichend Bewegungsfreiraum sorgen - diese und weitere Maßnahmen helfen, die Belastungen an Montagearbeitsplätzen zu reduzieren.</p>
+	      </div>
+	    </a>
+	  </div>
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/U1owMTM-">
+	      <img class="card-img-top" src="https://www.bgetem.de/checklisten.jpg">
+	        <div class="card-body p-0">
+	          <h3>Checklisten zur Gefährdungsbeurteilung: Ergonomie</h3>
+	          <p class="max-lines ellipsis">Licht am Arbeitsplatz, ergonomische  Gestaltung von Montagearbeitsplätzen.</p>
+	      </div>
+	    </a>
+	  </div>
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/TUIwNDg-">
+	      <img class="card-img-top" src="https://medien.bgetem.de/medienportal/artikel/TUIwNDg-/@@images/cb5d2c62-bbe7-476d-9314-d9c52e0b5100.jpeg">
+	        <div class="card-body p-0">
+	          <h3>Sicheres Arbeiten in Druckverarbeitung und Buchbinderei</h3>
+	          <p class="max-lines ellipsis">Lärm, Schneidewerkzeuge, Klebstoffe und Stäube - wie geht man sicher mit Gefährdungen in Druckverarbeitung und Buchbinderei um? Lesen Sie hier auch, worauf beim Transport, beim Heben, Tragen und Umsetzen von Lasten zu achten ist.</p>
+	      </div>
+	    </a>
+	  </div>
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/MjAzLTAyMw--">
+	      <img class="card-img-top" src="https://www.bgetem.de/regelwerk.jpg">
+	        <div class="card-body p-0">
+	          <h3>DGUV Information 203-023 (BGI 804-2): Ergonomie an Näharbeitsplätzen - ein Ratgeber für die Praxis</h3>
+	          <p class="max-lines ellipsis">Die DGUV Information bietet eine praxisnahe Handlungsanleitung zur ergonomischen Einrichtung von Näharbeitsplätzen. Belastungen des Muskel-Skelett-Systems und daraus resultierende Erkrankungen insbesondere der Wirbelsäule und des Hand-Arm-Systems sollen verringert werden.</p>
+	      </div>
+	    </a>
+	  </div>
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/VDAxMw--">
+	      <img class="card-img-top" src="https://medien.bgetem.de/medienportal/artikel/VDAxMw--/@@images/titelbild">
+	        <div class="card-body p-0">
+	          <h3>Gesund bleiben beim Nähen</h3>
+	          <p class="max-lines ellipsis">Ein ergonomisch gestalteter Arbeitsplatz erlaubt es, die Näharbeit weniger ermüdend durchzuführen und vermeidet langfristige körperliche Schäden am Bewegungsapparat. Ergonomische Verbesserungen lassen sich oft mit wenigen Maßnahmen erreichen.</p>
+	      </div>
+	    </a>
+	  </div>
+	  <div class="card mb-3" style="min-width: 15rem; max-width: 15rem;">
+	    <a href="https://medien.bgetem.de/medienportal/artikel/VDAxM0U-">
+	      <img class="card-img-top" src="https://medien.bgetem.de/medienportal/artikel/VDAxM0U-/@@images/6bd7f6c1-f0ee-4065-a49e-bf83159117f9.jpeg">
+	        <div class="card-body p-0">
+	          <h3>Gesund bleiben beim Nähen (englische Fassung)</h3>
+	          <p class="max-lines ellipsis">Ein ergonomisch gestalteter Arbeitsplatz erlaubt es, die Näharbeit weniger ermüdend durchzuführen und vermeidet langfristige körperliche Schäden am Bewegungsapparat. Ergonomische Verbesserungen lassen sich oft mit wenigen Maßnahmen erreichen.</p>
+	      </div>
+	    </a>
+	  </div>
+	</div>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+	<code class="language-html">&lt;div class=&quot;card-deck mb-3&quot;&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/VDAwMw--&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://medien.bgetem.de/medienportal/artikel/VDAwMw--/@@images/72faf48b-f023-463a-8464-ce2a274991a0.jpeg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;Ergonomische Gestaltung von Montagearbeitsplätzen&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Regelmäßig wechseln zwischen Sitzen und Stehen, die Höhe der Arbeitsfläche richtig einstellen, für ausreichend Bewegungsfreiraum sorgen - diese und weitere Maßnahmen helfen, die Belastungen an Montagearbeitsplätzen zu reduzieren.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/U1owMTM-&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://www.bgetem.de/checklisten.jpg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;Checklisten zur Gefährdungsbeurteilung: Ergonomie&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Licht am Arbeitsplatz, ergonomische  Gestaltung von Montagearbeitsplätzen.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/TUIwNDg-&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://medien.bgetem.de/medienportal/artikel/TUIwNDg-/@@images/cb5d2c62-bbe7-476d-9314-d9c52e0b5100.jpeg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;Sicheres Arbeiten in Druckverarbeitung und Buchbinderei&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Lärm, Schneidewerkzeuge, Klebstoffe und Stäube - wie geht man sicher mit Gefährdungen in Druckverarbeitung und Buchbinderei um? Lesen Sie hier auch, worauf beim Transport, beim Heben, Tragen und Umsetzen von Lasten zu achten ist.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/MjAzLTAyMw--&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://www.bgetem.de/regelwerk.jpg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;DGUV Information 203-023 (BGI 804-2): Ergonomie an Näharbeitsplätzen - ein Ratgeber für die Praxis&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Die DGUV Information bietet eine praxisnahe Handlungsanleitung zur ergonomischen Einrichtung von Näharbeitsplätzen. Belastungen des Muskel-Skelett-Systems und daraus resultierende Erkrankungen insbesondere der Wirbelsäule und des Hand-Arm-Systems sollen verringert werden.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/VDAxMw--&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://medien.bgetem.de/medienportal/artikel/VDAxMw--/@@images/1e739173-06a0-4955-92aa-ad16dd0cf92d.jpeg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;Gesund bleiben beim Nähen&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Ein ergonomisch gestalteter Arbeitsplatz erlaubt es, die Näharbeit weniger ermüdend durchzuführen und vermeidet langfristige körperliche Schäden am Bewegungsapparat. Ergonomische Verbesserungen lassen sich oft mit wenigen Maßnahmen erreichen.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	  &lt;div class=&quot;card mb-3&quot; style=&quot;min-width: 15rem; max-width: 15rem;&quot;&gt;
+	    &lt;a href=&quot;https://medien.bgetem.de/medienportal/artikel/VDAxM0U-&quot;&gt;
+	      &lt;img class=&quot;card-img-top&quot; src=&quot;https://medien.bgetem.de/medienportal/artikel/VDAxM0U-/@@images/6bd7f6c1-f0ee-4065-a49e-bf83159117f9.jpeg&quot;&gt;
+	        &lt;div class=&quot;card-body p-0&quot;&gt;
+	          &lt;h3&gt;Gesund bleiben beim Nähen (englische Fassung)&lt;/h3&gt;
+	          &lt;p class=&quot;max-lines ellipsis&quot;&gt;Ein ergonomisch gestalteter Arbeitsplatz erlaubt es, die Näharbeit weniger ermüdend durchzuführen und vermeidet langfristige körperliche Schäden am Bewegungsapparat. Ergonomische Verbesserungen lassen sich oft mit wenigen Maßnahmen erreichen.&lt;/p&gt;
+	      &lt;/div&gt;
+	    &lt;/a&gt;
+	  &lt;/div&gt;
+	&lt;/div&gt;</code>
+</pre>
+
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br> #}
+
+<!-- BREADCRUMB -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="breadcrumb" class="inventar-anchor">Breadcrumb</a></strong>&ensp;<a class="inventar-anchor-link" href="#breadcrumb">#</a></h2>
+</div>
+<br><br><nav aria-label="breadcrumb" class="breadcrumb">
+	<div class="container bg-layout_medien_container">
+		<div class="scrollbox">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Startseite</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz" rel="noopener noreferrer">Prävention</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/brancheninformationen1" rel="noopener noreferrer">Brancheninformationen</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung" rel="noopener noreferrer">Energie- und Wasserwirtschaft</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder" rel="noopener noreferrer">Bäder</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder/branchenspezifische-gefaehrdungen" rel="noopener noreferrer">Branchenspezifische Gefährdungen</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder/branchenspezifische-gefaehrdungen/gefaehrdungen-bei-der-desinfektion-von-wasser" rel="noopener noreferrer">Gefährdungen bei der Desinfektion von Wasser</a>
+				</li>
+				<li class="breadcrumb-item last" aria-current="page">
+					<strong>Natriumhypochloritlösung …</strong>
+				</li>
+			</ol>
+		</div>
+	</div>
+</nav>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;nav aria-label=&quot;breadcrumb&quot; class=&quot;breadcrumb&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;div class=&quot;scrollbox&quot;&gt;
+			&lt;ol class=&quot;breadcrumb&quot;&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/&quot;&gt;Startseite&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz&quot; rel=&quot;noopener noreferrer&quot;&gt;Prävention&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/brancheninformationen1&quot; rel=&quot;noopener noreferrer&quot;&gt;Brancheninformationen&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung&quot; rel=&quot;noopener noreferrer&quot;&gt;Energie- und Wasserwirtschaft&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder&quot; rel=&quot;noopener noreferrer&quot;&gt;Bäder&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder/branchenspezifische-gefaehrdungen&quot; rel=&quot;noopener noreferrer&quot;&gt;Branchenspezifische Gefährdungen&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item&quot;&gt;
+					&lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/brancheninformationen1/energieversorgung/baeder/branchenspezifische-gefaehrdungen/gefaehrdungen-bei-der-desinfektion-von-wasser&quot; rel=&quot;noopener noreferrer&quot;&gt;Gefährdungen bei der Desinfektion von Wasser&lt;/a&gt;
+				&lt;/li&gt;
+				&lt;li class=&quot;breadcrumb-item last&quot; aria-current=&quot;page&quot;&gt;
+					&lt;strong&gt;Natriumhypochloritlösung …&lt;/strong&gt;
+				&lt;/li&gt;
+			&lt;/ol&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;</code>
+</pre>
+
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- ARTICLE -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="article" class="inventar-anchor">Artikel</a></strong>&ensp;<a class="inventar-anchor-link" href="#article">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container"><article>
+	<header>
+		<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+		<h1>Was Chefs für Verkehrssicherheit tun können</h1>
+		<div class="dot">
+			<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+			</svg>
+		</div>
+		<p class="intro description bold">(12.05.2020) In Zeiten von Corona nutzen die Deutschen zunehmend das Fahrrad als Beförderungsmittel zum Arbeitsplatz. Andere gehen zu Fuß. Aber unabhängig davon, wie man zur Arbeit kommt, etwas ist für alle wichtig: Verkehrssicherheit. Deshalb suchen viele Unternehmen nach Hilfe, wie sie ihre Mitarbeiter unterstützen können. In der aktuellen Ausgabe des Magazins &quot;etem&quot; der Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) wird ausführlich erklärt, was Verantwortliche in Unternehmen zu mehr Sicherheit im Straßenverkehr beitragen können.</p>
+		<p class="author-byline">Letzte Änderung: 11.05.2020</p>
+	</header>
+	<section class="article-body clearfix">
+		<figure class="news-image inline float-left">
+			<img data-sizes="auto" src="../imager/2a342da7b24883187d0ecc1dc8bb15fc/image_97a642ad53d0d8801556dcebdb2754d0.jpg"  srcset="../imager/2a342da7b24883187d0ecc1dc8bb15fc/image_3653c2a26e9ddb81ac1f85eed2255c38.jpg 400w">
+			<figcaption>Bild: Halfpoint/ stock.adobe.com</figcaption>
+		</figure>
+		<p>Schon die kleinsten Maßnahmen können helfen. Vorgesetzte sollten etwa darauf verzichten, ihre Mitarbeiterinnen und Mitarbeiter telefonisch zu kontaktieren, wenn sich diese auf dem Weg zur Arbeit befinden. Auch ein Gespräch mit der Belegschaft kann schnell klären, wo sich Schwerpunkte zu Unfallzeiten und -orten ausmachen lassen. Beispielsweise kann als Folge eine Kommune dafür gewonnen werden, Zufahrten zu Gewerbegebieten zu erweitern oder Fahrradwege und Straßenbeleuchtungen auszubauen.</p>
+		<p>Diese Tipps verlangen ein gewisses Umdenken: Wer flexible Arbeitszeiten einführt, entzerrt die Verkehrsbelastung im Umfeld des Unternehmens, senkt dadurch Stressniveau und Unfallgefahr für Beschäftigte. Arbeitgeber sollten großzügig sein und ein Auge zudrücken, wenn Mitarbeiter sich wegen Verkehrsstaus oder schlechter Witterung verspäten. Damit wird vermeiden, dass wegen Zeitdrucks mit überhöhter Geschwindigkeit gefahren wird. Wer Betriebszeiten auf gute Anschlüsse im öffentlichen Nahverkehr ausrichtet, ermöglicht seinen Mitarbeitern, Bus und Bahn problemlos zu nutzen. Auch über die Einführung von Jobtickets oder Bahncards sollte nachgedacht werden. Wenn ein Unternehmen über Intranet oder eine Mitarbeiterzeitung kommuniziert, können so leicht neue Fahrgemeinschaften gefunden werden. Und wenn sich ein Arbeitgeber an der Anschaffung von Warnwesten für Zweiradfahrer beteiligt, setzt er damit Zeichen und fördert eine sehr gute präventive Maßnahme. Umsichtige Vorgesetzte denken außerdem daran, Azubis und junge Beschäftigte besonders über Verkehrssicherheit aufzuklären.</p>
+		<h3>Überschrift</h3>
+		<p>Der <a class="external-link" href="http://etem.bgetem.de/2.2020/titelstories/so-machen-das-chefs/document_view" target="_self" title="">komplette Artikel "So machen das Chefs"</a> ist in der Ausgabe 2.2020 des Magazins "etem" nachzulesen. Das Magazin und weitere Informationen zum Thema Verkehrssicherheit gibt es auf der Webseite der BG ETEM: <a href="http://bgetem-inventar.test/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/transport-logistik-und-verkehr/verkehrssicherheit" class="internal-link" target="_self">www.bgetem.de (Webcode 16692593)</a>.</p>
+		<ul class="arrowed">
+			<li>Wo ist der Unfall passiert?</li>
+			<li>Was ist geschehen?</li>
+			<li>Wie viele Verletzte gibt es?</li>
+			<li>Welche Verletzungen liegen vor?</li>
+			<li>Warten auf Rückfragen</li>
+		</ul>
+		<h3>Hintergrund BG ETEM</h3>
+		<p>Die BG ETEM ist die gesetzliche Unfallversicherung für vier Millionen Beschäftigte in gut 200.000 Mitgliedsbetrieben. Sie kümmert sich um Arbeitssicherheit und Gesundheitsschutz in den Mitgliedsbetrieben sowie um Rehabilitation und Entschädigung von Arbeitsunfällen und Berufskrankheiten. Für ihre Mitgliedsunternehmen übernimmt die BG ETEM die Haftung für die gesundheitlichen Folgen von Arbeitsunfällen und Berufskrankheiten gegenüber den Beschäftigten und stellt diese auch untereinander von der Haftung frei.</p>
+		<p><a href="http://bgetem-inventar.test/presse-aktuelles/pressebilder/was-chefs-fuer-verkehrssicherheit-tun-koennen" class="internal-link" target="_self">Pressebild</a> (die Verwendung dieses Bildes ist nur in Verbindung mit der Pressemitteilung und nicht zu anderen Zwecken gestattet.)</p>
+		<h3>Pressekontakt</h3>
+		<p>Christian Sprotte<br />Pressesprecher<br />Telefon 0221 3778-5521<br />Telefax 0221 3778-25521<br />Mobil 0175 260 73 90<br />E-Mail <a href="mailto:sprotte.christian@bgetem.de">sprotte.christian@bgetem.de</a><br />Internet www.bgetem.de, <a href="http://bgetem-inventar.test/presse-aktuelles/pressestelle/pressestelle" class="internal-link" target="_self">Webcode 11364615</a></p>
+	</section>
+</article>
+
+</div>
+<br><br><br>
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;article&gt;
+	&lt;header&gt;
+		&lt;p class=&quot;roof-row upper&quot;&gt;Sicherheit am Arbeitsplatz&lt;/p&gt;
+		&lt;h1&gt;Was Chefs für Verkehrssicherheit tun können&lt;/h1&gt;
+		&lt;div class=&quot;dot&quot;&gt;
+			&lt;svg viewBox=&quot;0 0 500 500&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+				&lt;circle cx=&quot;250&quot; cy=&quot;250&quot; r=&quot;250&quot; fill=&quot;#0086cd&quot;&gt;&lt;/circle&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;p class=&quot;intro description bold&quot;&gt;(12.05.2020) In Zeiten von Corona nutzen die Deutschen zunehmend das Fahrrad als Beförderungsmittel zum Arbeitsplatz. Andere gehen zu Fuß. Aber unabhängig davon, wie man zur Arbeit kommt, etwas ist für alle wichtig: Verkehrssicherheit. Deshalb suchen viele Unternehmen nach Hilfe, wie sie ihre Mitarbeiter unterstützen können. In der aktuellen Ausgabe des Magazins &amp;quot;etem&amp;quot; der Berufsgenossenschaft Energie Textil Elektro Medienerzeugnisse (BG ETEM) wird ausführlich erklärt, was Verantwortliche in Unternehmen zu mehr Sicherheit im Straßenverkehr beitragen können.&lt;/p&gt;
+		&lt;p class=&quot;author-byline&quot;&gt;Letzte Änderung: 11.05.2020&lt;/p&gt;
+	&lt;/header&gt;
+	&lt;section class=&quot;article-body clearfix&quot;&gt;
+		&lt;figure class=&quot;news-image inline float-left&quot;&gt;
+			&lt;img data-sizes=&quot;auto&quot; src=&quot;/imager/2a342da7b24883187d0ecc1dc8bb15fc/image_97a642ad53d0d8801556dcebdb2754d0.jpg&quot;  srcset=&quot;/imager/2a342da7b24883187d0ecc1dc8bb15fc/image_3653c2a26e9ddb81ac1f85eed2255c38.jpg 400w&quot;&gt;
+			&lt;figcaption&gt;Bild: Halfpoint/ stock.adobe.com&lt;/figcaption&gt;
+		&lt;/figure&gt;
+		&lt;p&gt;Schon die kleinsten Maßnahmen können helfen. Vorgesetzte sollten etwa darauf verzichten, ihre Mitarbeiterinnen und Mitarbeiter telefonisch zu kontaktieren, wenn sich diese auf dem Weg zur Arbeit befinden. Auch ein Gespräch mit der Belegschaft kann schnell klären, wo sich Schwerpunkte zu Unfallzeiten und -orten ausmachen lassen. Beispielsweise kann als Folge eine Kommune dafür gewonnen werden, Zufahrten zu Gewerbegebieten zu erweitern oder Fahrradwege und Straßenbeleuchtungen auszubauen.&lt;/p&gt;
+		&lt;p&gt;Diese Tipps verlangen ein gewisses Umdenken: Wer flexible Arbeitszeiten einführt, entzerrt die Verkehrsbelastung im Umfeld des Unternehmens, senkt dadurch Stressniveau und Unfallgefahr für Beschäftigte. Arbeitgeber sollten großzügig sein und ein Auge zudrücken, wenn Mitarbeiter sich wegen Verkehrsstaus oder schlechter Witterung verspäten. Damit wird vermeiden, dass wegen Zeitdrucks mit überhöhter Geschwindigkeit gefahren wird. Wer Betriebszeiten auf gute Anschlüsse im öffentlichen Nahverkehr ausrichtet, ermöglicht seinen Mitarbeitern, Bus und Bahn problemlos zu nutzen. Auch über die Einführung von Jobtickets oder Bahncards sollte nachgedacht werden. Wenn ein Unternehmen über Intranet oder eine Mitarbeiterzeitung kommuniziert, können so leicht neue Fahrgemeinschaften gefunden werden. Und wenn sich ein Arbeitgeber an der Anschaffung von Warnwesten für Zweiradfahrer beteiligt, setzt er damit Zeichen und fördert eine sehr gute präventive Maßnahme. Umsichtige Vorgesetzte denken außerdem daran, Azubis und junge Beschäftigte besonders über Verkehrssicherheit aufzuklären.&lt;/p&gt;
+		&lt;h3&gt;Überschrift&lt;/h3&gt;
+		&lt;p&gt;Der &lt;a class=&quot;external-link&quot; href=&quot;http://etem.bgetem.de/2.2020/titelstories/so-machen-das-chefs/document_view&quot; target=&quot;_self&quot; title=&quot;&quot;&gt;komplette Artikel &quot;So machen das Chefs&quot;&lt;/a&gt; ist in der Ausgabe 2.2020 des Magazins &quot;etem&quot; nachzulesen. Das Magazin und weitere Informationen zum Thema Verkehrssicherheit gibt es auf der Webseite der BG ETEM: &lt;a href=&quot;/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/transport-logistik-und-verkehr/verkehrssicherheit&quot; class=&quot;internal-link&quot; target=&quot;_self&quot;&gt;www.bgetem.de (Webcode 16692593)&lt;/a&gt;.&lt;/p&gt;
+		&lt;ul class=&quot;arrowed&quot;&gt;
+			&lt;li&gt;Wo ist der Unfall passiert?&lt;/li&gt;
+			&lt;li&gt;Was ist geschehen?&lt;/li&gt;
+			&lt;li&gt;Wie viele Verletzte gibt es?&lt;/li&gt;
+			&lt;li&gt;Welche Verletzungen liegen vor?&lt;/li&gt;
+			&lt;li&gt;Warten auf Rückfragen&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;h3&gt;Hintergrund BG ETEM&lt;/h3&gt;
+		&lt;p&gt;Die BG ETEM ist die gesetzliche Unfallversicherung für vier Millionen Beschäftigte in gut 200.000 Mitgliedsbetrieben. Sie kümmert sich um Arbeitssicherheit und Gesundheitsschutz in den Mitgliedsbetrieben sowie um Rehabilitation und Entschädigung von Arbeitsunfällen und Berufskrankheiten. Für ihre Mitgliedsunternehmen übernimmt die BG ETEM die Haftung für die gesundheitlichen Folgen von Arbeitsunfällen und Berufskrankheiten gegenüber den Beschäftigten und stellt diese auch untereinander von der Haftung frei.&lt;/p&gt;
+		&lt;p&gt;&lt;a href=&quot;/presse-aktuelles/pressebilder/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; class=&quot;internal-link&quot; target=&quot;_self&quot;&gt;Pressebild&lt;/a&gt; (die Verwendung dieses Bildes ist nur in Verbindung mit der Pressemitteilung und nicht zu anderen Zwecken gestattet.)&lt;/p&gt;
+		&lt;h3&gt;Pressekontakt&lt;/h3&gt;
+		&lt;p&gt;Christian Sprotte&lt;br /&gt;Pressesprecher&lt;br /&gt;Telefon 0221 3778-5521&lt;br /&gt;Telefax 0221 3778-25521&lt;br /&gt;Mobil 0175 260 73 90&lt;br /&gt;E-Mail &lt;a href=&quot;mailto:sprotte.christian@bgetem.de&quot;&gt;sprotte.christian@bgetem.de&lt;/a&gt;&lt;br /&gt;Internet www.bgetem.de, &lt;a href=&quot;/presse-aktuelles/pressestelle/pressestelle&quot; class=&quot;internal-link&quot; target=&quot;_self&quot;&gt;Webcode 11364615&lt;/a&gt;&lt;/p&gt;
+	&lt;/section&gt;
+&lt;/article&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<div class="container bg-layout_medien_container">
+<!-- SCHLÜSSELPAARE -->
+<h2 class="h6"><strong class="upper"><a id="schluesselpaar" class="inventar-anchor">Schlüsselpaare</a></strong>&ensp;<a class="inventar-anchor-link" href="#schluesselpaar">#</a></h2>
+
+<br><br>
+
+
+  
+<article>
+	<header>
+		<div class="row">
+			<h1 class="col col-8 col-sm-8 col-md-4 col-lg-11">A-1300 UV</h1>
+			<figure class="product-image col col-md-1">
+			 	<picture>
+					<source type="image/webp" srcset="/imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.webp" media="(max-width: 419px)">
+					<source type="image/jpeg" srcset="/imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.jpeg" media="(max-width: 419px)">
+					<source type="image/webp" srcset="/imager/bilder/1066/a_1300_uv_82447b996475a717cea06e78fc635a4b.webp" media="(max-width: 899px)">
+					<source type="image/jpeg" srcset="/imager/bilder/1066/a_1300_uv_82447b996475a717cea06e78fc635a4b.jpeg" media="(max-width: 899px)">
+					<source type="image/webp" srcset="/imager/bilder/1066/a_1300_uv_2b9b570065fb48b2331dc6726b5b6312.webp" media="(max-width: 1199px)">
+					<source type="image/jpeg" srcset="/imager/bilder/1066/a_1300_uv_2b9b570065fb48b2331dc6726b5b6312.jpeg" media="(max-width: 1199px)">
+					<source type="image/webp" srcset="/imager/bilder/1066/a_1300_uv_bafb34757571e85da5c105b163055aa9.webp" media="(min-width: 1200px)">
+					<source type="image/jpeg" srcset="/imager/bilder/1066/a_1300_uv_bafb34757571e85da5c105b163055aa9.jpeg" media="(min-width: 1200px)">
+					<img src="../imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.jpeg" alt="A 1300 UV" title="A 1300 UV">
+				</picture>
+				<figcaption>A 1300 UV</figcaption>
+			</figure>
+		</div>
+		<div class="dot">
+			<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+				<circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+			</svg>
+		</div>
+		<p class="intro description bold">(04.01.2022) Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!</p>
+	</header>
+	<section class="article-body clearfix">
+		<dl class="row key-value-pair">
+  			<dt class="col col-sm-3">Typ des Wasch- und Reinigungsmittels</dt>
+  			<dd class="col col-sm-6"><span>Offsetdruck (allgemein)</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Branche</dt>
+			<dd class="col col-sm-6"><span>branch</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Hautschutzmittelgruppe</dt>
+			<dd class="col col-sm-6"><span>Gegen wechselnde Arbeitsstoffe</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Sonderreiniger</dt>
+			<dd class="col col-sm-6"><span>Nein</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Emissionsarmes Produkt</dt>
+			<dd class="col col-sm-6"><span>Ja</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Flammpunkt</dt>
+			<dd class="col col-sm-6"><span>75</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Wertebereich für den Flammpunkt</dt>
+			<dd class="col col-sm-6"><span>nein</span></dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Datum</dt>
+			<dd class="col col-sm-6"><span>04.01.2022</span></dd>
+
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Datum + Uhrzeit</dt>
+			<dd class="col col-sm-6"><span>04.01.2022, 12:39</span></dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Textblock</dt>
+			<dd class="col col-sm-6"><span>Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!</span></dd>
+		
+			<div class="w-100 divider"></div><dt class="col col-sm-3">Datei</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<a class="download inline" href="http://bgetem.test/img/beispieldatei.pdf" title="Beispieldatei – PDF herunterladen" download>
+						Beispieldatei – PDF (0.01 MB)
+						<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+							<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+						</svg>
+											</a>
+				</span>
+			</dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Dateiliste</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<ul>
+													<li>
+								<a class="download inline" href="http://bgetem.test/img/beispieldatei.pdf" title="Beispieldatei – PDF herunterladen" download>
+									Beispieldatei – PDF (0.01 MB)
+									<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+										<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+									</svg>
+																	</a>
+							</li>	
+													<li>
+								<a class="download inline" href="http://bgetem.test/img/beispieldatei.pdf" title="Beispieldatei – PDF herunterladen" download>
+									Beispieldatei – PDF (0.01 MB)
+									<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+										<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+									</svg>
+																	</a>
+							</li>	
+													<li>
+								<a class="download inline" href="http://bgetem.test/img/beispieldatei.pdf" title="Beispieldatei – PDF herunterladen" download>
+									Beispieldatei – PDF (0.01 MB)
+									<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+										<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+									</svg>
+																	</a>
+							</li>	
+													<li>
+								<a class="download inline" href="http://bgetem.test/img/beispieldatei.pdf" title="Beispieldatei – PDF herunterladen" download>
+									Beispieldatei – PDF (0.01 MB)
+									<svg class="" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+										<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+									</svg>
+																	</a>
+							</li>	
+											</ul>
+				</span>
+			</dd>
+		
+			<div class="w-100 divider"></div>
+
+			<dt class="col col-sm-3">Bestandteile (Liste)</dt>
+			<dd class="col col-sm-6">
+				<span>
+					<ul>
+						<li>10-Undecenal (>= 77.0 % <= 88.0 %)</li>
+						<li>1-(2-Hydroxy-3-sulfonatopropyl)pyridinium (>= 3.0 %, <= 5.0 %)</li>
+						<li>Weiterer Listenpunkt</li>
+						<li>Letzter Listenpunkt</li>
+					</ul>
+				</span>
+			</dd>
+			
+					</dl>
+	</section>
+</article>
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+	<code class="language-html">
+&lt;article&gt;
+	&lt;header&gt;
+		&lt;div class=&quot;row&quot;&gt;
+			&lt;h1 class=&quot;col col-8 col-sm-8 col-md-4 col-lg-11&quot;&gt;A-1300 UV&lt;/h1&gt;
+			&lt;figure class=&quot;product-image col col-md-1&quot;&gt;
+			 	&lt;picture&gt;
+					&lt;source type=&quot;image/webp&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.webp&quot; media=&quot;(max-width: 419px)&quot;&gt;
+					&lt;source type=&quot;image/jpeg&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.jpeg&quot; media=&quot;(max-width: 419px)&quot;&gt;
+					&lt;source type=&quot;image/webp&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_82447b996475a717cea06e78fc635a4b.webp&quot; media=&quot;(max-width: 899px)&quot;&gt;
+					&lt;source type=&quot;image/jpeg&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_82447b996475a717cea06e78fc635a4b.jpeg&quot; media=&quot;(max-width: 899px)&quot;&gt;
+					&lt;source type=&quot;image/webp&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_2b9b570065fb48b2331dc6726b5b6312.webp&quot; media=&quot;(max-width: 1199px)&quot;&gt;
+					&lt;source type=&quot;image/jpeg&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_2b9b570065fb48b2331dc6726b5b6312.jpeg&quot; media=&quot;(max-width: 1199px)&quot;&gt;
+					&lt;source type=&quot;image/webp&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_bafb34757571e85da5c105b163055aa9.webp&quot; media=&quot;(min-width: 1200px)&quot;&gt;
+					&lt;source type=&quot;image/jpeg&quot; srcset=&quot;/imager/bilder/1066/a_1300_uv_bafb34757571e85da5c105b163055aa9.jpeg&quot; media=&quot;(min-width: 1200px)&quot;&gt;
+					&lt;img src=&quot;/imager/bilder/1066/a_1300_uv_54172ed4dc7f55289fd8f9458f325dd0.jpeg&quot; alt=&quot;A 1300 UV&quot; title=&quot;A 1300 UV&quot;&gt;
+				&lt;/picture&gt;
+				&lt;figcaption&gt;A 1300 UV&lt;/figcaption&gt;
+			&lt;/figure&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;dot&quot;&gt;
+			&lt;svg viewBox=&quot;0 0 500 500&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+				&lt;circle cx=&quot;250&quot; cy=&quot;250&quot; r=&quot;250&quot; fill=&quot;#0086cd&quot;&gt;&lt;/circle&gt;
+			&lt;/svg&gt;
+		&lt;/div&gt;
+		&lt;p class=&quot;intro description bold&quot;&gt;(04.01.2022) Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!&lt;/p&gt;
+	&lt;/header&gt;
+	&lt;section class=&quot;article-body clearfix&quot;&gt;
+		&lt;dl class=&quot;row key-value-pair&quot;&gt;
+  			&lt;dt class=&quot;col col-sm-3&quot;&gt;Typ des Wasch- und Reinigungsmittels&lt;/dt&gt;
+  			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;Offsetdruck (allgemein)&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Branche&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;branch&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Hautschutzmittelgruppe&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;Gegen wechselnde Arbeitsstoffe&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Sonderreiniger&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;Nein&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Emissionsarmes Produkt&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;Ja&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Flammpunkt&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;75&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Wertebereich für den Flammpunkt&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;nein&lt;/span&gt;&lt;/dd&gt;
+		
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Datum&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;04.01.2022&lt;/span&gt;&lt;/dd&gt;
+
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Datum + Uhrzeit&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;04.01.2022, 12:39&lt;/span&gt;&lt;/dd&gt;
+		
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Textblock&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;&lt;span&gt;Lorem, ipsum dolor sit, amet consectetur adipisicing elit. Sint cumque laborum eveniet! Quibusdam asperiores ab non aperiam excepturi cupiditate impedit molestiae nulla harum nisi placeat, accusamus in blanditiis quam repudiandae!&lt;/span&gt;&lt;/dd&gt;
+		
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;&lt;dt class=&quot;col col-sm-3&quot;&gt;Datei&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;
+				&lt;span&gt;
+					&lt;a class=&quot;download inline&quot; href=&quot;http://bgetem.test/img/beispieldatei.pdf&quot; title=&quot;Beispieldatei – PDF herunterladen&quot; download&gt;
+						Beispieldatei – PDF (0.01 MB)
+						&lt;svg class=&quot;&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+							&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;&gt;&lt;/path&gt;
+						&lt;/svg&gt;
+					&lt;/a&gt;
+				&lt;/span&gt;
+			&lt;/dd&gt;
+		
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Dateiliste&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;
+				&lt;span&gt;
+					&lt;ul&gt;
+						&lt;li&gt;
+							&lt;a class=&quot;download inline&quot; href=&quot;http://bgetem.test/img/beispieldatei.pdf&quot; title=&quot;Beispieldatei – PDF herunterladen&quot; download&gt;
+								Beispieldatei – PDF (0.01 MB)
+								&lt;svg class=&quot;&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+									&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;&gt;&lt;/path&gt;
+								&lt;/svg&gt;
+							&lt;/a&gt;
+						&lt;/li&gt;	
+						&lt;li&gt;
+							&lt;a class=&quot;download inline&quot; href=&quot;http://bgetem.test/img/beispieldatei.pdf&quot; title=&quot;Beispieldatei – PDF herunterladen&quot; download&gt;
+								Beispieldatei – PDF (0.01 MB)
+								&lt;svg class=&quot;&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+									&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;&gt;&lt;/path&gt;
+								&lt;/svg&gt;
+							&lt;/a&gt;
+						&lt;/li&gt;	
+						&lt;li&gt;
+							&lt;a class=&quot;download inline&quot; href=&quot;http://bgetem.test/img/beispieldatei.pdf&quot; title=&quot;Beispieldatei – PDF herunterladen&quot; download&gt;
+								Beispieldatei – PDF (0.01 MB)
+								&lt;svg class=&quot;&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+									&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;&gt;&lt;/path&gt;
+								&lt;/svg&gt;
+							&lt;/a&gt;
+						&lt;/li&gt;	
+						&lt;li&gt;
+							&lt;a class=&quot;download inline&quot; href=&quot;http://bgetem.test/img/beispieldatei.pdf&quot; title=&quot;Beispieldatei – PDF herunterladen&quot; download&gt;
+								Beispieldatei – PDF (0.01 MB)
+								&lt;svg class=&quot;&quot; viewBox=&quot;50.22 50.22 249.56 249.56&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+									&lt;path d=&quot;M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z&quot;&gt;&lt;/path&gt;
+								&lt;/svg&gt;
+							&lt;/a&gt;
+						&lt;/li&gt;	
+					&lt;/ul&gt;
+				&lt;/span&gt;
+			&lt;/dd&gt;
+		
+			&lt;div class=&quot;w-100 divider&quot;&gt;&lt;/div&gt;
+
+			&lt;dt class=&quot;col col-sm-3&quot;&gt;Bestandteile&lt;/dt&gt;
+			&lt;dd class=&quot;col col-sm-6&quot;&gt;
+				&lt;span&gt;
+					&lt;ul&gt;
+						&lt;li&gt;10-Undecenal (&gt;= 77.0 % &lt;= 88.0 %)&lt;/li&gt;
+						&lt;li&gt;1-(2-Hydroxy-3-sulfonatopropyl)pyridinium (&gt;= 3.0 %, &lt;= 5.0 %)&lt;/li&gt;
+						&lt;li&gt;Weiterer Listenpunkt&lt;/li&gt;
+						&lt;li&gt;Letzter Listenpunkt&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/span&gt;
+			&lt;/dd&gt;
+		&lt;/dl&gt;
+	&lt;/section&gt;
+&lt;/article&gt;</code>
+</pre>
+
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<!-- TABELLE -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="einfache-table" class="inventar-anchor">Einfache Tabelle</a></strong>&ensp;<a class="inventar-anchor-link" href="#einfache-table">#</a></h2>
+	<p>Schriftvorschlag für Tabellen: <b>Axel</b>, Schrift für tabellarische Inhalte <a class="external-link" href="https://www.fontshop.com/families/axel">»Axel« bei Fontshop</a></p>
+</div>
+<br><br><div class="container bg-layout_medien_container">
+	<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Medienart</th>
+			<th scope="col">Freimenge</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Faltblätter</td>
+			<td>bis 30 Exemplare</td>
+		</tr>
+		<tr>
+			<td>Broschüren</td>
+			<td>bis 20 Exemplare</td>
+		</tr>
+		<tr>
+			<td>Plakate/Aushänge</td>
+			<td>bis 10 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Elektronische Medien<br>(gilt auch für Broschüren mit CD-ROM/DVD-ROM)
+			</td>
+			<td>bis 3 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Azubi-Pakete
+			</td>
+			<td>
+				1 Exemplar
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Unternehmermodell-Ordner
+			</td>
+			<td>1 Exemplar
+		</tr>
+		<tr>
+			<td>
+				Aktionsmedien
+			</td>
+			<td>1 Exemplar</td>
+		</tr>
+		<tr>
+			<td>
+				Aufkleber, Anstecknadeln
+			</td>
+			<td>20 Exemplare</td>
+		</tr>
+		<tr>
+			<td>
+				Regelwerk (DGUV Vorschriften, DGUV Regeln, DGUV Informationen, DGUV Grundsätze, Gesetze/Verordnungen)
+			</td>
+			<td>unbegrenzt / bis 99 Exemplare je Bestellung im Medienportal</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;table class=&quot;table&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th scope=&quot;col&quot;&gt;Medienart&lt;/th&gt;
+			&lt;th scope=&quot;col&quot;&gt;Freimenge&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Faltblätter&lt;/td&gt;
+			&lt;td&gt;bis 30 Exemplare&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Broschüren&lt;/td&gt;
+			&lt;td&gt;bis 20 Exemplare&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Plakate/Aushänge&lt;/td&gt;
+			&lt;td&gt;bis 10 Exemplare&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Elektronische Medien&lt;br&gt;(gilt auch für Broschüren mit CD-ROM/DVD-ROM)
+			&lt;/td&gt;
+			&lt;td&gt;bis 3 Exemplare&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Azubi-Pakete
+			&lt;/td&gt;
+			&lt;td&gt;
+				1 Exemplar
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+			Unternehmermodell-Ordner
+			&lt;/td&gt;
+			&lt;td&gt;1 Exemplar
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Aktionsmedien
+			&lt;/td&gt;
+			&lt;td&gt;1 Exemplar&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Aufkleber, Anstecknadeln
+			&lt;/td&gt;
+			&lt;td&gt;20 Exemplare&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Regelwerk (DGUV Vorschriften, DGUV Regeln, DGUV Informationen, DGUV Grundsätze, Gesetze/Verordnungen)
+			&lt;/td&gt;
+			&lt;td&gt;unbegrenzt / bis 99 Exemplare je Bestellung im Medienportal&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!--ERWEITERTE TABELLE-->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="erweiterte-tabelle" class="inventar-anchor">Erweiterte Tabelle</a></strong>&ensp;<a class="inventar-anchor-link" href="#erweiterte-tabelle">#</a></h2>
+	<p>Schriftvorschlag für Tabellen: <b>Axel</b>, Schrift für tabellarische Inhalte <a class="external-link" href="https://www.fontshop.com/families/axel">»Axel« bei Fontshop</a></p>
+</div>
+<br><br><div class="container bg-layout_medien_container">
+	<h2><strong>Vergleichende Darstellung der Klassifizierungen von staubbeseitigenden Maschinen</strong></h2><br>
+<table class="table table-bordered table-extended">
+	<thead>
+		<tr>
+			<th rowspan="2">Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube<br><br>Vor 01.01.2005</td>
+			<th colspan="2" class="border-one-px">Bis 1998 (Übergangsfrist bis 2003) nach ZH 1/487</td>
+			<th rowspan="2">Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube<br><br>Seit 01.01.2005</td>
+			<th colspan="2" class="border-one-px">geltende Staubklassen nach DIN EN 60335-2-69 Anh. AA und E DIN IEC 61 J/94/CD</td>
+		</tr>
+		<tr>
+			<th>Verwendungskategorie</td>
+			<th>Max. Durchlassgrad</td>
+			<th>Staubklasse</td>
+			<th>Max. Durchlassgrad</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>mit MAK-Werten > 1 mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">U</span><br>(S, G, C, K1, K2)</td>
+			<td>≤ 5%</td>
+			<td>mit AGW<br>> 1mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">L</span><br>(M, H)</td>
+			<td>< 1%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten > 0,1 mg/m<sup>3</sup></td>
+			<td>Mindestens <span class="big red">S</span><br>(G, C, K1, K2)</td>
+			<td>≤ 1%</td>
+			<td rowspan="2">mit AGW<br>≥ 0,1 mg/m<sup>3</sup></td>
+			<td rowspan="2">Mindestens <span class="big red">M</span><br>(H)</td>
+			<td rowspan="2">< 0,1%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten</td>
+			<td>Mindestens <span class="big red">G</span><br>(C, K1, K2)</td>
+			<td>≤ 0,5%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 GefStoffV)</td>
+			<td>Mindestens <span class="big red">C</span><br>(K1, K2)</td>
+			<td>≤ 0,1%</td>
+			<td rowspan="2">mit AGW<br>< 0,1 mg/m<sup>3</sup><br>krebserzeugende Gefahrstoffe gem. GefStoffV § 11. TRGS905 bzw. TRGS 906</td>
+			<td><span class="big red">H</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV)</td>
+			<td><span class="big red">K1, K2</span></td>
+			<td>≤ 0,05%</td>
+			<td><span class="big red">H</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>mit MAK-Werten < 0,1mg* m<sup>3</sup> + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV) inkl. Asbest</td>
+			<td><span class="big red">K1, K2 +</span><br><span class="red">Eignung für Einsatz gemäß TRGS 519</span></td>
+			<td>≤ 0,005%</td>
+			<td>Asbest gemäß TRGS 519</td>
+			<td><span class="big red">H +</span> <span class="red">Eignung für Einsatz gemäß TRGS 519</span></td>
+			<td>< 0,005%</td>
+		</tr>
+		<tr>
+			<td>Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME < 1 mJ)</td>
+			<td colspan="2">Mindestens <span class="big red">S</span><br>mit <span class="big red">B1</span> zusätzlich</td>
+			<td>Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME < 1 mJ)</td>
+			<td colspan="2">Mindestens <span class="big red">L</span><br>mit zusätzlicher Prüfung nach DIN EN 60335-2-69, Anhang CC<br><span class="big red">Geräte der Bauart Zone 22</span></td>
+		</tr>
+	</tbody>
+</table>
+<p><strong>Quelle: IFA 2011</strong></p>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;h2&gt;&lt;strong&gt;Vergleichende Darstellung der Klassifizierungen von staubbeseitigenden Maschinen&lt;/strong&gt;&lt;/h2&gt;&lt;br&gt;
+&lt;table class=&quot;table table-bordered table-extended&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th rowspan=&quot;2&quot;&gt;Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube&lt;br&gt;&lt;br&gt;Vor 01.01.2005&lt;/td&gt;
+			&lt;th colspan=&quot;2&quot; class=&quot;border-one-px&quot;&gt;Bis 1998 (Übergangsfrist bis 2003) nach ZH 1/487&lt;/td&gt;
+			&lt;th rowspan=&quot;2&quot;&gt;Geeignet für trockene, gesundheitsgefährliche, nicht brennbare Stäube&lt;br&gt;&lt;br&gt;Seit 01.01.2005&lt;/td&gt;
+			&lt;th colspan=&quot;2&quot; class=&quot;border-one-px&quot;&gt;geltende Staubklassen nach DIN EN 60335-2-69 Anh. AA und E DIN IEC 61 J/94/CD&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Verwendungskategorie&lt;/td&gt;
+			&lt;th&gt;Max. Durchlassgrad&lt;/td&gt;
+			&lt;th&gt;Staubklasse&lt;/td&gt;
+			&lt;th&gt;Max. Durchlassgrad&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten &gt; 1 mg/m&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+			&lt;td&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;U&lt;/span&gt;&lt;br&gt;(S, G, C, K1, K2)&lt;/td&gt;
+			&lt;td&gt;≤ 5%&lt;/td&gt;
+			&lt;td&gt;mit AGW&lt;br&gt;&gt; 1mg/m&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+			&lt;td&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;L&lt;/span&gt;&lt;br&gt;(M, H)&lt;/td&gt;
+			&lt;td&gt;&lt; 1%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten &gt; 0,1 mg/m&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+			&lt;td&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;S&lt;/span&gt;&lt;br&gt;(G, C, K1, K2)&lt;/td&gt;
+			&lt;td&gt;≤ 1%&lt;/td&gt;
+			&lt;td rowspan=&quot;2&quot;&gt;mit AGW&lt;br&gt;≥ 0,1 mg/m&lt;sup&gt;3&lt;/sup&gt;&lt;/td&gt;
+			&lt;td rowspan=&quot;2&quot;&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;M&lt;/span&gt;&lt;br&gt;(H)&lt;/td&gt;
+			&lt;td rowspan=&quot;2&quot;&gt;&lt; 0,1%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten&lt;/td&gt;
+			&lt;td&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;G&lt;/span&gt;&lt;br&gt;(C, K1, K2)&lt;/td&gt;
+			&lt;td&gt;≤ 0,5%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 GefStoffV)&lt;/td&gt;
+			&lt;td&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;C&lt;/span&gt;&lt;br&gt;(K1, K2)&lt;/td&gt;
+			&lt;td&gt;≤ 0,1%&lt;/td&gt;
+			&lt;td rowspan=&quot;2&quot;&gt;mit AGW&lt;br&gt;&lt; 0,1 mg/m&lt;sup&gt;3&lt;/sup&gt;&lt;br&gt;krebserzeugende Gefahrstoffe gem. GefStoffV § 11. TRGS905 bzw. TRGS 906&lt;/td&gt;
+			&lt;td&gt;&lt;span class=&quot;big red&quot;&gt;H&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt; 0,005%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV)&lt;/td&gt;
+			&lt;td&gt;&lt;span class=&quot;big red&quot;&gt;K1, K2&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;≤ 0,05%&lt;/td&gt;
+			&lt;td&gt;&lt;span class=&quot;big red&quot;&gt;H&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt; 0,005%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;mit MAK-Werten &lt; 0,1mg* m&lt;sup&gt;3&lt;/sup&gt; + von krebserzeugenden Stoffen (§ 35 u. §15a GefStoffV) inkl. Asbest&lt;/td&gt;
+			&lt;td&gt;&lt;span class=&quot;big red&quot;&gt;K1, K2 +&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;red&quot;&gt;Eignung für Einsatz gemäß TRGS 519&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;≤ 0,005%&lt;/td&gt;
+			&lt;td&gt;Asbest gemäß TRGS 519&lt;/td&gt;
+			&lt;td&gt;&lt;span class=&quot;big red&quot;&gt;H +&lt;/span&gt; &lt;span class=&quot;red&quot;&gt;Eignung für Einsatz gemäß TRGS 519&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt; 0,005%&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME &lt; 1 mJ)&lt;/td&gt;
+			&lt;td colspan=&quot;2&quot;&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;S&lt;/span&gt;&lt;br&gt;mit &lt;span class=&quot;big red&quot;&gt;B1&lt;/span&gt; zusätzlich&lt;/td&gt;
+			&lt;td&gt;Zusätzliche Eignung für brennbare Stäube aller Staubexplosionsklassen (ausgenommen Stäube mit extrem niedriger Mindestzündenergie ME &lt; 1 mJ)&lt;/td&gt;
+			&lt;td colspan=&quot;2&quot;&gt;Mindestens &lt;span class=&quot;big red&quot;&gt;L&lt;/span&gt;&lt;br&gt;mit zusätzlicher Prüfung nach DIN EN 60335-2-69, Anhang CC&lt;br&gt;&lt;span class=&quot;big red&quot;&gt;Geräte der Bauart Zone 22&lt;/span&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Quelle: IFA 2011&lt;/strong&gt;&lt;/p&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<!-- Galerie Slideshow -->
+
+
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="slideshow-gallery" class="inventar-anchor">Slideshow Galerie</a></strong>&ensp;<a class="inventar-anchor-link" href="#slideshow-gallery">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container">
+	{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
+</div>
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+<!-- SHARIFF -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="shariff" class="inventar-anchor">Shariff</a></strong>&ensp;<a class="inventar-anchor-link" href="#shariff">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container"><section class="shariff-wrapper sharing-buttons">  
+	<h6>Diesen Beitrag teilen</h6>
+	<div class="shariff">
+		<ul class="theme-grey orientation-horizontal">
+			<li class="shariff-button twitter">
+				<a href="https://twitter.com/intent/tweet?text=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen – BGETEM&amp;url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" data-rel="popup" title="Bei Twitter teilen" role="button" aria-label="Bei Twitter teilen">
+					<span class="twitter"></span>
+					<span class="share_text">Bei Twitter teilen</span>
+				</a>
+			</li>
+			<li class="shariff-button facebook">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" data-rel="popup" title="Bei Facebook teilen" role="button" aria-label="Bei Facebook teilen">
+					<span class="facebook"></span>
+					<span class="share_text">Bei Facebook teilen</span>
+				</a>
+			</li>
+			<li class="shariff-button linkedin">
+				<a href="https://www.linkedin.com/shareArticle?mini=true&amp;summary=&amp;title=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen&amp;url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" data-rel="popup" title="Bei LinkedIn teilen" role="button" aria-label="Bei LinkedIn teilen">
+					<span class="linkedin"></span>
+					<span class="share_text">Bei LinkedIn teilen</span>
+				</a>
+			</li>
+			<li class="shariff-button mail">
+				<a href="mailto:?subject=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen&amp;body=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" title="Per E-Mail versenden" role="button" aria-label="Per E-Mail versenden">
+					<span class="envelope"></span>
+					<span class="share_text">Per E-Mail versenden</span>
+				</a>
+			</li>
+			<li class="shariff-button whatsapp">
+				<a href="whatsapp://send?text=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen%20%20http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" title="Bei Whatsapp teilen" role="button" aria-label="Bei Whatsapp teilen">
+					<span class="whatsapp"></span>
+					<span class="share_text">Bei Whatsapp teilen</span>
+				</a>
+			</li>
+			<li class="shariff-button xing">
+				<a href="https://www.xing.com/social_plugins/share?url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen" data-rel="popup" title="Bei XING teilen" role="button" aria-label="Bei XING teilen">
+					<span class="xing"></span>
+					<span class="share_text">Bei XING teilen</span>
+				</a>
+			</li>
+			<li class="shariff-button info">
+				<a href="http://ct.de/-2467514" target="_blank" title="weitere Informationen" role="button" aria-label="weitere Informationen">
+					<span class="info"></span>
+					<span class="share_text">Weitere Informationen</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+</div>
+<br><br><br>
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;section class=&quot;shariff-wrapper sharing-buttons&quot;&gt;  
+	&lt;h6&gt;Diesen Beitrag teilen&lt;/h6&gt;
+	&lt;div class=&quot;shariff&quot;&gt;
+		&lt;ul class=&quot;theme-grey orientation-horizontal&quot;&gt;
+			&lt;li class=&quot;shariff-button twitter&quot;&gt;
+				&lt;a href=&quot;https://twitter.com/intent/tweet?text=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen – BGETEM&amp;amp;url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; data-rel=&quot;popup&quot; title=&quot;Bei Twitter teilen&quot; role=&quot;button&quot; aria-label=&quot;Bei Twitter teilen&quot;&gt;
+					&lt;span class=&quot;twitter&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Bei Twitter teilen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button facebook&quot;&gt;
+				&lt;a href=&quot;https://www.facebook.com/sharer/sharer.php?u=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; data-rel=&quot;popup&quot; title=&quot;Bei Facebook teilen&quot; role=&quot;button&quot; aria-label=&quot;Bei Facebook teilen&quot;&gt;
+					&lt;span class=&quot;facebook&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Bei Facebook teilen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button linkedin&quot;&gt;
+				&lt;a href=&quot;https://www.linkedin.com/shareArticle?mini=true&amp;amp;summary=&amp;amp;title=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen&amp;amp;url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; data-rel=&quot;popup&quot; title=&quot;Bei LinkedIn teilen&quot; role=&quot;button&quot; aria-label=&quot;Bei LinkedIn teilen&quot;&gt;
+					&lt;span class=&quot;linkedin&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Bei LinkedIn teilen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button mail&quot;&gt;
+				&lt;a href=&quot;mailto:?subject=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen&amp;amp;body=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; title=&quot;Per E-Mail versenden&quot; role=&quot;button&quot; aria-label=&quot;Per E-Mail versenden&quot;&gt;
+					&lt;span class=&quot;envelope&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Per E-Mail versenden&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button whatsapp&quot;&gt;
+				&lt;a href=&quot;whatsapp://send?text=Was%20Chefs%20f%C3%BCr%20Verkehrssicherheit%20tun%20k%C3%B6nnen%20%20http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; title=&quot;Bei Whatsapp teilen&quot; role=&quot;button&quot; aria-label=&quot;Bei Whatsapp teilen&quot;&gt;
+					&lt;span class=&quot;whatsapp&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Bei Whatsapp teilen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button xing&quot;&gt;
+				&lt;a href=&quot;https://www.xing.com/social_plugins/share?url=http://bgetem.localhost/presse-aktuelles/pressemeldungen/2020/was-chefs-fuer-verkehrssicherheit-tun-koennen&quot; data-rel=&quot;popup&quot; title=&quot;Bei XING teilen&quot; role=&quot;button&quot; aria-label=&quot;Bei XING teilen&quot;&gt;
+					&lt;span class=&quot;xing&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Bei XING teilen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;shariff-button info&quot;&gt;
+				&lt;a href=&quot;http://ct.de/-2467514&quot; target=&quot;_blank&quot; title=&quot;weitere Informationen&quot; role=&quot;button&quot; aria-label=&quot;weitere Informationen&quot;&gt;
+					&lt;span class=&quot;info&quot;&gt;&lt;/span&gt;
+					&lt;span class=&quot;share_text&quot;&gt;Weitere Informationen&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/section&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- DOCUMENT ACTIONS -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="document-actions" class="inventar-anchor">Document Actions</a></strong>&ensp;<a class="inventar-anchor-link" href="#document-actions">#</a></h2>
+</div>
+<br><br>
+
+<div class="container bg-layout_medien_container"><footer class="article-footer doc-actions">
+	<h5>Document actions</h5>
+	<ul class="docactions small">
+		<li><a href="#">Webcode: 12915485</a></li>
+		<li><a href="#">Drucken</a></li>
+		<li><a href="#">RSS</a></li>
+		<li><a href="#">Rückmeldung</a></li>
+	</ul>
+</footer>
+
+</div>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;footer class=&quot;article-footer doc-actions&quot;&gt;
+	&lt;h5&gt;Document actions&lt;/h5&gt;
+	&lt;ul class=&quot;docactions small&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Webcode: 12915485&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Drucken&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;RSS&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Rückmeldung&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/footer&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- FORMULAR -->
+
+
+<!-- PAGINIERUNG -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="pagination" class="inventar-anchor">Paginierung</a></strong>&ensp;<a class="inventar-anchor-link" href="#pagination">#</a></h2>
+</div>
+<br><br><div class="container bg-layout_medien_container">
+	<div class="pagination">
+	<nav aria-label="Page navigation example">
+		<ul class="pagination small justify-content-center">
+			<li class="page-item">
+				<a class="page-link" href="#">
+					<svg viewBox="118.687 114.053 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+						<g style="" transform="matrix(-1, 0, 0, -1, 409.562164, 390.553284)">
+							<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+						</g>
+					</svg>
+				</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item  active"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">4</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#">
+					<svg viewBox="0 0 15.6 17.95" xmlns="http://www.w3.org/2000/svg">
+						<g style="" transform="matrix(1, 0, 0, 1, -275.274994, -258.549988)">
+							<path d="M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z " style="" stroke="none"/>
+						</g>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;div class=&quot;pagination&quot;&gt;
+	&lt;nav aria-label=&quot;Page navigation example&quot;&gt;
+		&lt;ul class=&quot;pagination small justify-content-center&quot;&gt;
+			&lt;li class=&quot;page-item&quot;&gt;
+				&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;
+					&lt;svg viewBox=&quot;118.687 114.053 15.6 17.95&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+						&lt;g style=&quot;&quot; transform=&quot;matrix(-1, 0, 0, -1, 409.562164, 390.553284)&quot;&gt;
+							&lt;path d=&quot;M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z &quot; style=&quot;&quot; stroke=&quot;none&quot;/&gt;
+						&lt;/g&gt;
+					&lt;/svg&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;page-item  active&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+			&lt;li class=&quot;page-item&quot;&gt;
+				&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;
+					&lt;svg viewBox=&quot;0 0 15.6 17.95&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+						&lt;g style=&quot;&quot; transform=&quot;matrix(1, 0, 0, 1, -275.274994, -258.549988)&quot;&gt;
+							&lt;path d=&quot;M275.275000,266.550000 L275.275000,268.450000 L287.100000,268.450000 L280.950000,275.150000 L282.200000,276.500000 L290.875000,267.525000 L282.200000,258.550000 L280.950000,259.900000 L287.075000,266.550000 L275.275000,266.550000 Z &quot; style=&quot;&quot; stroke=&quot;none&quot;/&gt;
+						&lt;/g&gt;
+					&lt;/svg&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+<!-- GLOBAL FOOTER -->
+
+<div class="container bg-layout_medien_container">
+	<h2 class="h6"><strong class="upper"><a id="global-footer" class="inventar-anchor">Global Footer</a></strong>&ensp;<a class="inventar-anchor-link" href="#global-footer">#</a></h2>
+</div>
+<br><br><footer class="footer footer-global mt-auto py-3">
+	<div class="wrapper">
+		<div class="container bg-layout_medien_container">
+			<div class="row">
+				<div class="col col-12 col-sm-4 col-md-6 col-lg-3 mr-auto">
+					<p class="list-header"><strong>Berufsgenossenschaft <br>Energie Textil Elektro <br>Medienerzeugnisse</strong></p>
+					<p>Gustav-Heinemann-Ufer 130<br>50968 Köln</p>
+				</div>
+				<div class="col col-6 col-sm-3 col-md-3 col-lg-2">
+					<p class="list-header"><strong>BGETEM</strong></p>
+					<ul>						
+						<li>
+							<a href="http://bgetem-inventar.test/die-bgetem">Über uns</a>
+						</li>
+						<li>
+							<a href="#">Kontakt</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/presse-aktuelles">Presse</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/die-bgetem/standorte-der-bg-etem">Standorte</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/mitgliedschaft-beitrag">Mitglieder</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/die-bgetem/karriere">Karriere</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/medien-service">Medien</a>
+						</li>
+						<li>
+							<a href="http://bgetem-inventar.test/seminare">Seminare</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col col-6 col-sm-3 col-md-3 col-lg-2">
+					<p class="list-header"><strong>Informationen für:</strong></p>
+					<ul>						
+						<li>
+							<a href="#">Arbeitgeber</a>
+						</li>
+						<li>
+							<a href="#">Versicherte</a>
+						</li>
+						<li>
+							<a href="#">Betriebsräte</a>
+						</li>
+						<li>
+							<a href="#">Fachkräfte</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col col-sm-6 col-lg-3 offset-lg-2">
+					<p class="list-header"><strong>Haben Sie Fragen?</strong></p>
+					<p>Unter 0221 3778-0 erreichen Sie uns telefonisch.</p>
+					<p><small><a href="http://bgetem-inventar.test/ansprechpartner-bg-etem?pk_campaign=Ansprechpartnersuche">Hier finden Sie Ihre Ansprechperson für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.</a></small></p>
+					<div class="social-profiles">
+						<div class="social-connect">
+							<p><small>Folgen Sie uns:</small></p>
+							<div class="social-icons">
+								<div class="icon youtube">
+									<a href="http://www.youtube.de/diebgetem" target="_blank" title="BGETEM auf YouTube besuchen">
+										<svg viewBox="0 76.8 511.999 358.4" xmlns="http://www.w3.org/2000/svg">
+											<path d="M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z" style="fill-rule:nonzero;"/>
+										</svg>
+									</a>
+								</div>
+								<div class="icon facebook">
+									<a href="http://www.facebook.com/bgetem" target="_blank" title="BGETEM auf Facebook besuchen">
+										<svg viewBox="0 0 14222 14136" xmlns="http://www.w3.org/2000/svg">
+											<path class="fil0" d="M14222 7111c0,-3927 -3184,-7111 -7111,-7111 -3927,0 -7111,3184 -7111,7111 0,3549 2600,6491 6000,7025l0 -4969 -1806 0 0 -2056 1806 0 0 -1567c0,-1782 1062,-2767 2686,-2767 778,0 1592,139 1592,139l0 1750 -897 0c-883,0 -1159,548 -1159,1111l0 1334 1972 0 -315 2056 -1657 0 0 4969c3400,-533 6000,-3475 6000,-7025z"/>
+										</svg>
+									</a>
+								</div>
+								<div class="icon twitter">
+									<a href="https://www.twitter.com/bg_etem" target="_blank" title="BGETEM auf Twitter besuchen">
+										<svg viewBox="0.082 -3.824 638.754 519.121" xmlns="http://www.w3.org/2000/svg">
+											<path d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094"/>
+										</svg>
+									</a>
+								</div>
+								<div class="icon xing">
+									<a href="http://www.xing.to/bgetem" target="_blank" title="BGETEM auf Xing besuchen">
+										<svg viewBox="7.5 5 85 90" xmlns="http://www.w3.org/2000/svg">
+											<path d="M60.364,95L40.236,59.717L71.475,5H92.5L61.262,59.717L81.391,95H60.364z M27.322,67.787l15.617-25.711l-11.712-20.63  H11.404l11.713,20.63L7.5,67.787H27.322z"/>
+										</svg>
+									</a>
+								</div>
+								<div class="icon linkedin">
+									<a href="https://www.linkedin.com/company/bgetem" target="_blank" title="BGETEM auf LinkedIn besuchen">
+										<svg viewBox="-0.927 -1.353 512.117 512.131" xmlns="http://www.w3.org/2000/svg">
+											<path d="M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z" style="fill-rule:nonzero;" />
+										</svg>
+									</a>
+								</div>
+								<div class="icon instagram">
+									<a href="https://www.instagram.com/bg__etem" target="_blank" title="BGETEM auf Instagram besuchen">
+										<svg viewBox="0 0.159 503.841 503.841" xmlns="http://www.w3.org/2000/svg">
+											<path d="M 251.921 336.053 C 205.543 336.053 167.947 298.457 167.947 252.08 C 167.947 205.702 205.543 168.106 251.921 168.106 C 298.298 168.106 335.894 205.702 335.894 252.08 C 335.894 298.457 298.298 336.053 251.921 336.053 Z M 251.921 122.715 C 180.474 122.715 122.556 180.633 122.556 252.08 C 122.556 323.526 180.474 381.444 251.921 381.444 C 323.367 381.444 381.285 323.526 381.285 252.08 C 381.285 180.633 323.367 122.715 251.921 122.715 Z M 416.627 117.604 C 416.627 134.3 403.092 147.834 386.396 147.834 C 369.701 147.834 356.166 134.3 356.166 117.604 C 356.166 100.908 369.701 87.374 386.396 87.374 C 403.092 87.374 416.627 100.908 416.627 117.604 Z M 251.921 0.15900000000000003 C 183.503 0.15900000000000003 174.924 0.449 148.054 1.6749999999999998 C 121.24 2.899 102.927 7.157 86.902 13.385 C 70.336 19.823 56.287 28.437 42.282 42.442 C 28.277 56.447 19.663 70.496 13.225 87.062 C 6.997 103.086 2.739 121.399 1.5150000000000001 148.213 C 0.28900000000000003 175.083 0 183.662 0 252.08 C 0 320.497 0.28900000000000003 329.076 1.5150000000000001 355.946 C 2.739 382.76 6.997 401.073 13.225 417.097 C 19.663 433.663 28.277 447.712 42.282 461.718 C 56.287 475.723 70.336 484.337 86.902 490.775 C 102.927 497.002 121.24 501.261 148.054 502.484 C 174.924 503.71 183.503 504 251.921 504 C 320.338 504 328.917 503.71 355.787 502.484 C 382.601 501.261 400.914 497.002 416.938 490.775 C 433.504 484.337 447.553 475.723 461.559 461.718 C 475.564 447.712 484.178 433.663 490.616 417.097 C 496.843 401.073 501.102 382.76 502.325 355.946 C 503.551 329.076 503.841 320.497 503.841 252.08 C 503.841 183.662 503.551 175.083 502.325 148.213 C 501.102 121.399 496.843 103.086 490.616 87.062 C 484.178 70.496 475.564 56.447 461.559 42.442 C 447.553 28.437 433.504 19.823 416.938 13.385 C 400.914 7.157 382.601 2.899 355.787 1.6749999999999998 C 328.917 0.449 320.338 0.15900000000000003 251.921 0.15900000000000003 Z M 251.921 45.551 C 319.186 45.551 327.154 45.807 353.718 47.019 C 378.28 48.14 391.619 52.244 400.496 55.693 C 412.255 60.263 420.647 65.723 429.462 74.538 C 438.278 83.353 443.737 91.746 448.307 103.504 C 451.757 112.381 455.861 125.72 456.981 150.282 C 458.193 176.846 458.45 184.814 458.45 252.08 C 458.45 319.345 458.193 327.313 456.981 353.877 C 455.861 378.439 451.757 391.778 448.307 400.655 C 443.737 412.414 438.278 420.806 429.462 429.621 C 420.647 438.437 412.255 443.896 400.496 448.466 C 391.619 451.916 378.28 456.02 353.718 457.14 C 327.158 458.352 319.191 458.609 251.921 458.609 C 184.65 458.609 176.684 458.352 150.123 457.14 C 125.561 456.02 112.222 451.916 103.345 448.466 C 91.586 443.896 83.194 438.437 74.378 429.621 C 65.563 420.806 60.103 412.414 55.534 400.655 C 52.084 391.778 47.98 378.439 46.859 353.877 C 45.647 327.313 45.391 319.345 45.391 252.08 C 45.391 184.814 45.647 176.846 46.859 150.282 C 47.98 125.72 52.084 112.381 55.534 103.504 C 60.103 91.746 65.563 83.353 74.378 74.538 C 83.194 65.723 91.586 60.263 103.345 55.693 C 112.222 52.244 125.561 48.14 150.123 47.019 C 176.687 45.807 184.655 45.551 251.921 45.551 Z" />
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="legal">
+				<p>
+					<a href="http://bgetem-inventar.test/die-bgetem/impressum">Impressum</a> · 
+					<a href="http://bgetem-inventar.test/die-bgetem/datenschutz">Datenschutz</a> · 
+					<a href="http://bgetem-inventar.test/sitemap">Sitemap</a> · 
+					<a href="http://bgetem-inventar.test/bildrechte">Bildrechte</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<br>
+<br>
+<br>
+
+<div class="container bg-layout_medien_container">
+
+<small class="toggle-code">HTML</small>
+<pre class="code">
+<code class="language-html">&lt;footer class=&quot;footer footer-global mt-auto py-3&quot;&gt;
+	&lt;div class=&quot;wrapper&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;div class=&quot;row&quot;&gt;
+				&lt;div class=&quot;col col-12 col-sm-4 col-md-6 col-lg-3 mr-auto&quot;&gt;
+					&lt;p class=&quot;list-header&quot;&gt;&lt;strong&gt;Berufsgenossenschaft &lt;br&gt;Energie Textil Elektro &lt;br&gt;Medienerzeugnisse&lt;/strong&gt;&lt;/p&gt;
+					&lt;p&gt;Gustav-Heinemann-Ufer 130&lt;br&gt;50968 Köln&lt;/p&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;col col-6 col-sm-3 col-md-3 col-lg-2&quot;&gt;
+					&lt;p class=&quot;list-header&quot;&gt;&lt;strong&gt;BGETEM&lt;/strong&gt;&lt;/p&gt;
+					&lt;ul&gt;						
+						&lt;li&gt;
+							&lt;a href=&quot;/die-bgetem&quot;&gt;Über uns&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;#&quot;&gt;Kontakt&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/presse-aktuelles&quot;&gt;Presse&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/die-bgetem/standorte-der-bg-etem&quot;&gt;Standorte&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/mitgliedschaft-beitrag&quot;&gt;Mitglieder&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/die-bgetem/karriere&quot;&gt;Karriere&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/medien-service&quot;&gt;Medien&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/seminare&quot;&gt;Seminare&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;col col-6 col-sm-3 col-md-3 col-lg-2&quot;&gt;
+					&lt;p class=&quot;list-header&quot;&gt;&lt;strong&gt;Informationen für:&lt;/strong&gt;&lt;/p&gt;
+					&lt;ul&gt;						
+						&lt;li&gt;
+							&lt;a href=&quot;/#&quot;&gt;Arbeitgeber&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/#&quot;&gt;Versicherte&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/#&quot;&gt;Betriebsräte&lt;/a&gt;
+						&lt;/li&gt;
+						&lt;li&gt;
+							&lt;a href=&quot;/#&quot;&gt;Fachkräfte&lt;/a&gt;
+						&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;col col-sm-6 col-lg-3 offset-lg-2&quot;&gt;
+					&lt;p class=&quot;list-header&quot;&gt;&lt;strong&gt;Haben Sie Fragen?&lt;/strong&gt;&lt;/p&gt;
+					&lt;p&gt;Unter 0221 3778-0 erreichen Sie uns telefonisch.&lt;/p&gt;
+					&lt;p&gt;&lt;small&gt;&lt;a href=&quot;/ansprechpartner-bg-etem?pk_campaign=Ansprechpartnersuche&quot;&gt;Hier finden Sie Ihre Ansprechperson für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+					&lt;div class=&quot;social-profiles&quot;&gt;
+						&lt;div class=&quot;social-connect&quot;&gt;
+							&lt;p&gt;&lt;small&gt;Folgen Sie uns:&lt;/small&gt;&lt;/p&gt;
+							&lt;div class=&quot;social-icons&quot;&gt;
+								&lt;div class=&quot;icon youtube&quot;&gt;
+									&lt;a href=&quot;http://www.youtube.de/diebgetem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf YouTube besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;0 76.8 511.999 358.4&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path d=&quot;M501.303,132.765c-5.887,-22.03 -23.235,-39.377 -45.265,-45.265c-39.932,-10.7 -200.038,-10.7 -200.038,-10.7c0,0 -160.107,0 -200.039,10.7c-22.026,5.888 -39.377,23.235 -45.264,45.265c-10.697,39.928 -10.697,123.238 -10.697,123.238c0,0 0,83.308 10.697,123.232c5.887,22.03 23.238,39.382 45.264,45.269c39.932,10.696 200.039,10.696 200.039,10.696c0,0 160.106,0 200.038,-10.696c22.03,-5.887 39.378,-23.239 45.265,-45.269c10.696,-39.924 10.696,-123.232 10.696,-123.232c0,0 0,-83.31 -10.696,-123.238Zm-296.506,200.039l0,-153.603l133.019,76.802l-133.019,76.801Z&quot; style=&quot;fill-rule:nonzero;&quot;/&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class=&quot;icon facebook&quot;&gt;
+									&lt;a href=&quot;http://www.facebook.com/bgetem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf Facebook besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;0 0 14222 14136&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path class=&quot;fil0&quot; d=&quot;M14222 7111c0,-3927 -3184,-7111 -7111,-7111 -3927,0 -7111,3184 -7111,7111 0,3549 2600,6491 6000,7025l0 -4969 -1806 0 0 -2056 1806 0 0 -1567c0,-1782 1062,-2767 2686,-2767 778,0 1592,139 1592,139l0 1750 -897 0c-883,0 -1159,548 -1159,1111l0 1334 1972 0 -315 2056 -1657 0 0 4969c3400,-533 6000,-3475 6000,-7025z&quot;/&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class=&quot;icon twitter&quot;&gt;
+									&lt;a href=&quot;https://www.twitter.com/bg_etem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf Twitter besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;0.082 -3.824 638.754 519.121&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path d=&quot;m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094&quot;/&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class=&quot;icon xing&quot;&gt;
+									&lt;a href=&quot;http://www.xing.to/bgetem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf Xing besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;7.5 5 85 90&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path d=&quot;M60.364,95L40.236,59.717L71.475,5H92.5L61.262,59.717L81.391,95H60.364z M27.322,67.787l15.617-25.711l-11.712-20.63  H11.404l11.713,20.63L7.5,67.787H27.322z&quot;/&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class=&quot;icon linkedin&quot;&gt;
+									&lt;a href=&quot;https://www.linkedin.com/company/bgetem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf LinkedIn besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;-0.927 -1.353 512.117 512.131&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path d=&quot;M473.305,-1.353c20.88,0 37.885,16.533 37.885,36.926l0,438.251c0,20.393 -17.005,36.954 -37.885,36.954l-436.459,0c-20.839,0 -37.773,-16.561 -37.773,-36.954l0,-438.251c0,-20.393 16.934,-36.926 37.773,-36.926l436.459,0Zm-37.829,436.389l0,-134.034c0,-65.822 -14.212,-116.427 -91.12,-116.427c-36.955,0 -61.739,20.263 -71.867,39.476l-1.04,0l0,-33.411l-72.811,0l0,244.396l75.866,0l0,-120.878c0,-31.883 6.031,-62.773 45.554,-62.773c38.981,0 39.468,36.461 39.468,64.802l0,118.849l75.95,0Zm-284.489,-244.396l-76.034,0l0,244.396l76.034,0l0,-244.396Zm-37.997,-121.489c-24.395,0 -44.066,19.735 -44.066,44.047c0,24.318 19.671,44.052 44.066,44.052c24.299,0 44.026,-19.734 44.026,-44.052c0,-24.312 -19.727,-44.047 -44.026,-44.047Z&quot; style=&quot;fill-rule:nonzero;&quot; /&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+								&lt;div class=&quot;icon instagram&quot;&gt;
+									&lt;a href=&quot;https://www.instagram.com/bg__etem&quot; target=&quot;_blank&quot; title=&quot;BGETEM auf Instagram besuchen&quot;&gt;
+										&lt;svg viewBox=&quot;0 0.159 503.841 503.841&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+											&lt;path d=&quot;M 251.921 336.053 C 205.543 336.053 167.947 298.457 167.947 252.08 C 167.947 205.702 205.543 168.106 251.921 168.106 C 298.298 168.106 335.894 205.702 335.894 252.08 C 335.894 298.457 298.298 336.053 251.921 336.053 Z M 251.921 122.715 C 180.474 122.715 122.556 180.633 122.556 252.08 C 122.556 323.526 180.474 381.444 251.921 381.444 C 323.367 381.444 381.285 323.526 381.285 252.08 C 381.285 180.633 323.367 122.715 251.921 122.715 Z M 416.627 117.604 C 416.627 134.3 403.092 147.834 386.396 147.834 C 369.701 147.834 356.166 134.3 356.166 117.604 C 356.166 100.908 369.701 87.374 386.396 87.374 C 403.092 87.374 416.627 100.908 416.627 117.604 Z M 251.921 0.15900000000000003 C 183.503 0.15900000000000003 174.924 0.449 148.054 1.6749999999999998 C 121.24 2.899 102.927 7.157 86.902 13.385 C 70.336 19.823 56.287 28.437 42.282 42.442 C 28.277 56.447 19.663 70.496 13.225 87.062 C 6.997 103.086 2.739 121.399 1.5150000000000001 148.213 C 0.28900000000000003 175.083 0 183.662 0 252.08 C 0 320.497 0.28900000000000003 329.076 1.5150000000000001 355.946 C 2.739 382.76 6.997 401.073 13.225 417.097 C 19.663 433.663 28.277 447.712 42.282 461.718 C 56.287 475.723 70.336 484.337 86.902 490.775 C 102.927 497.002 121.24 501.261 148.054 502.484 C 174.924 503.71 183.503 504 251.921 504 C 320.338 504 328.917 503.71 355.787 502.484 C 382.601 501.261 400.914 497.002 416.938 490.775 C 433.504 484.337 447.553 475.723 461.559 461.718 C 475.564 447.712 484.178 433.663 490.616 417.097 C 496.843 401.073 501.102 382.76 502.325 355.946 C 503.551 329.076 503.841 320.497 503.841 252.08 C 503.841 183.662 503.551 175.083 502.325 148.213 C 501.102 121.399 496.843 103.086 490.616 87.062 C 484.178 70.496 475.564 56.447 461.559 42.442 C 447.553 28.437 433.504 19.823 416.938 13.385 C 400.914 7.157 382.601 2.899 355.787 1.6749999999999998 C 328.917 0.449 320.338 0.15900000000000003 251.921 0.15900000000000003 Z M 251.921 45.551 C 319.186 45.551 327.154 45.807 353.718 47.019 C 378.28 48.14 391.619 52.244 400.496 55.693 C 412.255 60.263 420.647 65.723 429.462 74.538 C 438.278 83.353 443.737 91.746 448.307 103.504 C 451.757 112.381 455.861 125.72 456.981 150.282 C 458.193 176.846 458.45 184.814 458.45 252.08 C 458.45 319.345 458.193 327.313 456.981 353.877 C 455.861 378.439 451.757 391.778 448.307 400.655 C 443.737 412.414 438.278 420.806 429.462 429.621 C 420.647 438.437 412.255 443.896 400.496 448.466 C 391.619 451.916 378.28 456.02 353.718 457.14 C 327.158 458.352 319.191 458.609 251.921 458.609 C 184.65 458.609 176.684 458.352 150.123 457.14 C 125.561 456.02 112.222 451.916 103.345 448.466 C 91.586 443.896 83.194 438.437 74.378 429.621 C 65.563 420.806 60.103 412.414 55.534 400.655 C 52.084 391.778 47.98 378.439 46.859 353.877 C 45.647 327.313 45.391 319.345 45.391 252.08 C 45.391 184.814 45.647 176.846 46.859 150.282 C 47.98 125.72 52.084 112.381 55.534 103.504 C 60.103 91.746 65.563 83.353 74.378 74.538 C 83.194 65.723 91.586 60.263 103.345 55.693 C 112.222 52.244 125.561 48.14 150.123 47.019 C 176.687 45.807 184.655 45.551 251.921 45.551 Z&quot; /&gt;
+										&lt;/svg&gt;
+									&lt;/a&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;br&gt;
+			&lt;div class=&quot;legal&quot;&gt;
+				&lt;p&gt;
+					&lt;a href=&quot;/die-bgetem/impressum&quot;&gt;Impressum&lt;/a&gt; · 
+					&lt;a href=&quot;/die-bgetem/datenschutz&quot;&gt;Datenschutz&lt;/a&gt; · 
+					&lt;a href=&quot;/sitemap&quot;&gt;Sitemap&lt;/a&gt; · 
+					&lt;a href=&quot;/bildrechte&quot;&gt;Bildrechte&lt;/a&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/footer&gt;</code>
+</pre>
+
+</div>
+
+
+<br><br><br>
+<hr>
+<br><br><br>
+
+
+
+</div>
+<br><br><br>	
+		
+
+
+		<div class="back-to-top-arrow">
+	<a href="#" class="scroll-to-top">
+		<svg viewBox="104.2 87.245 288.211 250.309" xmlns="http://www.w3.org/2000/svg">
+		  <g style="" transform="matrix(0, -0.578805, 0.578805, 0, 103.621086, 337.553772)">
+		    <path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" stroke="none"/>
+		  </g>
+		</svg>
+	</a>
+</div>
+	
+
+
+{% if entry.modules.level(1) %}
+	{% include '_includes/component_modules.twig' %}
+{% else %}
+	No
+{% endif %}
+
+
+
+{% endblock %}
+

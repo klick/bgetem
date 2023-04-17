@@ -1,0 +1,46 @@
+
+{% set mainNav = {
+    mitgliedschaft: { 
+      title: "Mitgliedschaft & Beitrag", 
+      url: "https://www.bgetem.de/mitgliedschaft-beitrag"
+    },
+    unfall: { 
+      title: "Unfall & Berufskrankheit", 
+      url: "https://www.bgetem.de/unfall-berufskrankheit"
+    },
+    praevention: { 
+      title: "Sicherheit & Gesundheit", 
+      url: "https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz"
+    }
+} %}
+
+<nav class="mainnav navbar sticky-top navbar-expand-lg navbar-light">
+
+  <div class="container">
+
+    <a class="navbar-brand logo-bgetem" href="/">
+      <img src="{{ getenv('DEFAULT_SITE_URL') }}/img/logo_bgetem.svg" alt="">
+    </a>
+  
+    <div>
+      <ul class="mainnav-list navbar-nav">
+        {% for node in mainNav %}
+        <li class="nav-item {% if ((node.url)|replace({'https://www.bgetem.de/':''})) == craft.app.request.segments|first %} active{% endif %}">
+          <a class="nav-link {% if ((node.url)|replace({'https://www.bgetem.de/':''})) == craft.app.request.segments|first %} active{% endif %}" href="{{ node.url is defined ? (node.url)|replace({'https://www.bgetem.de':''}) }}" rel="noopener noreferrer">
+            {{ node.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div id="sidebar-handle">
+      <a href="#">
+        <img class="icon icon-inline icon-lg" src="img/justify.svg" alt="Sign Sidebar" style="margin: -3px 5px 0 0 !important;">
+        <span>Menü</span>
+      </a>
+    </div>
+
+  </div>
+
+</nav>

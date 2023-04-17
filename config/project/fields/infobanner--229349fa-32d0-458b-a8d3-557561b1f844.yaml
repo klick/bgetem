@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: infobanner
+instructions: null
+name: Infobanner
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_infobanner}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

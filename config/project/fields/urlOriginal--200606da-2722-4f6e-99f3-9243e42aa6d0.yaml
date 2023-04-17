@@ -1,0 +1,14 @@
+columnSuffix: nebfvwhd
+contentColumnType: string(255)
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: urlOriginal
+instructions: null
+name: 'URL original'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

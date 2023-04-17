@@ -1,0 +1,63 @@
+*.magazine-card {
+	// border: 1px solid $dguv-grau-8;
+	width: 100%;
+	p.roof-row {
+		letter-spacing: 0.9px;
+	}
+	h2 {
+			line-height: 1.4em;
+		}
+	&.themen {
+		h2 {
+			font-size: 1.6em;
+		}
+		p {
+			font-size: 1.2em;
+		}
+	}
+	&.titlestories {
+		h2 {
+			line-height: 1.3em;
+		}
+	}
+	
+	a {
+		color: black;
+		display: block;
+		height: 100%;
+		h1, 
+		h2 {
+			color: $dguv-blau;
+		}
+		&:hover {
+			h1,
+			h2 {
+				color: black;
+			}
+		}
+	}
+	&.has-background-mask {
+		 background-image: url("../bilder/magazin/mask.png") !important;
+		 background-size: contain;
+		 background-repeat: no-repeat;
+		 &:hover {
+		 	background-image: none !important;
+		 }
+	}
+}
+div.magazine-link {
+	a {
+	color: black;
+	height: 100%;
+	h1, 
+	h2 {
+		color: $dguv-blau;
+	}
+	&:hover {
+		h1,
+		h2 {
+			color: black;
+		}
+	}
+}
+}

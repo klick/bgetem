@@ -1,0 +1,20 @@
+columnSuffix: rvpabptg
+contentColumnType: text
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: lesezeitB
+instructions: null
+name: 'Lesezeit B'
+searchable: false
+settings:
+  allowSelect: false
+  columnType: text
+  decimals: 0
+  displayType: textinput
+  fieldTwig: "{% set textfull %}\r\n{{ entry.text }}\r\n{{ entry.text2 }}\r\n{{ entry.text3 }}\r\n{% endset %}\r\n\r\n{{ textfull | readTime }}"
+  parseBeforeSave: true
+  parseOnMove: false
+  showField: false
+  textareaRows: 5
+translationKeyFormat: null
+translationMethod: none
+type: besteadfast\preparsefield\fields\PreparseFieldType

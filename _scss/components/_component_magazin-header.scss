@@ -1,0 +1,24 @@
+header {
+	&.header-global {
+		div {
+			a,
+			svg {
+				display: block;
+				&.logo-etem {
+					
+				}
+				&.logo-bgetem-is {
+					flex: 1 1 100px;
+					max-width: 170px;
+				}
+			}
+			a.link-home {
+				flex: 1 1 100px;
+				max-width: 170px;
+				@media screen and (min-width: 1200px) {
+					max-width: 150px;
+				}
+			}
+		}
+	}
+}

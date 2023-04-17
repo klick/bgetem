@@ -1,0 +1,55 @@
+fieldLayouts:
+  eb586747-7ac6-44bd-98d1-247b340f0b3a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 044e0b48-55f6-4bbb-afb8-ef1ddeb06bfa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8de65a87-a5a8-4ab3-bb4a-907ebfc36890
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 8d7b19ee-b7d9-4c3b-9226-e44eeb05618d
+        userCondition: null
+handle: bghwHome
+hasTitleField: true
+name: '[BGHW] Home'
+section: 5b5685f9-7ef6-4077-acf1-6b1db82bee10 # [BGHW] Home
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

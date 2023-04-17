@@ -1,0 +1,13 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'volumes.43ce67ae-cfa2-4680-9235-dd9546b9803e:read' # Bilder Magazin
+  - 'volumes.e257968b-8f7b-4516-a8b0-aba7bcbadb4a:read' # Bilder Medienportal
+  - 'categorygroups.38d071a0-2ede-478b-a2fc-854dd8ab2889:read' # Branchen
+  - 'categorygroups.d085cee4-7bf7-4217-b30e-13f198622070:read' # Handlungsebenen
+  - 'categorygroups.87bc2480-4466-4ea5-95f5-1f30e9429502:read' # Kategorien Magazin
+  - 'categorygroups.0d8dd661-52d0-4e81-84e1-03e7c0078a36:read' # Medienart
+  - 'categorygroups.96857f58-b529-435a-8085-18765db64ec9:read' # Sparte Magazin
+  - 'categorygroups.38ca8e55-71a9-452d-a603-80c29aac220e:read' # Themen
+  - 'categorygroups.512f63e9-3ab8-4726-a143-18e9ad2147e6:read' # Zielgruppen
+  - 'productTypes.5f496c4d-7f46-4b46-9a52-525d2847b63c:read' # Medien

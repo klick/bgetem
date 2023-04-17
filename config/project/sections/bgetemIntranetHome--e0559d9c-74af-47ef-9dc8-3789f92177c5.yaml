@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: false
+handle: bgetemIntranetHome
+name: '[BGETEM INtranet] Home'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    enabledByDefault: true
+    hasUrls: true
+    template: bgetem-intranet/index.twig
+    uriFormat: __home__
+type: single

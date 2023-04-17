@@ -1,0 +1,14 @@
+columnSuffix: dariqtyo
+contentColumnType: boolean
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: magazineTitleStory
+instructions: null
+name: 'Bühnen-Beitrag?'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

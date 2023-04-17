@@ -1,0 +1,35 @@
+{% import '_macros.twig' as macros %}
+
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="content-type-{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+    			<p class="roof-row upper">Sicherheit am Arbeitsplatz</p>
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+				{{ macros.auhtorsByLine(feed.creators, feed.effectiveDate is defined ? feed.effectiveDate|date) }}
+				{% if feed.titleimages is defined and feed.titleimages is not empty %}
+				{% include "_includes/component-titleimage" with {images:feed.titleimages is not empty ? feed.titleimages : null, caption:feed.imageCaption is defined ? feed.imageCaption : null} %}
+				{% endif %}
+			</header>
+			<section class="article-body clearfix">
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+    </div>
+    <div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>
+

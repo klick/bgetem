@@ -1,0 +1,130 @@
+defaultPlacement: end
+fieldLayouts:
+  19b9e591-cb63-410b-b481-6e94c26db752:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 8264cc2b-1ecc-4677-8fc9-864710f5ad78
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d7a1157e-da91-4039-be83-43aec725e5da
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6aad5b14-2954-4a05-9c14-c57c17f7f06d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4a7f4048-6eb0-47e5-91e9-4fbf33cf4852
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 200606da-2722-4f6e-99f3-9243e42aa6d0 # URL original
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2707b55d-2144-4780-bfab-7796ba298d90
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8209f7d2-4ffd-4e0c-8c56-252fc61c4f8c # Plone query
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d6f74559-3c98-48d2-b96e-c3364cb3080b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 0882c152-4286-48cb-bf12-255cd2235a61
+        userCondition: null
+handle: branchen
+name: Branchen
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    hasUrls: false
+    template: null
+    uriFormat: null
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    hasUrls: false
+    template: null
+    uriFormat: null
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    hasUrls: false
+    template: null
+    uriFormat: null
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    hasUrls: false
+    template: null
+    uriFormat: null
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    hasUrls: false
+    template: null
+    uriFormat: null
+  c267be8c-ada1-4920-8ecf-cc60914aed52: # Keycloak
+    hasUrls: false
+    template: null
+    uriFormat: null
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 3a10caeb-d631-40d9-9091-f2a01b4dfe67

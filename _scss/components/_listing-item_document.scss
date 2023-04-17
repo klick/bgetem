@@ -1,0 +1,36 @@
+ul.listing {
+	&:not(.accordion_view) {
+		li[class*="__document"] {
+			div.folder-item-wrapper {
+				&.has-image {
+					display: flex;
+					div.folder-image {
+						flex: 0 0 30%;
+						margin-right: 24px;
+					}
+				}
+				div.folder-description {
+					h3 {
+						line-height: 1;
+						@include arrowed-intern-link('0063af');
+						margin-bottom: 6px;
+						&:after {
+							float: right;
+							margin-right: 0 !important;
+						}
+					}
+					p {
+						padding-right: 48px;
+					}
+				}
+			}
+		}
+	}
+	li[class*="__document"] {
+		border-top: 1px solid $dguv-blau-2;
+		a {
+			display: block;
+			padding: 24px 0 24px 0;
+		}
+	}
+}

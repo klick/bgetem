@@ -1,0 +1,130 @@
+defaultPlacement: end
+fieldLayouts:
+  64c4eb39-6c61-47ec-a889-10c4800a3a6d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: fd13bda4-493b-4937-9303-82706442ac69
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 28b7bfc5-6eb1-4028-abe8-e5cb2c1b5a7c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 200606da-2722-4f6e-99f3-9243e42aa6d0 # URL original
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1dee864c-fc90-4f4e-b6f8-15b877d0b69e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c1fd07ac-acc2-45ff-b52f-da4cf5dae1eb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09bf1f98-1ce8-4e90-93ff-7081b0203b9f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8209f7d2-4ffd-4e0c-8c56-252fc61c4f8c # Plone query
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b49dfb1c-ffaf-416b-bb30-20f18441daae
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 1a9a44d6-6350-4e9e-85d7-ff4a2ef891cf
+        userCondition: null
+handle: themen
+name: Themen
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    hasUrls: false
+    template: null
+    uriFormat: null
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    hasUrls: false
+    template: null
+    uriFormat: null
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    hasUrls: false
+    template: null
+    uriFormat: null
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    hasUrls: false
+    template: null
+    uriFormat: null
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    hasUrls: false
+    template: null
+    uriFormat: null
+  c267be8c-ada1-4920-8ecf-cc60914aed52: # Keycloak
+    hasUrls: false
+    template: null
+    uriFormat: null
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 59d2719f-5d7d-43cc-8623-8578206deee6

@@ -1,0 +1,14 @@
+columnSuffix: ttpkdnvj
+contentColumnType: string
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: kommentare
+instructions: null
+name: Kommentare
+searchable: false
+settings:
+  columnType: text
+  commentEnabled: true
+  default: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\comments\fields\CommentsField

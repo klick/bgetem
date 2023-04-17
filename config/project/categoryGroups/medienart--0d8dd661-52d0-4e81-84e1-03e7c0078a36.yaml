@@ -1,0 +1,118 @@
+defaultPlacement: end
+fieldLayouts:
+  6ef9f5b3-d61c-4f55-99ab-aefadf8d3cdc:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 13c4bffe-9d39-49f7-b0cc-edbf99de5b5a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1e34fc6d-2d74-45dd-a19a-bdeb4f3c9474 # Medienart Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 845859fa-b383-439b-9b12-5f55b97734a1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d53b37eb-aa8d-4145-b6a5-bd327f9ee912
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 892ed439-cabe-4322-87d7-ca9683b1ca24
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9536a28f-7390-461f-a4b8-2513e5438a3b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 4716146b-9698-49fb-a879-80c62cbc5ae6
+        userCondition: null
+handle: medienart
+name: Medienart
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    hasUrls: false
+    template: null
+    uriFormat: null
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    hasUrls: false
+    template: null
+    uriFormat: null
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    hasUrls: false
+    template: null
+    uriFormat: null
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    hasUrls: false
+    template: null
+    uriFormat: null
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    hasUrls: false
+    template: null
+    uriFormat: null
+  c267be8c-ada1-4920-8ecf-cc60914aed52: # Keycloak
+    hasUrls: false
+    template: null
+    uriFormat: null
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: ad61441e-081c-425e-87fd-6f827fb8768d

@@ -1,0 +1,45 @@
+// components/_cards.scss
+// resetting selected .card-properties
+
+*.card {
+	border-radius: 0;
+		border: none;
+		border-radius: 0;
+		//background: transparent;
+		// a {
+		// 	color: $dguv-grau;
+		// }
+		.card-header {
+			background: none;
+			border: none;
+			padding: 0;
+			button {
+				padding: 0;
+			}
+		}
+
+		.card-body {
+
+		}
+
+	.card-deck & {
+		background: lighten($dguv-grau-9, 3%);
+		border: none;
+		a {
+			height: 100%;
+			color: $dguv-grau;
+			h5 {
+				color: $dguv-blau-2;
+			}
+			&:hover {
+				background: $dguv-grau-9;
+			}
+		}
+	}
+	&.linkkarte {
+		a {
+			color: $text-color;
+		}
+	}
+}
+

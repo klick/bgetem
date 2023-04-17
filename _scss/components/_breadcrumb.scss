@@ -1,0 +1,51 @@
+nav.breadcrumb {
+	flex: 0 0 auto;
+	padding: 12px 0;
+	@include lg {
+		padding: 24px 0;
+	}
+	background: transparent;
+	margin: 0;
+	@media screen and (max-width: 767.98px) {
+		div.container {
+			overflow: scroll;
+			overflow: auto;
+  			white-space: nowrap;
+  			ol {
+				width: 100%;
+				flex-wrap: nowrap;
+				li {
+					&:last-child {
+						padding-right: 15px;
+					}
+				}
+			}
+		}
+	}
+	ol.breadcrumb {
+		margin: 0;
+		background: #fff;
+		padding-left: 0;
+		@include md() {
+			padding-left: 0;
+		}
+		li.breadcrumb-item {
+			a {
+				color: $dguv-blau-2;
+				text-decoration: none;
+			}
+		}
+	} 
+}
+
+// Reset Bootstrap Styles
+
+.breadcrumb-item+.breadcrumb-item::before {
+	float: none !important;
+}
+
+// Overwrite siguv.css
+
+.breadcrumb .breadcrumb-item::after {
+	display: none !important;
+}

@@ -1,0 +1,50 @@
+{% import '_macros.twig' as macros %}
+
+
+<ul class="items list-unstyled listing {{ feed.layout }}">
+
+{% include "_includes/listing-items" with {items:feed.items,layout:feed.layout} %}
+
+</ul>
+
+{# <ul class="items list-unstyled listing {{ feed.layout }}">
+{% cache using key craft.app.request.url %}
+{% for item in feed.items %}
+	{% set itemDetail = {
+	    url: item['@id'],
+	    type: 'json',
+	    cache: 0,
+	} %}
+	{% set itemDetails = craft.feedme.feed(itemDetail) %}
+	<li class="listing__item" data-content-type="{{ item['@type'] }}" data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}">
+		<a class="no-underline" href="{{ (item['@id'])|replace({'https://www.bgetem.de/':'/'}) }}">
+			{% if itemDetails['@type'] is defined and itemDetails['@type'] == 'Image' %}
+				{% set params = [
+					{ width: 255, jpegQuality: 85, format: 'jpg' }
+				] %}
+				{{ macros.imgFullWidth(item['@id'], null, false, params, false) }}
+			{% endif %}
+			{% if itemDetails['@type'] is defined and itemDetails['@type'] == 'MediaFile' %}
+				{% set params = [
+					{ width: 500, mode: 'crop', jpegQuality: 85, format: 'jpg' },
+					{ width: 255, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+				] %}
+				{% if itemDetails.image is defined and itemDetails.image|length %}
+				{{ macros.imgFullWidth(item['@id'] ~ '/image', null, false, params, false) }}
+				{% endif %}
+				{% if itemDetails.image is defined and itemDetails.image is not empty %}
+					<br>{{ macros.imgFullWidth(itemDetails.image.scales.large.download ~ '/image', null, false, params, false) }}
+				{% endif %}
+				<small>{{ item.title }}<br>
+				Download {{ itemDetails.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF'}) }} ({{ (itemDetails.file.size / 1000000)|number_format(2) }} MB)<br>
+				{{ item.description ? ('<br>' ~ item.description)|raw|chop(limit=30, unit='c', append=' …')  : null }}
+				</small>
+			{% endif %}
+			{{ item.title }}
+		</a>
+		{{ item.description ? ('<br>' ~ item.description)|raw : null }}
+	</li>
+	{% endif %}
+{% endfor %}
+{% endcache %}
+</ul> #}

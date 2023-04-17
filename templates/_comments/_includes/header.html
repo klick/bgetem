@@ -1,0 +1,37 @@
+<header class="bg_cc--i-header" role="meta">
+    <span itemprop="creator" itemscope itemtype="http://schema.org/Person">
+        <strong class="bg_cc--i-author" itemprop="name">
+            {{- comment.author.fullName ?? comment.author -}}
+        </strong>
+
+        {% if comment.parent %}
+            <span class="bg_cc--icon arrow-after ms-1 me-2">
+                {# <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M340.5,218.6l99-99c4.7-4.7,4.7-12.3,0-17l-99-99C332.9-4,320,1.3,320,12v71H12c-6.6,0-12,5.4-12,12v32c0,6.6,5.4,12,12,12h308v71C320,220.8,332.9,226.1,340.5,218.6L340.5,218.6z"></path></svg> #}
+            </span>
+
+            <a class="bg_cc--i-reply" href="{{ craft.app.request.url }}#comment-{{ comment.parent.id }}">
+                {{- comment.parent.author.fullName ?? comment.parent.author -}}
+            </a>
+        {% endif %}
+    </span>
+    {% if comment.can('showTimeAgo') %}
+        <div class="bg_cc--ll">
+            <span class="bg_cc--ll-i">
+                 <a class="bg_cc--i-share bg_cc--dot text-decoration-none ms-2" href="{{ craft.app.request.url }}#comment-{{ comment.id }}"><time itemprop="commentTime" title="{{ comment.commentDate | date('D M j Y H:i:s \\G\\M\\TO (T)') }}" datetime="{{ comment.commentDate | date('c') }}">{{ comment.commentDate.getTimestamp()|timeAgo("de") }}</time></a>
+            </span>
+        </div>
+    {% endif %}
+
+    <small class="bg_cc--i-header-links {{ comment.hasFlagged() ? 'has-flag' }}">
+        {% if comment.can('flag') %}
+            <form data-action="flag" role="form" method="post" abg_cc-ept-charset="UTF-8">
+                <input type="hidden" name="action" value="comments/comments/flag">
+                <input type="hidden" name="siteId" value="{{ comment.siteId }}">
+                <input type="hidden" name="commentId" value="{{ comment.id }}">
+                {{ csrfInput() }}
+
+                <button type="submit" class="bg_cc--i-flag">{{ 'Flag' | t('comments') }}</button>
+            </form>
+        {% endif %}
+    </small>
+</header>

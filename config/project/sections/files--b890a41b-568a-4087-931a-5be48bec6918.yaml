@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: files
+name: Files
+propagationMethod: all
+siteSettings:
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    enabledByDefault: true
+    hasUrls: true
+    template: files/_entry
+    uriFormat: 'files/{slug}'
+type: channel

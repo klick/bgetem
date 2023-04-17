@@ -1,0 +1,27 @@
+ul.listing {
+	&:not(.accordion_view) {
+		li[class*="__event"] {
+			border-top: 1px solid $dguv-blau-2;
+			a {
+				display: block;
+				padding: 24px 0 24px 0;
+			}
+			div.event-item-wrapper {
+				display: flex;
+				div.event-details {
+						flex: 0 0 20%;
+						margin-right: 24px;
+					}
+				div.folder-description {
+					h3 {
+						line-height: 1;
+					}
+					p {
+						padding-right: 48px;
+					}
+				}
+			}
+			
+		}
+	}
+}

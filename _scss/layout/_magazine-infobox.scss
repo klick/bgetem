@@ -1,0 +1,9 @@
+section.article-body {
+	div.infobox.floating {
+	@include lg() {
+		margin-left: -10rem;
+		width: 40%;
+		float: left;
+	}
+}
+}

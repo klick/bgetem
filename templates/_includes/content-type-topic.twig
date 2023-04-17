@@ -1,0 +1,191 @@
+{% import '_macros.twig' as macros %}
+
+{% if feed.UID == "01d7e06edf604756ab3df7880492a30e" %}
+
+	{% set contents = ('https://newbgetem.bg-kooperation.de/arbeitssicherheit-gesundheitsschutz/aus-unfaellen-lernen') %}
+
+{% set feedParams = {
+    url: contents,
+    type: 'json',
+    cache: 0,
+} %}
+{% set feed = craft.feedme.feed(feedParams) %}
+
+{% set items = {
+    url: contents,
+    type: 'json',
+    element: 'items',
+    cache: 0,
+} %}
+<div class="hero-image">
+	{% if feed.titleimages is defined and feed.titleimages is not empty %}
+		{% set params = [
+			{ width: 2560, height:750, jpegQuality: 100, format: 'jpg' },
+			{ width: 680, height:400, jpegQuality: 100, format: 'jpg' },
+			{ width: 345, height:250, jpegQuality: 85, format: 'jpg' }
+		] %}
+	
+	{% for img in feed.titleimages %}
+		{{ macros.imgFullWidth(img, null, false, params, false) }}
+	{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+	{% endfor %}
+{% endif %}
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="content-type-{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+			</header>
+			<section class="article-body clearfix">
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			<section class="latest-news listings">
+				{% include "_includes/component-latest_news" %}
+			</section>
+			{% if feed.title == 'Die BG ETEM' %}
+			<section class="form">
+				{% include "_includes/kontaktform" %}
+			</section>
+			{% endif %}
+			<section class="cards">
+				<div class="cards card-deck row no-gutters">
+					{% for card in feed.items %}
+					{% set cardDetail = {
+					    url: card['@id'],
+					    type: 'json',
+					    cache: 0,
+					} %}
+					{% set cardDetails = craft.feedme.feed(cardDetail) %}
+					<div class="col-6 col-md-6 mb-4">
+						<div class="card h-100">
+							<a href="{{ card['@id']|replace({'https://newbgetem.bg-kooperation.de/':'/'})|raw }}" class="card-link">
+								{% if cardDetails.titleimages[0]['@id'] is defined %}
+						    		{% set cardImageParams = [
+										{ width: 2560, ratio:16/9, jpegQuality: 100, format: 'jpg' },
+										{ width: 680, ratio:16/9, jpegQuality: 100, format: 'jpg' },
+										{ width: 345, ratio:16/9, jpegQuality: 85, format: 'jpg' }
+									] %}
+									{{ macros.imgFullWidth('https://intern-bgetem.glorious-mess.com/businessman.jpg', null, false, cardImageParams, false) }}
+						    	{% endif %}
+						  <div class="card-body">
+						  	
+						    	<h5 class="card-title">{{ card.title }}</h5>
+						    	{# <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> #}
+						    	<p class="card-text">{{ card.description }}</p>
+						    	{# {{ cardDetails.titleimages[0]['@id'] }} #}
+						    	{# {{ dd(cardDetails.titleimages[0]['@id']) }} #}
+						    	
+
+						    
+						  </div>
+						  </a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</section>
+				
+		
+		{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+
+    </div>
+     <div class="col-lg-3 offset-md-1 portlets">
+    	{% include "_includes/portlets" %}
+    </div>
+</div>
+
+{% else %}
+
+<div class="hero-image">
+	{% if feed.titleimages is defined and feed.titleimages is not empty %}
+		{% set params = [
+			{ width: 2560, height:750, jpegQuality: 100, format: 'jpg' },
+			{ width: 680, height:400, jpegQuality: 100, format: 'jpg' },
+			{ width: 345, height:250, jpegQuality: 85, format: 'jpg' }
+		] %}
+	
+	{% for img in feed.titleimages %}
+		{{ macros.imgFullWidth(img, null, false, params, false) }}
+	{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+	{% endfor %}
+{% endif %}
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="content-type-{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0063af"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+			</header>
+			<section class="article-body clearfix">
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			<section class="latest-news listings">
+				{% include "_includes/component-latest_news" %}
+			</section>
+			{% if feed.title == 'Die BG ETEM' %}
+			<section class="form">
+				{% include "_includes/kontaktform" %}
+			</section>
+			{% endif %}
+			
+
+		{% include "_includes/component-sharing-buttons" %}
+			{% include "_includes/component-doc-actions" with {webcode:feed.webcode is defined ? feed.webcode : null} %}
+		</article>
+
+    </div>
+    <div class="col-lg-3 offset-md-1">
+    	<nav class="topic-navigation">
+    		<ul>
+		{% for item in folderNavItems %}
+        {% set itemDetail = {
+            url: item['@id'],
+            type: 'json',
+            cache: 0,
+        } %}
+        {% set itemDetails = craft.feedme.feed(itemDetail) %}
+        {% if itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 0 %}
+           <li>
+           	 <a class="{% if itemDetails.id == craft.app.request.segment(2) %} active{% endif %}" data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (item['@id'])|replace({'https://www.bgetem.de/':'/'}) }}">{{ item.title }}</a>
+           </li>
+            {% endif %}
+          {% endfor %}
+		</ul>
+    	</nav>
+    	
+    </div>
+</div>
+
+{% endif %}
+
+
+
+
+
+
+
+
+

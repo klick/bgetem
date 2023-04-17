@@ -1,0 +1,19 @@
+childBlocks: null
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+group: null
+groupChildBlockTypes: true
+handle: suchfeldGross
+icon: null
+ignorePermissions: true
+maxBlocks: 1
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Suchfeld Groß'
+sortOrder: 5
+topLevel: true

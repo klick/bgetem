@@ -1,0 +1,73 @@
+fieldLayouts:
+  191d2f98-e161-4e90-a0ce-26b42f62621f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c5c40c96-031d-4640-82ac-6eb20c2aa5b7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b87dcc8-21ce-42e9-8885-4503c74a58b0
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 59c56dcb-0702-49a3-866f-56355bbe6c8c
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bab290d7-8fdb-4a57-be7c-82a27c7cc0ab
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: ad33078d-8552-49f1-91da-81b28684b1db
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: b87426b2-2875-4462-abf0-a1e3a4462caa # [BGHW] Aufgaben
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

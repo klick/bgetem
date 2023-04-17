@@ -1,0 +1,12 @@
+columnSuffix: orymannu
+contentColumnType: string(7)
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: colorcodeHex
+instructions: null
+name: 'Colorcode Hex'
+searchable: false
+settings:
+  defaultColor: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

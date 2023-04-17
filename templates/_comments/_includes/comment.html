@@ -1,0 +1,36 @@
+<article class="bg_cc--i mt-3 pt-3 border-top" id="comment-{{ comment.id }}" data-id="{{ comment.id }}" data-site-id="{{ comment.siteId }}" data-role="comment" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+    {{ commentsInclude('_includes/avatar') }}
+
+    <div class="bg_cc--i-wrap" data-role="wrap-content">
+        <div class="bg_cc--i-content" data-role="content">
+            {{ commentsInclude('_includes/header') }}
+
+            <div class="bg_cc--i-body" data-role="body">
+                <div class="bg_cc--i-comment" data-role="message" dir="auto" itemprop="commentText">
+                    {% if comment.isFlagged() %}
+                        <p>[{{ 'Comment marked as inappropriate' | t('comments') }}]</p>
+                    {% elseif comment.isPoorlyRated() %}
+                        <p>[{{ 'Comment hidden due to low rating' | t('comments') }}]</p>
+                    {% else %}
+                        <p>{{ comment.comment | nl2br }}</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {{ commentsInclude('_includes/footer') }}
+        </div>
+
+        <div data-role="reply"></div>
+
+        <div data-role="errors" class="bg_cc--e"></div>
+        <div data-role="notice" class="bg_cc--n"></div>
+
+        <div data-role="replies">
+            {% if comment.children | length %}
+                {% for nestedComment in comment.children %}
+                    {{ commentsInclude('_includes/comment', { comment: nestedComment }) }}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</article>

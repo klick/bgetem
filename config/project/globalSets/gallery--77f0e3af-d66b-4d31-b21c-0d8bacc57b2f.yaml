@@ -1,0 +1,24 @@
+fieldLayouts:
+  51e215b4-d743-4bf8-8c05-c7daefa88cc6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 4bb8147a-bd97-4247-b605-e4e18aa5002c # Bilder
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f7cf403f-4d5d-4ef7-a287-d2918a985550
+            userCondition: null
+            warning: null
+            width: 100
+        name: Bilder
+        uid: 529673af-b116-48b5-a930-e5f1fdac1719
+        userCondition: null
+handle: gallery
+name: Gallery
+sortOrder: 1

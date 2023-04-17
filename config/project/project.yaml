@@ -1,0 +1,831 @@
+dateModified: 1681654261
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: singles
+      type: native
+    -
+      heading: Kanäle
+      type: heading
+    -
+      key: 'section:7104933b-77b4-49f4-a8d1-14f5389901c9' # [BGHW ]Termine
+      type: native
+    -
+      key: 'section:b292b1ca-4d77-45e7-97a2-da468c18c880' # [BGHW] ABC Tabelle
+      type: native
+    -
+      key: 'section:0408cca5-e827-40c8-9397-89c062429004' # [BGHW] Aktuelle Meldungen
+      type: native
+    -
+      key: 'section:b87426b2-2875-4462-abf0-a1e3a4462caa' # [BGHW] Aufgaben
+      type: native
+    -
+      key: 'section:737466a9-13e4-48b4-9183-b99322d6153a' # [BGHW] Formulare und Anträge
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:0158b508-0e9f-4d41-9410-4e298cd84b2e' # [Magazin] Artikel
+      tableAttributes:
+        - 'field:a337bdf2-4a59-47da-abe4-e744a6d1744c' # Lesezeit B
+        - 'field:986d22af-30dc-4e1f-8eab-12bde24d4a35' # Ausgabe
+        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Ausgabe
+        - 'field:574efa14-8605-49de-9cbb-c6b42e1562cc' # Ausgabe (Eintrag)
+        - 'field:57d60075-a63a-4b5a-b8f0-6d7a866848fa' # Sammlung
+        - postDate
+        - 'field:8338d0b4-6806-4d80-9f07-d7b699e50891' # Bühnen-Bild
+        - 'field:d2e08fc6-148b-41dc-829a-1deb370f2e1f' # Cover
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'section:8bb547f6-733a-4d2f-a80b-9e11ade49f9b' # [Magazin] Ausgaben
+      type: native
+    -
+      key: 'section:4a3887b8-7e54-4709-b239-64288b09c0a0' # [Medienportal] Spezial
+      type: native
+    -
+      key: 'section:7703ab3d-a038-425d-9545-3a0c453b355e' # Anwendungen
+      type: native
+    -
+      key: 'section:b890a41b-568a-4087-931a-5be48bec6918' # Files
+      type: native
+    -
+      key: 'section:f8cc4e9e-68c4-4d4c-9824-fe07f74be890' # Kampagnen
+      type: native
+    -
+      key: 'section:666abca7-3afa-46a7-8e2e-3e10dd276a91' # Links und Recherche
+      type: native
+    -
+      key: 'section:d72b6749-cdcf-4fae-b301-4fb276ea7af9' # Presse-Aktuelles
+      type: native
+    -
+      key: 'section:3a4fe6b3-7fa2-47a7-aa8f-3c8a0e2defb0' # Quicklinks
+      type: native
+    -
+      key: 'section:ddd26e3a-596d-4e06-b9a3-7e548dc5fc21' # Sammlungen
+      type: native
+    -
+      key: 'section:ba022acb-eb7e-409e-a25a-1eab9f9b01c2' # Stellenanzeigen
+      type: native
+    -
+      key: 'section:01611f33-6e74-462d-a255-b45020496a92' # Termine
+      type: native
+email:
+  fromEmail: me@marcusscheller.com
+  fromName: bgetem
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  bilder:
+    hasUrls: true
+    name: Bilder
+    settings:
+      path: '@web/bilder'
+    type: craft\fs\Local
+    url: $ASSET_BASE_URL
+  bilderBgetem:
+    hasUrls: true
+    name: 'Bilder BGETEM'
+    settings:
+      path: '@webroot/bilder/bgetem'
+    type: craft\fs\Local
+    url: '@web/bilder/bgetem'
+  bilderBghw:
+    hasUrls: true
+    name: 'Bilder BGHW'
+    settings:
+      path: '@webroot/bilder/bghw'
+    type: craft\fs\Local
+    url: '@web/bilder/bghw'
+  bilderInventar:
+    hasUrls: true
+    name: 'Bilder Inventar'
+    settings:
+      path: '@webroot/bilder/inventar'
+    type: craft\fs\Local
+    url: '@web/bilder/inventar'
+  bilderMagazin:
+    hasUrls: true
+    name: 'Bilder Magazin'
+    settings:
+      path: '@webroot/bilder/magazin'
+    type: craft\fs\Local
+    url: '@web/bilder/magazin'
+  bilderMedienportal:
+    hasUrls: true
+    name: 'Bilder Medienportal'
+    settings:
+      path: '@webroot/bilder/medienportal'
+    type: craft\fs\Local
+    url: '@web/bilder/medienportal'
+meta:
+  __names__:
+    0b651392-6aa9-4875-a6c7-e6e6aa6911fc: '[BGHW] Kartentyp' # [BGHW] Kartentyp
+    0c70ccd0-641c-4388-afd5-99577e98ab14: 'Modification date' # Modification date
+    0d8dd661-52d0-4e81-84e1-03e7c0078a36: Medienart # Medienart
+    0e5c7117-10ba-4d3b-a867-f56e8019fdee: '[BGHW] Schmuckbild' # [BGHW] Schmuckbild
+    1accf0f8-bb10-4379-a2f2-e411cb1e9c7c: Produkte # Produkte
+    1bf79d3a-9242-4f72-a771-9558a8c3685f: 'Auswahl Standortnews' # Auswahl Standortnews
+    1e6bc161-9cd9-4a39-b4bc-2cdbada9d28f: Video1 # Video1
+    1e7b52e7-a6f4-4b0e-bbc1-1069018fcc28: Cluster # Cluster
+    1e22bb49-6a25-47c2-a69b-f91816938557: Inventar # Inventar
+    1e34fc6d-2d74-45dd-a19a-bdeb4f3c9474: 'Medienart Code' # Medienart Code
+    1ecc9047-740e-4bfc-b2c9-884a1a0c510c: 'Reiner Text' # Reiner Text
+    1ef6aff1-838e-41fb-878c-d219ce2d0bfb: Dummy # Dummy
+    2b4bb988-7ea1-409a-acad-f0c54d78fcc6: 'Termin Ende' # Termin Ende
+    2d2216bd-338e-412d-82de-fbd33f2429da: Textkarte # Textkarte
+    2e9a779e-bee1-4399-8275-29eb5c25bd1f: Typed # Typed
+    02e214e1-b467-4b46-9790-00c1106977e3: Lesezeit # Lesezeit
+    3a4fe6b3-7fa2-47a7-aa8f-3c8a0e2defb0: Quicklinks # Quicklinks
+    3ab9694f-2302-4f74-b7d0-62d61fc3916f: Themenüberschrift # Themenüberschrift
+    3c2dc27d-f280-41f7-b406-84eb7a6f67d2: 'Colorcode title' # Colorcode title
+    3d14b3e6-9841-4b6f-95a9-77fe717967f5: bgetem # bgetem
+    3e37fd6e-521f-42a2-aae4-f63c4733c7b0: 'Previous Entry' # Previous Entry
+    3e91e3ef-e2e1-4e27-bed4-272726652681: Api-Karte # Api-Karte
+    4a3887b8-7e54-4709-b239-64288b09c0a0: '[Medienportal] Spezial' # [Medienportal] Spezial
+    4a4114eb-7d1e-4f5b-838e-0bd260939ebe: '[Medienportal] Home' # [Medienportal] Home
+    4b28616a-ad9a-442c-8749-818ef0103741: Termine # Termine
+    4bb8147a-bd97-4247-b605-e4e18aa5002c: Bilder # Bilder
+    4d258537-6fe1-4053-9372-75d5a2d18f24: Infobox2 # Infobox2
+    4e78878f-47aa-47a9-8e34-5d9bb1ebe0c0: 'Next Entry' # Next Entry
+    4e338728-c003-49e3-b5db-f6cbc348171f: 'Next Item URL' # Next Item URL
+    5b5685f9-7ef6-4077-acf1-6b1db82bee10: '[BGHW] Home' # [BGHW] Home
+    5c37bed0-5325-4a9e-b21f-eb4898cf7fe0: Video3 # Video3
+    5d36b6f3-3e49-445a-9555-e0d1d4c6c2b8: Dachzeile # Dachzeile
+    5d42d873-8c48-4c84-bafb-17d870608e3b: Arrowed # Arrowed
+    5d704171-06d4-45a8-bc37-865db88fc1c5: Standard # Standard
+    5ecf5cf5-80e2-4ce7-981b-395fdabff790: New # New
+    5f8f596f-03c8-4237-b30f-078a4e4507c1: Ausgabe # Ausgabe
+    5f496c4d-7f46-4b46-9a52-525d2847b63c: Medien # Medien
+    6b22a029-9f3c-43da-ab0c-19484758e8b7: Large # Large
+    6bedf22b-8e52-4b66-8308-5de1ebf11188: 'Plone UID' # Plone UID
+    6fb4df02-3540-4203-8023-107db609ea0a: Inventar # Inventar
+    7a4f859a-e479-49e7-bb0f-43348ab41c75: 'Slider Produkte' # Slider Produkte
+    7c2086e6-43ff-45bb-8cf1-5457f668ee34: 'Bilder BGHW' # Bilder BGHW
+    7e6c4f4f-dd0d-43ff-ac72-55a8997af650: Autor(en) # Autor(en)
+    7e83231a-8956-4d31-8506-f9e905dee038: Kontaktperson # Kontaktperson
+    07ed1155-1682-4c54-910b-1866295f1526: 'Bilder Inventar' # Bilder Inventar
+    07f8a223-17b5-41dc-87fa-2051c9283c7c: Hintergrundbild # Hintergrundbild
+    7fe6a5fa-d7bf-4300-a56d-590ea7486fac: Hintergrundfarbe # Hintergrundfarbe
+    8a1c75a7-078c-45d8-96a3-4a40be6966ff: Titel # Titel
+    8a506951-2a86-4e25-bca0-82760f78d1f1: Standard # Standard
+    8ab0089d-d353-43a8-84ef-cabd9f9b5fa0: 'Colorcode Hex' # Colorcode Hex
+    8bb547f6-733a-4d2f-a80b-9e11ade49f9b: '[Magazin] Ausgaben' # [Magazin] Ausgaben
+    8d0af6b3-5588-48bd-9096-3a9210441926: Standard # Standard
+    8f2b5b9f-8407-47a8-9062-008aeb32d1fe: Video2 # Video2
+    8fb35bb6-913b-4e90-83da-9b4bbaa184d0: Branchen # Branchen
+    9c662fb6-8379-43db-b3ef-b6aeac801152: Cluster # Cluster
+    9e20cc6a-ae33-4301-85e3-fe0c4997bb56: Sparte # Sparte
+    9e93da52-63d5-4653-8d57-f43369cc838f: Medienprodukt # Medienprodukt
+    9f9daf17-cc79-4545-8963-474697050fc3: 'Abstand unten' # Abstand unten
+    10b2df46-fd3c-4780-83ab-52788783da68: 'Kommentarschliessung Anmerkung' # Kommentarschliessung Anmerkung
+    14cb1faa-28ae-49d6-8bef-0dc0aee46264: 'User Ort' # User Ort
+    16deb46b-a727-48d1-a9f2-17c3fbc4161b: Small # Small
+    20c43c9e-ad75-4d4b-8796-d67ee559450c: Spezial # Spezial
+    21b99f91-c2e0-4210-bc81-1675a2f7f68b: '[BGHW] Vertretungen und Beauftragte' # [BGHW] Vertretungen und Beauftragte
+    32eb0504-7632-4734-8af1-84bf075e65c0: Kommentare # Kommentare
+    33b954c3-774e-4cf6-b5d4-60583dfa6266: 'Tags Magazin' # Tags Magazin
+    38ca8e55-71a9-452d-a603-80c29aac220e: Themen # Themen
+    38d071a0-2ede-478b-a2fc-854dd8ab2889: Branchen # Branchen
+    39d56999-f9ab-4dae-9479-bc2ee2efcb43: 'Download Content-Typ' # Download Content-Typ
+    43ce67ae-cfa2-4680-9235-dd9546b9803e: 'Bilder Magazin' # Bilder Magazin
+    47c9e39d-3647-44d3-8396-c4633530fb7a: User # User
+    48f1a755-e705-451c-8d9d-77204e066f2f: Zielgruppen # Zielgruppen
+    49a877c8-92d5-4b38-9278-f1b3d368c44d: Banner # Banner
+    50fdce0b-660b-4632-a7e6-da0f3ec470e8: Linkkarte # Linkkarte
+    55eda33f-7753-4af2-99eb-b751ea263cbe: 'Kontakt Email' # Kontakt Email
+    57d60075-a63a-4b5a-b8f0-6d7a866848fa: Sammlung # Sammlung
+    65d407ce-b77d-4631-8c34-16a99596ceca: 'Generische Url' # Generische Url
+    72b11192-5482-4a25-9618-f679be48d29f: Einträge # Einträge
+    72f43d91-3177-4d11-8d7b-3cdc6dd4ea03: Standard # Standard
+    74fda7a1-ae3f-4658-a1d3-d8700b578b64: '[BGHW] Organisation' # [BGHW] Organisation
+    76e9c4cd-0e3f-4927-bc94-f9c295e2b7a8: 'Medienportal Titelbild' # Medienportal Titelbild
+    77f0e3af-d66b-4d31-b21c-0d8bacc57b2f: Gallery # Gallery
+    80fd4a33-4f65-4889-8027-613220c56557: 'Previous Item Title' # Previous Item Title
+    81f0465c-b748-4122-8893-9e53b76c37c7: Überschrift # Überschrift
+    86bb144a-902b-4554-a04f-80384a7b897c: 'Mit Cover' # Mit Cover
+    86ffc0fb-30e6-4356-bc8a-6ad97b0e841b: Banner # Banner
+    87bc2480-4466-4ea5-95f5-1f30e9429502: 'Kategorien Magazin' # Kategorien Magazin
+    88dfdae1-4190-4877-b518-b179840d61ff: 'Aktuelle Meldung' # Aktuelle Meldung
+    88e1572c-f3c5-4214-a261-b079e6234963: Ausgaben # Ausgaben
+    92b37031-751f-4c8f-95f6-d417b247b2b3: Artikelreferenzen # Artikelreferenzen
+    98c7bda6-34df-400e-a887-20d17efd637b: 'Items (Files)' # Items (Files)
+    151c7440-fbd5-4dfd-af92-19bf87ece331: Eintrag # Eintrag
+    0158b508-0e9f-4d41-9410-4e298cd84b2e: '[Magazin] Artikel' # [Magazin] Artikel
+    181cef0e-45db-489c-af21-e0b8c8efbf0f: 'Previous Item' # Previous Item
+    191d740e-8fa8-47c2-9d0e-66ee2727176b: 'Img Caption' # Img Caption
+    260a1a7f-ec83-4903-a647-de657eaefbb7: 'Nur Download' # Nur Download
+    265b612b-3848-4489-a762-54ddab4e55af: 'BG ETEM Intranet' # BG ETEM Intranet
+    394b4ab7-a7cb-4a8c-a40b-b70afd2a1fd8: Kontaktdetails # Kontaktdetails
+    399b5c53-9aae-44a4-8260-995f2569bee1: '[BGHW] Vertretungen und Beauftragte' # [BGHW] Vertretungen und Beauftragte
+    0408cca5-e827-40c8-9397-89c062429004: '[BGHW] Aktuelle Meldungen' # [BGHW] Aktuelle Meldungen
+    429bbed8-d8f7-4bc7-b64e-0724357e6e5b: '[BGHW] Home' # [BGHW] Home
+    512f63e9-3ab8-4726-a143-18e9ad2147e6: Zielgruppen # Zielgruppen
+    521f96ac-3b44-4e73-a05f-311c6df1f990: Body # Body
+    551b718f-8731-4bb9-af61-8af2791686a1: Standard # Standard
+    574efa14-8605-49de-9cbb-c6b42e1562cc: 'Ausgabe (Eintrag)' # Ausgabe (Eintrag)
+    598c6787-021c-4882-bbd6-a767f505eaa1: Termin # Termin
+    666abca7-3afa-46a7-8e2e-3e10dd276a91: 'Links und Recherche' # Links und Recherche
+    729e8099-e116-420e-bb48-cff32ac2289d: Kartenbreite # Kartenbreite
+    785ffb6b-dfab-4d64-862a-ba9d9a7276a7: 'Image Alt' # Image Alt
+    875b5abb-fd1b-48a9-8d59-afaa93058564: Hintergrundfarbe # Hintergrundfarbe
+    0920ba4c-ca0e-4187-b14f-53ff8d14c625: 'Das Magazin Ihrer Berufsgenossenschaft' # Das Magazin Ihrer Berufsgenossenschaft
+    931c5f0e-5064-470d-b62f-377ac66d3c37: 'Bilder bgetem.de' # Bilder bgetem.de
+    986d22af-30dc-4e1f-8eab-12bde24d4a35: Ausgabe # Ausgabe
+    1460b900-cfb5-4e30-9c2e-7e2e447cd216: Dachzeile # Dachzeile
+    01611f33-6e74-462d-a255-b45020496a92: Termine # Termine
+    2696d3ea-1bef-4106-a7d8-231a6499bef8: 'Interne Bemerkungen' # Interne Bemerkungen
+    5308f625-2e37-4886-a374-dabe6876ff09: 'Next Item Title' # Next Item Title
+    5632a833-05f5-473b-9d6b-b6c765b3b760: Termin # Termin
+    7645eba5-0351-458d-8478-17ad0725c98b: '[BGHW] Sicher und gesund arbeiten' # [BGHW] Sicher und gesund arbeiten
+    7703ab3d-a038-425d-9545-3a0c453b355e: Anwendungen # Anwendungen
+    8209f7d2-4ffd-4e0c-8c56-252fc61c4f8c: 'Plone query' # Plone query
+    8338d0b4-6806-4d80-9f07-d7b699e50891: Bühnen-Bild # Bühnen-Bild
+    9535d1b7-e342-417e-8b4b-7239c5d508fa: Webcode # Webcode
+    14920f16-2995-43b5-97d9-1aa79427c6b5: Listenkarte # Listenkarte
+    28200f09-b5e6-49d8-926b-df0a381de8e4: '[BG ETEM Intranet Home] Alternativ' # [BG ETEM Intranet Home] Alternativ
+    34500e50-d8d1-4592-b245-644b1c2530c4: BGHW # BGHW
+    53541d99-0c99-427f-8a9e-2057eeff4eb5: 'Plone Slug' # Plone Slug
+    70705f1c-d8c7-41bd-a27c-037c30582bd3: Medienkonzept # Medienkonzept
+    75210d2d-2a19-44d7-ad92-67f63d68048a: 'Previous Item URL' # Previous Item URL
+    80415c96-5329-4b06-9068-39c17653214a: Text2 # Text2
+    84723f8c-8158-4198-a2d9-3c31f18dae7d: '[BG ETEM Intranet Home] Alternativ' # [BG ETEM Intranet Home] Alternativ
+    90469c8b-06b6-4f41-b5a2-977a9aec64d4: Störer # Störer
+    96857f58-b529-435a-8085-18765db64ec9: 'Sparte Magazin' # Sparte Magazin
+    200606da-2722-4f6e-99f3-9243e42aa6d0: 'URL original' # URL original
+    229349fa-32d0-458b-a8d3-557561b1f844: Infobanner # Infobanner
+    502865fd-4a00-472b-9d29-70ed249fbebf: 'Themen Medienportal' # Themen Medienportal
+    654825d7-38aa-42d0-a373-5e0d37bc1ff2: Standard # Standard
+    708709a9-02a0-41c1-8931-0b37fea52893: Description # Description
+    737466a9-13e4-48b4-9183-b99322d6153a: '[BGHW] Formulare und Anträge' # [BGHW] Formulare und Anträge
+    2569214b-8dd3-48b5-9be8-194b0df28f90: 'Mehr Link Text' # Mehr Link Text
+    5240590f-1525-4ad9-ac44-c941d17ad8b9: Intro # Intro
+    5592152c-4b75-473d-9793-90a6f4e17267: Standard # Standard
+    7104933b-77b4-49f4-a8d1-14f5389901c9: '[BGHW ]Termine' # [BGHW ]Termine
+    8286755e-ec43-43e2-8da6-a46d71fbf625: Medienart # Medienart
+    08983272-5ec0-4938-b35e-14b44204c5fc: '[BGHW] Sicher und gesund arbeiten' # [BGHW] Sicher und gesund arbeiten
+    14344646-31c7-41b2-8522-82be843125af: Standard # Standard
+    16333976-8b8b-46fe-b762-21fbfd44c6f7: 'Cover Full' # Cover Full
+    20672963-5e68-4c37-9c2c-d8cc44335ac0: Themen # Themen
+    36273984-61a4-452f-b81f-d64d1c73a61a: 'Bühnen-Beitrag?' # Bühnen-Beitrag?
+    54431938-02d0-4d46-9f1e-570bd960f491: '[BGHW] Organisation' # [BGHW] Organisation
+    86353817-6fbe-4480-965b-52d779ef940c: Kategorie # Kategorie
+    a4bfdfaa-c7aa-4b43-94e1-6eb1a196866f: Medienportal # Medienportal
+    a7a7a583-711b-4391-b5a1-83f8436f7ce8: Standard # Standard
+    a10f503e-69c1-40c5-b2ec-688b90a113cf: Spezial # Spezial
+    a337bdf2-4a59-47da-abe4-e744a6d1744c: 'Lesezeit B' # Lesezeit B
+    a823ee04-7aed-4c47-8b70-23e01bec009d: Standard # Standard
+    a874a5ff-0499-4dfc-b727-4c6fbaca1ba7: Galerieposition # Galerieposition
+    a6670b9e-3e64-44a0-ba93-178c56f8793c: Inventar # Inventar
+    a2821711-f9c3-46b0-ae5e-158625c1ee52: BGHW # BGHW
+    ab28b56c-a969-42b1-88d0-ac5c67a2f522: Linktext # Linktext
+    ab1569f9-82d8-4559-bd06-0c7b03f953bc: '[BGETEM INtranet] Home' # [BGETEM INtranet] Home
+    abfae7f9-d019-4fa1-a1f3-8e743c97f5c7: 'Termin URL' # Termin URL
+    ac5ce855-8809-476a-9266-37e10d423114: Inventar # Inventar
+    adfee2f6-1729-4892-8143-8deff3d585e9: Infobox # Infobox
+    afb589d6-5bdb-4c32-bb59-0fb2d9591f7c: 'Next Item' # Next Item
+    b0fb89e7-b60c-4384-8545-48af80f77895: 'Cover parsed' # Cover parsed
+    b1e317c2-d47c-4fcb-a490-a1b03ad60eed: Text3 # Text3
+    b7bbb443-8e7c-4be3-9690-736faf916c1d: Medium # Medium
+    b22ab796-420a-41bf-afac-42427c322fa2: 'Termin Start' # Termin Start
+    b35a7ae2-3bd8-4060-aeb9-c4d387dcf15c: Datei # Datei
+    b72d0b0b-2e74-49a8-9b40-ad06fe94ddc2: 'Public Schema' # Public Schema
+    b254a6df-06aa-446b-b667-b0d71ba66c56: Infobox3 # Infobox3
+    b292b1ca-4d77-45e7-97a2-da468c18c880: '[BGHW] ABC Tabelle' # [BGHW] ABC Tabelle
+    b890a41b-568a-4087-931a-5be48bec6918: Files # Files
+    b9177b97-7003-4a68-bb72-251caf8d875a: PDF # PDF
+    b49767c2-cfb5-4c5e-a1f5-75901c72182e: 'Download URL' # Download URL
+    b87426b2-2875-4462-abf0-a1e3a4462caa: '[BGHW] Aufgaben' # [BGHW] Aufgaben
+    ba022acb-eb7e-409e-a25a-1eab9f9b01c2: Stellenanzeigen # Stellenanzeigen
+    be74105c-0631-4876-b742-694f9b7ac20a: 'BG ETEM Medienportal' # BG ETEM Medienportal
+    bf96c077-f497-4462-816d-c86d11c9de7c: 'Suchfeld Groß' # Suchfeld Groß
+    c0093312-578d-458d-b484-f57a0ec7f41c: Text # Text
+    c0350a88-a081-4343-bffa-6d356ebd45f0: Order # Order
+    c5ef96fd-41d8-42db-8864-688be6377664: 'Download Filename' # Download Filename
+    c6d054ad-5897-492a-a964-bb89de3bbc64: Default # Default
+    c267be8c-ada1-4920-8ecf-cc60914aed52: Keycloak # Keycloak
+    c426dae6-0d3d-4c1d-b2b2-243488dae406: Alert # Alert
+    c866deda-e6cc-48ea-8562-52f0654d5db2: _Common # _Common
+    c9786807-2d61-4e69-81a0-5f5a8e11b89a: Bühnen-Beiträge # Bühnen-Beiträge
+    cd49009d-49c7-44c2-adce-81651a699347: BGHW # BGHW
+    cf5a605b-acb4-4296-b702-72ef5386a6b3: Linkfeld # Linkfeld
+    d016e0d7-8824-4e44-9bc0-e8699c72c056: 'Kontakt Telefon' # Kontakt Telefon
+    d085cee4-7bf7-4217-b30e-13f198622070: Handlungsebenen # Handlungsebenen
+    d2e08fc6-148b-41dc-829a-1deb370f2e1f: Cover # Cover
+    d7cae9fd-1be3-4d89-a7fa-090c21d05a43: Ort # Ort
+    d25dea44-f8f0-4555-bcc7-4f38b3cd72b8: Link-Url # Link-Url
+    d72b6749-cdcf-4fae-b301-4fb276ea7af9: Presse-Aktuelles # Presse-Aktuelles
+    d83a6862-1462-4021-9ab2-032bb27d4e55: Keycloak # Keycloak
+    d695e964-3a53-45e7-b9da-75b07a0d06e9: Link # Link
+    d12811de-a75f-4a62-946b-0541cbfedea5: 'Aktuelle Meldung' # Aktuelle Meldung
+    d13413a5-6169-4db0-bfa5-91b3a694e00b: 'Item URL' # Item URL
+    db27d238-a584-4597-92e6-9a9cfa3e6b76: Jahr # Jahr
+    ddd26e3a-596d-4e06-b9a3-7e548dc5fc21: Sammlungen # Sammlungen
+    de726bf5-b5e4-426f-bb62-f63b7178c285: 'Mehr Link -> Ziel' # Mehr Link -> Ziel
+    e0b4acfc-09c1-474a-bd31-ec67021e719d: bgetem # bgetem
+    e0559d9c-74af-47ef-9dc8-3789f92177c5: '[BGETEM INtranet] Home' # [BGETEM INtranet] Home
+    e8a4ae4a-2675-49c7-9796-bd25bf522355: Ausgabe # Ausgabe
+    e9e726c0-acd5-4251-b5af-68854db60da9: 'Auswahl Bereichsnews' # Auswahl Bereichsnews
+    e64dfb06-8adb-411c-a08d-c7e351de72a1: '[Medienportal] Home' # [Medienportal] Home
+    e325b571-9b9d-4681-b059-528883c42a96: Datum # Datum
+    e3113dd1-711c-4197-a444-502b559712fc: 'Tags (Magazin)' # Tags (Magazin)
+    e257968b-8f7b-4516-a8b0-aba7bcbadb4a: 'Bilder Medienportal' # Bilder Medienportal
+    ea9b526a-b66c-4883-8661-cc54c7dbb3bf: 'Download Size' # Download Size
+    ee46e718-c2ac-46a8-bb86-4ecb7098343a: 'Kontakt Name' # Kontakt Name
+    f7adbec1-88b8-4b4d-b69e-81a47947015d: Magazin # Magazin
+    f8cc4e9e-68c4-4d4c-9824-fe07f74be890: Kampagnen # Kampagnen
+    f9f6fbdf-4b31-4008-a500-e75ac60f6f54: Linkfeld # Linkfeld
+    f976ef3d-bbf8-4cc1-8c45-b634eee2c77a: Karten # Karten
+    f4645ab0-3ffc-427e-9c92-d3950a2655c7: Standard # Standard
+    fa33e5a3-c7e8-4d64-a83e-7936b142f04c: Module # Module
+    fa8471db-64d3-4a98-8c70-aceb4d237e19: 'Lead Card?' # Lead Card?
+    fb0fb474-89f7-4241-a86b-a604b12cc913: 'Data Beispiel' # Data Beispiel
+    fc6a7c30-5ef8-4afc-bddf-ed8a7f1e928d: 'ETEM +' # ETEM +
+    ff8d8b45-ac56-4ff2-80f7-51e27ffd0643: Cluster # Cluster
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  blitz:
+    edition: standard
+    enabled: true
+    licenseKey: C2C71P2MEUR34PVQ9I5J5ISW
+    schemaVersion: 4.4.0
+    settings:
+      apiKey: EcskpQ53X7tP5Lae
+      cacheControlHeader: 'public, s-maxage=31536000, max-age=0'
+      cacheDuration: null
+      cacheElementQueries: false
+      cacheElements: true
+      cacheGeneratorSettings:
+        __assoc__:
+          -
+            - concurrency
+            - '3'
+      cacheGeneratorType: putyourlightson\blitz\drivers\generators\HttpGenerator
+      cachePurgerType: putyourlightson\blitz\drivers\purgers\DummyPurger
+      cacheStorageSettings:
+        __assoc__:
+          -
+            - folderPath
+            - '@webroot/cache/blitz'
+          -
+            - createGzipFiles
+            - '1'
+          -
+            - createBrotliFiles
+            - ''
+      cacheStorageType: putyourlightson\blitz\drivers\storage\FileStorage
+      cachingEnabled: '1'
+      customSiteUris: ''
+      debug: true
+      deployerType: putyourlightson\blitz\drivers\deployers\DummyDeployer
+      driverJobPriority: 100
+      excludedQueryStringParams:
+        -
+          queryStringParam: gclid
+          siteId: ''
+        -
+          queryStringParam: fbclid
+          siteId: ''
+      excludedUriPatterns:
+        0:
+          __assoc__:
+            -
+              - siteId
+              - '4'
+            -
+              - uriPattern
+              - warenkorb
+        1:
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - suche
+        3:
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - files
+        4:
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - medienart
+        5:
+          __assoc__:
+            -
+              - siteId
+              - '6'
+            -
+              - uriPattern
+              - '*'
+        6:
+          __assoc__:
+            -
+              - siteId
+              - '4'
+            -
+              - uriPattern
+              - ''
+        7:
+          __assoc__:
+            -
+              - siteId
+              - '4'
+            -
+              - uriPattern
+              - medien
+        8:
+          __assoc__:
+            -
+              - siteId
+              - '4'
+            -
+              - uriPattern
+              - ausgaben
+        9:
+          __assoc__:
+            -
+              - siteId
+              - ''
+            -
+              - uriPattern
+              - tags
+      includedQueryStringParams:
+        -
+          queryStringParam: '.*'
+          siteId: ''
+      includedUriPatterns:
+        0:
+          __assoc__:
+            -
+              - siteId
+              - '2'
+            -
+              - uriPattern
+              - '.*'
+        1:
+          __assoc__:
+            -
+              - siteId
+              - '4'
+            -
+              - uriPattern
+              - '.*'
+        2:
+          __assoc__:
+            -
+              - siteId
+              - '5'
+            -
+              - uriPattern
+              - '.*'
+        4:
+          __assoc__:
+            -
+              - siteId
+              - '7'
+            -
+              - uriPattern
+              - '.*'
+        5:
+          __assoc__:
+            -
+              - siteId
+              - '2'
+            -
+              - uriPattern
+              - ausgaben
+      injectScriptEvent: DOMContentLoaded
+      integrations:
+        - putyourlightson\blitz\drivers\integrations\CommerceIntegration
+        - putyourlightson\blitz\drivers\integrations\FeedMeIntegration
+        - putyourlightson\blitz\drivers\integrations\SeomaticIntegration
+      maxRetryAttempts: 10
+      mutexTimeout: 1
+      outputComments: true
+      queryStringCaching: '0'
+      queueJobTtr: 300
+      refreshCacheAutomaticallyForGlobals: true
+      refreshCacheJobPriority: 10
+      refreshCacheWhenElementSavedNotLive: false
+      refreshCacheWhenElementSavedUnchanged: false
+      refreshMode: 3
+      sendPoweredByHeader: true
+      warmPagesWithQueryStringParams: true
+  blitz-recommendations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  colour-swatches:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.4.3
+  comments:
+    enabled: true
+    licenseKey: WL5KMHHSLNABDDWF1842EN1I
+    schemaVersion: 1.1.7
+    settings:
+      allowFlagging: false
+      allowGuest: false
+      allowGuestFlagging: false
+      allowGuestVoting: false
+      allowVoting: false
+      autoCloseDays: null
+      closed: false
+      defaultQueryStatus:
+        - approved
+      downvoteCommentLimit: 5
+      enableGravatar: false
+      enableSpamChecks: false
+      flaggedCommentLimit: 5
+      guestNotice: null
+      guestRequireEmailName: true
+      guestShowEmailName: true
+      hideVotingForThreshold: false
+      indexSidebarGroup: true
+      indexSidebarIndividualElements: false
+      indexSidebarLimit: 25
+      maxReplyDepth: '5'
+      maxUserComments: null
+      moderatorUserGroup: null
+      notificationAdminEnabled: false
+      notificationAdmins:
+        -
+          __assoc__:
+            -
+              - email
+              - me@marcusscheller.com
+            -
+              - enabled
+              - '1'
+        -
+          __assoc__:
+            -
+              - email
+              - Duennwald.Lucian@bgetem.de
+            -
+              - enabled
+              - '1'
+        -
+          __assoc__:
+            -
+              - email
+              - Schanz.Dieter@bgetem.de
+            -
+              - enabled
+              - '1'
+      notificationAuthorEnabled: false
+      notificationFlaggedEnabled: false
+      notificationModeratorApprovedEnabled: false
+      notificationModeratorEnabled: false
+      notificationReplyEnabled: false
+      notificationSubscribeAuto: false
+      notificationSubscribeCommentEnabled: false
+      notificationSubscribeDefault: false
+      notificationSubscribeEnabled: false
+      outputDefaultCss: false
+      outputDefaultJs: true
+      permissions:
+        __assoc__:
+          -
+            - craft\elements\Asset
+            - '*'
+          -
+            - craft\elements\Category
+            - '*'
+          -
+            - craft\elements\Entry
+            - '*'
+          -
+            - craft\elements\User
+            - '*'
+      placeholderAvatar: null
+      recaptchaEnabled: false
+      recaptchaKey: null
+      recaptchaMinScore: 0.5
+      recaptchaSecret: null
+      requireModeration: false
+      securityBanned: null
+      securityFlooding: null
+      securityMatchExact: false
+      securityMaxLength: null
+      securityModeration: null
+      securitySpamlist: null
+      showAvatar: true
+      showCustomFieldInstructions: false
+      showCustomFieldNames: false
+      showTimeAgo: true
+      sortDefaultDirection: asc
+      sortDefaultKey: structure
+      structureUid: 4615fb2b-9dd4-40e9-9757-4994e77a0af8
+      templateEmail: null
+      templateFolderOverride: _comments
+      useQueueForNotifications: false
+  commerce:
+    edition: pro
+    enabled: true
+    licenseKey: DLR9G4OOEM1VVL4AKWP7XJ19
+    schemaVersion: 4.2.3
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  empty-coalesce:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.1.0.0
+  first-image:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  image-resizer:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  image-toolbox:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: H7UHJ4AYZ7OBSU731CAHXTY9
+    schemaVersion: 4.0.0
+  logs:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: 58JJ2X30G06UG10YNZ4K1V52
+    schemaVersion: 3.6.2
+  omnisearch:
+    edition: standard
+    enabled: true
+    licenseKey: JPU7RLAGZMBNVKP4RR7ZCA9T
+    schemaVersion: 1.0.0
+  password-policy:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      cases: ''
+      maxLength: '160'
+      minLength: '5'
+      numbers: ''
+      showStrengthIndicator: '1'
+      symbols: ''
+  preparse-field:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  scss:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: RWX8PKXSHDUA663WP27BN3ZX
+    schemaVersion: 3.0.11
+    settings:
+      addHrefLang: true
+      addPaginatedHreflang: true
+      addXDefaultHrefLang: true
+      alwaysIncludeCanonicalUrls: false
+      cpTitlePrefix: '⚙ '
+      cspNonce: ''
+      cspScriptSrcPolicies:
+        -
+          __assoc__:
+            -
+              - policy
+              - '''self'''
+      devModeCpTitlePrefix: '&#x1f6a7;⚙ '
+      devModeTitlePrefix: '&#x1f6a7; '
+      displayAnalysisSidebar: true
+      displayPreviewSidebar: true
+      enableJsonLdEndpoint: false
+      enableMetaContainerEndpoint: false
+      enableSeoFileLinkEndpoint: false
+      environment: live
+      excludeNonCanonicalUrls: false
+      generatorEnabled: true
+      headersEnabled: true
+      includeHomepageInBreadcrumbs: true
+      lowercaseCanonicalUrl: true
+      manuallySetEnvironment: false
+      maxDescriptionLength: 155
+      maxTitleLength: 70
+      metaCacheDuration: 0
+      pluginName: SEOmatic
+      regenerateSitemapsAutomatically: true
+      renderEnabled: false
+      separatorChar: '|'
+      sidebarDisplayPreviewTypes:
+        - google
+        - twitter
+        - facebook
+      siteGroupsSeparate: '1'
+      siteUrlOverride: ''
+      sitemapsEnabled: true
+      socialMediaPreviewTarget: true
+      submitSitemaps: true
+      truncateDescriptionTags: '1'
+      truncateTitleTags: '1'
+  similar:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  super-filter:
+    edition: standard
+    enabled: true
+    licenseKey: UWNSRRRBYDMNPTHUQ46PIXZN
+    schemaVersion: 1.0.0
+    settings:
+      categoryOperator: and
+      operator: and
+      pluginNameNav: 'Super Filter'
+      prefixParam: fields
+      variants: true
+  supersort:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+  tag-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  time-ago:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.1.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  vizy:
+    edition: standard
+    enabled: true
+    licenseKey: GO9PGP2YOE4T148NLEPZVQWM
+    schemaVersion: 0.9.0
+  wordsmith:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+system:
+  edition: pro
+  live: true
+  name: 'BG ETEM'
+  retryDuration: null
+  schemaVersion: 4.4.0.4
+  timeZone: Europe/Berlin

@@ -1,0 +1,166 @@
+columnSuffix: xmetyanj
+contentColumnType: string
+fieldGroup: 47c9e39d-3647-44d3-8396-c4633530fb7a # User
+handle: auswahlStandortnews
+instructions: null
+name: 'Auswahl Standortnews'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Augsburg
+        -
+          - value
+          - augsburg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Bad Münstereifel'
+        -
+          - value
+          - badMuenstereifel
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Berlin
+        -
+          - value
+          - berlin
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Braunschweig
+        -
+          - value
+          - braunschweig
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Dresden
+        -
+          - value
+          - dresden
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Düsseldorf
+        -
+          - value
+          - duesseldorf
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Hamburg
+        -
+          - value
+          - hamburg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Köln
+        -
+          - value
+          - koeln
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Leipzig
+        -
+          - value
+          - leipzig
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Linowsee
+        -
+          - value
+          - linowsee
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Nürnberg
+        -
+          - value
+          - nuernberg
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Stuttgart
+        -
+          - value
+          - stuttgart
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Wiesbaden
+        -
+          - value
+          - wiesbaden
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Wuppertal
+        -
+          - value
+          - wuppertal
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\MultiSelect

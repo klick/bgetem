@@ -1,0 +1,55 @@
+fieldLayouts:
+  76c90e22-a8cb-46e6-bbba-3be0a048ca2d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8d43b889-9b63-4997-846d-30f1ea879972
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 967aaf09-504a-4511-8f44-46c34279c249
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 702be60d-4917-472f-841f-58f47eebcd28
+        userCondition: null
+handle: medienportalHome
+hasTitleField: true
+name: '[Medienportal] Home'
+section: e64dfb06-8adb-411c-a08d-c7e351de72a1 # [Medienportal] Home
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

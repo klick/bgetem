@@ -1,0 +1,54 @@
+{% import '_macros.twig' as macros %}
+
+
+<div class="row">
+    <div class="col-lg-8">
+    	<article class="{{ feed['@type']|lower }} layout-{{ feed.layout }}" data-content-type="{{ feed['@type']|lower }}">
+			<header>
+				{% if feed.titleimages is defined and feed.titleimages is not empty %}
+					{% set params = [
+						{ width: 1110, jpegQuality: 100, format: 'jpg' },
+						{ width: 680, jpegQuality: 100, format: 'jpg' },
+						{ width: 345, jpegQuality: 85, format: 'jpg' }
+					] %}
+					{% for img in feed.titleimages %}
+						{{ macros.imgFullWidth(img, null, false, params, false) }}
+						{% if feed.imageCaption is defined and feed.imageCaption|length %}<br><small>{{ feed.imageCaption }}</small>{% endif %}
+					{% endfor %}
+				{% endif %}
+				{# {{ macros.typeDetection(feed['@type'] is defined ? feed['@type'] : 'NULL', feed.layout is defined ? feed.layout : 'NULL') }} #}
+				<h1>{{feed.title}}</h1>
+				{% if feed.description['content-type'] is defined and feed.description.data is not empty %}
+				<div class="dot">
+					<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+					  <defs></defs>
+					  <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+					</svg>
+				</div>
+				<p class="intro description bold">{{ feed.description.data }}</p>
+				{% endif %}
+				{{ macros.auhtorsByLine(feed.creators, feed.modification_date is defined ? feed.modification_date|date) }}
+			</header>
+			<section class="article-body clearfix">
+				{{ feed.text is defined ? macros.text(feed.text) : null }}
+			</section>
+			<aside>
+				{{ macros.entryMeta(feed.modification_date is defined ? feed.modification_date|date : null, feed.webcode is defined ? feed.webcode : null) }}
+			</aside>
+		</article>
+    </div>
+    <div class="col-lg-3 offset-md-1 portlets">
+    	<h3>Portlets</h3>
+    	{# {% if folderNavItems|length %}
+		{% include "_includes/foldernav" %}
+		{% endif %} #}
+    </div>
+</div>
+
+
+
+
+
+
+
+

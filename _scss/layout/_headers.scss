@@ -1,0 +1,20 @@
+// partials/_header.scss
+
+header {
+	article & {
+		margin-bottom: 36px;
+		div.dot {
+			width: 16px;
+			height: 16px;
+			//display: inline;
+			float: left;
+			margin-right: 10px;
+			svg {
+				vertical-align: inherit;
+				@include lg {
+					margin-top: 6px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+{% set contents = ('https://www.bgetem.de' ~ craft.app.request.url) %}
+{% set mainNavRequestUrl = 'https://www.bgetem.de/' ~ craft.app.request.pathInfo ~ '/@navigation' %}
+{% set breadcumbRequestUrl = 'https://www.bgetem.de/' ~ craft.app.request.pathInfo ~ '/@breadcrumbs' %}
+
+{% set mainNavParams = {
+    url: mainNavRequestUrl,
+    type: 'json',
+    element: 'items',
+    cache: 0,
+} %}
+{% set mainNav = craft.feedme.feed(mainNavParams) %}
+
+{% set folderNavParams = {
+    url: 'https://www.bgetem.de/' ~ craft.app.request.segments|first,
+    type: 'json',
+    element: 'items',
+    cache: 0,
+} %}
+{% set folderNavItems = craft.feedme.feed(folderNavParams) %}
+
+{% set breadcrumbsParams = {
+    url: breadcumbRequestUrl,
+    type: 'json',
+    element: 'items',
+    cache: 0,
+} %}
+{% set breadcrumbs = craft.feedme.feed(breadcrumbsParams) %}
+
+{% set feedParams = {
+    url: contents,
+    type: 'json',
+    cache: 0,
+} %}
+{% set feed = craft.feedme.feed(feedParams) %}
+
+{% set items = {
+    url: contents,
+    type: 'json',
+    element: 'items',
+    cache: 0,
+} %}
+
+{% set type = craft.feedme.feed(feedParams)['@type'] %}
+
+{% if type == 'Folder' %}
+	{% set defaultPageId = contents ~ '/default-page' %}
+
+	{% set defaultPageParams = {
+	    url: contents ~ '/default-page',
+	    type: 'json',
+	    cache: 0,
+	} %}
+	{% set defaultPageUrl = craft.feedme.feed(defaultPageParams) %}
+
+	{% if defaultPageUrl.default_page is defined %}
+	{% set defaultPageContentsParams = {
+	    url: defaultPageUrl.default_page,
+	    type: 'json',
+	    cache: 0,
+	} %}
+	{% set defaultPageContents = craft.feedme.feed(defaultPageContentsParams) %}
+	{% endif %}
+	
+{% endif %}
+
+{% if feed.remoteUrl is defined %}
+{% redirect feed.remoteUrl %}
+{% endif %}
+{% if feed.external is defined %}
+{% redirect feed.external %}
+{% endif %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheDuration: 'P10D',
+}) %}

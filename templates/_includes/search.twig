@@ -1,0 +1,130 @@
+{# Sets to a default value if not defined #}
+{% set query = suchtext ?? '' %}
+{% set entries = craft.products().search(query).orderBy('score').all() %}
+
+{% set artikelCoverTransforms = {
+	  '(min-width: 1px)': {
+        width: 141,
+    }
+} %}
+
+{% set artikelCoverAttributes = { alt: 'Alt Text', title: 'title' } %}
+
+
+<form class="mb-5" sprig>
+	<div class="input-group d-flex">
+		<input type="text" name="suchtext" placeholder="Geben Sie einen Suchbegriff ein…" class="form-control mp-search-input bg_border-dguv-gruen" data-dashlane-rid="bd0f2ad146469fb2" data-form-type="">
+		<span class="input-group-btn">
+			<button type="submit" class="btn btn-default mp-search p-3 bg-dguv-gruen text-white" data-dashlane-rid="0dbc300ea9258763" data-dashlane-label="true" data-form-type=""><span class="arrow-after arrow-white d-flex justify-content-between align-items-center">Suche</span>
+			</button>
+		</span>
+	</div>
+</form>
+{% if query %}
+<div class="col-9">
+	<h1 class="h2 m-0">Suche nach „{{ query }}“</h1>
+</div>
+{% set entries = craft.products().search(query).orderBy('score').all() %}
+<div class="row align-items-baseline">
+	<div class="col-12 text-end">
+		<small>Gefundene Artikel: {{ entries|length }}</small>
+	</div>
+</div>
+{% endif %}
+
+<section class="listings clearfix" id="results">
+{% if query %}
+	<ul class="listing m-0">
+		{% set entries = craft.products().search(query).orderBy('score').all() %}
+		{% for artikel in entries %}
+			{# {{ artikel.title }} #}
+		<li class="card listing__item mb-5">
+	<div class="row py-4 item-wrapper has-actions">
+		{% if not artikel.medienportalTitelbild is empty %}	
+		<div class="col-2">
+			<figure>
+				{{ craft.images.pictureMedia(artikel.medienportalTitelbild.one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+			</figure>
+		</div>
+		{% else %}
+		<div class="col-2">
+			<figure>
+				{{ craft.images.pictureMedia(craft.assets.id(15178).one(), artikelCoverTransforms, null, artikelCoverAttributes) }}
+			</figure>
+		</div>
+		{% endif %}
+		<div class="col-7">
+			<a href="{{ artikel.url }}">
+				<h4 class="h5 fw-bold">{{ artikel.title }}</h4>
+			</a>
+			<div class="p-0">
+				<p>{{ artikel.description ? artikel.description }}</p>
+			</div>
+		</div>
+		<div class="col-3">
+			<div class="mp-price-table">
+				<div class="conditions bg-dguv-grau-leicht">
+					<small class="py-2 px-3 color-dguv-grau-3">Versicherte Unternehmen: 99 Freiexemplare, jedes weitere Exemplar 0,00 €</small>
+					<small class="py-2 px-3 border-white border-top border-bottom color-dguv-grau-3">Andere Besteller: {{ artikel.defaultVariant.price }},– € zzgl. 3,50 € Versandkosten</small>
+				</div>
+				
+				{% if artikel.defaultVariant.stock > 0 %}
+				{% set buyButton = true %}
+				{% if buyButton == true %}
+				<form sprig s-method="post" s-action="commerce/cart/update-cart">
+					{{ craft.blitz.csrfInput() }}
+					{# {{ actionInput('commerce/cart/update-cart') }}
+					{{ redirectInput('warenkorb') }}
+					{{ hiddenInput('successMessage', ('Added "' ~ artikel.title ~ '" to cart.')|hash) }}
+					{{ hiddenInput('qty', 1) }} #}
+					<input type="hidden" name="purchasableId" value="{{ artikel.defaultvariant.id }}">
+					{# <div class="d-none">
+						<select name="purchasableId">
+							{% for variant in artikel.variants %}
+							<option value="{{ variant.id }}">{{ variant.sku }}</option>
+							{% endfor %}
+						</select>
+					</div> #}
+					<input type="submit" value="Add to cart" class="w-100 bg-dguv-gruen text-white p-3">
+					<button type="submit" class="w-100 bg-dguv-gruen text-white p-3"><small><span class="arrow-after arrow-white d-flex justify-content-between align-items-center">Jetzt bestellen</span></small></button>
+					{% if success is defined and success %}
+    Product added to your cart!
+{% elseif errors is defined %}
+    {% for error in errors %}
+      <p class="error">{{ error|first }}</p>
+    {% endfor %}
+{% endif %}
+				</form>
+				{% endif %}
+				{% else %}
+					<small class="p-3 color-dguv-rot border-top">Zur Zeit nicht lieferbar</small>
+				{% endif %}
+				<a href="{{ artikel.url }}" title="„{{ artikel.title }}“ ansehen">
+					<small class="bg-dguv-grau-8 text-black p-3 bg-hover-dguv-blau"><span class="arrow-after arrow-black d-flex justify-content-between align-items-center">Details</span></small>
+				</a>
+			</div>
+			{# <small>A: {{ entry.availableForPurchase }}<br>S: {{ entry.defaultVariant.stock }}</small> #}
+		</div>
+	</div>
+</li>
+		{% endfor %}
+	</ul>
+{% endif %}
+</section>
+
+{# <form sprig>
+    <input type="text" name="query" value="{{ query }}">
+    <input type="submit" value="Search">
+</form>
+ #}
+
+{# <div id="results">
+Results
+    {% if query %}
+        {% set entries = craft.products().search(query).orderBy('score').all() %}
+        {% for entry in entries %}
+            {{ entry.title }}
+       {% endfor %}
+    {% endif %}
+</div> #}
+

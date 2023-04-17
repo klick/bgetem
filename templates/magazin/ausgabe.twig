@@ -1,0 +1,295 @@
+{% if not entry %}
+  {% exit 404 %}
+{% endif %}
+
+{% do craft.blitz.options({
+    tags: ['ausgabe']
+}) %}
+
+{% set today = "now"|atom %}
+{% set termineUpcoming = craft.entries.siteId(2).sectionId(3).limit(4).all() %}
+{% set titlestoryHighlight = entry.titlestories.with(['cover']).one() %}
+
+{% set etemPlusEntries = entry.etemPlus.with(['cover', 'titlestoryCover']).all() %}
+{% set kampagnen = craft.entries.siteId(2).sectionId(4).with(['cover']).orderBy('dateCreated ASC').all() %}
+
+
+{% import '_macros.twig' as macros %}
+{% extends "_layout" %}
+
+{% block ausgabe %}
+<p class="mb-0 d-inline">| Ausgabe {{ entry.title }}</p>
+{% endblock %}
+
+
+{% block content %}
+
+
+{% set titlestoryHighlightcoverTransforms = {
+	  '(max-width: 575px)': {
+        width: 510,
+        height: 290,
+        mode: 'crop',
+    },
+    '(max-width: 991px)': {
+        width: 690,
+        height: 392,
+        mode: 'crop',
+    },
+    '(max-width: 1199px)': {
+        width: 770,
+        height: 437,
+        mode: 'fit',
+    },
+    '(min-width: 1200px)': {
+        width: 847,
+        height: 481,
+        mode: 'crop',
+    }
+} %}
+
+{% set titlestoryHighlightcoverAttributes = { alt: 'Alt Text', title: titlestoryHighlight.title } %}
+
+<div class="container my-3 my-md-5">
+
+	<article class="mb-5 magazine-card titlestories">
+		<a href="{{ titlestoryHighlight.url }}" class="card-link text-decoration-none" title="{{ titlestoryHighlight.title }}">
+			<div class="row">
+				<div class="col-sm-12 col-lg-4">
+					<p class="category roof-row text-uppercase mb-2 mt-5">{{ titlestoryHighlight.dachzeile ? titlestoryHighlight.dachzeile : titlestoryHighlight.kategorie.one() }}</p>
+					<h1 class="fw-bold mb-3">{{ titlestoryHighlight.title }}</h1>
+					<p class="lead">{{ titlestoryHighlight.intro|typogrify }}</p>
+				</div>
+				<div class="col-sm-12 col-lg-8 order-first order-lg-last">
+					<figure>
+						{{ craft.images.pictureMedia(titlestoryHighlight.cover[0], titlestoryHighlightcoverTransforms, null, titlestoryHighlightcoverAttributes) }}
+					</figure>
+				</div>
+			</div>
+		</a>
+	</article>
+
+	{% set cardImgTransforms = {
+	  '(max-width: 575px)': {
+	      width: 180,
+	      height: 140,
+	      mode: 'crop'
+	  },
+	  '(min-width: 768px)': {
+	      width: 360,
+	      ratio: 16/9,
+	      mode: 'crop'
+	  }
+	} %}
+
+	<div class="row">
+	{% for entry in entry.titlestories[1:] %}
+	{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'' } %}
+		<div class="col-12 col-lg-4 magazine-link mb-5 mb-lg-0">
+			<a href="{{ entry.url }}" class="row text-decoration-none">
+				<div class="col-4 col-md-6">
+					{% set cover = entry.titlestoryCover[0] ??? entry.cover[0] %}
+					{{ craft.images.pictureMedia(cover, cardImgTransforms, null, cardImgAttributes) }}
+				</div>
+				<div class="col-8 col-md-6">
+					<p class="category roof-row text-uppercase mb-2"><small>{{ entry.dachzeile ? entry.dachzeile : entry.kategorie.one() }}</small></p>
+					<h2 class="h5 mb-2"><strong>{{ entry.title }}</strong></h2>
+					<p>{{ (entry.intro|typogrify)|chop(limit=10, unit='w', append="…") }}</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+
+	{% if entry.titlestories[1:]|length == 2 %}
+		<div class="col-12 col-lg-4 mt-3 mt-lg-0">
+			<a href="https://www.bgetem.de/praeventionspreis" target="_blank" class="">
+				<div class="border-light border-start ms-lg-5 py-md-2">
+				{% set placeholderImgTransforms = {
+				  '(min-width: 345px)': {
+				      height: 150,
+				  }
+				} %}
+				{% set placeholderImgAttributes = { alt: 'Präventionspreis', title: 'Präventionspreis', style:'margin: 0 auto' } %}
+				{{ craft.images.pictureMedia(craft.assets.id(11243).one(), placeholderImgTransforms, null, placeholderImgAttributes) }}
+				</div>
+			</a>
+		</div>
+	{% endif %}
+
+	</div>
+</div>
+
+
+
+<div class="py-5">
+	<div class="banner newsletter py-4 p-md-5 my-5 bg-dguv-gruen text-white">
+	<div class="container">
+		<h2 class="h2 p-0 m-0 text-center">Erhalten Sie aktuelle Informationen direkt in Ihre Mailbox</h2>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
+{# THEMEN #}
+
+
+{% set themenEntries = entry.themen.with(['cover', 'titlestoryCover', 'kategorie']).all() %}
+
+{% set cardImgTransforms = {
+  '(min-width: 345px)': {
+      width: 718,
+      height: 416,
+  }
+} %}
+
+
+<div class="container my-3 my-md-5">
+	<div class="row">
+		{% for entry in themenEntries[:2] %}
+		{{ macros.articleGrid(entry, cardImgTransforms) }}
+		{% endfor %}
+		<div class="col-sm-12 col-md-6 col-lg-4 my-3 d-flex align-items-stretch">
+			<div class="magazine-card themen has-background-mask text-white bg-dguv-blau">
+				<div class="card-body">
+					<h2>Termine</h2>
+					{% for entry in termineUpcoming %}
+					<a href="{{ entry.terminUrl }}" target="_blank" class="text-decoration-none">
+						<p>{{ entry.datum|date('d.m.Y') }} | {{ entry.ort }}<br>{{ entry.title }}</p>
+					</a>
+					{% endfor %}
+					<p><a href="http://www.bgetem.de/presse-aktuelles/termine" target="_blank">Weitere Termine</a></p>
+				</div>
+			</div>
+		</div>
+		{% for entry in themenEntries[2:] %}
+		{{ macros.articleGrid(entry, cardImgTransforms) }}
+		{% endfor %}
+	</div>
+</div>
+
+
+	{% set branchSmallCardImgTransforms = {
+	  '(min-width: 345px)': {
+	      width: 609,
+	      height: 347,
+	      mode: 'crop'
+	  }
+	} %}
+
+		{% set branchLargeCardImgTransforms = {
+	  '(min-width: 345px)': {
+	      width: 768,
+	      height: 437,
+	      mode: 'crop'
+	  }
+	} %}
+
+
+
+<div class="py-5">
+	<div class="container">
+		<div class="border border-light p-3 p-lg-5">
+			<h1 class="display fw-bold color-dguv-blau my-3">etem <i style="color:#afca06;">plus</i></h1>
+			<div class="row">
+				{% for entry in etemPlusEntries %}
+				{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'pb-2' } %}
+				<div class="magazine-link col-sm-12 col-md-6 py-3 py-md-4">
+					<a href="{{ entry.url }}" class="card-link p-0 row text-decoration-none">
+						<div class="col-5 col-md-6">
+							{% if entry.titlestoryCover is not empty %}
+							{{ craft.images.pictureMedia(entry.titlestoryCover[0], branchSmallCardImgTransforms, null, cardImgAttributes) }}
+							{% elseif entry.cover is not empty %}
+							{{ craft.images.pictureMedia(entry.cover[0], branchSmallCardImgTransforms, null, cardImgAttributes) }}
+							{% endif %}
+						</div>
+						<div class="col-7 col-md-6">
+							<p class="category roof-row text-uppercase mb-2"><small>{{ entry.dachzeile ? entry.dachzeile : entry.kategorie.one() }}</small></p>
+							<h2 class="h4 mb-2"><strong>{{ entry.title }}</strong></h2>
+							<p class="">
+								{{ (entry.intro|typogrify)|chop(limit=15, unit='w', append="…") }}
+							</p>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+  {% set imgTransforms = {
+    '(max-width: 419px)': {
+        width: 345,
+        height: 196,
+        mode: 'fit',
+    },
+    '(max-width: 899px)': {
+        width: 899,
+        height: 512,
+        mode: 'fit',
+    },
+    '(max-width: 1199px)': {
+        width: 1199,
+        height: 683,
+        mode: 'fit',
+    },
+    '(min-width: 1200px)': {
+        width: 1199,
+        height: 683,
+        mode: 'fit',
+    }
+  } %}
+
+	{% cache globally %}
+
+<div class="container magazin my-3 my-md-5 p-0">
+		<h2 class="text-center my-3">Kampagnen</h2>
+		<div class="module module__gallery-slider campaigns mt-3 mt-md-5 mb-3 mb-md-5">
+			<div class="slick-slider-module-gallery slider_campaigns" data-id="id-1">
+			{% for entry in kampagnen %}
+			{% set imgAttributes = { alt: 'Alt Text', title: entry.title } %}
+				<div class="gallery-slider__item" data-image-number="{{ loop.index }}" style="display: inline-block;">
+					<a href="{{ entry.itemUrl }}" title="{{ entry.title }}" target="_blank" class="text-decoration-none">
+						<figure>
+						{{ craft.images.pictureMedia(entry.cover[0], imgTransforms, null, imgAttributes) }}
+							<figcaption class="mt-0 px-3 px-md-4 py-4 d-flex justify-content-center">
+								<div class="w-75">
+									<p class="h2 text-center color-dguv-blau">{{ entry.title }}</p>
+					 				<p class="h4 text-center">{{ entry.intro }}</p>
+								</div>
+					 		</figcaption>
+						</figure>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="nav slider-nav">
+			<div class="gallery-slider__nav id-1 previ_slider" data-id="id-1">
+				<svg viewBox="0 0 500 575.32">
+					<path d="M 6.122 10.4 L 6.122 8.728 L 16.528 8.728 L 11.116 2.832 L 12.216 1.644 L 19.85 9.542 L 12.216 17.44 L 11.116 16.252 L 16.506 10.4 L 6.122 10.4 Z" style="" stroke="none" transform="matrix(-36.421909, 0, 0, -36.421909, 722.974889, 635.198153)" fill="#ffffff"></path>
+				</svg>
+			</div>
+			<div class="gallery-slider__nav id-1 nexti_slider" data-id="id-1">
+				<svg viewBox="0 0 500 575.32">
+					<path d="M6.122000,8.684000 L6.122000,10.356000 L16.528000,10.356000 L11.116000,16.252000 L12.216000,17.440000 L19.850000,9.542000 L12.216000,1.644000 L11.116000,2.832000 L16.506000,8.684000 L6.122000,8.684000 Z " style="" stroke="none" transform="matrix(36.421909, 0, 0, 36.421909, -222.974945, -59.877621)" fill="#ffffff"></path>
+				</svg>
+			</div>
+		</div>
+</div>
+
+	{% endcache %}
+
+
+
+
+
+{% endblock %}
+
+

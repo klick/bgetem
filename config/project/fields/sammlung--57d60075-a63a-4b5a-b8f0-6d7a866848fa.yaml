@@ -1,0 +1,45 @@
+columnSuffix: vzqpqrpg
+contentColumnType: string
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: sammlung
+instructions: null
+name: Sammlung
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Bühnen-Beiträge
+        -
+          - value
+          - titelstories
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'ETEM +'
+        -
+          - value
+          - etem
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Themen
+        -
+          - value
+          - themen
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

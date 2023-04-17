@@ -1,0 +1,55 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %}
+
+{% block content %}
+
+    <div class="container">
+        <div id="kc-header" class="page-header text-white mt-5">
+            <div class="h1">SIGUV</div>
+        </div>
+        <div class="card border-0 card-body bg-white">
+            <header class="card-title">
+                {{ include('keycloak/_includes/localize-dropdown.twig') }}
+                <h1 class="h2">Passwort zurücksetzen</h1>
+            </header>
+
+            {% macro errorList(errors) %}
+            {% if errors %}
+                {{ ul(errors, {class: 'errors'}) }}
+            {% endif %}
+            {% endmacro %}
+
+            {% set user = user ?? null %}
+
+            <form method="post" accept-charset="UTF-8">
+                {{ csrfInput() }}
+                {{ actionInput('users/send-password-reset-email') }}
+                {{ redirectInput('passwort-neu-email') }}
+
+
+                <div class="form-group">
+
+                    <label for="loginName">Benutzername oder E-Mail</label>
+                    {{ input('text', 'loginName', loginName ?? craft.app.user.rememberedUsername, {
+                        id: 'loginName',
+                        autocomplete: 'username',
+                        class: 'form-control',
+                    }) }}
+
+                </div>
+
+                {% if errors is defined %}
+                    {{ ul(errors, {class: 'errors'}) }}
+                {% endif %}
+
+                <div id="kc-form-buttons" class="form-group">
+                    <button class="btn btn-primary btn-block btn-lg" type="submit">Absenden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

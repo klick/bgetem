@@ -1,0 +1,63 @@
+// _scss/grid.scss
+
+div.container {
+	min-height: 100vh;
+	margin: 0 auto;
+	@include for-phone-only() {
+		
+	}
+	@include for-tablet-portrait-up() {
+		max-width: 600px;
+	}
+	@include for-tablet-landscape-up() {
+		max-width: 800px;
+	}
+	@include for-desktop-up() {
+		max-width: 1026px;
+	}
+	@include for-big-desktop-up() {
+		// .container, .container-lg, .container-md, .container-sm, .container-xl {
+	 //    	max-width: 1140px !important;
+	 //    	background: red;
+		// }
+	}
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+
+	header {
+	
+	}
+	main {
+
+	}
+	footer {
+
+	}
+	
+}
+
+
+
+
+
+.type-area {
+	@include for-phone-only() {
+		//min-width: 350px;
+		//padding: 0 12px;
+		box-sizing: border-box;
+
+	}
+	@include for-tablet-portrait-up() {
+		max-width: 560px;
+	}
+	@include for-tablet-landscape-up() {
+		max-width: 760px;
+	}
+	@include for-desktop-up() {
+		max-width: 960px;
+	}
+	@include for-big-desktop-up() {
+		
+	}
+	margin: 0 auto;
+}

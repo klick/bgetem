@@ -1,0 +1,12 @@
+bgetem<br>
+Site ID: {{ currentSite.id }}
+{{ (currentUser ? '<br> User ID:' ~ currentUser.id ~ '<br> User Name: ' ~ currentUser.name ~ ' <a href="/logout">(Abmelden)</a>' : null)|raw }}
+<br>Site handle: {{ currentSite.handle }}
+<br>Site Name: {{ currentSite.name }}
+<br><a href="magazin">–> etem Magazin</a>
+<br><a href="medien">–> Medien</a>
+<br><a href="keycloak">–> Keycloak</a>
+<br><a href="bghw">–> BGHW</a>
+<br><a href="bgetemintranet">–> BGETEM Intranet</a>
+<br><a href="inventar">–> Inventar</a>
+{# {{ craft.app.request.hostInfo|split('.') }} #}

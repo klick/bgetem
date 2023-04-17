@@ -1,0 +1,24 @@
+defaultPlacement: end
+enableVersioning: true
+handle: sammlungen
+name: Sammlungen
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    enabledByDefault: true
+    hasUrls: true
+    template: sammlungen/_entry
+    uriFormat: 'sammlungen/{slug}'
+type: channel

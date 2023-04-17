@@ -1,0 +1,67 @@
+fieldLayouts:
+  3d89b571-6d3d-4afa-9e6b-480ce545ee14:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: bd634934-bb6f-4cdc-b04b-4be80271cf99
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 785ffb6b-dfab-4d64-862a-ba9d9a7276a7 # Image Alt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f8a97093-55fd-4ced-bc45-b8f8d52b44eb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 191d740e-8fa8-47c2-9d0e-66ee2727176b # Img Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d3511979-7a66-470f-80df-19ed3681a964
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: bd3283d8-20ae-4944-82f7-7ac5a909bf33
+        userCondition: null
+fs: bilderInventar
+handle: bilderInventar
+name: 'Bilder Inventar'
+sortOrder: 3
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

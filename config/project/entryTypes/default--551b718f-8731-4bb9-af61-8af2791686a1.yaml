@@ -1,0 +1,43 @@
+fieldLayouts:
+  feb819b4-87fe-4478-adde-b7f8251e0a04:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: c8780a25-ce51-494c-b521-c15336fe25e1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 79b66bf2-0b45-4d91-a9a7-47908d4c9caa
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Standard
+section: 7703ab3d-a038-425d-9545-3a0c453b355e # Anwendungen
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

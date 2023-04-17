@@ -1,0 +1,107 @@
+childBlocks:
+  - sliderProdukte
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+fieldLayouts:
+  13fc0894-4b76-4564-ad91-2b6c4bcc6198:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cee414fe-5dc3-4c33-ac90-11e35f1b3a5e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b677db77-3608-41fb-99a5-fad3005b0c6c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1bc32f11-6aa9-4338-9415-fbfac2aadbef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f9f6fbdf-4b31-4008-a500-e75ac60f6f54 # Linkfeld
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7d7ca8ec-3605-401c-be56-af9fe7c5d465
+            userCondition: null
+            warning: null
+            width: 100
+        name: Produkte
+        uid: 201919eb-b175-4125-a0b6-a278e5b7349a
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 875b5abb-fd1b-48a9-8d59-afaa93058564 # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e83fcef-9102-4ce9-8343-1802898f2255
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 16333976-8b8b-46fe-b762-21fbfd44c6f7 # Cover Full
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d0053d8-b712-44e2-89d4-933f8ab65499
+            userCondition: null
+            warning: null
+            width: 100
+        name: Einstellungen
+        uid: 4c056427-c671-4b3a-a170-81e714c00b5c
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: spezial
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 1
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Spezial
+sortOrder: 3
+topLevel: true

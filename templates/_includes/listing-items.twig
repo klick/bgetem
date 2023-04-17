@@ -1,0 +1,225 @@
+{% import '_macros.twig' as macros %}
+
+{% if items is defined and items|length > 0 %}
+{% cache using key craft.app.request.url %}
+	{% for item in items  %}
+	{% set itemDetail = {
+	    url: item['@id'],
+	    type: 'json',
+	    cache: 0,
+	} %}
+{% set itemDetails = craft.feedme.feed(itemDetail) %}
+{% if itemDetails != null %}
+<li class="item listing__item item-content-type__{{ itemDetails['@type'] is defined ? itemDetails['@type']|kebab }}{{ type == 'grid' ? ' col' }}{{ cols is defined ? ' ' ~ cols }} mb-5">
+{% if currentUser %}<small class="upper">{{ itemDetails['@type'] }}</small>{% endif %}
+	
+	{% switch itemDetails['@type'] %}
+	{% case 'Image' %}
+	<div class="image-wrapper">
+		<div class="image">
+			{% set params = [
+				{ width: 240, jpegQuality: 85, format: 'jpg' }
+			] %}
+			{{ macros.imgFullWidth(item['@id'], null, false, params, false) }}
+		</div>
+		<div class="description">
+			<small>{{ _self.itemDescription(itemDetails) }}</small>
+		</div>
+	</div>
+			
+	{% case 'MediaFile' %}
+	<div class="media-file-wrapper {{ itemDetails.image is null ? 'has-no-cover' }}">
+		{% if itemDetails.image is defined and itemDetails.image|length %}
+			{% set params = [
+				{ width: 255, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="media-file__image">
+				<a href="{{ item['@id']|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+					{{ macros.imgFullWidth(item['@id'] ~ '/image', null, false, params, false) }}
+				</a>
+			</div>
+		{% else %}
+			<div class="media-file__image">
+			<svg class="document-icon" viewBox="75.17 50.22 199.66 249.56" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M 125.09 175 L 224.92 175 L 224.92 199.96 L 125.09 199.96 L 125.09 175 Z M 125.09 224.91 L 224.92 224.91 L 224.92 249.87 L 125.09 249.87 L 125.09 224.91 Z M 192.65 50.22 L 75.17 50.22 L 75.17 299.78 L 274.83 299.78 L 274.83 132.4 Z M 200 92.82 L 232.26 125.09 L 200 125.09 Z M 100.17 274.82 L 100.17 75.17 L 175 75.17 L 175 150 L 249.87 150 L 249.87 274.83 Z"/>
+			</svg>
+		</div>
+		{% endif %}
+		<div class="media-file__body">
+			<h3><a class="media-file__title" href="{{ item['@id']|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">{{ item.title }}</a></h3>
+			<p>
+				{{ item.description ? ('<small>' ~ (item.description) ~ '</small>')|raw : null }}
+			</p>
+		</div>
+		<div class="media-file__actions">
+			<a href="{{ item['@id'] }}/@@download/file" title="{{ item.title }} herunterladen" aria-label="{{ item.title }} herunterladen">
+				<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+					<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"/>
+				</svg><br>
+				<small>Herunterladen<br> {{ itemDetails.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF','image/jpeg':'JPG','application/zip':'ZIP'}) }}, {{ (itemDetails.file.size / 1000000)|number_format(2) }} MB</small>
+			</a>
+		</div>
+	</div>
+
+	{% case 'Videoembed' %}
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="videoembed-wrapper {{ itemDetails.poster.download is defined and itemDetails.poster.download is not empty ? 'has-image' }}">
+			{% if itemDetails.poster.download is defined and itemDetails.poster.download is not empty %}
+			<div class="videoembed-poster">
+				{% set params = [
+					{ width: 500, mode: 'crop', jpegQuality: 85, format: 'jpg' },
+					{ width: 255, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+				] %}
+				<div class="play-button-wrapper">
+					<svg class="play-button" viewBox="157.495 163.399 173.656 173.656" xmlns="http://www.w3.org/2000/svg">
+				  		<circle fill="#000000" cx="244.323" cy="250.227" r="86.828"/>
+				  		<path id="play" d="M 217.23 289.417 L 217.23 214.799 C 217.23 211.428 220.938 209.18 223.86 210.866 L 291.061 248.175 C 294.095 249.86 294.095 254.355 291.061 256.041 L 223.86 293.35 C 220.938 295.035 217.23 292.9 217.23 289.417 Z" style="" fill="#FFFFFF"/>
+					</svg>
+				</div>
+				{{ macros.imgFullWidth(itemDetails.poster.download, null, false, params, false) }}
+			</div>
+			{% endif %}
+			<div class="videoembed__body">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description }}</p>
+			</div>
+		</div>
+	</a>
+
+	{% case 'Folder' %}
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="folder-item-wrapper {{ itemDetails.newsimage is defined and itemDetails.newsimage is not empty ? 'has-image'}}">			
+			{% set thumbnail = itemDetails.newsimage is defined ? itemDetails.newsimage %}
+			{% if thumbnail|length %}
+			{% set params = [
+				{ width: 500, mode: 'crop', jpegQuality: 85, format: 'jpg' },
+				{ width: 255, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="folder-image">
+				{{ macros.imgFullWidth(thumbnail, null, false, params, false) }}
+			</div>
+			{% endif %}
+			<div class="folder-description">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description }}</p>
+			</div>
+		</div>
+	</a>
+
+	{% case 'News Item' %}
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="news-item-wrapper {{ itemDetails.image is defined and itemDetails.image is not empty ? 'has-image'}}">
+			{% set thumbnail = itemDetails.image.download is defined ? itemDetails.image.download %}
+			{% if thumbnail|length %}
+			{% set params = [
+				{ width: 440, mode: 'crop', mode: 'letterbox', letterbox: { color: '#000', opacity: 0 }, jpegQuality: 85, format: 'jpg' },
+				{ width: 220, mode: 'crop', mode: 'letterbox', letterbox: { color: '#000', opacity: 0 }, jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="news-image">
+				{{ macros.imgFullWidth(thumbnail, null, false, params, false) }}
+			</div>
+			{% endif %}
+			<div class="news-description">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description|chop(limit=160, unit='c', append=' …') }}</p>
+			</div>
+		</div>
+	</a>
+	
+	{% case 'Document' %}
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="folder-item-wrapper {{ itemDetails.newsimage is defined and itemDetails.newsimage is not empty ? 'has-image'}}">
+			{% set thumbnail = itemDetails.newsimage is defined ? itemDetails.newsimage %}
+			{% if thumbnail|length %}
+			{% set params = [
+				{ width: 500, mode: 'fit', ratio: 16/9, jpegQuality: 85, format: 'jpg' },
+				{ width: 255, mode: 'fit', ratio: 16/9, jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="folder-image">
+				{{ macros.imgFullWidth(thumbnail, null, false, params, false) }}
+			</div>
+			{% endif %}
+			<div class="folder-contents">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description }}</p>
+			</div>
+		</div>
+	</a>
+	
+	{% case 'File' %}
+	<div class="media-file-wrapper {{  itemDetails.image is not defined or itemDetails.image is null ? 'has-no-cover' }}">
+		{% if itemDetails.image is defined and itemDetails.image|length %}
+			{% set params = [
+				{ width: 255, mode: 'crop', jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="media-file__image">
+				{{ macros.imgFullWidth(item['@id'] ~ '/image', null, false, params, false) }}
+			</div>
+		{% else %}
+			<div class="media-file__image">
+			<svg class="document-icon" viewBox="75.17 50.22 199.66 249.56" xmlns="http://www.w3.org/2000/svg">
+			  <path d="M 125.09 175 L 224.92 175 L 224.92 199.96 L 125.09 199.96 L 125.09 175 Z M 125.09 224.91 L 224.92 224.91 L 224.92 249.87 L 125.09 249.87 L 125.09 224.91 Z M 192.65 50.22 L 75.17 50.22 L 75.17 299.78 L 274.83 299.78 L 274.83 132.4 Z M 200 92.82 L 232.26 125.09 L 200 125.09 Z M 100.17 274.82 L 100.17 75.17 L 175 75.17 L 175 150 L 249.87 150 L 249.87 274.83 Z"/>
+			</svg>
+		</div>
+		{% endif %}
+		<div class="media-file__body">
+			<p>
+				<a class="media-file__title" href="{{ item['@id']|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">{{ item.title }}</a>
+				{{ item.description ? ('<br><small>' ~ (item.description) ~ '</small>')|raw : null }}
+			</p>
+		</div>
+		<div class="media-file__actions">
+			<a href="{{ item['@id'] }}/@@download/file" title="{{ item.title }} herunterladen" aria-label="{{ item.title }} herunterladen">
+				<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+					<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"/>
+				</svg><br>
+				<small>Herunterladen<br> {{ itemDetails.file['content-type']|replace({'application/msword':'Word','application/pdf':'PDF','image/jpeg':'JPG','application/zip':'ZIP'}) }}, {{ (itemDetails.file.size / 1000000)|number_format(2) }} MB</small>
+			</a>
+		</div>
+	</div>
+	
+	{% case 'News Item' %}
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="folder-item-wrapper {{ itemDetails.newsimage is defined and itemDetails.newsimage is not empty ? 'has-image'}}">
+			{% set thumbnail = itemDetails.newsimage is defined ? itemDetails.newsimage %}
+			{% if thumbnail|length %}
+			{% set params = [
+				{ width: 500, mode: 'fit', ratio: 16/9, jpegQuality: 85, format: 'jpg' },
+				{ width: 255, mode: 'fit', ratio: 16/9, jpegQuality: 85, format: 'jpg' }
+			] %}
+			<div class="folder-image">
+				{{ macros.imgFullWidth(thumbnail, null, false, params, false) }}
+			</div>
+			{% endif %}
+			<div class="folder-contents">
+				<h3>{{ item.title }}</h3>
+				<p>{{ item.description }}</p>
+			</div>
+		</div>
+	</a>
+	
+	{% case 'Event' %}
+
+	<a data-exclude-from-nav="{{ itemDetails.excludeFromNav is defined and itemDetails.excludeFromNav == 1 ? '1':'0' }}" href="{{ (itemDetails['@id'])|replace({'https://www.bgetem.de/':getenv('DEFAULT_SITE_URL') ~ '/'}) }}">
+		<div class="event-item-wrapper">
+			<div class="event-details">
+				<p>
+					{{ itemDetails.startDate|date('d.m.y') }}<br>
+				</p>
+			</div>
+			<div class="folder-contents">
+				<h3>{{ item.title }}</h3>
+				<p>{{ itemDetails.location }}, {{ itemDetails.startDate|date() }}–{{ itemDetails.endDate|date() }}</p>
+			</div>
+		</div>
+	</a>
+	
+	{% default %}
+	(…)
+	{% endswitch %}
+	
+</li>
+{% endif %}
+{% endfor %}
+{% endcache %}
+{% endif %}

@@ -1,0 +1,38 @@
+ul:not(.listing) {
+	article.content-type-document section.article-body &,
+	article.content-type-ploneglossarydefinition section.article-body & {
+		padding-left: 0;
+		li {
+			margin-left: 1em;
+			//margin-bottom: 1em;
+			list-style: none;
+			@include arrowed('000000', -1em);
+			> a:first-of-type {
+				//margin-left: -4px;
+			}
+		}
+	}
+}
+ol {
+	margin-left: 0;
+	section.article-body & {
+		li {
+			margin-bottom: 18px;
+			margin-left: 0;
+		}
+	}
+}
+ul.arrowed {
+	section.article-body & {
+		margin-bottom: 24px;
+	}
+	li {
+		margin-left: 1em;
+		//margin-bottom: 1em;
+		list-style: none;
+		@include arrowed('000000', -1em);
+		> a:first-of-type {
+			//margin-left: -4px;
+		}
+	}
+}

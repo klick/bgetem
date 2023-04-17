@@ -1,0 +1,39 @@
+div.container {
+	padding-right: var(--bs-gutter-x,.75rem) !important;
+    padding-left: var(--bs-gutter-x,.75rem) !important;
+	@media screen and (min-width:1200px) {
+		max-width: 1140px;
+	}
+	@media screen and (min-width:1800px) {
+		max-width: 1320px;
+	}
+}
+
+// Adding Gutter to bootstrap 4.6.2
+
+.g-3, .gy-3 {
+    --bs-gutter-y: 1rem;
+}
+
+.g-3, .gx-3 {
+    --bs-gutter-x: 1rem;
+}
+
+div.container.magazin {
+	padding-right: var(--bs-gutter-x,.75rem) !important;
+    padding-left: var(--bs-gutter-x,.75rem) !important;
+	@media screen and (min-width: 1200px) {
+		max-width: 1320px !important;
+	}
+}
+div.container {
+	div.row {
+		margin-right: calc(-.5 * var(--bs-gutter-x)) !important;
+    	margin-left: calc(-.5 * var(--bs-gutter-x)) !important;
+		>* {
+			padding-right: calc(var(--bs-gutter-x) * .5) !important;
+	    	padding-left: calc(var(--bs-gutter-x) * .5) !important;
+	    	margin-top: var(--bs-gutter-y);
+		}
+	}
+}

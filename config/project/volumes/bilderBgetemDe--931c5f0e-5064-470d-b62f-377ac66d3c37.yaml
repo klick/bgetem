@@ -1,0 +1,67 @@
+fieldLayouts:
+  420e50e6-704a-457e-bb19-4489cc354de8:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 01ebdf87-748a-4dfe-ac5a-202c58d14cbf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 785ffb6b-dfab-4d64-862a-ba9d9a7276a7 # Image Alt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7f66ab2a-7012-408b-b9c1-9f662e21a583
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 191d740e-8fa8-47c2-9d0e-66ee2727176b # Img Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff4ea4de-8846-47e2-943e-1a3ea56eb718
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 08c7fa4a-7b15-40bd-bf25-25bcf590205a
+        userCondition: null
+fs: bilderBgetem
+handle: bilderBgetemDe
+name: 'Bilder bgetem.de'
+sortOrder: 5
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

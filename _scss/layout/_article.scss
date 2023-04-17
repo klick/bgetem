@@ -1,0 +1,27 @@
+// layout/_article.scss
+
+p.roof-row {
+	letter-spacing: .3px;
+	margin-bottom: 6px;
+}
+@include for-phone-only() {
+
+}
+@include sm() {
+
+}
+@include md() {
+
+}
+@include lg() {
+	article {
+		header {
+			h1 {
+				margin-left: -3px;
+			}
+		}
+	}
+}
+@include xl() {
+	
+}

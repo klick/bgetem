@@ -1,0 +1,19 @@
+columnSuffix: qsdrdvob
+contentColumnType: text
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: imgCaption
+instructions: null
+name: 'Img Caption'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

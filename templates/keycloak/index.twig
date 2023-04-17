@@ -1,0 +1,30 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['keycloak']
+}) %}
+
+{% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %}
+
+{% block content %}
+
+	<div class="text-white">
+        <div class="mt-5">
+            <h1 class="h2 font-weight-bold">Keycloak</h1>
+            <ul class="mt-2 arrowed">
+                <li><a href="/keycloak/login">Login</a></li>
+                <li><a href="/keycloak/login-mit-alert">Login mit Alert</a></li>
+                <li><a href="/keycloak/passwort-vergessen">Passwort vergessen</a></li>
+                <li><a href="/keycloak/passwort-aktualisieren">Passwort aktualisieren</a></li>
+                <li><a href="/keycloak/registrierung">Registrierung</a></li>
+                <li><a href="/keycloak/totp">totp</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

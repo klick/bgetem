@@ -1,0 +1,136 @@
+childBlocks: null
+conditions: null
+description: null
+enabled: true
+field: fa33e5a3-c7e8-4d64-a83e-7936b142f04c # Module
+fieldLayouts:
+  1aa242c6-96fa-4a47-83b8-29e99fe72ad5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f9f6fbdf-4b31-4008-a500-e75ac60f6f54 # Linkfeld
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1596c988-a159-4870-8dc0-cadbc4bbe829
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalte
+        uid: 6d2ca436-350b-46b3-b904-82c416d074bd
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d62c304f-9fa8-47a9-be89-26353afc1fd6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68f9ec57-c282-4d06-88d0-968e22be94d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 81f0465c-b748-4122-8893-9e53b76c37c7 # Überschrift
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7db312a-6e44-4dce-956a-6a286f9dac07
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bcb9e11e-bc10-4098-b749-09b5ed0564d8
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Eigene Inhalte'
+        uid: 52e94cd3-a4ee-46ae-8f66-57205cfacfff
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 16333976-8b8b-46fe-b762-21fbfd44c6f7 # Cover Full
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f12942a8-3ef9-4f2f-a7dd-76b4227cf4d3
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 875b5abb-fd1b-48a9-8d59-afaa93058564 # Hintergrundfarbe
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4c058f46-8fb7-4d30-a14e-c7b9b3b9e986
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 9f9daf17-cc79-4545-8963-474697050fc3 # Abstand unten
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13092659-c604-423d-b122-51255b6f333b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Einstellungen
+        uid: 94c49a1b-8bc7-416a-99d7-58c64c26d8a8
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: stoerer
+icon: null
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Störer
+sortOrder: 2
+topLevel: true

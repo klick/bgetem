@@ -1,0 +1,162 @@
+fieldLayouts:
+  d321c75d-4898-4f99-992f-c23683ff5c5b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e6bf20bc-a5d4-4b04-b0bb-9ad3970668fb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0a3c7ef5-b513-4ba5-8e4f-3c7f55c002f2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0e5c7117-10ba-4d3b-a867-f56e8019fdee # [BGHW] Schmuckbild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 391d4783-6caf-404a-8245-68a59b13c443
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1460b900-cfb5-4e30-9c2e-7e2e447cd216 # Dachzeile
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a0d88c6a-b81e-4003-a078-63a60e5e2072
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77a5b6b5-2c3f-404a-ba43-ca6b50e991ce
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3177995-e1b2-4d18-a306-9975dd377a5c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 7672c214-2da7-4c7f-a9e4-5d27d1244a06
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 32eb0504-7632-4734-8af1-84bf075e65c0 # Kommentare
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a3821f0-8006-4922-83d6-ee03f1bbd110
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 10b2df46-fd3c-4780-83ab-52788783da68 # Kommentarschliessung Anmerkung
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e2d43d29-57ba-4c38-96ce-b39b7b5a075e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 697ed9b0-ef02-441c-9254-8c2b3b16e31e
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f6c7a091-f09e-427d-b667-c68786538427
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bd92731-9526-4b5b-a335-29adbc37b940
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: c6630a69-0bb3-4467-89fe-b383666cca46
+        userCondition: null
+handle: aktuelleMeldung
+hasTitleField: true
+name: 'Aktuelle Meldung'
+section: 0408cca5-e827-40c8-9397-89c062429004 # [BGHW] Aktuelle Meldungen
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

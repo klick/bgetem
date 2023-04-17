@@ -1,0 +1,42 @@
+{% import '_macros.twig' as macros %}
+<div class="portlet mb-5">
+	<h3>Ansprechpartner</h3>
+	<div class="portlet-body-wrapper">
+		<p>Hier finden Sie Ihren Ansprechpartner für Rehabilitation und Entschädigung, Prävention sowie Fragen zu Mitgliedschaft und Beitrag.
+		<p>Telefonisch erreichen Sie die BG ETEM unter 0221 3778-0.<br>Service-Zeiten: 8:00 - 17:00 Uhr</p>
+	</div>
+</div>
+<div class="portlet mb-5">
+	<h3>{/}</h3>
+	<div class="portlet-body-wrapper">
+		<small style="display:block;"><strong>Typ: </strong>{{ type }}<br>{{ feed.layout is defined ? ('<strong>Layout:</strong> ' ~ feed.layout)|raw }}</small>
+	</div>
+</div>
+<div class="portlet mb-5">
+	<h3>Videos: Alles aus einer Hand</h3>
+		{% set params = [
+			{ width: 345, jpegQuality: 85, format: 'jpg' }
+		] %}
+		<figure><a href="/die-bgetem/videos-alles-aus-einer-hand">{{ macros.imgFullWidth('https://www.bgetem.de/redaktion/startseite/video-alles-aus-einer-hand', null, false, params, false) }}</a></figure>
+		<div class="portlet-body-wrapper">
+		<p>Wir unterstützen Unternehmen im Arbeitsschutz, betreuen Versicherte nach Arbeitsunfällen oder Berufskrankheiten und sichern deren Lebensunterhalt finanziell ab. Wie machen wir das?</p>
+		<a class="more-link" href="/die-bgetem/videos-alles-aus-einer-hand">Mehr</a>
+	</div>
+</div>
+<div class="portlet mb-5">
+	<h3>Top 10</h3>
+	<div class="portlet-body-wrapper">
+		<ul class="link-list">
+			<li><a title="" href="/seminare/seminardatenbank-1" class="" target="_self">Seminardatenbank</a></li>
+			<li><a title="" href="/medien-service/regelwerk-und-informationsmaterial/regelwerk-und-informationsmaterial-sicherheit-in-schrift-bild-und-ton" class="internal-link" target="_self">Regelwerk und Informationsmaterial</a></li>
+			<li><a title="" href="/mitgliedschaft-beitrag/beitrag/entgeltnachweis-deuev-meldung" class="" target="_self"><span class="">Lohnnachweis</span></a></li>
+			<li><a title="" href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/gefaehrdungsbeurteilung" class="" target="_self">Gefährdungsbeurteilung</a></li>
+			<li><a title="" href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/unterweisung" class="" target="_self">Unterweisung</a></li>
+			<li><a title="" href="/unfall-berufskrankheit/formulare" class="" target="_self">Formulare</a></li>
+			<li><a title="" href="/medien-service/interaktiv-lernmodule-sicherheit-und-gesundheit-am-arbeitsplatz/sicherheit-und-gesundheit-am-arbeitsplatz-interaktiv" class="" target="_self">Lernmodule Sicherheit und Gesundheit am Arbeitsplatz</a></li>
+			<li><a title="" href="/unfall-berufskrankheit/haeufig-gestellte-fragen/haeufig-gestellte-fragen" class="" target="_self"><span class="">Unfall/Berufskrankheit: Häufig gestellte Fragen</span></a></li>
+			<li><a title="" href="/unfall-berufskrankheit/was-tun-bei-arbeitsunfall/notfall-hotline" class="" target="_self"><span class="">Notfall-Hotline</span></a></li>
+			<li><a title="" href="/arbeitssicherheit-gesundheitsschutz/themen-von-a-z-1/betriebsaerztliche-und-sicherheitstechnische-betreuung/unternehmermodell" class="" target="_self"><span class="">Unternehmermodell</span></a></li>
+		</ul>
+	</div>
+</div>

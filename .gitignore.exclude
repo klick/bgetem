@@ -1,0 +1,23 @@
+/craft/.env
+/craft/.idea
+/craft/vendor
+.DS_Store
+/_box
+/craft/.env.example
+# /craft/composer.json
+# /craft/composer.lock
+/scripts
+/craft/storage
+/html/.htaccess
+/html/index.php
+/html/img
+/html/media-assets
+/node_modules
+/craft/package-lock.json
+/html/imager
+/html/assets
+/html/cpresources
+/craft/config/license.key
+/__legacy
+/html/bilder
+/.ddev

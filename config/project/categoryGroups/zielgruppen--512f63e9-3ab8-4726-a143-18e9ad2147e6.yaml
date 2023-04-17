@@ -1,0 +1,118 @@
+defaultPlacement: end
+fieldLayouts:
+  b317d7e9-8c6c-4d8f-bdf9-976199b31e88:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: e7645299-7973-4656-af63-6d7239e065d0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: af6a0188-9ceb-424e-b63a-e2ac9ed97c9f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 200606da-2722-4f6e-99f3-9243e42aa6d0 # URL original
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6720c62d-4458-4372-9c9b-11b2ac84219d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ecb258a6-c8e0-41b0-8a1c-63ce253c2dc9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8209f7d2-4ffd-4e0c-8c56-252fc61c4f8c # Plone query
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b7dc1d1e-aa4a-46f9-8d06-5ef6c9d8d022
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 9f9f9e0e-0aa5-4141-8a1c-c50c4dcfd109
+        userCondition: null
+handle: zielgruppen
+name: Zielgruppen
+siteSettings:
+  1e22bb49-6a25-47c2-a69b-f91816938557: # Inventar
+    hasUrls: false
+    template: null
+    uriFormat: null
+  265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
+    hasUrls: false
+    template: null
+    uriFormat: null
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    hasUrls: false
+    template: null
+    uriFormat: null
+  a2821711-f9c3-46b0-ae5e-158625c1ee52: # BGHW
+    hasUrls: false
+    template: null
+    uriFormat: null
+  be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
+    hasUrls: false
+    template: null
+    uriFormat: null
+  c267be8c-ada1-4920-8ecf-cc60914aed52: # Keycloak
+    hasUrls: false
+    template: null
+    uriFormat: null
+  e0b4acfc-09c1-474a-bd31-ec67021e719d: # bgetem
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 5754493b-f0db-49d3-8645-68a8779329c1

@@ -1,0 +1,29 @@
+<li class="card listing__item mb-5">
+	<div class="row py-4 item-wrapper has-actions">
+		{% if not image is empty %}	
+		<div class="image col-2">
+			<figure>
+				{{ craft.images.pictureMedia(image, artikelCoverTransforms, null, artikelCoverAttributes) }}
+			</figure>
+		</div>
+		{% endif %}
+		<div class="item-contents col-8">
+			<a href="{{ entry.url }}">
+				<div class="card-header">
+					<h4>{{ entry.title }}</h4>
+				</div>
+			</a>
+			<div class="card-body p-0">
+				<p>{{ entry.description ? entry.description }}</p>
+			</div>
+		</div>
+		<div class="item-actions col-2">
+			<a href="https://www.bgetem.de/medien-service/grafiken-zur-sicherheit-und-gesundheit-am-arbeitsplatz/ladungssicherheit/ladungssicherheit-2/@@download/file" title="Ladungssicherheit 2 herunterladen" aria-label="Ladungssicherheit 2 herunterladen">
+				<svg class="media-file__download-icon" viewBox="50.22 50.22 249.56 249.56" xmlns="http://www.w3.org/2000/svg">
+					<path d="M 157.35 232.39 L 162.52 237.57 L 162.52 237.82 L 162.77 237.82 L 175 250.05 L 187.23 237.82 L 187.48 237.82 L 187.48 237.57 L 245.59 179.43 L 227.94 161.77 L 187.48 202.25 L 187.48 50.22 L 162.52 50.22 L 162.52 202.25 L 122.06 161.77 L 104.41 179.43 L 157.35 232.39 L 157.35 232.39 Z M 274.83 199.9 L 274.83 274.81 L 75.17 274.81 L 75.17 199.9 L 50.22 199.9 L 50.22 274.81 L 50.22 299.78 L 75.17 299.78 L 274.83 299.78 L 299.78 299.78 L 299.78 274.81 L 299.78 199.9 L 274.83 199.9 Z"></path>
+				</svg><br>
+				<small>Herunterladen<br>JPG, 0.81 MB</small>
+			</a>
+		</div>
+	</div>
+</li>

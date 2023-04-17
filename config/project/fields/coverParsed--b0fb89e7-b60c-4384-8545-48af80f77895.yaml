@@ -1,0 +1,20 @@
+columnSuffix: hcoxzhwq
+contentColumnType: text
+fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
+handle: coverParsed
+instructions: null
+name: 'Cover parsed'
+searchable: false
+settings:
+  allowSelect: false
+  columnType: text
+  decimals: 0
+  displayType: textinput
+  fieldTwig: '{{ entry.text | getFirstImage }}'
+  parseBeforeSave: true
+  parseOnMove: false
+  showField: false
+  textareaRows: 5
+translationKeyFormat: null
+translationMethod: none
+type: besteadfast\preparsefield\fields\PreparseFieldType

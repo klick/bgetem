@@ -1,0 +1,23 @@
+{% import '_macros.twig' as macros %}
+{% extends "_layout_keycloak" %}
+
+{% if (currentUser and currentUser.id != 1) %}
+   {% redirect "account" %}
+{% endif %}
+
+{% block content %}
+
+	<div class="container">
+        <div id="kc-header" class="page-header text-white mt-5">
+            <div class="h1">SIGUV</div>
+        </div>
+        <div class="card border-0 card-body bg-white">
+            <header class="card-title">
+                {{ include('keycloak/_includes/localize-dropdown.twig') }}
+                <h1 class="h2">Registrierung erfolgreich!</h1>
+            </header>
+            <p>Vielen Dank. Ihre Registrierung war erfolgreich und ist nun abgeschlossen. Sie können sich nun <a href="/keycloak">hier</a> einloggen.</p>
+
+        </div>
+    </div>
+{% endblock %}

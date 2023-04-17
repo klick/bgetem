@@ -1,0 +1,29 @@
+ul.listing {
+	&:not(.accordion_view) {
+		li[class*="__folder"] {
+			div.folder-item-wrapper {
+				&.has-image {
+					display: flex;
+					div.folder-image {
+						flex: 0 0 30%;
+						margin-right: 24px;
+					}
+				}
+				div.folder-description {
+					h3 {
+						line-height: 1;
+					}
+					p {
+						padding-right: 48px;
+					}
+				}
+			}
+		}
+	}
+	li[class*="__folder"] {
+		a {
+			display: block;
+			padding: 24px 0 24px 0;
+		}
+	}
+}
