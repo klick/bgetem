@@ -62,5 +62,7 @@ return [
 
     //'allowUppercaseInSlug' => true,
 
-    'pageTrigger' => 'seite/'
+    'pageTrigger' => 'seite/',
+
+    'maxUploadFileSize' => 100000000,
 ];

@@ -116,24 +116,24 @@ a {
 		color: $dguv-blau-2;
 	}
 	section.article-body & {
-		border-bottom: 1px solid currentColor;
-		display: inline;
-		line-height: 0.4 !important;
-		text-shadow:
-			2px 2px white,
-			2px -2px white,
-			-2px 2px white,
-			-2px -2px white;
-		display: inline;
+		// border-bottom: 1px solid currentColor;
+		// display: inline;
+		// line-height: 0.4 !important;
+		// text-shadow:
+		// 	2px 2px white,
+		// 	2px -2px white,
+		// 	-2px 2px white,
+		// 	-2px -2px white;
+		// display: inline;
 		
 		&:hover {
 			text-decoration: none;
-			border-bottom: 1px solid white;
+			// border-bottom: 1px solid white;
 			color: $dguv-blau-2;
 		}
 		&.no-underline {
 			text-decoration: none;
-			border-bottom: 1px solid white;
+			// border-bottom: 1px solid white;
 		}
 	}
 	&.no-underline {
@@ -176,7 +176,8 @@ a.active {
 }
 ul.arrowed,
 section.article-body ul,
-div.infobox-abbinder ul {
+div.infobox-abbinder ul,
+div.text-body ul {
 	li {
 		margin-left: 1em;
 		//margin-bottom: 1em;

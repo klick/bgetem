@@ -63,12 +63,15 @@ medien/index
 						<small>Gefundene Artikel: {{ artikel|length }}</small>
 					</div>
 				{% endif %}
+
+
 				<ul class="listing m-0">
 					{% for artikel in pageEntries %}
-					<li class="card listing__item mb-5">
+					<li class="card listing__item mb-5 pt-">
 						
-							<div class="item-wrapper has-image">			
-								<div class="image">
+							<div class="item-wrapper has-image row">	
+
+								<div class="image col-4">
 									{% set artikelCover = artikel.titlestoryCover[0] ??? artikel.cover[0] %}
 									{% set artikelCoverAttributes = { alt: '', title: artikelCover.title ??? 'BGETEM Logo' } %}
 									<figure class="">
@@ -79,8 +82,9 @@ medien/index
 										{% endif %}
 									</figure>
 								</div>
-								<div class="item-contents">
-									<a href="{{ artikel.url }}">
+
+								<div class="item-contents col-8">
+									<a href="{{ artikel.url }}" class="text-decoration-none">
 										<div class="card-header">
 											<div class="d-flex justify-content-space-between">
 												{{ artikel.dachzeile ? ('<small class="roof text-uppercase mb-2">' ~ artikel.dachzeile ~ '</small>')|raw }}
@@ -96,17 +100,22 @@ medien/index
 										<div class="tags mt-3">
 											<small>
 												{% for tag in artikel.tagsMagazin %}
-													<a href="{{ url('tags/'~tag.slug) }}" class="me-2">#{{ tag.title }}</a>
+													<a href="{{ url('tags/'~tag.slug) }}" class="me-2 text-decoration-none">#{{ tag.title }}</a>
 												{% endfor %}
 											</small>
 										</div>
 									{% endif %}
 								</div>
+
+
 							</div>
 						</a>
 					</li>
 					{% endfor %}
 				</ul>
+
+
+
 				{% if pageInfo.total > 10 %}
 				<div class="pagination my-5">
 					<nav aria-label="Page navigation example">

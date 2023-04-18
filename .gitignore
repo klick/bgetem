@@ -20,3 +20,6 @@
 /__legacy
 /web/bilder
 /.ddev
+/web/audio
+/b.sql
+/b.csv

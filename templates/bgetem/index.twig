@@ -1,0 +1,170 @@
+{# 
+medien/index 
+#}
+
+{# {% if not currentUser %}
+{% redirect 'suche' %}
+{% endif %} #}
+
+{% import '_macros.twig' as macros %}
+{% extends '_layout_' ~ currentSite.handle ~ '.twig' %}
+{% set podcasts = craft.entries.siteId(8).section('presseAktuelles').type('podcast').all() %}
+{% set soundcloudGhost = craft.assets.id(30312).one() %}
+
+
+
+
+
+{% do craft.blitz.options({
+    cachingEnabled: true,
+    cacheElements: true,
+    cacheElementQueries: true,
+    tags: ['bgetemIntranetStart']
+}) %}
+
+
+
+
+{% block content %}
+
+  <div id="viewlet-above-content">
+    <nav id="plone-breadcrumb" aria-label="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="{{ alias(currentSite.baseUrl) }}">Startseite</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{{ alias(currentSite.baseUrl) }}">Presse / Aktuelles</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="{{ alias(currentSite.baseUrl) }}">Themen</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <span>Podcast "Ganz sicher"</span>
+          </li>
+        </ol>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <figure class="figure" style="display:block">
+        <a href="https://www.bgetem.de/presse-aktuelles/themen-und-geschichten/podcasts#" title="">
+        <img class="figure-img img-fluid rounded" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher.jpg/@@images/image" title="Podcast &quot;Ganz sicher&quot;" alt="">
+        </a>
+        <figcaption class="figure-caption"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="row mt-5 g-3">
+    <div class="col-lg-9 col-12">
+      <h1>Podcast "Ganz sicher"</h1>
+      
+      <div class="dot">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="250" cy="250" r="250" fill="#0086cd"></circle>
+        </svg>
+      </div>
+    
+      <p class="lead intro description bold"><span>Unsere Podcasts geben interessante Einblicke in die Themen der gesetzlichen Unfallversicherung.</span></p>
+      <div class="my-5">
+        <p>Hören und abonnieren Sie „Ganz sicher“ auch auf anderen Kanälen:<span></span></p>
+        <p><a href="https://podcasts.apple.com/us/podcast/ganz-sicher-der-podcast-f%C3%BCr-menschen-mit-verantwortung/id1609928910" rel="noopener" target="_blank"><span><img alt="&quot;Ganz sicher&quot; auf Apple Podcasts" class="image-richtext image-inline" height="58" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher/button_apple.jpg" title="&quot;Ganz sicher&quot; auf Apple Podcasts" width="249"></span></a> <a href="https://open.spotify.com/show/1c2HlSD0xaV2vgLXeaNQ7U" rel="noopener" target="_blank"><img alt="&quot;Ganz sicher&quot; auf Spotify" class="image-richtext image-inline" height="58" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher/button_spotify.jpg" title="&quot;Ganz sicher&quot; auf Spotify" width="249"></a> <a href="https://podcasts.google.com/search/bg%20etem" rel="noopener" target="_blank"><img alt="&quot;Ganz sicher&quot; auf Google Podcasts" class="image-richtext image-inline" height="58" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher/button_google.png" title="&quot;Ganz sicher&quot; auf Google Podcasts" width="249"></a> <a href="https://www.deezer.com/de/show/3402842" rel="noopener" target="_blank"><img alt="&quot;Ganz sicher&quot; auf Deezer" class="image-richtext image-inline" height="58" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher/button_deezer.jpg" title="&quot;Ganz sicher&quot; auf Deezer" width="249"></a> <a href="https://soundcloud.com/user-997874143-683023674/tracks" rel="noopener" target="_blank"><img alt="&quot;Ganz sicher&quot; auf Soundcloud" class="image-richtext image-inline" height="58" src="https://www.bgetem.de/redaktion/presse-aktuelles/bilder/themen-und-geschichten/podcast-ganz-sicher/button_soundcloud.jpg" title="&quot;Ganz sicher&quot; auf Soundcloud" width="249"></a><span></span></p>
+      </div>
+
+
+      {% for entry in podcasts %}
+      <div class="list-item mb-5">  
+        <hr class="media-default">
+        <div class="row g-3">
+          <div class="col-12 col-md-6 col-lg-4 mb-3 mb-md-0">
+            <div class="soundcloud-mask soundcloud-player" style="background: url({{ soundcloudGhost.getUrl({ width: 300 }) }}); background-repeat: no-repeat; background-size: cover; width: 100%; height: 300px; cursor: pointer;">
+              <small class="load-soundcloud-player px-5 d-flex justify-content-center align-items-center text-center h-100 w-100" style="background: rgba(255,255,255,0.8)" data-soundcloud-track-id="{{ entry.soundcloudTrackId }}">
+                <span class="">
+                  <b>Zum Aktivieren der Podcastfolge klicken Sie bitte hier. Mit der Aktivierung werden Daten an Soundcloud übermittelt. Weitere Informationen in unserer <a href="https://www.bgetem.de/die-bgetem/datenschutz">Datenschutzerklärung</a></b>.
+                </span></small>
+            </div>
+              {# {{ entry.embdedCode|raw }} #}
+          </div>
+          <div class="col-12 col-md-6 col-lg-8">
+            <a href="{{ entry.url }}">
+              <h3 class="mb-2">
+                {{ entry.title }}
+              </h3>
+              <p>
+                {{ entry.description }}
+              </p>
+            </a>
+            {# <h4 class="mt-4 h5 text-uppercase bg_font-variant-asc pt-2 text-muted mb-2 toggle-shownotes" style="cursor:pointer">Shownotes zeigen</h2>
+            <div class="mt-4 shownotes hidden">
+              <div class="text-body">
+                {{ entry.shownotes }}
+              </div>  
+            </div> #}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% include "_includes/component-sharing-buttons" %}
+      {% include "_includes/component-doc-actions" with {webcode:entry.webcode is defined ? entry.webcode : null} %}
+
+    </div>
+
+
+
+    <div class="col-lg-3 col-12 portlets">
+
+      <div class="portlet card card-shadow mb-3" {# style="max-width: 18rem;" #}>
+        <div class="card-header">
+          <h3 class="h6">Abo-Services</h3>
+        </div>
+        <div class="card-body portlet-body-wrapper">
+          <p>Bitte abonnieren Sie hier unsere aktuellen <a href="https://www.bgetem.de/++add++PressSubscriber"><strong>Pressemitteilungen</strong>.</a><br>Wenn Sie sich wieder abmelden möchten, nutzen Sie bitte <a href="https://www.bgetem.de/email-unsubscribe-view">diesen Link.</a></p>
+          <p>Abonnieren Sie unseren <strong><a href="https://www.bgetem.de/presse-aktuelles/pressemeldungen/aktuelle-pressemeldungen/RSS">News-Feed</a></strong> (Anleitung: <span class="external-link"><a href="https://www.bgetem.de/presse-aktuelles/rss-feed-so-gehts">RSS-Feed - So geht's</a>)</span></p>
+          <p>Oder abonnieren Sie unsere Newsletter <strong><a href="https://www.bgetem.de/medien-service/etem-magazin-fuer-praevention-rehabilitation-und-entschaedigung" title="Der Newsletter für Menschen mit Verantwortung für Arbeitssicherheit.">etem</a></strong><span> und&nbsp;<strong><a href="https://www.bgetem.de/medien-service/profi-zeitschrift-fuer-versicherte" title="Der Newsletter für Beschäftigte.">profi</a> </strong></span>an.</p>
+        </div>
+      </div>
+
+      <div class="portlet card card-shadow mb-3" {# style="max-width: 18rem;" #}>
+        <div class="card-header"><h3 class="h6">Deutsche Gesetzliche Unfallversicherung</h3></div>
+        <div class="card-body portlet-body-wrapper">
+          <div class="row">
+            <div class="col-12">
+              <span>
+                <p><a target="_blank" href="https://www.asu-arbeitsmedizin.com/wissenschaft/schweissrauchexpositionen-deutschland-und-bewertung-der-gesundheitsschaedigenden">Gefahren durch Schweißrauchexpositionen</a><br>
+                   <small>17.04.2023 06:36</small></p>
+              </span>
+              <span>
+                <p><a target="_blank" href="https://topeins.dguv.de/kolumne/aufgaben-fuehrungskraft/">Ohne Schmierstoff geht es nicht</a><br>
+                   <small>14.04.2023 06:54</small></p>
+              </span>
+              <span>
+                <p><a target="_blank" href="https://www.bgbau.de/mitteilung/im-fruehjahr-vor-sonne-schuetzen">Schon im Frühjahr vor der Sonne schützen</a><br>
+                   <small>13.04.2023 06:30</small></p>
+              </span>
+              <span>
+                <p><a target="_blank" href="https://www.ukrlp.de/sicherheit-gesundheitsschutz/gesundheit-im-betrieb/homeoffice">Homeoffice-Guide</a><br>
+                   <small>12.04.2023 07:53</small></p>
+              </span>
+              <span>
+                <p><a target="_blank" href="https://etem.bgetem.de/2.2023/titelstories/die-richtigen-worte-finden/document_view?pk_campaign=etem-newsletter-2.2023&amp;pk_kwd=2-die-richtigen-worte-finden">Umgang mit psychisch auffälligen Beschäftigten</a><br>
+                   <small>11.04.2023 06:20</small></p>
+              </span>
+              <a class="btn btn-secondary" role="button" href="https://www.bgetem.de/presse-aktuelles/portlets/deutsche-gesetzliche-unfallversicherung">Weiterlesen</a>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,9 +1,9 @@
-columnSuffix: kvanrpqi
+columnSuffix: ukhattfs
 contentColumnType: integer(10)
-fieldGroup: 6c8ca4b5-faaa-4685-9881-dc933c2a9500 # Meta
-handle: readTime
+fieldGroup: d3f57e59-0c8a-492b-817e-785c378f3689 # Podcast
+handle: soundcloudTrackId
 instructions: null
-name: Lesezeit
+name: 'Soundcloud Track ID'
 searchable: false
 settings:
   decimals: 0
@@ -12,7 +12,7 @@ settings:
   min: 0
   prefix: null
   previewCurrency: null
-  previewFormat: decimal
+  previewFormat: none
   size: null
   suffix: null
 translationKeyFormat: null

@@ -1,0 +1,9 @@
+baseUrl: '@rootUrl/bgetem'
+enabled: '1'
+handle: bgetem
+hasUrls: true
+language: de-DE
+name: 'BG ETEM'
+primary: false
+siteGroup: 3d14b3e6-9841-4b6f-95a9-77fe717967f5 # bgetem
+sortOrder: 8
