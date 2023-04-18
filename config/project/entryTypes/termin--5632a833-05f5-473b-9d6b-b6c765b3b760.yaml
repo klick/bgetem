@@ -26,10 +26,39 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 43843773-3e2d-4644-be8b-a23b1e7047ca
+            uid: 719fe64d-0e9f-442b-8325-bdbb61767d0c
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 708709a9-02a0-41c1-8931-0b37fea52893 # Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a4d52e1-cb43-4070-a1ff-9b3fdc1fa408
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 521f96ac-3b44-4e73-a05f-311c6df1f990 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 032b90b9-1cc5-4b87-8cc5-090790688270
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: e52e1d04-269a-46ec-bb56-74ea9c35f82d
+            userCondition: null
           -
             elementCondition: null
             fieldUid: d7cae9fd-1be3-4d89-a7fa-090c21d05a43 # Ort
@@ -68,18 +97,6 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: abfae7f9-d019-4fa1-a1f3-8e743c97f5c7 # Termin URL
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: fa71f6e4-30dd-4b70-b0d1-7e3cc15d9627
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            elementCondition: null
             fieldUid: 7e83231a-8956-4d31-8506-f9e905dee038 # Kontaktperson
             instructions: null
             label: null
@@ -90,8 +107,55 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 4a5ff656-246d-418c-8c67-428143f0915b
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: abfae7f9-d019-4fa1-a1f3-8e743c97f5c7 # Termin URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa71f6e4-30dd-4b70-b0d1-7e3cc15d9627
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: a5790d28-8359-4a0e-99b4-3daa6c6a42dc
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 633453b0-2ce8-4018-8b02-64311a3350c5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b467da4-b654-4a9f-98e9-e7ef9ae0edbc
+            userCondition: null
+            warning: null
+            width: 100
+        name: Meta
+        uid: 8a1c73f1-1933-4d4c-96c6-13d334a4e4ba
         userCondition: null
 handle: termin
 hasTitleField: true

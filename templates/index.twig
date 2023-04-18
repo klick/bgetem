@@ -1,12 +1,24 @@
-bgetem<br>
-Site ID: {{ currentSite.id }}
-{{ (currentUser ? '<br> User ID:' ~ currentUser.id ~ '<br> User Name: ' ~ currentUser.name ~ ' <a href="/logout">(Abmelden)</a>' : null)|raw }}
-<br>Site handle: {{ currentSite.handle }}
-<br>Site Name: {{ currentSite.name }}
-<br><a href="magazin">–> etem Magazin</a>
-<br><a href="medien">–> Medien</a>
-<br><a href="keycloak">–> Keycloak</a>
-<br><a href="bghw">–> BGHW</a>
-<br><a href="bgetemintranet">–> BGETEM Intranet</a>
-<br><a href="inventar">–> Inventar</a>
-{# {{ craft.app.request.hostInfo|split('.') }} #}
+{% set allSites = craft.app.sites.getAllSites() %}
+{% set filteredSites = allSites|filter(site => site.id != 1) %}
+<html>
+	<head>
+		<title>BG ETEM Design Staging</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+	</head>
+	<body>
+		<div class="h-100 w-100 d-flex justify-content-center align-items-center">
+			<article>
+				<section class="article-body">
+					<ul class="arrowed">
+					{% for site in filteredSites %}
+						<li><b><a href="{{ site.baseUrl }}" class="text-decoration-none">{{ site.name }}</a></b></li>
+					{% endfor %}
+					</ul>
+				</section>
+			</article>
+			
+		</div>
+	</body>
+</html>

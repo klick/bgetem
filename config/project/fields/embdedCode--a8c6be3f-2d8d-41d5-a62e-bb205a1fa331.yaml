@@ -1,17 +1,17 @@
-columnSuffix: bglpicif
+columnSuffix: witvhrtl
 contentColumnType: text
-fieldGroup: 6c8ca4b5-faaa-4685-9881-dc933c2a9500 # Meta
-handle: webcode
+fieldGroup: d3f57e59-0c8a-492b-817e-785c378f3689 # Podcast
+handle: embdedCode
 instructions: null
-name: Webcode
-searchable: true
+name: 'Embded Code'
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: true
   columnType: null
   initialRows: 4
-  multiline: false
+  multiline: true
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

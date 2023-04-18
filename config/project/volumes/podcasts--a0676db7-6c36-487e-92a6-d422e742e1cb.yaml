@@ -1,0 +1,55 @@
+fieldLayouts:
+  828c7e0f-4e50-4c57-a03c-d8a2dccf0886:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 506cfc3f-4f9d-45b5-a405-c04bf22276dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7041c97d-0f49-465a-8929-71e84dbb3232 # Dateigröße
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 822bce1c-f447-4062-88b9-298fb715d711
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 9efc50d6-1487-4b72-8bb4-4dadcc1b3013
+        userCondition: null
+fs: audio
+handle: podcasts
+name: Podcasts
+sortOrder: 6
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

@@ -1,4 +1,5 @@
-ul.listing {
+ul.listing
+*.list-item {
 	margin: 24px 0;
 	@include lg() {
 		margin: 48px 0;
@@ -107,3 +108,31 @@ ul.listing {
 		}
 	}
 }
+
+// TMP
+
+			.list-item {    
+
+
+
+    p, ul {
+        font-size: 16px;
+        color: #3c3c3c;
+    }
+
+}
+
+
+@include lg() {
+
+    .list-item {
+
+
+        p, ul {
+            font-size: 22px;
+        }
+        
+    }
+    
+    
+  }   

@@ -1,6 +1,6 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+fieldGroup: 6c8ca4b5-faaa-4685-9881-dc933c2a9500 # Meta
 handle: previousEntry
 instructions: null
 name: 'Previous Entry'
@@ -12,6 +12,17 @@ settings:
   maintainHierarchy: false
   maxRelations: 1
   minRelations: null
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\Entry
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\entries\EntryCondition
   selectionLabel: null
   showSiteMenu: false
   sources:

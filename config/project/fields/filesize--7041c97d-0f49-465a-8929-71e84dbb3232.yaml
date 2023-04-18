@@ -1,9 +1,9 @@
-columnSuffix: kvanrpqi
+columnSuffix: wdygauqo
 contentColumnType: integer(10)
-fieldGroup: 6c8ca4b5-faaa-4685-9881-dc933c2a9500 # Meta
-handle: readTime
+fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
+handle: filesize
 instructions: null
-name: Lesezeit
+name: Dateigröße
 searchable: false
 settings:
   decimals: 0
@@ -12,7 +12,7 @@ settings:
   min: 0
   prefix: null
   previewCurrency: null
-  previewFormat: decimal
+  previewFormat: none
   size: null
   suffix: null
 translationKeyFormat: null

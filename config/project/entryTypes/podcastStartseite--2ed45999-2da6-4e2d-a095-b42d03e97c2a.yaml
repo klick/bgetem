@@ -1,0 +1,55 @@
+fieldLayouts:
+  fe437a0f-e951-4bb3-9e6f-02379863542f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 24e46703-a4bd-4534-8391-9aa6dc209bcf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9535d1b7-e342-417e-8b4b-7239c5d508fa # Webcode
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 529afd86-a767-4a22-bc93-295532f9422d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: c734b6ff-5a3c-43ee-9293-0fb556c452fc
+        userCondition: null
+handle: podcastStartseite
+hasTitleField: true
+name: 'Podcast Startseite'
+section: 3a7fa103-6e30-4c3b-a876-068a446f8fb0 # Podcast Startseite
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

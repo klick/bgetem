@@ -21,6 +21,11 @@ siteSettings:
     hasUrls: true
     template: null
     uriFormat: 'presse-aktuelles/{slug}'
+  187b2b2b-01ad-4963-b201-d3e5050521a8: # BG ETEM
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: 'presse-aktuelles/{slug}'
   265b612b-3848-4489-a762-54ddab4e55af: # BG ETEM Intranet
     enabledByDefault: true
     hasUrls: true

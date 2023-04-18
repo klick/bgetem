@@ -1,14 +1,14 @@
-columnSuffix: bglpicif
+columnSuffix: jjuqdxgm
 contentColumnType: text
 fieldGroup: 6c8ca4b5-faaa-4685-9881-dc933c2a9500 # Meta
-handle: webcode
+handle: cardcolor
 instructions: null
-name: Webcode
-searchable: true
+name: Cardcolor
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
-  code: true
+  code: false
   columnType: null
   initialRows: 4
   multiline: false

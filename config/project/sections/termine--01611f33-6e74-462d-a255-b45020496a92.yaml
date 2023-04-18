@@ -4,6 +4,11 @@ handle: termine
 name: Termine
 propagationMethod: all
 siteSettings:
+  187b2b2b-01ad-4963-b201-d3e5050521a8: # BG ETEM
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: 'presse-aktuelles/termine/{slug}'
   0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
     enabledByDefault: true
     hasUrls: false

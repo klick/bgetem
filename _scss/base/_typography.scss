@@ -37,7 +37,6 @@ h2,
 
 h1, 
 h2, 
-h3, 
 p, 
 ul 
 li {
@@ -58,7 +57,17 @@ h3 {
 
 
 
+div.text-body {
+	h1, 
+	h2, 
+	h3, 
+	p, 
+	ul 
+	li {
+		margin: revert;
+	}
 
+}
 
 
 
@@ -152,6 +161,7 @@ form button.btn,
 		li.listing__item p,
 		ul,
 		ol,
+		p,
 		dl {
 			font-size: 22px;
 			line-height: 1.45em;
