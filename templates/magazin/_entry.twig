@@ -90,14 +90,16 @@ article section.article-body figure.cover figcaption * {
 			      height: 746,
 			  }
 			} %}
+			{% set cover = entry.titlestoryCover[0] ??? entry.cover[0] %}
 			{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
-				{% if entry.titlestoryCover is not empty %}
+			{{ craft.images.pictureMedia(cover, imgTransforms, null, cardImgAttributes) }}
+				{# {% if entry.titlestoryCover is not empty %}
 				{{ craft.images.pictureMedia(entry.titlestoryCover[0], imgTransforms, null, cardImgAttributes) }}
 				{% elseif entry.cover is not empty %}
 				{{ craft.images.pictureMedia(entry.cover[0], imgTransforms, null, cardImgAttributes) }}
-				{% endif %}
+				{% endif %} #}
 				<figcaption>
-					{{ entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
+					{{ cover.imgCaption ??? entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
 				</figcaption>
 			</figure>
 		</div>
@@ -114,8 +116,6 @@ article section.article-body figure.cover figcaption * {
 					{{ (entry.text | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 
-
-
 					{% if entry.infobox is not empty %}
 					<div class="infobox infobox-1 mt-5 mt-lg-0 me-lg-5 mb-5 border border-dguv-cyan border-dashed p-3 p-md-4{% if entry.text2 is not empty %} floating mt-lg-0 me-lg-5{%endif %}">
 						{{ entry.infobox }}
@@ -127,7 +127,7 @@ article section.article-body figure.cover figcaption * {
 						<script src="//e.video-cdn.net/v2/embed.js"></script>
 					{% endif %}
 
-					{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
+					{# {% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %} #}
 
 					{% if  entry.text2 is not empty %}
 					<div class="text-2 mt-5 mb-5">
@@ -146,11 +146,6 @@ article section.article-body figure.cover figcaption * {
 						{{ (entry.text3 | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 					{% endif %}
-
-
-					
-
-					
 
 					{% if entry.galerieposition != 'oben' and entry.video1 is not empty%}
 					<div class="video mt-5 mb-5">
@@ -185,6 +180,18 @@ article section.article-body figure.cover figcaption * {
 			</div>
 		</div>
 	</aside>
+	{% endif %}
+	{% if entry.tagsMagazin is not empty %}
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-7 col-md-7">
+					<h6 class="border-top pt-2 mb-2">Tags</h6>
+					{% for tag in entry.tagsMagazin %}
+						<a href="{{ url('tags/'~tag.slug) }}" class="me-2 text-decoration-none">#{{ tag.title }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
 	{% endif %}
 </article>
 

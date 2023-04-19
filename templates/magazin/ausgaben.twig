@@ -21,7 +21,9 @@
 	<div class="container issue-nav mb-5">
 		<div class="row">
 			{% for year, entriesInYear in issuesByYear %}
-
+					<div class="col-12 mt-5">
+						<h2 class="pt-2 border-top"><b>{{ year }}</b></h2>
+					</div>
 					{% for entry in entriesInYear %}
 					{% set issueCoverAttributes = { alt: entry.title, title: 'etem Ausgabe' ~ entry.title, class:'card-img-top rounded-0 border border-light' } %}
 					<div class="ausgabe-thumb col-3 col-md-3 col-lg-2 my-1 my-lg-3 pt-3 pb-2{{ craft.app.request.getSegment(1) == entry.title ? ' active bg-dguv-cyan text-white' }}">

@@ -5,29 +5,35 @@ medien/index
 {% import '_macros.twig' as macros %}
 {% extends "_layout" %}
 
-{% set searchQuery = craft.app.request.getParam('suchtext') %}
+{% set searchtext = craft.app.request.getParam('suchtext') %}
+{% set queryParams = searchtext ? {'suchtext': searchtext} : {} %}
+{% set currentUrl = url(craft.app.request.pathInfo, queryParams) %}
 
-{% if searchQuery %}
-	{% set artikel = craft.entries.sectionId(1).with(['titlestoryCover','cover']).search(searchQuery).limit(10).orderBy('score') %}
+
+{% set searchQuery = craft.app.request.getParam('suchtext') %}
+{% set tagSlug = craft.app.request.getParam('tag') %}
+
+{% if tagSlug %}
+{% set tag = craft.tags.slug(tagSlug).one() %}
 {% endif %}
 
 
-{# {% set filterCategories = craft.categories()
-  .groupId('7,8,4,3')
-  .all()
- %}
- {% set filterCategoriesGrouped = filterCategories|group(e => e.group) %} #}
+{% set searchParams = {
+	siteId: 2,
+  section: 'magazin',
+  search: searchQuery,
+  limit: 10,
+  orderBy: 'score',
+} %}
 
+{% if tagSlug %}
+{% if tag %}
+  {% set searchParams = searchParams|merge({ relatedTo: tag }) %}
+{% endif %}
+{% endif %}
 
+{% paginate craft.entries(searchParams) as pageInfo, entries %}
 
-{% paginate artikel as pageInfo, pageEntries %}
-
-{# {% do craft.blitz.options({
-    cachingEnabled: true,
-    cacheElements: true,
-    cacheElementQueries: true,
-    tags: ['medienStart']
-}) %} #}
 
 {% set artikelCoverTransforms = {
 	  '(min-width: 1px)': {
@@ -38,11 +44,8 @@ medien/index
 } %}
 
 
-
-
-
-
 {% block content %}
+
 
 <div class="container">
 	<div class="row">
@@ -52,21 +55,21 @@ medien/index
 				<div class="row align-items-baseline mb-2">
 				{% if searchQuery %}
 					<div class="col-7 text-start">
-						<b>Suchergebnisse für „{{ searchQuery }}“</b>
+						<b>Suchergebnisse für „{{ searchQuery }}“{% if tagSlug %} und #{{ tag }}{% endif %}</b>
 					</div>
 					<div class="col-5 text-end">
-						<small>Gefundene Artikel: {{ artikel|length }}</small>
+						<small>Gefundene Artikel: {{craft.entries(searchParams)|length }}</small>
 					</div>
 				</div>
 				{% else %}
 					<div class="col-12 text-end">
-						<small>Gefundene Artikel: {{ artikel|length }}</small>
+						<small>Gefundene Artikel: {{ craft.entries(searchParams)|length }}</small>
 					</div>
 				{% endif %}
 
 
 				<ul class="listing m-0">
-					{% for artikel in pageEntries %}
+					{% for artikel in entries %}
 					<li class="card listing__item mb-5 pt-">
 						
 							<div class="item-wrapper has-image row">	
@@ -100,7 +103,7 @@ medien/index
 										<div class="tags mt-3">
 											<small>
 												{% for tag in artikel.tagsMagazin %}
-													<a href="{{ url('tags/'~tag.slug) }}" class="me-2 text-decoration-none">#{{ tag.title }}</a>
+													<a href="{{ currentUrl }}&tag={{tag.slug}}" class="me-2 text-decoration-none">#{{ tag.title }}</a>
 												{% endfor %}
 											</small>
 										</div>
