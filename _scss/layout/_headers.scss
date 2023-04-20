@@ -18,3 +18,39 @@ header {
 		}
 	}
 }
+div.magazine-header-wrapper {
+	z-index: 2;
+	position: fixed;
+    width: 100vw;
+    top: 0;
+   	transition: all 0.3s;
+   	*, svg {
+   		transition: all 0.3s;
+   	}
+   	header.header-global {
+		transition: all 0.3s;
+		background: #ffffff;
+	}
+   	&.scrolled {
+   		header.header-global {
+   			padding: 1rem 0 !important;
+   			transition: all 0.3s;
+   		}
+   		nav.navbar {
+			padding: .5rem 0 !important;
+			transition: all 0.3s;
+   		}
+   		svg {
+   			max-width: 80px !important;
+   			transition: all 0.3s;
+   		}
+	   	nav.navbar {
+	   		margin-top:-20px;
+	   		opacity: 0;
+	   	}
+   	}
+
+}
+div.magazine-content {
+	margin-top: 320px;
+}

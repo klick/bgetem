@@ -6,7 +6,9 @@ medien/index
 {% extends "_layout" %}
 
 {% set searchtext = craft.app.request.getParam('suchtext') %}
+{% set orderParam = craft.app.request.getParam('orderBy') %}
 {% set queryParams = searchtext ? {'suchtext': searchtext} : {} %}
+{% set orderMethod = orderParam == 'postDate' ? 'postDate DESC' : 'score' %}
 {% set currentUrl = url(craft.app.request.pathInfo, queryParams) %}
 
 
@@ -23,7 +25,7 @@ medien/index
   section: 'magazin',
   search: searchQuery,
   limit: 10,
-  orderBy: 'score',
+  orderBy: orderMethod,
 } %}
 
 {% if tagSlug %}
@@ -44,6 +46,8 @@ medien/index
 } %}
 
 
+
+
 {% block content %}
 
 
@@ -56,9 +60,11 @@ medien/index
 				{% if searchQuery %}
 					<div class="col-7 text-start">
 						<b>Suchergebnisse für „{{ searchQuery }}“{% if tagSlug %} und #{{ tag }}{% endif %}</b>
+
 					</div>
 					<div class="col-5 text-end">
-						<small>Gefundene Artikel: {{craft.entries(searchParams)|length }}</small>
+
+						<small><span class="me-4">Sortieren: {% if orderParam == 'postDate' %}<a href="{{ currentUrl }}&orderBy=score">Beste Ergebisse</a>{% else %}Beste Ergebisse{% endif %} | {% if orderParam == 'score' or orderParam|length == 0 %}<a href="{{ currentUrl }}&orderBy=postDate">Datum</a>{% else %}Datum{% endif %}</span>Gefundene Artikel: {{craft.entries(searchParams)|length }}</small>
 					</div>
 				</div>
 				{% else %}
@@ -99,7 +105,7 @@ medien/index
 											<p>{{ artikel.intro }}</p>
 										</div>
 									</a>
-									{% if artikel.tagsMagazin|length %}
+									{# {% if artikel.tagsMagazin|length %}
 										<div class="tags mt-3">
 											<small>
 												{% for tag in artikel.tagsMagazin %}
@@ -107,18 +113,13 @@ medien/index
 												{% endfor %}
 											</small>
 										</div>
-									{% endif %}
+									{% endif %} #}
 								</div>
-
-
 							</div>
 						</a>
 					</li>
 					{% endfor %}
 				</ul>
-
-
-
 				{% if pageInfo.total > 10 %}
 				<div class="pagination my-5">
 					<nav aria-label="Page navigation example">

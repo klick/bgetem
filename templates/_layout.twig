@@ -11,7 +11,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
+		{# <link rel="manifest" href="/site.webmanifest"> #}
 		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#004993">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<meta name="msapplication-TileColor" content="#ffffff">
@@ -32,57 +32,40 @@
 	<body>
 
 		<!-- Header -->
-
-		<header class="header-global py-4 py-lg-5">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-6">
-						<a class="link-home me-auto" href="{{ currentSite.baseUrl }}{{ craft.entries.section('ausgaben').one().slug }}" title="Zur Ausgabe {{ craft.entries.section('ausgaben').one().title }} der etem.">
-							<svg class="logo-etem" viewBox="91.016 167.276 263.207 87.514" xmlns="http://www.w3.org/2000/svg">
-								<path d="M 144.349 221.274 L 144.349 219.811 C 144.349 203.984 142.487 197.733 136.768 191.881 C 132.246 187.226 125.995 184.699 118.813 184.699 C 110.833 184.699 104.316 187.625 98.996 193.876 C 93.41 200.526 91.016 207.708 91.016 218.88 C 91.016 240.825 102.055 254.125 120.409 254.125 C 128.921 254.125 136.901 251.199 142.753 245.879 L 138.763 239.229 C 134.108 243.485 128.921 245.48 122.537 245.48 C 115.887 245.48 109.769 243.086 106.045 237.367 C 103.784 233.909 102.986 229.121 102.986 222.87 L 102.986 221.274 Z M 133.31 213.427 L 102.986 213.427 C 103.518 199.728 108.838 192.812 118.281 192.812 C 123.335 192.812 127.99 195.073 130.251 198.664 C 132.246 201.856 133.177 206.245 133.31 213.427 Z M 190.234 186.428 L 173.609 186.428 C 173.609 178.581 174.673 169.404 174.939 167.276 L 164.033 169.67 C 163.767 171.798 162.969 180.709 162.969 186.428 L 154.324 186.428 L 154.324 194.275 L 162.969 194.275 L 162.969 239.761 C 162.969 246.411 164.698 250.667 169.353 252.928 C 171.88 254.125 174.54 254.79 177.998 254.79 C 182.653 254.79 186.377 253.859 189.702 252.13 L 188.239 245.48 C 186.377 246.411 184.648 246.81 181.722 246.81 C 175.205 246.81 173.21 244.283 173.21 236.968 L 173.21 194.275 L 187.042 194.275 L 190.234 186.428 Z M 252.877 221.274 L 252.877 219.811 C 252.877 203.984 251.015 197.733 245.296 191.881 C 240.774 187.226 234.523 184.699 227.341 184.699 C 219.361 184.699 212.844 187.625 207.524 193.876 C 201.938 200.526 199.544 207.708 199.544 218.88 C 199.544 240.825 210.583 254.125 228.937 254.125 C 237.449 254.125 245.429 251.199 251.281 245.879 L 247.291 239.229 C 242.636 243.485 237.449 245.48 231.065 245.48 C 224.415 245.48 218.297 243.086 214.573 237.367 C 212.312 233.909 211.514 229.121 211.514 222.87 L 211.514 221.274 Z M 241.838 213.427 L 211.514 213.427 C 212.046 199.728 217.366 192.812 226.809 192.812 C 231.863 192.812 236.518 195.073 238.779 198.664 C 240.774 201.856 241.705 206.245 241.838 213.427 Z M 354.223 252.662 L 354.223 202.654 C 354.223 192.147 347.44 184.699 337.598 184.699 C 330.815 184.699 322.702 188.955 316.318 195.738 C 313.924 188.689 307.407 184.699 300.89 184.699 C 294.107 184.699 285.994 189.753 281.605 194.674 C 281.605 190.551 279.743 185.896 279.211 184.832 L 269.103 187.226 C 269.635 188.157 271.497 192.812 271.497 201.324 L 271.497 252.662 L 281.472 252.662 L 281.472 203.186 C 288.388 196.935 293.309 194.408 298.363 194.408 C 301.422 194.408 303.55 195.206 305.146 197.068 C 306.609 198.93 307.008 201.59 307.008 205.58 L 307.008 252.662 L 317.515 252.662 L 317.515 204.25 C 324.431 197.866 329.086 194.009 335.071 194.009 C 340.657 194.009 343.583 197.334 343.583 203.718 L 343.583 252.662 L 354.223 252.662 Z" style="fill: rgb(0, 73, 148);" stroke="none"/>
-							</svg>
-						</a>
-					</div>
-					<div class="col-4 ms-auto">
-						{{ include('_includes/logo-bgetem-is.twig', {class: 'ms-auto'}) }}	
+		<div class="magazine-header-wrapper">
+			<header class="magazine header-global border-bottom py-4 py-lg-5">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-6">
+							<a class="link-home me-auto" href="{{ currentSite.baseUrl }}{{ craft.entries.section('ausgaben').one().slug }}" title="Zur Ausgabe {{ craft.entries.section('ausgaben').one().title }} der etem.">
+								<svg class="logo-etem logo-bgetem-is" viewBox="91.016 167.276 263.207 87.514" xmlns="http://www.w3.org/2000/svg">
+									<path d="M 144.349 221.274 L 144.349 219.811 C 144.349 203.984 142.487 197.733 136.768 191.881 C 132.246 187.226 125.995 184.699 118.813 184.699 C 110.833 184.699 104.316 187.625 98.996 193.876 C 93.41 200.526 91.016 207.708 91.016 218.88 C 91.016 240.825 102.055 254.125 120.409 254.125 C 128.921 254.125 136.901 251.199 142.753 245.879 L 138.763 239.229 C 134.108 243.485 128.921 245.48 122.537 245.48 C 115.887 245.48 109.769 243.086 106.045 237.367 C 103.784 233.909 102.986 229.121 102.986 222.87 L 102.986 221.274 Z M 133.31 213.427 L 102.986 213.427 C 103.518 199.728 108.838 192.812 118.281 192.812 C 123.335 192.812 127.99 195.073 130.251 198.664 C 132.246 201.856 133.177 206.245 133.31 213.427 Z M 190.234 186.428 L 173.609 186.428 C 173.609 178.581 174.673 169.404 174.939 167.276 L 164.033 169.67 C 163.767 171.798 162.969 180.709 162.969 186.428 L 154.324 186.428 L 154.324 194.275 L 162.969 194.275 L 162.969 239.761 C 162.969 246.411 164.698 250.667 169.353 252.928 C 171.88 254.125 174.54 254.79 177.998 254.79 C 182.653 254.79 186.377 253.859 189.702 252.13 L 188.239 245.48 C 186.377 246.411 184.648 246.81 181.722 246.81 C 175.205 246.81 173.21 244.283 173.21 236.968 L 173.21 194.275 L 187.042 194.275 L 190.234 186.428 Z M 252.877 221.274 L 252.877 219.811 C 252.877 203.984 251.015 197.733 245.296 191.881 C 240.774 187.226 234.523 184.699 227.341 184.699 C 219.361 184.699 212.844 187.625 207.524 193.876 C 201.938 200.526 199.544 207.708 199.544 218.88 C 199.544 240.825 210.583 254.125 228.937 254.125 C 237.449 254.125 245.429 251.199 251.281 245.879 L 247.291 239.229 C 242.636 243.485 237.449 245.48 231.065 245.48 C 224.415 245.48 218.297 243.086 214.573 237.367 C 212.312 233.909 211.514 229.121 211.514 222.87 L 211.514 221.274 Z M 241.838 213.427 L 211.514 213.427 C 212.046 199.728 217.366 192.812 226.809 192.812 C 231.863 192.812 236.518 195.073 238.779 198.664 C 240.774 201.856 241.705 206.245 241.838 213.427 Z M 354.223 252.662 L 354.223 202.654 C 354.223 192.147 347.44 184.699 337.598 184.699 C 330.815 184.699 322.702 188.955 316.318 195.738 C 313.924 188.689 307.407 184.699 300.89 184.699 C 294.107 184.699 285.994 189.753 281.605 194.674 C 281.605 190.551 279.743 185.896 279.211 184.832 L 269.103 187.226 C 269.635 188.157 271.497 192.812 271.497 201.324 L 271.497 252.662 L 281.472 252.662 L 281.472 203.186 C 288.388 196.935 293.309 194.408 298.363 194.408 C 301.422 194.408 303.55 195.206 305.146 197.068 C 306.609 198.93 307.008 201.59 307.008 205.58 L 307.008 252.662 L 317.515 252.662 L 317.515 204.25 C 324.431 197.866 329.086 194.009 335.071 194.009 C 340.657 194.009 343.583 197.334 343.583 203.718 L 343.583 252.662 L 354.223 252.662 Z" style="fill: rgb(0, 73, 148);" stroke="none"/>
+								</svg>
+							</a>
+						</div>
+						<div class="col-4 ms-auto">
+							{{ include('_includes/logo-bgetem.twig', {class: 'ms-auto'}) }}
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>	
-		<nav class="navbar navbar-light border-top border-bottom border-light py-3 py-md-4">
-			<div class="container d-flex align-items-center">
-				<p><a class="navbar-brand mb-0 me-auto fw-bold">{{ currentSite.name }}</a></p>
-				{% if not (searchQuery is defined or tag is defined or craft.app.request.segments|last == 'ausgaben') %}
+			</header>	
+			<nav class="navbar navbar-light border-bottom border-light py-3 py-md-4">
+				<div class="container d-flex align-items-center">
+					<p><a class="navbar-brand mb-0 me-auto fw-bold">{{ currentSite.name }}</a></p>
 					<span class="ms-auto">
+						{% if not (searchQuery is defined or tag is defined or craft.app.request.segments|last == 'ausgaben') %}
 						<b>Ausgabe {{ entry.section.id == 1 ? entry.ausgabe : entry.title }}</b> | 
+						{% endif %}
 						<small class="d-inline"><a href="{{ alias(currentSite.baseUrl) }}ausgaben" class="me-3 text-dark">Alle Ausgaben</a></small>
 					</span>
-					
-				{# <button type="button" class="btn btn-outline-secondary border-light ms-auto me-3" data-toggle="modal" data-target=".bd-example-modal-lg">
-				Ausgabe {{ entry.section.id == 1 ? entry.ausgabe : entry.title }}
-				</button> #}
-				<button type="button" class="btn btn-outline-secondary border-light ms-0 toggle-searchfield">
-	                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-	                	<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-	                </svg>
-	            </button>
-	            {% endif %}
-		  	</div>
-		</nav>
-
-		{%- js -%}
-			
-			$(document).ready(function(){
-				$(document).on('click', 'button.toggle-searchfield', function(){
-					$('div.searchfield').toggleClass('hidden');
-				})
-			})
-
-		{%- endjs -%}
-
-		<!-- End Header -->
-		
-		<!-- Suche -->
+					<button type="button" class="btn btn-outline-secondary border-light ms-0 toggle-searchfield">
+		                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+		                	<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+		                </svg>
+		            </button>
+			  	</div>
+			</nav>
+			<!-- Suche -->
 
 		<div class="border-bottom bg_border-light searchfield hidden">
 		  <div class="container bg-layout_medien_container py-5">
@@ -106,10 +89,24 @@
 		    </div>
 		  </div>
 		</div>
+		</div>
+		
+
+		{%- js -%}
+		$(document).ready(function(){
+			$(document).on('click', 'button.toggle-searchfield', function(){
+				$('div.searchfield').toggleClass('hidden');
+			})
+		})
+		{%- endjs -%}
+
+		<!-- End Header -->
+		
+		
 
 		<!-- End Suche -->
 
-		<div id="my-page">
+		<div id="my-page" class="magazine-content">
 			{% block content %}
 			<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 			<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
@@ -212,73 +209,29 @@
 
 		<!-- Ensd To-Top-Pfeil -->
 		
-
-	{% set issuesByYear = craft.entries.siteId(2).sectionId(2).with(['cover']).orderBy('postDate desc').all()|group(e => e.postDate|date('Y')) %}
-
-	{% cache %}
-
-	{% set issueCoverTransforms = {
-	  '(min-width: 345px)': {
-	      width: 180,
-	      mode: 'fit'
-	  },
-	  '(min-width: 1200px)': {
-	      width: 80,
-	      mode: 'fit'
-	  }
-	} %}
-
-	<!-- Ausgaben-Navigation -->
-
-	<div class="modal issue-nav bd-example-modal-lg align-items-center">
-		<div class="min-vh-100 d-lg-flex align-items-lg-center">
-			<div class="container">
-				<div class="row align-items-center justify-content-space-between mb-3">
-					<div class="col mt-4 mt-lg-0">
-						<h1 class="h2 fw-bold p-0 m-0">Alle Ausgaben der etem</h1>
-					</div>
-					<div class="col text-end mt-4 mt-lg-0">
-						<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-          					<span aria-hidden="true" class="d-none">&times;</span>
-        				</button>
-					</div>
-				</div>
-				<div class="row align-items-center">
-  					{% for year, entriesInYear in issuesByYear %}
-  					<div class="col-3 col-md-3 col-lg-1 d-flex align-items-center justify-content-center">
-  						<h2 class="fw-bold">{{ year }}</h2>
-  					</div>
-					{% for entry in entriesInYear %}
-					{% set issueCoverAttributes = { alt: entry.title, title: 'etem Ausgabe' ~ entry.title, class:'card-img-top rounded-0' } %}
-					<div class="ausgabe-thumb col-3 col-md-3 col-lg-1 mt-3 mb-3 pt-3 pb-2{{ craft.app.request.getSegment(1) == entry.title ? ' active bg-dguv-cyan text-white' }}">
-    					<a href="{{ entry.url }}" class="text-decoration-none text-dark">
-	    					<figure class="mb-2">
-	    						{{ craft.images.pictureMedia(entry.cover[0], issueCoverTransforms, null, issueCoverAttributes) }}
-	    					</figure>
-    						<p class="{{ craft.app.request.getSegment(1) == entry.title ? ' fw-bold color-dguv-cyan' }}">{{ entry.title }}</p>	    					
-    					</a>
-    				</div>
-					{% endfor %}
-					{% endfor %}
-	      		</div>
-			</div>
-	 	</div>
-	</div>
-
-	{% endcache %}
-
-	<!-- End Ausgaben-Navigation -->
-
-
-
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/jquery-3.4.1.slim.min.js"></script>
-{# <script src="https://kenwheeler.github.io/slick/slick/slick.js"></script> #}
-
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/popper.min.js"></script>
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bootstrap.min.js"></script>
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bundle.js"></script>
+
+		{%- js -%}
+		$(document).ready(function () {
+	      const header = $('.magazine-header-wrapper');
+	      const scrollThreshold = 50;
+
+	      $(window).scroll(function () {
+	        const scrollTop = $(this).scrollTop();
+
+	        if (scrollTop > scrollThreshold) {
+	          header.addClass('scrolled');
+	        } else {
+	          header.removeClass('scrolled');
+	        }
+	      });
+	    });
+		{%- endjs -%}
 		
-{# 				<script>
+		{# <script>
 		$(document).ready(function() {
 			 alert('shown'); 
 				$( ".navbar-toggler-word" ).on( "click", function() {
@@ -306,70 +259,6 @@
 
 
 			});
-
-		
-
 		</script> #}
-
-		<script>
-			
-		  $(document).ready(function(){
-		  	$('.slider_campaigns').slick({
-		    	fade: false,
-				mobileFirst: true,
-				variableWidth: false,
-				arrows: false,
-				autoplay: true,
-				autoplaySpeed: 5000,
-				prevArrow:$('.previ_slider'),
-		  		nextArrow:$('.nexti_slider'),
-				infinite: true,
-				  	responsive: [
-		  		{
-			      breakpoint: 1,
-			      settings: {
-			        arrows: false,
-			        //centerMode: true,
-			        //centerPadding: '40px',
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    },
-			    {
-			      breakpoint: 600,
-			      settings: {
-			        arrows: false,
-			        //centerMode: true,
-			        //centerPadding: '40px',
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    },
-			    {
-			      breakpoint: 992,
-			      settings: {
-			        arrows: true,
-			        //centerMode: true,
-			        //centerPadding: '0px',
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    },
-			    {
-			      breakpoint: 1200,
-			      settings: {
-			        arrows: true,
-			        //centerMode: true,
-			        //centerPadding: '80px',
-			        slidesToShow: 1,
-			        slidesToScroll: 1
-			      }
-			    }
-			  ]
-		  });
-		});
-
-		</script>
-
 	</body>
 </html>
