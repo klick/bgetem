@@ -12,7 +12,7 @@
 
 
 {% block content %}
-
+ 
 
 {% scss %}
 /*! Comment */
@@ -111,6 +111,10 @@ article section.article-body figure.cover figcaption * {
 					{{ (entry.text | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 
+					{% if entry.id == 28361 %}
+						{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
+					{% endif %}
+
 					{% if entry.infobox is not empty %}
 					<div class="infobox infobox-1 mt-5 mt-lg-0 mb-5 border border-dguv-cyan border-dashed p-4 p-md-5{# {% if entry.text2 is not empty %} floating mt-lg-0 me-lg-5{%endif %} #}">
 						{{ entry.infobox }}
@@ -121,9 +125,7 @@ article section.article-body figure.cover figcaption * {
 						{{ entry.video1 }}
 						<script src="//e.video-cdn.net/v2/embed.js"></script>
 					{% endif %}
-
-					{# {% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %} #}
-
+					
 					{% if  entry.text2 is not empty %}
 					<div class="text-2 mt-5 mb-5">
 						{{ (entry.text2 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}

@@ -1,246 +1,315 @@
-{# {{ include('_includes/component-intranet_metanav', {customContainer: 'bg-layout_medien_container', class: 'null', showCart: false}) }} #}
+{% if currentUser %}
+  {% set userPhoto = currentUser.photo == null ? craft.assets.id(26645).one() : craft.assets.id(currentUser.photoId).one() %}
+{% else %}
+  {% set userPhoto = craft.assets.id(26645).one() %}
+{% endif %}
 
-<div id="portal-mainnavigation">
-
+{# {{ include('_includes/component-intranet_metanav', {customContainer: 'bg-layout_medien_container', class: 'null', showCart: false}) }} #} <div id="portal-mainnavigation">
   <div id="portal-navigation-cover" style="display: none;"></div>
-
-  <nav id="portal-navigation" class="sidebar-left" data-sidebar-mouse="true" data-sidebar-mouse-area="10">
-
-    <div class="menu">
-
-      <!-- Search -->
-
-      <div id="sidebar-section-search" class="menu-section">
-
-        <div class="menu-section-content">
-
-        <form action="https://www.bgetem.de/@@search" id="menu-search" role="search" method="post" data-dashlane-rid="c4347bf0ee2710a5" data-form-type="">
-          <label class="sr-only" for="menu-search">Suchbegriff/Webcode</label>
-          <div class="input-group">
-            <input type="search" name="SearchableText" class="form-control border-dark" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode" data-dashlane-rid="2e455bea4fa571db" data-form-type="">
-            <div class="input-group-append">
-              <button type="submit" class="btn btn-light border-dark">Suchen</button>
+  <nav id="portal-navigation" class="sidebar-left" data-sidebar-mouse="true" data-sidebar-mouse-area="30">
+        <div class="menu">
+          <!-- Portal Marker -->
+          <!-- Search -->
+          <div id="sidebar-section-search" class="menu-section">
+            <div class="menu-section-content">
+              <form action="http://svaintra20:8080/portal/@@search" id="menu-search" role="search" method="post">
+                <label class="sr-only" for="menu-search">Suchbegriff/Webcode</label>
+                <div class="input-group">
+                  <input type="search" name="SearchableText" class="form-control border-dark" placeholder="Suchbegriff/Webcode" aria-label="Suchbegriff/Webcode">
+                  <div class="input-group-append">
+                    <button type="submit" class="btn btn-light border-dark">Suchen</button>
+                  </div>
+                </div>
+                <input name="_authenticator" type="hidden" value="5fc73f9300ceedbaa40962fa85d967ae9054b360">
+              </form>
             </div>
           </div>
-        </form>
-
+          <!-- tal:comment tal:replace="nothing" -->
+          <div id="sidebar-section-profile" class="menu-section collapsed">
+            <div class="menu-profile">
+              <a href="{{ alias(currentSite.baseUrl) }}account">
+                <div class="profile-image" style="background-image: url('{{ userPhoto.url }}');"></div>
+                <div class="profile-info">
+                  <div class="profile-name">admin</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- /tal:comment -->
+          <!-- Admin Links -->
+          <div id="sidebar-section-site" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Webseite</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/plone_control_panel">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Einstellungen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Static Links -->
+          <div id="sidebar-section-links" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Links</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal" title="Startseite">
+                <span class="menu-item-icon bi bi-house"></span>
+                <span class="menu-item-title">Startseite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/logout" title="Abmelden">
+                <span class="menu-item-icon bi bi-box-arrow-right"></span>
+                <span class="menu-item-title">Abmelden</span>
+              </a>
+            </div>
+          </div>
+          <!-- Navigation Controls -->
+          <!-- Editing -->
+          <div id="sidebar-section-edit" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Bearbeitung</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/startseitexy/view">
+                <span class="menu-item-icon bi bi-eye"></span>
+                <span class="menu-item-title">Anzeigen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/edit">
+                <span class="menu-item-icon bi bi-pencil-square"></span>
+                <span class="menu-item-title">Bearbeiten</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/folder_contents">
+                <span class="menu-item-icon bi bi-folder"></span>
+                <span class="menu-item-title">Inhalte</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@historyview">
+                <span class="menu-item-icon bi bi-clock"></span>
+                <span class="menu-item-title">20.02.2023 20:49</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@sharing">
+                <span class="menu-item-icon bi bi-arrow-90deg-right"></span>
+                <span class="menu-item-title">Freigabe</span>
+              </a>
+            </div>
+          </div>
+          <!-- Workflow -->
+          <div id="sidebar-section-workflow" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Arbeitsablauf</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="#">
+                <span class="menu-item-icon bi bi-bullseye state-published with-state-color"></span>
+                <span class="menu-item-title state-published with-state-color">Ver&#246;ffentlicht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_modify?workflow_action=reject&amp;_authenticator=5fc73f9300ceedbaa40962fa85d967ae9054b360">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckweisen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_modify?workflow_action=retract&amp;_authenticator=5fc73f9300ceedbaa40962fa85d967ae9054b360">
+                <span class="menu-item-icon bi bi-arrow-left-right"></span>
+                <span class="menu-item-title">Zur&#252;ckziehen</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/content_status_history">
+                <span class="menu-item-icon bi bi-three-dots"></span>
+                <span class="menu-item-title">Erweitert</span>
+              </a>
+            </div>
+          </div>
+          <!-- Actions -->
+          <div id="sidebar-section-actions" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Aktionen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/startseitexy/@@ical_import_settings/enable?_authenticator=5fc73f9300ceedbaa40962fa85d967ae9054b360" class="">
+                <span class="menu-item-icon bi bi-calendar2-plus"></span>
+                <span class="menu-item-title">Enable icalendar import</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@renewwebcode?_authenticator=5fc73f9300ceedbaa40962fa85d967ae9054b360" class="">
+                <span class="menu-item-icon bi bi-chevron-right"></span>
+                <span class="menu-item-title">Webcode erneuern</span>
+              </a>
+            </div>
+          </div>
+          <!-- Document Management -->
+          <div id="sidebar-section-add" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Hinzuf&#252;gen</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/++add++Anzeige">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Anzeige </span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Bekanntmachung">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bekanntmachung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Image">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Bild</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Cluster">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Cluster</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++File">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Datei</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Feedreader">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Feedreader</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Flexfolder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Flexfolder</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Formularauswahl">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Formularauswahl</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Collection">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Kollektion</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++LDAPPerson">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">LDAPPerson</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Landingpage">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Landingpage</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Link">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Link</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++News%20Item">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Nachricht</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Folder">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Ordner</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Pinnwand">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Pinnwand</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Portlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Portlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++RSSPortlet">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">RSSPortlet</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Document">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Seite</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Sozialprojekt">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Soziales Projekt</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Stellenanzeige">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Stellenanzeige</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++Event">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">Termin</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/++add++videoembed">
+                <span class="menu-item-icon bi bi-plus"></span>
+                <span class="menu-item-title">videoembed</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/startseitexy/@@folder_factories">
+                <span class="menu-item-icon bi bi-gear"></span>
+                <span class="menu-item-title">Artikel zur Standardseite hinzuf&#252;gen</span>
+              </a>
+            </div>
+          </div>
+          <!-- Display Management -->
+          <div id="sidebar-section-display" class="menu-section collapsed">
+            <div class="menu-section-title">
+              <span>Anzeige</span>
+              <span class="section-handle">
+                <i class="section-up bi bi-chevron-down"></i>
+                <i class="section-down bi bi-chevron-up"></i>
+              </span>
+            </div>
+            <div class="menu-section-content">
+              <a href="http://svaintra20:8080/portal/select_default_view" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-pip"></span>
+                <span class="menu-item-title">Darstellung</span>
+              </a>
+              <a href="http://svaintra20:8080/portal/select_default_page" class="pat-plone-modal">
+                <span class="menu-item-icon bi bi-geo"></span>
+                <span class="menu-item-title">Standardseite</span>
+              </a>
+            </div>
+          </div>
         </div>
-
+      </nav>
+  <div id="siguv-navigation" class="enabled">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="{{ alias(currentSite.baseUrl) }}" title="BG ETEM Intranet Startseite - BG ETEM">
+          <img src="https://www.bgetem.de/++theme++plonetheme.siguv/logo/bg-etem.svg" alt="bgetem.de - BG ETEM">
+        </a>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a id="diebgetem" class="nav-link" href="http://svaintra20:8080/portal/diebgetem"> Die BG ETEM </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="standorte" class="nav-link" href="http://svaintra20:8080/portal/standorte"> Standorte </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="sicherheit-gesundheit" class="nav-link" href="http://svaintra20:8080/portal/sicherheit-gesundheit"> Sicherheit/Gesundheit </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a id="arbeitsbereiche" class="nav-link" href="http://svaintra20:8080/portal/arbeitsbereiche"> Arbeitsbereiche </a>
+          </li>
+          <li class="nav-item">
+            <a id="testnachricht-im-bereich-it" class="nav-link" href="http://svaintra20:8080/portal/testnachricht-im-bereich-it"> Testnachricht im Bereich IT </a>
+          </li>
+          <li class="nav-item">
+            <a id="stellenanzeigen" class="nav-link" href="http://svaintra20:8080/portal/stellenanzeigen"> Stellenanzeigen </a>
+          </li>
+        </ul>
+        <div id="sidebar-handle">
+          <img class="icon icon-inline icon-lg" src="https://www.bgetem.de/++theme++plonetheme.tokyo/icons/bootstrap/justify.svg" alt="Sign Sidebar" style="margin: -3px 5px 0 0 !important;">
+          <span>Men&#252;</span>
+        </div>
       </div>
-      
-      
-
-      <!-- Admin Links -->
-
-      
-
-      <!-- Static Links -->
-
-      <div id="sidebar-section-links" class="menu-section">
-
-        <div class="menu-section-title">
-          <span>Links</span>
-          
-        </div>
-
-        <div class="menu-section-content">
-          
-            <a href="{{ alias(currentSite.baseUrl) }}" title="Startseite">
-              <span class="menu-item-icon bi bi-house"></span>
-              <span class="menu-item-title">Startseite</span>
-            </a>
-          
-        </div>
-
-      </div>
-
-      <!-- Navigation Controls -->
-
-      <div id="sidebar-section-navigation" class="menu-section">
-
-        <div class="menu-section-title">
-          <span>Navigation</span>
-          
-        </div>
-
-        <div id="navigation-wrapper" class="navigation-dynamic">
-          <div class="menu-section-content">
-
-  
-
-  
-
-  <div class="has-no-back">
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/presse-aktuelles" title="Presse / Aktuelles">
-        <span class="menu-item-title">Presse / Aktuelles</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/presse-aktuelles" title="Presse / Aktuelles">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/mitgliedschaft-beitrag" title="Mitgliedschaft &amp; Beitrag">
-        <span class="menu-item-title">Mitgliedschaft &amp; Beitrag</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/mitgliedschaft-beitrag" title="Mitgliedschaft &amp; Beitrag">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz" title="Sicherheit &amp; Gesundheit">
-        <span class="menu-item-title">Sicherheit &amp; Gesundheit</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz" title="Sicherheit &amp; Gesundheit">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/seminare" title="Seminare">
-        <span class="menu-item-title">Seminare</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/seminare" title="Seminare">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/unfall-berufskrankheit" title="Unfall &amp; Berufskrankheit">
-        <span class="menu-item-title">Unfall &amp; Berufskrankheit</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/unfall-berufskrankheit" title="Unfall &amp; Berufskrankheit">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/medien-service" title="Medien / Service">
-        <span class="menu-item-title">Medien / Service</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/medien-service" title="Medien / Service">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
-    <div class="d-flex">
-
-      <a class="link-item" href="https://www.bgetem.de/die-bgetem" title="Die BG ETEM">
-        <span class="menu-item-title">Die BG ETEM</span>
-      </a>
-
-      <a class="link-folder" href="https://www.bgetem.de/die-bgetem" title="Die BG ETEM">
-        <span class="menu-item-nav bi bi-caret-right-fill"></span>
-      </a>
-
-    </div>
+    </nav>
   </div>
-
-
-</div>
-
-        </div>
-
-      </div>
-
-      <!-- Editing -->
-
-      
-
-      <!-- Workflow -->
-
-      
-
-      <!-- Actions -->
-
-      
-
-      <!-- Document Management -->
-
-      <div id="sidebar-section-add" class="menu-section">
-
-        <div class="menu-section-title">
-          <span>Hinzufügen</span>
-          
-        </div>
-
-        <div class="menu-section-content">
-          
-            <a href="https://www.bgetem.de/++add++PressSubscriber">
-              <span class="menu-item-icon bi bi-plus"></span>
-              <span class="menu-item-title">Abonnement der Pressemitteilungen</span>
-            </a>
-          
-        </div>
-
-      </div>
-
-      <!-- Display Management -->
-
-      
-
-    </div>
-
-  </nav>
-
-
-
-<div id="siguv-navigation" class="enabled">
-
-  <nav class="navbar navbar-expand-lg">
-
-    <div class="container">
-
-      <a class="navbar-brand" href="{{ alias(currentSite.baseUrl) }}" title="BG ETEM Intranet Startseite - BG ETEM">
-        <img src="https://www.bgetem.de/++theme++plonetheme.siguv/logo/bg-etem.svg" alt="bgetem.de - BG ETEM">
-      </a>
-
-      <ul class="navbar-nav mr-auto">
-
-        
-          <li class="nav-item dropdown">
-            <a id="mitgliedschaft-beitrag" class="nav-link" href="https://www.bgetem.de/mitgliedschaft-beitrag">
-              Mitgliedschaft &amp; Beitrag
-            </a>
-          </li>
-        
-          <li class="nav-item dropdown">
-            <a id="arbeitssicherheit-gesundheitsschutz" class="nav-link" href="https://www.bgetem.de/arbeitssicherheit-gesundheitsschutz">
-              Sicherheit &amp; Gesundheit
-            </a>
-          </li>
-        
-          <li class="nav-item dropdown">
-            <a id="unfall-berufskrankheit" class="nav-link" href="https://www.bgetem.de/unfall-berufskrankheit">
-              Unfall &amp; Berufskrankheit
-            </a>
-          </li>
-        
-
-      </ul>
-
-      <div id="sidebar-handle">
-        <img class="icon icon-inline icon-lg" src="https://www.bgetem.de/++theme++plonetheme.tokyo/icons/bootstrap/justify.svg" alt="Sign Sidebar" style="margin: -3px 5px 0 0 !important;">
-        <span>Menü</span>
-      </div>
-
-    </div>
-
-  </nav>
-
-</div>
 </div>

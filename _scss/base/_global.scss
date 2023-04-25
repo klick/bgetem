@@ -676,3 +676,12 @@ img.image-left {
 		border-color: $dguv-blau-10;
 	}
 }
+// Intranet CSS FIXES
+
+#portal-navigation .menu-section-content .menu-item-title {
+  display: inline !important;
+  vertical-align: sub !important;
+}
+
+
+

@@ -24,13 +24,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/siguv.min.css">
-		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
 		<link rel="stylesheet" href="{{ craft.app.sites.primarySite.baseUrl }}css/sidebar.min.css">
+		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
+		{# <link rel="stylesheet" href="https://www.bgetem.de/++resource++collective.sidebar/css/sidebar.min.css?version=2021-04-18%2012%3A25%3A23.019928"> #}
 
 
 
 	</head>
-	<body class="d-flex flex-column h-100 magazin" data-content-type="" data-with-sidebar="false">
+	<body class="d-flex flex-column h-100 magazin userrole-authenticated" data-content-type="" data-with-sidebar="false">
 
 		<header id="portal-top">
       <div id="portal-header" class="bg-light">
@@ -71,6 +72,7 @@
         </div>
       </div>
     </header>
+    
 		{% include '_includes/component-portal_navigation.twig' %}
 
 		<div id="my-page">
@@ -101,6 +103,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script> #}
 
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/bundle.js"></script>
+		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/sidebar.min.js"></script>
 
 	</body>
 </html>
