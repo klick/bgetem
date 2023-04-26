@@ -64,8 +64,28 @@ div.gallery-slider__nav {
     
   }
 
- 
+}
+.carousel-control-prev,
+.carousel-control-next {
+	width: 10%;
+}
+.carousel-control-prev-icon {
+   	background: rgba(0,0,0,0.3) url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a<g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23ffffff" stroke="none" />\a</g></svg>');
+   	background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(180deg);
+}
 
+.carousel-control-next-icon {
+   	background: rgba(0,0,0,0.3) url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a<g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23ffffff" stroke="none" />\a</g></svg>');
+   	background-size: 60%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
 }
 
 /* tiny slider */
@@ -107,5 +127,11 @@ div.bg_carousel-thumbnails {
 		&.active {
 			opacity: .5;
 		}
+	}
+}
+
+.carousel-dark .carousel-indicators [data-bs-target] {
+	&.active {
+    background-color: $dguv-blau-2;
 	}
 }

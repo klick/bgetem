@@ -19,7 +19,7 @@
 /craft/config/license.key
 /__legacy
 /web/bilder
-/.ddev
 /web/audio
 /b.sql
 /b.csv
+/bg-etem--2023-04-17-115619--v4.4.5.sql

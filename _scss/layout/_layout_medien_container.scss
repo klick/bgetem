@@ -9,7 +9,7 @@ div.container {
 	}
 }
 
-// Adding Gutter to bootstrap 4.6.2
+// Adding the Gutter utility to bootstrap 4.6.2
 
 .g-3, .gy-3 {
     --bs-gutter-y: 1rem;
@@ -19,13 +19,6 @@ div.container {
     --bs-gutter-x: 1rem;
 }
 
-div.container.magazin {
-	padding-right: var(--bs-gutter-x,.75rem) !important;
-    padding-left: var(--bs-gutter-x,.75rem) !important;
-	@media screen and (min-width: 1200px) {
-		max-width: 1320px !important;
-	}
-}
 div.container {
 	div.row {
 		margin-right: calc(-.5 * var(--bs-gutter-x)) !important;

@@ -5,29 +5,37 @@ medien/index
 {% import '_macros.twig' as macros %}
 {% extends "_layout" %}
 
-{% set searchQuery = craft.app.request.getParam('suchtext') %}
+{% set searchtext = craft.app.request.getParam('suchtext') %}
+{% set orderParam = craft.app.request.getParam('orderBy') %}
+{% set queryParams = searchtext ? {'suchtext': searchtext} : {} %}
+{% set orderMethod = orderParam == 'postDate' ? 'postDate DESC' : 'score' %}
+{% set currentUrl = url(craft.app.request.pathInfo, queryParams) %}
 
-{% if searchQuery %}
-	{% set artikel = craft.entries.sectionId(1).with(['titlestoryCover','cover']).search(searchQuery).limit(10).orderBy('score') %}
+
+{% set searchQuery = craft.app.request.getParam('suchtext') %}
+{% set tagSlug = craft.app.request.getParam('tag') %}
+
+{% if tagSlug %}
+{% set tag = craft.tags.slug(tagSlug).one() %}
 {% endif %}
 
 
-{# {% set filterCategories = craft.categories()
-  .groupId('7,8,4,3')
-  .all()
- %}
- {% set filterCategoriesGrouped = filterCategories|group(e => e.group) %} #}
+{% set searchParams = {
+	siteId: 2,
+  section: 'magazin',
+  search: searchQuery,
+  limit: 10,
+  orderBy: orderMethod,
+} %}
 
+{% if tagSlug %}
+{% if tag %}
+  {% set searchParams = searchParams|merge({ relatedTo: tag }) %}
+{% endif %}
+{% endif %}
 
+{% paginate craft.entries(searchParams) as pageInfo, entries %}
 
-{% paginate artikel as pageInfo, pageEntries %}
-
-{# {% do craft.blitz.options({
-    cachingEnabled: true,
-    cacheElements: true,
-    cacheElementQueries: true,
-    tags: ['medienStart']
-}) %} #}
 
 {% set artikelCoverTransforms = {
 	  '(min-width: 1px)': {
@@ -40,9 +48,8 @@ medien/index
 
 
 
-
-
 {% block content %}
+
 
 <div class="container">
 	<div class="row">
@@ -52,23 +59,28 @@ medien/index
 				<div class="row align-items-baseline mb-2">
 				{% if searchQuery %}
 					<div class="col-7 text-start">
-						<b>Suchergebnisse für „{{ searchQuery }}“</b>
+						<b>Suchergebnisse für „{{ searchQuery }}“{% if tagSlug %} und #{{ tag }}{% endif %}</b>
+
 					</div>
 					<div class="col-5 text-end">
-						<small>Gefundene Artikel: {{ artikel|length }}</small>
+
+						<small><span class="me-4">Sortieren: {% if orderParam == 'postDate' %}<a href="{{ currentUrl }}&orderBy=score">Beste Ergebisse</a>{% else %}Beste Ergebisse{% endif %} | {% if orderParam == 'score' or orderParam|length == 0 %}<a href="{{ currentUrl }}&orderBy=postDate">Datum</a>{% else %}Datum{% endif %}</span>Gefundene Artikel: {{craft.entries(searchParams)|length }}</small>
 					</div>
 				</div>
 				{% else %}
 					<div class="col-12 text-end">
-						<small>Gefundene Artikel: {{ artikel|length }}</small>
+						<small>Gefundene Artikel: {{ craft.entries(searchParams)|length }}</small>
 					</div>
 				{% endif %}
+
+
 				<ul class="listing m-0">
-					{% for artikel in pageEntries %}
-					<li class="card listing__item mb-5">
+					{% for artikel in entries %}
+					<li class="card listing__item mb-5 pt-">
 						
-							<div class="item-wrapper has-image">			
-								<div class="image">
+							<div class="item-wrapper has-image row">	
+
+								<div class="image col-4">
 									{% set artikelCover = artikel.titlestoryCover[0] ??? artikel.cover[0] %}
 									{% set artikelCoverAttributes = { alt: '', title: artikelCover.title ??? 'BGETEM Logo' } %}
 									<figure class="">
@@ -79,8 +91,9 @@ medien/index
 										{% endif %}
 									</figure>
 								</div>
-								<div class="item-contents">
-									<a href="{{ artikel.url }}">
+
+								<div class="item-contents col-8">
+									<a href="{{ artikel.url }}" class="text-decoration-none">
 										<div class="card-header">
 											<div class="d-flex justify-content-space-between">
 												{{ artikel.dachzeile ? ('<small class="roof text-uppercase mb-2">' ~ artikel.dachzeile ~ '</small>')|raw }}
@@ -92,15 +105,15 @@ medien/index
 											<p>{{ artikel.intro }}</p>
 										</div>
 									</a>
-									{% if artikel.tagsMagazin|length %}
+									{# {% if artikel.tagsMagazin|length %}
 										<div class="tags mt-3">
 											<small>
 												{% for tag in artikel.tagsMagazin %}
-													<a href="{{ url('tags/'~tag.slug) }}" class="me-2">#{{ tag.title }}</a>
+													<a href="{{ currentUrl }}&tag={{tag.slug}}" class="me-2 text-decoration-none">#{{ tag.title }}</a>
 												{% endfor %}
 											</small>
 										</div>
-									{% endif %}
+									{% endif %} #}
 								</div>
 							</div>
 						</a>

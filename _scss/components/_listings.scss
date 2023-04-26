@@ -1,9 +1,8 @@
-ul.listing
-*.list-item {
-	margin: 24px 0;
-	@include lg() {
-		margin: 48px 0;
-	}
+ul.listing {
+	//margin: 24px 0;
+	// @include lg() {
+	// 	margin: 48px 0;
+	// }
 	a, 
 	a:hover {
 		border: none;
@@ -20,7 +19,7 @@ ul.listing
 			margin-bottom: 6px;
 		}
 		a {
-			padding: 24px 0 24px 0;
+			//padding: 24px 0 24px 0;
 			text-shadow: none;
 			text-decoration: none;
 			border: none;
@@ -40,11 +39,11 @@ ul.listing
 		div.item-wrapper {
 			padding: 24px 0 24px 0;
 			&.has-image {
-				display: flex;
-				div.image {
-					flex: 0 0 30%;
-					margin-right: 24px;
-				}
+				// display: flex;
+				// div.image {
+				// 	flex: 0 0 30%;
+				// 	margin-right: 24px;
+				// }
 			}
 			&.has-actions {
 				@include flex-container();

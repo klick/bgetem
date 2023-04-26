@@ -16,30 +16,24 @@
 	<div class="container my-3 my-md-5">
 		<h1>Alle Ausgaben der etem</h1>
 	</div>
-
-
 	<div class="container issue-nav mb-5">
 		<div class="row">
 			{% for year, entriesInYear in issuesByYear %}
-
-					{% for entry in entriesInYear %}
-					{% set issueCoverAttributes = { alt: entry.title, title: 'etem Ausgabe' ~ entry.title, class:'card-img-top rounded-0 border border-light' } %}
-					<div class="ausgabe-thumb col-3 col-md-3 col-lg-2 my-1 my-lg-3 pt-3 pb-2{{ craft.app.request.getSegment(1) == entry.title ? ' active bg-dguv-cyan text-white' }}">
-						<a href="{{ entry.url }}" class="text-decoration-none text-dark">
-							<figure class="mb-1 mb-lg-2">
-								{{ craft.images.pictureMedia(entry.cover[0], issueCoverTransforms, null, issueCoverAttributes) }}
-							</figure>
-							<p class="{{ craft.app.request.getSegment(1) == entry.title ? ' fw-bold color-dguv-cyan' }} "><strong>{{ entry.title }}</strong></p>	    					
-						</a>
-					</div>
-					{% endfor %}
-
-
-			
+			<div class="col-12 mt-5">
+				<h2 class="pt-2 border-top"><b>{{ year }}</b></h2>
+			</div>
+			{% for entry in entriesInYear %}
+			{% set issueCoverAttributes = { alt: entry.title, title: 'etem Ausgabe ' ~ entry.title, class:'card-img-top rounded-0 border border-light' } %}
+			<div class="ausgabe-thumb col-3 col-md-3 col-lg-2 my-1 my-lg-3 pt-3 pb-2{{ craft.app.request.getSegment(1) == entry.title ? ' active bg-dguv-cyan text-white' }}">
+				<a href="{{ entry.url }}" class="text-decoration-none text-dark">
+					<figure class="mb-1 mb-lg-2">
+						{{ craft.images.pictureMedia(entry.cover[0], issueCoverTransforms, null, issueCoverAttributes) }}
+					</figure>
+					<p class="{{ craft.app.request.getSegment(1) == entry.title ? ' fw-bold color-dguv-cyan' }} "><strong>{{ entry.title }}</strong></p>	
+				</a>
+			</div>
+			{% endfor %}
 			{% endfor %}
   		</div>
-	</div>
-
-
 	</div>
 {% endblock %}

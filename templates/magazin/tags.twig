@@ -33,7 +33,7 @@
 				<div class="row align-items-baseline mb-2">
 				{% if tag %}
 					<div class="col-7 text-start">
-						<b>Artikel mit dem Schlagwort „{{ tag.title }}“</b>
+						<b>Artikel mit dem Stichwort „{{ tag.title }}“</b>
 					</div>
 					<div class="col-5 text-end">
 						<small>Gefundene Artikel: {{ artikel|length }}</small>
@@ -48,8 +48,8 @@
 					{% for artikel in pageEntries %}
 					<li class="card listing__item mb-5">
 						
-							<div class="item-wrapper has-image">			
-								<div class="image">
+							<div class="item-wrapper has-image row">			
+								<div class="image col-4">
 									{% set artikelCover = artikel.titlestoryCover[0] ??? artikel.cover[0] %}
 									{% set artikelCoverAttributes = { alt: '', title: artikelCover.title ??? 'BGETEM Logo' } %}
 									<figure class="">
@@ -60,7 +60,7 @@
 										{% endif %}
 									</figure>
 								</div>
-								<div class="item-contents">
+								<div class="item-contents col-8">
 									<a href="{{ artikel.url }}">
 										<div class="card-header">
 											<div class="d-flex justify-content-space-between">

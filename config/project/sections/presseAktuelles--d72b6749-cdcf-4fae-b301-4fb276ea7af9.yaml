@@ -31,6 +31,11 @@ siteSettings:
     hasUrls: true
     template: presse-aktuelles/_entry
     uriFormat: 'presse-aktuelles/{slug}'
+  0920ba4c-ca0e-4187-b14f-53ff8d14c625: # Das Magazin Ihrer Berufsgenossenschaft
+    enabledByDefault: true
+    hasUrls: true
+    template: presse-aktuelles/_entry.twig
+    uriFormat: '../bgetem/presse-aktuelles/{slug}'
   be74105c-0631-4876-b742-694f9b7ac20a: # BG ETEM Medienportal
     enabledByDefault: true
     hasUrls: true

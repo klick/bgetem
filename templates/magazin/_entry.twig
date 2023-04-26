@@ -12,8 +12,7 @@
 
 
 {% block content %}
-
-{# <a href="{{ currentSite.baseUrl }}">Start</a> #}
+ 
 
 {% scss %}
 /*! Comment */
@@ -35,7 +34,6 @@ article section.article-body div.text-1 {
 	display: none;
 	}
 } #}
-
 article section.article-body figure.cover figcaption * {
 	&.caption {
 	&:not(:first-of-type) {
@@ -44,21 +42,18 @@ article section.article-body figure.cover figcaption * {
 	
 	}
 }
-
-
-
 .footer {
     .copyright {
         color: silver;
     }
 }
 {% endscss %}
-
+{% set verwandteEinträge = entry.relatedEntries %}
 
 <article>
 	<div class="container my-3 my-md-5">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-7">
+		<div class="row">
+			<div class="col-12 col-md-8 offset-md-2">
 				<header>
 					{{ (entry.dachzeile ? '<p class="roof-row upper">' ~ entry.dachzeile ~ '</p>')|raw }}
 					<h1>{{ entry.title }}</h1>
@@ -90,14 +85,16 @@ article section.article-body figure.cover figcaption * {
 			      height: 746,
 			  }
 			} %}
+			{% set cover = entry.titlestoryCover[0] ??? entry.cover[0] %}
 			{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
-				{% if entry.titlestoryCover is not empty %}
+			{{ craft.images.pictureMedia(cover, imgTransforms, null, cardImgAttributes) }}
+				{# {% if entry.titlestoryCover is not empty %}
 				{{ craft.images.pictureMedia(entry.titlestoryCover[0], imgTransforms, null, cardImgAttributes) }}
 				{% elseif entry.cover is not empty %}
 				{{ craft.images.pictureMedia(entry.cover[0], imgTransforms, null, cardImgAttributes) }}
-				{% endif %}
+				{% endif %} #}
 				<figcaption>
-					{{ entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
+					{{ cover.imgCaption ??? entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
 				</figcaption>
 			</figure>
 		</div>
@@ -107,17 +104,19 @@ article section.article-body figure.cover figcaption * {
 		{# {% set LaImage = getFirstImage(entry.text) %}
 		<pre>{{ dump(LaImage) }}</pre> #}
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-12 col-md-7">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
 
 					<div class="text-1 mb-5">
-					{{ (entry.text | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+					{{ (entry.text | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 
-
+					{% if entry.id == 28361 %}
+						{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
+					{% endif %}
 
 					{% if entry.infobox is not empty %}
-					<div class="infobox infobox-1 mt-5 mt-lg-0 me-lg-5 mb-5 border border-dguv-cyan border-dashed p-3 p-md-4{% if entry.text2 is not empty %} floating mt-lg-0 me-lg-5{%endif %}">
+					<div class="infobox infobox-1 mt-5 mt-lg-0 mb-5 border border-dguv-cyan border-dashed p-4 p-md-5{# {% if entry.text2 is not empty %} floating mt-lg-0 me-lg-5{%endif %} #}">
 						{{ entry.infobox }}
 					</div>
 					{% endif %}
@@ -126,31 +125,24 @@ article section.article-body figure.cover figcaption * {
 						{{ entry.video1 }}
 						<script src="//e.video-cdn.net/v2/embed.js"></script>
 					{% endif %}
-
-					{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
-
+					
 					{% if  entry.text2 is not empty %}
 					<div class="text-2 mt-5 mb-5">
-						{{ (entry.text2 | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+						{{ (entry.text2 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 					{% endif %}
 
 					{% if entry.infobox2 is not empty %}
-					<div class="infobox infobox-2 mt-5 mb-5 border border-dguv-cyan border-dashed p-3 p-md-4{% if entry.text3 is not empty %} floating mt-lg-0 me-lg-5{%endif %}">
+					<div class="infobox infobox-2 mt-5 mb-5 border border-dguv-cyan border-dashed p-4 p-md-5{# {% if entry.text3 is not empty %} floating mt-lg-0 me-lg-5{%endif %} #}">
 						{{ entry.infobox2 }}
 					</div>
 					{% endif %}
 
 					{% if  entry.text3 is not empty %}
 					<div class="text-3 mt-5 mb-5">
-						{{ (entry.text3 | retconAttr( 'div.caption', { 'class' : 'mb-3 mt-2' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+						{{ (entry.text3 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 					{% endif %}
-
-
-					
-
-					
 
 					{% if entry.galerieposition != 'oben' and entry.video1 is not empty%}
 					<div class="video mt-5 mb-5">
@@ -176,9 +168,9 @@ article section.article-body figure.cover figcaption * {
 	{% if entry.infobox3 is not empty %}
 	<aside>
 		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-12 col-md-7 col-md-7">
-					<div class="infobox infobox-abbinder mt-5 mb-5 border-top bg_border-dguv-blau  p-3 p-md-5 bg_bg-dguv-grau-leicht">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
+					<div class="infobox infobox-abbinder mt-5 mb-5 border-top bg_border-dguv-blau p-4 p-md-5 bg_bg-dguv-grau-leicht">
 						{{ entry.infobox3|replace({'<h4>':'<p>','</h4>':'</p>'})|raw }}
 					</div>
 				</div>
@@ -186,23 +178,87 @@ article section.article-body figure.cover figcaption * {
 		</div>
 	</aside>
 	{% endif %}
+	{% if entry.tagsMagazin is not empty %}
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
+					<h6 class="border-top pt-2 mb-2">Stichworte</h6>
+					{% for tag in entry.tagsMagazin %}
+						<a href="{{ url('tags/'~tag.slug) }}" class="btn btn-primary me-2 text-decoration-none">#{{ tag.title }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+	{% if verwandteEinträge is not empty %}
+		{% set relatedEntryCoverTransforms = {
+			  '(min-width: 1px)': {
+		        width: 388,
+		        ratio: 16/9,
+		        mode: 'crop',
+		    }
+		} %}
+		<section class="listings mt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-md-8 offset-md-2">
+						<h6 class="border-top pt-2 mb-4">Auch interessant</h6>
+						<ul class="listing">
+						{% for entry in verwandteEinträge %}
+						{% set relatedEntryCover = entry.titlestoryCover[0] ??? entry.cover[0] %}
+						{% set relatedEntryCoverAttributes = { alt: '', title: relatedEntryCover.title ??? 'BGETEM Logo' } %}
+							<li class="card listing__item mb-3 mb-md-5">
+								<article class="related-entry">
+									<a href="{{ entry.url }}" class="d-block py-3 py-md-3">
+										<div class="row g-0">
+											<div class="col-4">
+												<figure class="">
+												{% if not relatedEntryCover == null %}
+													{{craft.images.pictureMedia(relatedEntryCover, relatedEntryCoverTransforms, null, relatedEntryCoverAttributes)}}
+												{% else %}
+												<img src="../img/etem_search_replace.svg" alt="">
+												{% endif %}
+											</figure>
+											</div>
+											<div class="col-8">
+												<div class="ps-3">
+													{{ (entry.dachzeile ? '<p class="roof-row upper"><small>' ~ entry.dachzeile ~ '</small></p>')|raw }}
+													<h1 class="h5 fw-bold">{{ entry.title }}</h1>
+													<p><small>{{ entry.description ??? entry.intro }}</small></p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</article>
+							</li>
+						{% endfor %}
+						</ul>
+					</div>
+				</div>
+				
+				{# <ul class="listing">
+					{% for entry in verwandteEinträge %}
+					<li class="card listing__item mb-5 row">
+						<a href="">
+
+								<div class="col col-12 col-4 offset-md-2">
+									Bild
+								</div>
+									
+
+						</a>
+					</li>
+					{% endfor %}
+				</ul> #}
+			</div>
+		</section>
+	{% endif %}
 </article>
 
 <div class="container mb-5">
-	<div class="row justify-content-center">
-		<div class="col-12 col-md-7">
+	<div class="row">
+		<div class="col-12 col-md-8 offset-md-2">
 			{{ include('_includes/component-sharing-buttons.twig') }}
-
-			{# {{ entry.sammlung.value }} #}
-
-			{# {% if entry.titlestoryCover.one() is not null %}
-				<img src="{{ entry.titlestoryCover.one().url }}" alt="">
-			{% endif %}
-
-			{% if entry.cover is not null %}
-				<img src="{{ entry.cover.one().url }}" alt="">
-			{% endif %} #}
-
 			<p><a href="/magazin/{{ entry.ausgabe }}">Ausgabe {{ entry.ausgabe }}</a></p>
 		</div>
 	</div>
