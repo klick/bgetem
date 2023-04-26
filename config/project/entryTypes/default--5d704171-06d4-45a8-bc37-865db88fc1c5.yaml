@@ -334,7 +334,19 @@ fieldLayouts:
             uid: 35f10160-2dab-4558-acb4-923dccc8d5c1
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 4e788272-b02c-40b9-9ea7-849a11902a4e # Verwandte Medienartikel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ffae48b5-21a4-4d7c-acf2-d18ac58cc036
+            userCondition: null
+            warning: null
+            width: 50
         name: Inhalt
         uid: e86f0f87-c935-4465-bc65-b33badc435f0
         userCondition: null

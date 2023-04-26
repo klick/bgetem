@@ -51,10 +51,13 @@ article section.article-body figure.cover figcaption * {
 {% set verwandteEinträge = entry.relatedEntries %}
 
 <article>
-	<div class="container my-3 my-md-5">
-		<div class="row">
-			<div class="col-12 col-md-8 offset-md-2">
-				<header>
+
+	<!-- Artikel Header -->
+
+	<header>
+		<div class="container my-3 my-md-5">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
 					{{ (entry.dachzeile ? '<p class="roof-row upper">' ~ entry.dachzeile ~ '</p>')|raw }}
 					<h1>{{ entry.title }}</h1>
 					{# {{ entry.text | getFirstImage }} #}
@@ -67,51 +70,46 @@ article section.article-body figure.cover figcaption * {
 					<p class="intro description bold">{{ entry.intro }}</p>
 					{% endif %}
 					<p class="bi bi-hourglass-split"><span class="ps-1">Lesedauer: {{ entry.readTime }}{{ entry.readTime > 1 ? ' Minuten' : ' Minute' }}</span></p>
-				</header>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	<section class="article-body clearfix">
+		{% set cover = entry.titlestoryCover[0] ??? entry.cover[0] %}
+		{% if not cover == null %}
 		<div class="container my-3 my-md-5">
 			<figure class="cover">
-			{% set imgTransforms = {
-			  '(max-width: 1199px)': {
-			      width: 718,
-			      height: 416,
-			  },
-			  '(min-width: 1200px)': {
-			      width: 1310,
-			      height: 746,
-			  }
-			} %}
-			{% set cover = entry.titlestoryCover[0] ??? entry.cover[0] %}
-			{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
-			{{ craft.images.pictureMedia(cover, imgTransforms, null, cardImgAttributes) }}
-				{# {% if entry.titlestoryCover is not empty %}
-				{{ craft.images.pictureMedia(entry.titlestoryCover[0], imgTransforms, null, cardImgAttributes) }}
-				{% elseif entry.cover is not empty %}
-				{{ craft.images.pictureMedia(entry.cover[0], imgTransforms, null, cardImgAttributes) }}
-				{% endif %} #}
+				{% set imgTransforms = {
+				  '(max-width: 1199px)': {
+				      width: 718,
+				      height: 416,
+				  },
+				  '(min-width: 1200px)': {
+				      width: 1310,
+				      height: 746,
+				  }
+				} %}
+				{% set cardImgAttributes = { alt: entry.title, title: entry.title, class:'card-img-top rounded-0' } %}
+				{{ craft.images.pictureMedia(cover, imgTransforms, null, cardImgAttributes) }}
 				<figcaption>
 					{{ cover.imgCaption ??? entry.text | retconOnly( [ 'div.caption:nth-of-type(1)' ] ) }}
 				</figcaption>
 			</figure>
 		</div>
+		{% endif %}
+	</header>
 
+	<!-- Artikel Body -->
 
-
-		{# {% set LaImage = getFirstImage(entry.text) %}
-		<pre>{{ dump(LaImage) }}</pre> #}
+	<section class="article-body clearfix">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-8 offset-md-2">
 
 					<div class="text-1 mb-5">
-					{{ (entry.text | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+					{{ (entry.text | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h2>':'<h2 class="mb-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 
 					{% if entry.id == 28361 %}
+					<!-- Beispiel Bildergalerie (Carousel) -->
 						{% include '_includes/component-gallery-slider-with-thumbnails.twig' with {galleryImages: gallery.images} %}
 					{% endif %}
 
@@ -128,7 +126,7 @@ article section.article-body figure.cover figcaption * {
 					
 					{% if  entry.text2 is not empty %}
 					<div class="text-2 mt-5 mb-5">
-						{{ (entry.text2 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+						{{ (entry.text2 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h2>':'<h2 class="mb-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 					{% endif %}
 
@@ -140,7 +138,7 @@ article section.article-body figure.cover figcaption * {
 
 					{% if  entry.text3 is not empty %}
 					<div class="text-3 mt-5 mb-5">
-						{{ (entry.text3 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
+						{{ (entry.text3 | retconAttr( 'table', { class: 'table' }, false ) | replace({ '<ul>':'<ul class="my-3">','<h2>':'<h2 class="mb-3">','<h3>':'<h3 class="mb-2">','<h4>':'<h4 class="mb-2">' }))|raw }}
 					</div>
 					{% endif %}
 
@@ -165,24 +163,28 @@ article section.article-body figure.cover figcaption * {
 			</div>
 		</div>
 	</section>
+
+	<!-- Artikel Infobox Abbinder -->
+
 	{% if entry.infobox3 is not empty %}
-	<aside>
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-md-8 offset-md-2">
-					<div class="infobox infobox-abbinder mt-5 mb-5 border-top bg_border-dguv-blau p-4 p-md-5 bg_bg-dguv-grau-leicht">
-						{{ entry.infobox3|replace({'<h4>':'<p>','</h4>':'</p>'})|raw }}
-					</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-md-8 offset-md-2">
+				<div class="infobox infobox-abbinder mt-5 mb-5 border-top bg_border-dguv-blau p-4 p-md-5 bg_bg-dguv-grau-leicht">
+					{{ entry.infobox3|replace({'<h4>':'<p>','</h4>':'</p>'})|raw }}
 				</div>
 			</div>
 		</div>
-	</aside>
+	</div>
 	{% endif %}
+
+	<!-- Artikel Stichworte (Tags) -->
+
 	{% if entry.tagsMagazin is not empty %}
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-8 offset-md-2">
-					<h6 class="border-top pt-2 mb-2">Stichworte</h6>
+					<p class="h6 pt-2 mb-3 text-uppercase bg_font-variant-ac pt-2 text-muted">Stichworte</p>
 					{% for tag in entry.tagsMagazin %}
 						<a href="{{ url('tags/'~tag.slug) }}" class="btn btn-primary me-2 text-decoration-none">#{{ tag.title }}</a>
 					{% endfor %}
@@ -190,6 +192,9 @@ article section.article-body figure.cover figcaption * {
 			</div>
 		</div>
 	{% endif %}
+
+	<!-- Artikel Verwandte Beiträge -->
+
 	{% if verwandteEinträge is not empty %}
 		{% set relatedEntryCoverTransforms = {
 			  '(min-width: 1px)': {
@@ -198,11 +203,11 @@ article section.article-body figure.cover figcaption * {
 		        mode: 'crop',
 		    }
 		} %}
-		<section class="listings mt-5">
+		<aside class="listings mt-5">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-8 offset-md-2">
-						<h6 class="border-top pt-2 mb-4">Auch interessant</h6>
+						<p class="h6 pt-2 mb-3 text-uppercase bg_font-variant-ac pt-2 text-muted">Mehr zum Thema</p>
 						<ul class="listing">
 						{% for entry in verwandteEinträge %}
 						{% set relatedEntryCover = entry.titlestoryCover[0] ??? entry.cover[0] %}
@@ -235,33 +240,26 @@ article section.article-body figure.cover figcaption * {
 						</ul>
 					</div>
 				</div>
-				
-				{# <ul class="listing">
-					{% for entry in verwandteEinträge %}
-					<li class="card listing__item mb-5 row">
-						<a href="">
-
-								<div class="col col-12 col-4 offset-md-2">
-									Bild
-								</div>
-									
-
-						</a>
-					</li>
-					{% endfor %}
-				</ul> #}
 			</div>
-		</section>
+		</aside>
 	{% endif %}
+
+	<!-- Artikel Actions -->
+
+	<footer>
+		<div class="container mb-5">
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
+					{{ include('_includes/component-sharing-buttons.twig') }}
+					<p><a href="/magazin/{{ entry.ausgabe }}">Ausgabe {{ entry.ausgabe }}</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+
 </article>
 
-<div class="container mb-5">
-	<div class="row">
-		<div class="col-12 col-md-8 offset-md-2">
-			{{ include('_includes/component-sharing-buttons.twig') }}
-			<p><a href="/magazin/{{ entry.ausgabe }}">Ausgabe {{ entry.ausgabe }}</a></p>
-		</div>
-	</div>
-</div>
+
 
 {% endblock %}

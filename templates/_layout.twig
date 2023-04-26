@@ -26,12 +26,12 @@
 		<!-- JavaScript Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="{{ rev('css/styles.css') }}">
-		
-		{# <link href="http://mmenu.localhost/dist/mmenu.css" rel="stylesheet" /> #}
+
 	</head>
 	<body>
 
-		<!-- Header -->
+		<!-- Dokument-Header -->
+
 		<div class="magazine-header-wrapper">
 			<header class="magazine header-global border-bottom py-4 py-lg-5">
 				<div class="container">
@@ -49,7 +49,7 @@
 					</div>
 				</div>
 			</header>	
-			<nav class="navbar navbar-light border-bottom border-light py-3 py-md-4">
+			<nav class="navbar navbar-light border-bottom border-light py-3 py-md-4 bg-white">
 				<div class="container d-flex align-items-center">
 					<p><a class="navbar-brand mb-0 me-auto fw-bold">{{ currentSite.name }}</a></p>
 					<span class="ms-auto">
@@ -101,11 +101,6 @@
 		})
 		{%- endjs -%}
 
-		<!-- End Header -->
-		
-		
-
-		<!-- End Suche -->
 
 		<div id="my-page" class="magazine-content">
 			{% block content %}
@@ -114,7 +109,7 @@
 			{% endblock %}
 		</div>
 
-		<!-- Footer -->
+		<!-- Dokument-Footer -->
 
 		<footer class="footer footer-global bg_bg-dguv-blau mt-auto py-3">
 			<div class="container">
@@ -194,9 +189,7 @@
 			</div>
 		</footer>
 
-		<!-- End Footer -->
-
-		<!-- To-Top-Pfeil -->
+		<!-- Scroll-To-Top-Pfeil -->
 
 		<div class="back-to-top-arrow">
 			<a href="#" class="scroll-to-top">
@@ -208,7 +201,6 @@
 			</a>
 		</div>
 
-		<!-- Ensd To-Top-Pfeil -->
 		
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/jquery-3.4.1.slim.min.js"></script>
 		<script src="{{ getenv('DEFAULT_SITE_URL') }}/js/popper.min.js"></script>

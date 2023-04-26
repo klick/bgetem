@@ -1,4 +1,4 @@
-dateModified: 1681982858
+dateModified: 1682579237
 elementSources:
   craft\elements\Entry:
     -
@@ -116,6 +116,34 @@ elementSources:
       label: Podcasts
       tableAttributes: '-'
       type: custom
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: 516a5ed2-d16b-4546-95f6-858c24d41d34
+            values:
+              - 0158b508-0e9f-4d41-9410-4e298cd84b2e # [Magazin] Artikel
+          -
+            class: craft\fields\conditions\RelationalFieldConditionRule
+            elementId: null
+            fieldUid: d2e08fc6-148b-41dc-829a-1deb370f2e1f # Cover
+            operator: empty
+            uid: 7d1cb92c-2baa-4f80-8891-10bd49f6c32c
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:6c6ffca0-9bf6-4906-90f7-abade4ec9759'
+      label: 'Artikel ohne Cover'
+      tableAttributes:
+        - link
+        - 'field:574efa14-8605-49de-9cbb-c6b42e1562cc' # Ausgabe (Eintrag)
+        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Ausgabe
+      type: custom
 email:
   fromEmail: me@marcusscheller.com
   fromName: bgetem
@@ -205,6 +233,7 @@ meta:
     4d258537-6fe1-4053-9372-75d5a2d18f24: Infobox2 # Infobox2
     4e78878f-47aa-47a9-8e34-5d9bb1ebe0c0: 'Next Entry' # Next Entry
     4e338728-c003-49e3-b5db-f6cbc348171f: 'Next Item URL' # Next Item URL
+    4e788272-b02c-40b9-9ea7-849a11902a4e: 'Verwandte Medienartikel' # Verwandte Medienartikel
     5b5685f9-7ef6-4077-acf1-6b1db82bee10: '[BGHW] Home' # [BGHW] Home
     5c37bed0-5325-4a9e-b21f-eb4898cf7fe0: Video3 # Video3
     5d36b6f3-3e49-445a-9555-e0d1d4c6c2b8: Dachzeile # Dachzeile
@@ -413,6 +442,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
   blitz:
     edition: standard
     enabled: true
