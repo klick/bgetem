@@ -238,6 +238,9 @@ div.text-body ul {
 				background: url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23000000" stroke="none" />\a </g></svg>');
 			}
 	}
+	*[class^="bg_bg"] &,
+	*[class^="bg-dguv-"] &,
+	.bg-dguv-orange &,
 	&.white,
 	&.arrow-white {
 		&:after {
@@ -251,6 +254,12 @@ div.text-body ul {
 				content: "";
 				background: url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%230063af" stroke="none" />\a </g></svg>');
 			}
+		}
+}
+a.arrow-after {
+	&:after {
+		content: "";
+		background: url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%230063af" stroke="none" />\a </g></svg>');
 	}
 }
 .arrow-before {
@@ -678,10 +687,40 @@ img.image-left {
 }
 // Intranet CSS FIXES
 
-#portal-navigation .menu-section-content .menu-item-title {
-  display: inline !important;
-  vertical-align: sub !important;
+div.menu-profile {
+	display: flex;
+	justify-content: center;
 }
 
+#portal-navigation .menu-section-content {
+	display: flex;
+	flex-direction: column;
+	> a {
+		display: block;
+		margin: .15rem 0;
+	}
+	.menu-item-title {
+	  display: inline !important;
+	  vertical-align: sub !important;
+	  white-space: normal !important;
+	} 
+}
+.img-responsive {
+   display: block;
+   max-width: 100%;
+   height: auto;
+   width: auto !important;
+}
+.bg-dguv-light-gruen, .bg_bg-dguv-light-gruen {
+   background: #51ae31;
+   border-color: #51ae31;
+   color: #fff;
+}
 
+.bg-dguv-light-gruen a, .bg_bg-dguv-light-gruen a {
+   border-color: #51ae31!important
+}
 
+.bg-dguv-light-gruen a:hover, .bg_bg-dguv-light-gruen a:hover {
+   background: transparent!important
+}

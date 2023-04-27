@@ -60,7 +60,7 @@
 									<span class="row bg_category-wrapper mb-3">
 										<span class="col-4 fw-bold">Medienart:</span>
 										<span class="col-7">
-											{% for medienart in product.medienart %}
+											{% for medienart in product.medienart.all() %}
 											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ medienart.url }}">{{ medienart }}</a>{% if not loop.last %}, {% endif %} 
 											{% endfor %}
 										</span>
@@ -71,7 +71,7 @@
 									<span class="row bg_category-wrapper mb-3">
 										<span class="col-4 fw-bold">Branchen:</span>
 										<span class="col-7">
-											{% for branche in product.branchen %}
+											{% for branche in product.branchen.all() %}
 											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ branche.url }}">{{ branche }}</a>{% if not loop.last %}, {% endif %} 
 											{% endfor %}
 										</span>
@@ -82,7 +82,7 @@
 									<span class="row bg_category-wrapper mb-3">
 										<span class="col-4 fw-bold">Themen:</span>
 										<span class="col-7">
-											{% for thema in product.themenMedienportal %}
+											{% for thema in product.themenMedienportal.all() %}
 											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ thema.url }}">{{ thema }}</a>{% if not loop.last %}, {% endif %} 
 											{% endfor %}
 										</span>
@@ -93,7 +93,7 @@
 									<span class="row bg_category-wrapper mb-3">
 										<span class="col-4 fw-bold">Zielgruppen:</span>
 										<span class="col-7">
-											{% for zielgruppe in product.zielgruppen %}
+											{% for zielgruppe in product.zielgruppen.all() %}
 											<a class="text-decoration-none shadow-none border-bottom-0 bg_text-default-color" href="{{ zielgruppe.url }}">{{ zielgruppe }}</a>{% if not loop.last %}, {% endif %} 
 											{% endfor %}
 										</span>
@@ -150,7 +150,7 @@
 					</section>
 					{% endif %}
 
-					<footer class="article-footer doc-actions mb-5">
+					<footer class="article-footer doc-actions my-5">
 						<ul class="docactions small">
 							<li>Aktualisiert: {{ product.postDate|date('d.m.Y') }}</li>
 							<li><a href="#">Drucken</a></li>

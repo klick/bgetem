@@ -85,11 +85,13 @@
 					{% endif %}
 					{{ entry.body | replace({'<h2>':'<h2 class="my-3">'})|raw }}
 					<div class="soundcloud-mask soundcloud-player mt-5" style="background: url({{ soundcloudGhost.getUrl({ width: 300 }) }}); background-repeat: no-repeat; background-size: cover; width: 100%; height: 300px; cursor: pointer;">
-		              <small class="load-soundcloud-player px-5 d-flex justify-content-center align-items-center text-center h-100 w-100" style="background: rgba(255,255,255,0.8)" data-soundcloud-track-id="{{ entry.soundcloudTrackId }}">
-		                <span class="">
-		                  <b>Zum Aktivieren der Podcastfolge klicken Sie bitte hier. Mit der Aktivierung werden Daten an Soundcloud übermittelt. Weitere Informationen in unserer <a href="https://www.bgetem.de/die-bgetem/datenschutz">Datenschutzerklärung</a></b>.
-		                </span></small>
-		            </div>
+		        <small class="note px-5 d-flex flex-column justify-content-center align-items-center text-center text-white h-100 w-100" style="background: rgba(0,73,148,0.8)">
+            	<span class="load-soundcloud-player w-50" data-soundcloud-track-id="{{ entry.soundcloudTrackId }}">
+              	<b>Zum Aktivieren der Podcastfolge klicken Sie bitte hier. Mit der Aktivierung werden Daten an Soundcloud übermittelt.</b>
+              </span> 
+              Weitere Informationen in unserer <a class="text-white text-decoration-underline" href="https://www.bgetem.de/die-bgetem/datenschutz" target="_blank" style="text-decoration: underline;">Datenschutzerklärung.</a>
+             </small>
+		      </div>
 					{% if entry.type == 'podcast' %}
 					<div class="mt-5">
 						<h2>Shownotes</h2>

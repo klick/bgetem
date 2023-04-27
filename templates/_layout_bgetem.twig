@@ -143,12 +143,12 @@
       $( ".load-soundcloud-player" ).on( "click", function() {
           var soundCloudTrackId = $(this).data( "soundcloud-track-id" );
           $(this).addClass('hidden');
-          $(this).parent('div.soundcloud-player').css('background-image' , 'none');
+          $(this).parents('div.soundcloud-player').css('background-image' , 'none');
           console.log( soundCloudTrackId );
           $(
             '<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + soundCloudTrackId + '&color=%230063af&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>'
-          ).appendTo($(this).parent('div.soundcloud-player'));
-          $(this).remove();
+          ).appendTo($(this).parents('div.soundcloud-player'));
+          $(this).parents('div.soundcloud-player small.note').remove();
       } )
     });
 {%- endjs -%}

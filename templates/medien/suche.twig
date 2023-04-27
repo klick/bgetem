@@ -12,9 +12,9 @@ medien/index
 	{% set artikelStart = craft.products().with(['medienportalTitelbild']).search(searchQuery).with(['medienportalTitelbild']).orderBy('score') %}
 	{% else %}
 		{% if craft.app.request.hostInfo|split('.')|last == 'test' %}
-			{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(5).orderBy('score') %}
+			{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(10).orderBy('postDate DESC') %}
 		{% else %}
-		{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(20).orderBy('score') %}
+		{% set artikelStart = craft.products().with(['medienportalTitelbild']).limit(10).orderBy('postDate DESC') %}
 	{% endif %}
 {% endif %}
 
@@ -113,7 +113,7 @@ medien/index
 				{% endif %}
 				<ul class="listing m-0">
 					{% for artikel in pageEntries %}
-					{{ include('_includes/component-listing_with-image-and-actions', {entry: artikel, image: artikel.medienportalTitelbild ? artikel.medienportalTitelbild[0] : null, buyButton: true}) }}
+					{{ include('_includes/component-listing_with-image-and-actions', {entry: artikel, image: artikel.medienportalTitelbild ? artikel.medienportalTitelbild.one() : null, buyButton: true}) }}
 					{% endfor %}
 				</ul>
 				<div class="pagination">
@@ -174,9 +174,7 @@ $(document).ready(function(){
 			);
 			$.get( '/medien/api/products.json?', $('form#suchform').serialize(), function(data) {
 	         // ... do something with response from server
-	   
-	        	
-	        	
+
 	        	//console.log(resultsPagination); 
 	         
 		        $('section.listings#results').html(
@@ -221,10 +219,11 @@ $(document).ready(function(){
 		         	);
 		        });
 		        resultsPagination = data.meta.pagination;
+		        resultsNextPagination = data.meta.pagination.links.next;
 		        $('section.listings').append(
 		        	'<div class="row align-items-baseline mb-2">' +
 						'<div class="col-12 text-end">' +
-							'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button">Mehr laden</a>' +
+							'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button" data-next="' + resultsNextPagination + '">Mehr laden</a>' +
 						'</div>' +
 					'</div>' +
 					'<ul class="listing m-0">'
@@ -237,7 +236,6 @@ $(document).ready(function(){
 	}
 
 	function loadMore(url) {
-		//console.log(resultsPagination); 
 
 		$('section.listings').append(
     		'<div class="d-flex justify-content-center spinner-wrapper">' +
@@ -247,12 +245,14 @@ $(document).ready(function(){
 			'</div>'
     	);
 
+		
+
 		$.get( url, function(data) {
 	         // ... do something with response from server
 	   		console.log('More: ' +  url);
 	   		console.log(data);
 
-	        data.forEach(function(item) {
+	        data.data.forEach(function(item) {
 	         	$('ul.listing').append(
 					'<li class="card listing__item mb-5">' + 
 						'<div class="row py-4 item-wrapper has-actions">' + 
@@ -290,7 +290,7 @@ $(document).ready(function(){
 	        $('section.listings').append(
 	        	'<div class="row align-items-baseline mb-2">' +
 					'<div class="col-12 text-end">' +
-						'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button">Mehr laden</a>' +
+						'<span class="load-more-button bg_bg-dguv-grau-9 p-2" role="button" data-next="' + data.meta.pagination.links.next + '">Mehr laden</a>' +
 					'</div>' +
 				'</div>' +
 				'<ul class="listing m-0">'
@@ -344,9 +344,10 @@ $(document).ready(function(){
 	$('section.listings').on('click', 'span.load-more-button', function(){
 		$(this).remove();
 		var url = resultsPagination.links.next;
+		var nextUrl = $(this).data('next');
 		console.log('Next: ' + url);
 		//console.log(resultsPagination);
-		loadMore('/medien/api/products.json?suchtext&categoryIds[0]=14159&page=3');
+		loadMore(nextUrl);
 	})
 	
 });

@@ -54,7 +54,7 @@
 					<p><a class="navbar-brand mb-0 me-auto fw-bold">{{ currentSite.name }}</a></p>
 					<span class="ms-auto">
 						{% if not (searchQuery is defined or tag is defined or craft.app.request.segments|last == 'ausgaben') %}
-						<b>Ausgabe {{ entry.section.id == 1 ? entry.ausgabe : entry.title }}</b> | 
+						<a class="text-dark" href="/magazin/{{ entry.ausgabe }}">Ausgabe {{ entry.ausgabe }}</a> | 
 						{% endif %}
 						<small class="d-inline"><a href="{{ alias(currentSite.baseUrl) }}ausgaben" class="me-3 text-dark">Alle Ausgaben</a></small>
 					</span>

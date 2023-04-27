@@ -3,7 +3,6 @@
 use craft\elements\Entry;
 use craft\commerce\elements\Product;
 use craft\helpers\UrlHelper;
-use aelvan\imager\services\ImagerService;
 
 return [
     'endpoints' => [
@@ -226,11 +225,11 @@ return [
                     }
                     
                     if (strlen($product->medienportalTitelbild->one()) > 0){
-                        $imager = new aelvan\imager\services\ImagerService();
+                        $imagerx = Craft::$app->plugins->getPlugin('imager-x');
                         $image  = $product->medienportalTitelbild->one();
-                        $cover  = $imager->transformImage($image, [
-                            'width' => 141,
-                            'format'=> 'webp',
+                        $cover  = $imagerx->imager->transformImage($image, [
+                            'width' => 400,
+                            'format' => 'webp'
                         ])->url;
                         //$cover = $product->medienportalTitelbild->one()->url;
                         //$cover = Craft::$plugin->imager->transformImage($product->medienportalTitelbild->one(), ['width' => 100]);
