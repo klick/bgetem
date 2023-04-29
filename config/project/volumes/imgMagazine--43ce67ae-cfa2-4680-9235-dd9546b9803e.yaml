@@ -54,6 +54,59 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            elementCondition: null
+            fieldUid: 6023d733-d4e9-4692-bb83-69fad305b78b # Bildrechte
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6d087e1c-f853-4cac-b5a3-68217b4eb505
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 9bf69965-c31e-40ea-972a-d56c8e0e088c
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 6bedf22b-8e52-4b66-8308-5de1ebf11188 # Plone UID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a9c823c-26d2-40b0-b846-5be561f71356
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 823ad588-f221-4790-a8ba-d25d0ed88c77 # Dateiname Original
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 206390fa-ca2b-4551-9dcb-2b210d8eb1c8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 574efa14-8605-49de-9cbb-c6b42e1562cc # Ausgabe (Eintrag)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: abbde271-6691-4a7e-8cf6-41b5dcbc435a
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: 093a9bd4-c2c1-474d-9cb1-290ac9d6bca2
         userCondition: null

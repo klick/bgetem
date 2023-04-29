@@ -128,7 +128,7 @@ fieldLayouts:
             width: 25
           -
             elementCondition: null
-            fieldUid: e8a4ae4a-2675-49c7-9796-bd25bf522355 # Ausgabe
+            fieldUid: e8a4ae4a-2675-49c7-9796-bd25bf522355 # Url Original
             instructions: null
             label: __blank__
             required: false

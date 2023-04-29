@@ -238,6 +238,13 @@ div.text-body ul {
 				background: url('data:image/svg+xml; utf8, <svg width="434px" height="500px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\a <g style=""><path d="M294.671697,215.182669 L0.000000,215.182669 L0.000000,285.440041 L295.353808,285.440041 L145.289517,449.146539 L191.673025,498.940599 L432.458000,249.970300 L191.673025,1.000000 L145.289517,51.476170 Z" fill="%23000000" stroke="none" />\a </g></svg>');
 			}
 	}
+	.bg-dguv-cyan &,
+	.bg-dguv-tuerkis &,
+	.bg-dguv-light-gruen &,
+	.bg-dguv-gruen &,
+	.bg-dguv-violett &,
+	.bg_bg-dguv-blau &,
+	.bg_bg-dguv-rot &,
 	*[class^="bg_bg"] &,
 	*[class^="bg-dguv-"] &,
 	.bg-dguv-orange &,
@@ -699,11 +706,25 @@ div.menu-profile {
 		display: block;
 		margin: .15rem 0;
 	}
+	div.has-back {
+		a.link-item {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			display: flex;
+		}
+	}
 	.menu-item-title {
 	  display: inline !important;
 	  vertical-align: sub !important;
 	  white-space: normal !important;
-	} 
+	  white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+	}
+	div.d-flex {
+		justify-content: space-between !important;
+	}
 }
 .img-responsive {
    display: block;
@@ -724,3 +745,4 @@ div.menu-profile {
 .bg-dguv-light-gruen a:hover, .bg_bg-dguv-light-gruen a:hover {
    background: transparent!important
 }
+

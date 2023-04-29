@@ -3,7 +3,7 @@ contentColumnType: string(255)
 fieldGroup: f7adbec1-88b8-4b4d-b69e-81a47947015d # Magazin
 handle: ausgabeUrl
 instructions: null
-name: Ausgabe
+name: 'Url Original'
 searchable: false
 settings:
   maxLength: 255

@@ -4,7 +4,7 @@ fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
 handle: ueberschrift
 instructions: null
 name: Überschrift
-searchable: false
+searchable: true
 settings:
   byteLimit: null
   charLimit: null

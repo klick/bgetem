@@ -7,7 +7,7 @@
 }) %}
 
 {% set today = "now"|atom %}
-{% set termineUpcoming = craft.entries.siteId(2).sectionId(3).limit(4).all() %}
+{% set termineUpcoming = craft.entries.siteId(2).sectionId(3).terminStart(["> #{today}"]).orderBy('terminStart asc').limit(5).all() %}
 {% set titlestoryHighlight = entry.titlestories.with(['cover']).one() %}
 
 {% set etemPlusEntries = entry.etemPlus.with(['cover', 'titlestoryCover']).all() %}
@@ -162,6 +162,7 @@
   }
 } %}
 
+{# TERMINE #}
 
 <div class="container my-3 my-md-5">
 	<div class="row">
@@ -170,14 +171,18 @@
 		{% endfor %}
 		<div class="col-sm-12 col-md-6 col-lg-4 my-3 d-flex align-items-stretch">
 			<div class="magazine-card themen has-background-mask text-white bg-dguv-blau">
-				<div class="card-body">
-					<h2>Termine</h2>
+				<div class="card-body p-4">
+					<p class="category roof-row text-uppercase mb-4"><small>Termine</small></p>
 					{% for entry in termineUpcoming %}
-					<a href="{{ entry.terminUrl }}" target="_blank" class="text-decoration-none">
-						<p>{{ entry.datum|date('d.m.Y') }} | {{ entry.ort }}<br>{{ entry.title }}</p>
+					<a href="{{ entry.terminUrl }}" target="_blank" class="text-decoration-none mb-4 d-flex align-items-start">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3 me-2 mt-1 flex-shrink-0" viewBox="0 0 16 16">
+					  <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+					  <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+					</svg>
+						<p><span class="bg_fv-lining-nums">{{ entry.terminStart|date('d.m.Y') }}</span> | {{ entry.ort }}<br><b>{{ entry.title }}</b></p>
 					</a>
 					{% endfor %}
-					<p><a href="http://www.bgetem.de/presse-aktuelles/termine" target="_blank">Weitere Termine</a></p>
+					<p class="mt-4"><a class="text-decoration-none arrow arrow-after arrow-white" href="http://www.bgetem.de/presse-aktuelles/termine" target="_blank">Weitere Termine</a></p>
 				</div>
 			</div>
 		</div>

@@ -1,17 +1,17 @@
-columnSuffix: rkakjumj
+columnSuffix: rphusyfs
 contentColumnType: text
-fieldGroup: c866deda-e6cc-48ea-8562-52f0654d5db2 # _Common
-handle: description
+fieldGroup: 98dc625b-051e-4332-adef-2dd98e633dec # Dateien
+handle: imgFilenameOriginal
 instructions: null
-name: Description
-searchable: true
+name: 'Dateiname Original'
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: false
   columnType: null
-  initialRows: 3
-  multiline: true
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

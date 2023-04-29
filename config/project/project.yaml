@@ -1,4 +1,4 @@
-dateModified: 1682579237
+dateModified: 1683094299
 elementSources:
   craft\elements\Entry:
     -
@@ -44,7 +44,7 @@ elementSources:
       tableAttributes:
         - 'field:a337bdf2-4a59-47da-abe4-e744a6d1744c' # Lesezeit B
         - 'field:986d22af-30dc-4e1f-8eab-12bde24d4a35' # Ausgabe
-        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Ausgabe
+        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Url Original
         - 'field:574efa14-8605-49de-9cbb-c6b42e1562cc' # Ausgabe (Eintrag)
         - 'field:57d60075-a63a-4b5a-b8f0-6d7a866848fa' # Sammlung
         - postDate
@@ -142,7 +142,7 @@ elementSources:
       tableAttributes:
         - link
         - 'field:574efa14-8605-49de-9cbb-c6b42e1562cc' # Ausgabe (Eintrag)
-        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Ausgabe
+        - 'field:e8a4ae4a-2675-49c7-9796-bd25bf522355' # Url Original
       type: custom
 email:
   fromEmail: me@marcusscheller.com
@@ -296,6 +296,7 @@ meta:
     88e1572c-f3c5-4214-a261-b079e6234963: Ausgaben # Ausgaben
     92b37031-751f-4c8f-95f6-d417b247b2b3: Artikelreferenzen # Artikelreferenzen
     98c7bda6-34df-400e-a887-20d17efd637b: 'Items (Files)' # Items (Files)
+    98dc625b-051e-4332-adef-2dd98e633dec: Dateien # Dateien
     151c7440-fbd5-4dfd-af92-19bf87ece331: Eintrag # Eintrag
     0158b508-0e9f-4d41-9410-4e298cd84b2e: '[Magazin] Artikel' # [Magazin] Artikel
     181cef0e-45db-489c-af21-e0b8c8efbf0f: 'Previous Item' # Previous Item
@@ -315,6 +316,7 @@ meta:
     666abca7-3afa-46a7-8e2e-3e10dd276a91: 'Links und Recherche' # Links und Recherche
     729e8099-e116-420e-bb48-cff32ac2289d: Kartenbreite # Kartenbreite
     785ffb6b-dfab-4d64-862a-ba9d9a7276a7: 'Image Alt' # Image Alt
+    823ad588-f221-4790-a8ba-d25d0ed88c77: 'Dateiname Original' # Dateiname Original
     875b5abb-fd1b-48a9-8d59-afaa93058564: Hintergrundfarbe # Hintergrundfarbe
     0920ba4c-ca0e-4187-b14f-53ff8d14c625: 'Das Magazin Ihrer Berufsgenossenschaft' # Das Magazin Ihrer Berufsgenossenschaft
     931c5f0e-5064-470d-b62f-377ac66d3c37: 'Bilder bgetem.de' # Bilder bgetem.de
@@ -325,6 +327,7 @@ meta:
     2696d3ea-1bef-4106-a7d8-231a6499bef8: 'Interne Bemerkungen' # Interne Bemerkungen
     5308f625-2e37-4886-a374-dabe6876ff09: 'Next Item Title' # Next Item Title
     5632a833-05f5-473b-9d6b-b6c765b3b760: Termin # Termin
+    6023d733-d4e9-4692-bb83-69fad305b78b: Bildrechte # Bildrechte
     7041c97d-0f49-465a-8929-71e84dbb3232: Dateigröße # Dateigröße
     7645eba5-0351-458d-8478-17ad0725c98b: '[BGHW] Sicher und gesund arbeiten' # [BGHW] Sicher und gesund arbeiten
     7703ab3d-a038-425d-9545-3a0c453b355e: Anwendungen # Anwendungen
@@ -419,7 +422,7 @@ meta:
     de726bf5-b5e4-426f-bb62-f63b7178c285: 'Mehr Link -> Ziel' # Mehr Link -> Ziel
     e0b4acfc-09c1-474a-bd31-ec67021e719d: bgetem # bgetem
     e0559d9c-74af-47ef-9dc8-3789f92177c5: '[BGETEM INtranet] Home' # [BGETEM INtranet] Home
-    e8a4ae4a-2675-49c7-9796-bd25bf522355: Ausgabe # Ausgabe
+    e8a4ae4a-2675-49c7-9796-bd25bf522355: 'Url Original' # Url Original
     e9e726c0-acd5-4251-b5af-68854db60da9: 'Auswahl Bereichsnews' # Auswahl Bereichsnews
     e64dfb06-8adb-411c-a08d-c7e351de72a1: '[Medienportal] Home' # [Medienportal] Home
     e325b571-9b9d-4681-b059-528883c42a96: Datum # Datum

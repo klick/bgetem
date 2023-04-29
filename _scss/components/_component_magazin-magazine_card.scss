@@ -38,8 +38,8 @@
 	}
 	&.has-background-mask {
 		 background-image: url("../bilder/magazin/mask.png") !important;
-		 background-size: contain;
-		 background-repeat: no-repeat;
+		 background-size: contain !important;
+		 background-repeat: no-repeat !important;
 		 &:hover {
 		 	background-image: none !important;
 		 }
